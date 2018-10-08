@@ -22,9 +22,10 @@ export class JobItemComponent implements OnInit {
 
   onSave() {
     this.httpClient.put('http://localhost:3000/jobitem/' + this.jobItem.id, {
-      'name': this.jobItem.name,
+      'name': this.jobItem.title,
       'jobListId': this.jobItem.jobListId,
-      'done': this.jobItem.done
+      'description': this.jobItem.description,
+      'skills': this.jobItem.skills
     }).subscribe(res=>{
 
     });

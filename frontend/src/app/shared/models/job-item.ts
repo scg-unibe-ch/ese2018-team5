@@ -3,8 +3,9 @@ export class JobItem {
   constructor(
     public id: number,
     public jobListId: number,
-    public name: string,
-    public done: boolean
+    public title: string,
+    public description: string,
+    public skills: string
   ) {
   }
 
