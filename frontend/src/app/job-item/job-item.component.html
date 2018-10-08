@@ -1,5 +1,10 @@
+<div class="job-item">
+<h1>  <mat-icon>work</mat-icon> Job Item {{jobItem.name}}</h1>
 <mat-form-field>
   <input matInput placeholder="Name" [(ngModel)]="jobItem.name" name="name" (ngModelChange)="onSave()">
 </mat-form-field>
+<br>
 <mat-checkbox [(ngModel)]="jobItem.done" (ngModelChange)="onSave()">done</mat-checkbox>
+<br><br>
 <button mat-button (click)="onDestroy()">destroy</button>
+</div>

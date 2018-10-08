@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {JobList} from '../job-list';
-import {JobItem} from '../job-item';
+import {JobList} from '../shared/models/job-list';
+import {JobItem} from '../shared/models/job-item';
 import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Component({

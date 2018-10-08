@@ -1,6 +1,3 @@
-<mat-form-field>
-  <input matInput placeholder="Create list" [(ngModel)]="jobList.name" name="name">
-</mat-form-field>
-<button mat-button (click)="onJobListCreate()">create</button>
-<app-job-list [jobList]="jobList" (destroy)="onJobListDestroy($event)"
-               *ngFor="let jobList of jobLists"></app-job-list>
+<app-dashboard></app-dashboard>
+<!--<app-list>Loading...</app-list> -->
+

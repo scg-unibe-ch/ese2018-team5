@@ -1,6 +1,9 @@
-<mat-card>
+<mat-card class="list">
+  <mat-card-title>
+    List - {{jobList.name}} ID: {{jobList.id}}
+  </mat-card-title>
   <mat-form-field>
-    <input matInput placeholder="Name" [(ngModel)]="jobList.name" name="name" (ngModelChange)="onSave()">
+    <input matInput placeholder="Name"  [(ngModel)]="jobList.name" name="name" (ngModelChange)="onSave()">
   </mat-form-field>
   <button mat-button (click)="onDestroy()">destroy</button>
   <br>
@@ -8,9 +11,11 @@
     <input matInput placeholder="Create Item" [(ngModel)]="jobItem.name" name="name">
   </mat-form-field>
   <button mat-button (click)="onJobItemCreate()">add</button>
-  <mat-list>
-    <mat-list-item *ngFor="let jobItem of jobItems">
-      <app-job-item [jobItem]="jobItem" (destroy)="onJobItemDestroy($event)"></app-job-item>
-    </mat-list-item>
-  </mat-list>
+
+    <div *ngFor="let jobItem of jobItems" class="jobitem">
+    <app-job-item [jobItem]="jobItem" (destroy)="onJobItemDestroy($event)"></app-job-item>
+    </div>
+
+
 </mat-card>
+

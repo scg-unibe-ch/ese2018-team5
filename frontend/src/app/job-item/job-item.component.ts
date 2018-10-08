@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {JobItem} from '../job-item';
+import {JobItem} from '../shared/models/job-item';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -25,7 +25,9 @@ export class JobItemComponent implements OnInit {
       'name': this.jobItem.name,
       'jobListId': this.jobItem.jobListId,
       'done': this.jobItem.done
-    }).subscribe();
+    }).subscribe(res=>{
+
+    });
   }
 
   onDestroy() {

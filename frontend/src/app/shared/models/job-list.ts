@@ -1,4 +1,4 @@
-import {JobItem} from './job-item';
+import {JobItem} from '../../job-item';
 
 export class JobList {
 
