@@ -18,6 +18,7 @@ import { JobListComponent } from './job-list/job-list.component';
 import { JobItemComponent } from './job-item/job-item.component';
 import {FormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {JobService} from './shared/service/job.service';
 
 
 
@@ -42,7 +43,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatCardModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [JobService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

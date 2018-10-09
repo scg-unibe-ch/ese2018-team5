@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {JobItem} from '../shared/models/job-item';
 import {HttpClient} from '@angular/common/http';
+import {JobService} from '../shared/service/job.service';
 
 @Component({
   selector: 'app-job-item',
@@ -14,23 +15,17 @@ export class JobItemComponent implements OnInit {
   @Output()
   destroy = new EventEmitter<JobItem>();
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private jobService: JobService) {
   }
 
   ngOnInit() {
   }
 
   onSave() {
-    this.httpClient.put('http://localhost:3000/jobitem/' + this.jobItem.id, {
-      'title': this.jobItem.title,
-      'jobListId': this.jobItem.jobListId,
-      'description': this.jobItem.description,
-      'skills': this.jobItem.skills
-    }).subscribe();
+   this.jobService.createJob(this.jobItem).subscribe();
   }
-
   onDestroy() {
-    this.httpClient.delete('http://localhost:3000/jobitem/' + this.jobItem.id).subscribe(() => {
+    this.jobService.deleteJob(this.jobItem).subscribe(() => {
       this.destroy.emit(this.jobItem);
     });
   }

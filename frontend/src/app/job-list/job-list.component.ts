@@ -52,7 +52,7 @@ export class JobListComponent implements OnInit {
     }).subscribe((instance: any) => {
       this.jobItem.id = instance.id;
       this.jobItems.push(this.jobItem);
-      this.jobItem = new JobItem(null, this.jobList.id, '', '','');
+      this.jobItem = instance;
     });
   }
 

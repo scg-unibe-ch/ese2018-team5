@@ -16,9 +16,12 @@ const sequelize =  new Sequelize({
 });
 sequelize.addModels([JobList, JobItem]);
 
+var cors = require('cors');
+cors({credentials: true, origin: true})
 // create a new express application instance
 const app: express.Application = express();
 app.use(express.json());
+app.use(cors())
 
 // define the port the express app will listen on
 var port: number = 3000;
