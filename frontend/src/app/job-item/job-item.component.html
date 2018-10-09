@@ -1,15 +1,15 @@
 <div class="job-item">
   <h1>  <mat-icon>work</mat-icon> {{jobItem.title}}</h1>
   <mat-form-field>
-    <input matInput placeholder="Title" [(ngModel)]="jobItem.title" title="title"  required (ngModelChange)="onSave()">
+    <input matInput placeholder="Title" [(ngModel)]="jobItem.title" title="title" required>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Description" [(ngModel)]="jobItem.description" description="description" (ngModelChange)="onSave()" required>
+    <input matInput placeholder="Description" [(ngModel)]="jobItem.description" description="description" required>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Skills" [(ngModel)]="jobItem.skills" skills="skills" (ngModelChange)="onSave()" required>
+    <input matInput placeholder="Skills" [(ngModel)]="jobItem.skills" skills="skills" required>
   </mat-form-field>
 
 <br>
