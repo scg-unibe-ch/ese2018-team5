@@ -22,13 +22,11 @@ export class JobItemComponent implements OnInit {
 
   onSave() {
     this.httpClient.put('http://localhost:3000/jobitem/' + this.jobItem.id, {
-      'name': this.jobItem.title,
+      'title': this.jobItem.title,
       'jobListId': this.jobItem.jobListId,
       'description': this.jobItem.description,
       'skills': this.jobItem.skills
-    }).subscribe(res=>{
-
-    });
+    }).subscribe();
   }
 
   onDestroy() {
