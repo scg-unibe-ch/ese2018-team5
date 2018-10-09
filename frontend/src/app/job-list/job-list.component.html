@@ -8,11 +8,11 @@
   <button mat-button (click)="onDestroy()">destroy</button>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Create Item" [(ngModel)]="jobItem.name" name="name">
+    <input matInput placeholder="Create Item" [(ngModel)]="jobItem.title" title="title">
   </mat-form-field>
   <button mat-button (click)="onJobItemCreate()">add</button>
 
-    <div *ngFor="let jobItem of jobItems" class="jobitem">
+    <div *ngFor="let jobItem of jobItems" class="jobItem">
     <app-job-item [jobItem]="jobItem" (destroy)="onJobItemDestroy($event)"></app-job-item>
     </div>
 
