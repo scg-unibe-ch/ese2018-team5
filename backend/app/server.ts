@@ -2,10 +2,11 @@
 import express from 'express';
 
 // import all the controllers. If you add a new controller, make sure to import it here as well.
-import {JobListController, JobItemController} from './controllers';
+import {JobListController, JobItemController, UserController} from './controllers';
 import {Sequelize} from 'sequelize-typescript';
 import {JobList} from './models/joblist.model';
 import {JobItem} from './models/jobitem.model';
+import {User} from './models/user.model';
 
 const sequelize =  new Sequelize({
   database: 'development',
@@ -14,7 +15,7 @@ const sequelize =  new Sequelize({
   password: '',
   storage: 'db.sqlite'
 });
-sequelize.addModels([JobList, JobItem]);
+sequelize.addModels([JobList, JobItem, User]);
 
 var cors = require('cors');
 cors({credentials: true, origin: true})
@@ -38,6 +39,7 @@ app.use(function (req, res, next) {
 
 app.use('/joblist', JobListController);
 app.use('/jobitem', JobItemController);
+app.use('/user', UserController);
 
 
 sequelize.sync().then(() => {
