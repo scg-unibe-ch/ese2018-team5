@@ -1,31 +1,54 @@
-import {Table, Column, Model, HasMany, BelongsTo, ForeignKey} from 'sequelize-typescript';
-import {JobList} from './joblist.model';
+import {Table, Column, Model, PrimaryKey, AutoIncrement, AllowNull, Unique} from 'sequelize-typescript';
+const bcrypt = require('bcrypt');
 
 @Table
 export class User extends Model<User> {
 
+
+  @Unique
+  @AllowNull
   @Column
-  firstName!: string;
+  username!: string;
+
+  @AllowNull
+  @Column
+  password!: string;
 
   @Column
-  lastName!: string;
-
-  @Column
-  skills!: string;
+  email!: string;
 
   toSimplification(): any {
     return {
       'id': this.id,
-      // 'title': this.title,
-      // 'description': this.description,
-      // 'skills': this.skills
+      'username': this.username,
+      'password': this.password,
+      'email': this.email
     };
   }
 
   fromSimplification(simplification: any): void {
-    // this.title = simplification['title'];
-    // this.description = simplification['description'];
-    // this.skills = simplification['skills'];
+    this.username = simplification['username'];
+    this.password = simplification['password'];
+    this.email = simplification['email'];
   }
 
+  comparePassword(password: any, callback:any) {
+    bcrypt.compare(password, this.password, function(err:any, isMatch:any) {
+      if (err) {
+        return callback(err);
+      }
+      return callback(null, isMatch);
+    });
+  }
+
+  hashPassword(user: any) {
+    if(user.changed('password')) {
+      return bcrypt.hash(user.password, 10).then(function(password:any) {
+        user.password = password;
+      });
+    }
+  }
 }
+
+
+

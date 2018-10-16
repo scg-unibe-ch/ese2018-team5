@@ -3,19 +3,13 @@ import express from 'express';
 
 // import all the controllers. If you add a new controller, make sure to import it here as well.
 import {JobListController, JobItemController, UserController} from './controllers';
-import {Sequelize} from 'sequelize-typescript';
-import {JobList} from './models/joblist.model';
-import {JobItem} from './models/jobitem.model';
-import {User} from './models/user.model';
 
-const sequelize =  new Sequelize({
-  database: 'development',
-  dialect: 'sqlite',
-  username: 'root',
-  password: '',
-  storage: 'db.sqlite'
-});
-sequelize.addModels([JobList, JobItem, User]);
+const bodyParser = require ('body-parser');
+const morgan = require('morgan');
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+
+const sequelize = require('./services/database')
 
 var cors = require('cors');
 cors({credentials: true, origin: true})
@@ -23,6 +17,14 @@ cors({credentials: true, origin: true})
 const app: express.Application = express();
 app.use(express.json());
 app.use(cors())
+
+//app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(morgan('dev'));
+
+app.use(passport.initialize());
+const hookJWTStrategy = require('./services/passportStrategy')
+hookJWTStrategy(passport);
 
 // define the port the express app will listen on
 var port: number = 3000;
@@ -39,8 +41,9 @@ app.use(function (req, res, next) {
 
 app.use('/joblist', JobListController);
 app.use('/jobitem', JobItemController);
-app.use('/user', UserController);
+//app.use('/user', UserController);
 
+app.use('/api', require('./routes/api')(passport));
 
 sequelize.sync().then(() => {
 // start serving the application on the given port
