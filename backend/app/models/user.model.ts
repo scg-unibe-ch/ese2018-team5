@@ -1,9 +1,8 @@
-import {Table, Column, Model, PrimaryKey, AutoIncrement, AllowNull, Unique} from 'sequelize-typescript';
+import {Table, Column, Model, AllowNull, Unique, BeforeCreate, BeforeUpdate} from 'sequelize-typescript';
 const bcrypt = require('bcrypt');
 
 @Table
 export class User extends Model<User> {
-
 
   @Unique
   @AllowNull
@@ -17,6 +16,15 @@ export class User extends Model<User> {
   @Column
   email!: string;
 
+  @BeforeUpdate
+  @BeforeCreate
+  static hashPassword(instance:User) {
+      return bcrypt.hash(instance.password, 10).then(function (password: any) {
+        instance.password = password;
+      });
+
+  }
+  
   toSimplification(): any {
     return {
       'id': this.id,
@@ -40,15 +48,8 @@ export class User extends Model<User> {
       return callback(null, isMatch);
     });
   }
-
-  hashPassword(user: any) {
-    if(user.changed('password')) {
-      return bcrypt.hash(user.password, 10).then(function(password:any) {
-        user.password = password;
-      });
-    }
-  }
 }
+
 
 
 

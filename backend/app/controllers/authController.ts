@@ -23,8 +23,7 @@ AuthController.signUp = async function(req:any, res:any) {
         res.status(201).json({message: 'Account created!'});
       });
     }).catch(function(err:any) {
-        res.status(403).json({message: 'Username already exists!'
-      });
+        res.status(403).json({message: 'Username already exists!'});
     });
   }
 }
