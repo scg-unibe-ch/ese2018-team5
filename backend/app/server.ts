@@ -2,7 +2,7 @@
 import express from 'express';
 
 // import all the controllers. If you add a new controller, make sure to import it here as well.
-import {JobListController, JobItemController, UserController} from './controllers';
+import {JobListController, JobItemController} from './controllers';
 
 const bodyParser = require ('body-parser');
 const morgan = require('morgan');
@@ -16,6 +16,7 @@ cors({credentials: true, origin: true})
 // create a new express application instance
 const app: express.Application = express();
 app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())
 
 //app.use(bodyParser.urlencoded({extended: false}));

@@ -1,5 +1,6 @@
-import {Table, Column, Model, AllowNull, Unique, BeforeCreate, BeforeUpdate} from 'sequelize-typescript';
+import {Table, Column, Model, AllowNull, Unique, BeforeCreate, BeforeUpdate, Default} from 'sequelize-typescript';
 const bcrypt = require('bcrypt');
+const config = require('../config');
 
 @Table
 export class User extends Model<User> {
@@ -16,6 +17,10 @@ export class User extends Model<User> {
   @Column
   email!: string;
 
+  @Default(config.userRoles.user)
+  @Column
+  role!: number;
+
   @BeforeUpdate
   @BeforeCreate
   static hashPassword(instance:User) {
@@ -24,7 +29,7 @@ export class User extends Model<User> {
       });
 
   }
-  
+
   toSimplification(): any {
     return {
       'id': this.id,

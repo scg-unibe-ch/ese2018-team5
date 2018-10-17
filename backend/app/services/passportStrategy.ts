@@ -4,7 +4,7 @@ const JWTStrategy = require('passport-jwt').Strategy,
   ExtractJWT = require('passport-jwt').ExtractJwt,
   config1 = require('../config');
 
-const User = require('./../models/user.model');
+import {User} from '../models/user.model';
 
 function hookJWTStrategy(passport:any) {
 

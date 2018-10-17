@@ -3,6 +3,7 @@ import {User} from '../models/user.model';
 
 const router: Router = Router();
 
+
 //create user
 router.post('/', async (req: Request, res: Response) => {
   const instance = new User();
