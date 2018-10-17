@@ -13,12 +13,12 @@ export class JobItem extends Model<JobItem> {
   @Column
   skills!: string;
 
-  @ForeignKey(() => JobList)
-  @Column
-  jobListId!: number;
-
-  @BelongsTo(() => JobList)
-  jobList!: JobList;
+  // @ForeignKey(() => JobList)
+  // @Column
+  // jobListId!: number;
+  //
+  // @BelongsTo(() => JobList)
+  // jobList!: JobList;
 
   toSimplification(): any {
     return {
@@ -31,7 +31,7 @@ export class JobItem extends Model<JobItem> {
 
   fromSimplification(simplification: any): void {
     this.title = simplification['title'];
-    this.jobListId = simplification['jobListId'];
+    // this.jobListId = simplification['jobListId'];
     this.description = simplification['description'];
     this.skills = simplification['skills'];
   }

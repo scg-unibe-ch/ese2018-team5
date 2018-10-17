@@ -12,6 +12,6 @@ const sequelize = new Sequelize({
   password: '',
   storage: 'db.sqlite'
 });
-sequelize.addModels([JobList, JobItem, User]);
+sequelize.addModels([JobItem, User]);
 
 module.exports = sequelize;

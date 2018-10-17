@@ -7,8 +7,6 @@ import {JobListController, JobItemController} from './controllers';
 const bodyParser = require ('body-parser');
 const morgan = require('morgan');
 const passport = require('passport');
-const jwt = require('jsonwebtoken');
-
 const sequelize = require('./services/database')
 
 var cors = require('cors');
@@ -40,9 +38,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/joblist', JobListController);
+//app.use('/joblist', JobListController);
 app.use('/jobitem', JobItemController);
-//app.use('/user', UserController);
 
 app.use('/api', require('./routes/api')(passport));
 

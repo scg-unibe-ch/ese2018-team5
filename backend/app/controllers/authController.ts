@@ -1,6 +1,5 @@
 import {User} from '../models/user.model';
 
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const sequelize = require('../services/database');
@@ -48,7 +47,8 @@ AuthController.authenticateUser = function(req:any, res:any) {
 
             res.json({
               success: true,
-              token: 'JWT ' + token
+              token: 'JWT ' + token,
+              role: user.role
             });
           } else {
             res.status(404).json({ message: 'Login failed!' });
