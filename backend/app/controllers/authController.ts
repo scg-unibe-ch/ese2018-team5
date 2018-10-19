@@ -6,7 +6,7 @@ const sequelize = require('../services/database');
 const config = require('../config');
 const AuthController = {} as any;
 
-AuthController.signUp = async function(req:any, res:any) {
+AuthController.signUp = async (req:any, res:any) => {
   if(!req.body.username || !req.body.password) {
     res.json({message: 'Please provide a username and password.'});
   } else {
@@ -25,7 +25,7 @@ AuthController.signUp = async function(req:any, res:any) {
   }
 }
 
-AuthController.authenticateUser = function(req:any, res:any) {
+AuthController.authenticateUser = async (req:any, res:any) => {
   if(!req.body.username || !req.body.password) {
     res.status(404).json({ message: 'Username and password are needed!' });
   } else {

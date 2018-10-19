@@ -2,7 +2,7 @@
 import express from 'express';
 
 // import all the controllers. If you add a new controller, make sure to import it here as well.
-import {JobListController, JobItemController} from './controllers';
+import {JobItemController} from './controllers';
 
 const bodyParser = require ('body-parser');
 const morgan = require('morgan');
