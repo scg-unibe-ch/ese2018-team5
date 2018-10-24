@@ -5,7 +5,9 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
-//import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
+import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
+import { AuthService } from './auth.service'; //Import a authentication service
+import { AuthGuard } from './auth.guard'; //Import a authentication guard
 
 // Add css components from angular material
 import {
@@ -23,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobService} from './shared/service/job.service';
 import { HeaderComponent } from './header/header.component';
 import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
+import { LoginComponent } from './login/login.component';
 
 //function to get a token
 export function tokenGetter() {
@@ -37,6 +40,7 @@ export function tokenGetter() {
     DashboardComponent,
     HeaderComponent,
     PseudeJobsComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -52,17 +56,19 @@ export function tokenGetter() {
     MatIconModule,
 
     //import of the jwt mdule
-    /*
+
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
         whitelistedDomains: ['\'/authenticate\', authController.authenticateUser)'],
-        blacklistedRoutes: ['localhost:4000/api/auth']
+       // blacklistedRoutes: ['localhost:4000/api/auth']
       }
     })
-*/
+
   ],
-  providers: [JobService],
+  providers: [JobService,
+    AuthService,
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
