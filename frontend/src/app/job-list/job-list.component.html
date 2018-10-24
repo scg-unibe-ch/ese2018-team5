@@ -2,7 +2,7 @@
   <mat-card-title>
     List - {{jobList.name}} ID: {{jobList.id}}
   </mat-card-title>
-  <mat-form-field>
+  <mat-form-field >
     <input matInput placeholder="Name"  [(ngModel)]="jobList.name" name="name" (ngModelChange)="onSave()">
   </mat-form-field>
   <button mat-button (click)="onDestroy()">destroy</button>

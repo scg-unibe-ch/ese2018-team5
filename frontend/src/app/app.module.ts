@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 
+//import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
+
 // Add css components from angular material
 import {
   MatButtonModule,
@@ -19,9 +21,13 @@ import { JobItemComponent } from './job-item/job-item.component';
 import {FormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobService} from './shared/service/job.service';
+import { HeaderComponent } from './header/header.component';
+import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
 
-
-
+//function to get a token
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -29,6 +35,8 @@ import {JobService} from './shared/service/job.service';
     JobListComponent,
     JobItemComponent,
     DashboardComponent,
+    HeaderComponent,
+    PseudeJobsComponent,
 
   ],
   imports: [
@@ -42,6 +50,17 @@ import {JobService} from './shared/service/job.service';
     MatCheckboxModule,
     MatCardModule,
     MatIconModule,
+
+    //import of the jwt mdule
+    /*
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['\'/authenticate\', authController.authenticateUser)'],
+        blacklistedRoutes: ['localhost:4000/api/auth']
+      }
+    })
+*/
   ],
   providers: [JobService],
   bootstrap: [AppComponent]

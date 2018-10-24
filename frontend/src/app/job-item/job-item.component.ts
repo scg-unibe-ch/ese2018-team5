@@ -10,6 +10,8 @@ import {JobService} from '../shared/service/job.service';
 })
 export class JobItemComponent implements OnInit {
 
+
+
   @Input()
   jobItem: JobItem;
   @Output()
