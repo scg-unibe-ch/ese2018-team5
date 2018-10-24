@@ -12,11 +12,22 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   createUser(user:User):Observable<any> {
-    return this.httpClient.put(this._apiUrl + user.id, user);
-
+    return this.httpClient.post(this._apiUrl + 'signup', user);
   }
 
+  deleteUser(user:User):Observable<any> {
+    return this.httpClient.delete(this._apiUrl + user.id);
+  }
 
+  updateUser(user:User):Observable<any> {
+    return this.httpClient.put(this._apiUrl + user.id, user);
+  }
 
+  getUser(user:User):Observable<any> {
+    return this.httpClient.get(this._apiUrl + user.id);
+  }
 
+  authenticateUser(user:User):Observable<any> {
+    return this.httpClient.post(this._apiUrl + 'authenticate', user);
+  }
 }
