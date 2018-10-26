@@ -5,22 +5,23 @@
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Description" [(ngModel)]="jobItem.description" description="Description" (ngModelChange)="onSave()" required>
+    <input matInput placeholder="Description" [(ngModel)]="jobItem.company" company="Company" (ngModelChange)="onSave()" required>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <input matInput placeholder="Skills" [(ngModel)]="jobItem.skills" skills="Required skills" (ngModelChange)="onSave()" required>
+    <input matInput placeholder="Skills" [(ngModel)]="jobItem.location" location="Location" (ngModelChange)="onSave()" required>
   </mat-form-field>
 
-<br>
-  <mat-form-field>
+  <br>
+
+<!--  <mat-form-field>
     <input matInput placeholder="Salary" [(ngModel)]="jobItem.salary" skills="Salary" (ngModelChange)="onSave()" required>
   </mat-form-field>
 
   <br>
   <mat-form-field>
     <input matInput placeholder="Location" [(ngModel)]="jobItem.location" skills="Location" (ngModelChange)="onSave()" required>
-  </mat-form-field>
+  </mat-form-field>-->
 
   <br>
   <button mat-button (click)="onSave()">Save</button>

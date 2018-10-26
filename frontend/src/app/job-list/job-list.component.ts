@@ -12,7 +12,7 @@ export class JobListComponent implements OnInit {
 
   @Input()
   jobList: JobList;
-  jobItem: JobItem = new JobItem(null, null, '', '', '');
+  jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null);
   jobItems: JobItem[] = [];
   @Output()
   destroy = new EventEmitter<JobList>();
@@ -26,7 +26,8 @@ export class JobListComponent implements OnInit {
       params:  new HttpParams().set('jobListId', '' + this.jobList.id)
     }).subscribe((instances: any) => {
       this.jobItems = instances.map((instance) =>
-        new JobItem(instance.id, instance.jobListId, instance.title, instance.description, instance.skills));
+        new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
+          instance.description, instance.position , instance.pensum));
     });
   }
 
@@ -43,9 +44,9 @@ export class JobListComponent implements OnInit {
   }
 
   onJobItemCreate() {
-    this.jobItem.jobListId = this.jobList.id;
-    this.httpClient.post('http://localhost:3000/jobitem', {
-      'jobListId': this.jobItem.jobListId,
+
+/*    this.httpClient.post('http://localhost:3000/jobitem', {
+
       'title': this.jobItem.title,
       'description': this.jobItem.description,
       'skills': this.jobItem.skills
@@ -53,7 +54,7 @@ export class JobListComponent implements OnInit {
       this.jobItem.id = instance.id;
       this.jobItems.push(this.jobItem);
       this.jobItem = instance;
-    });
+    });*/
   }
 
   onJobItemDestroy(jobItem: JobItem) {
