@@ -3,23 +3,11 @@ import {JobList} from '../models/joblist.model';
 import {JobItem} from '../models/jobitem.model';
 
 const router: Router = Router();
-// router.get('/', async (req: Request, res: Response) => {
-//   const jobListId = parseInt(req.query.jobListId);
-//   let options = {};
-//   if (jobListId != null) {
-//     options = {
-//       include: [{
-//         model: JobList,
-//         where: {
-//           id: jobListId
-//         }
-//       }]
-//     };
-//   }
-//   const instances = await JobItem.findAll(options);
-//   res.statusCode = 200;
-//   res.send(instances.map(e => e.toSimplification()));
-// });
+router.get('/', async (req: Request, res: Response) => {
+   const instances = await JobItem.findAll();
+   res.statusCode = 200;
+   res.send(instances.map(e => e.toSimplification()));
+ });
 router.post('/', async (req: Request, res: Response) => {
   const instance = new JobItem();
   instance.fromSimplification(req.body);

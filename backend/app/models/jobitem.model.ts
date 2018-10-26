@@ -1,5 +1,5 @@
-import {Table, Column, Model, HasMany, BelongsTo, ForeignKey} from 'sequelize-typescript';
-import {JobList} from './joblist.model';
+import {Table, Column, Model} from 'sequelize-typescript';
+
 
 @Table
 export class JobItem extends Model<JobItem> {
@@ -8,32 +8,44 @@ export class JobItem extends Model<JobItem> {
   title!: string;
 
   @Column
+  company!: string;
+
+  @Column
+  location!: string;
+
+  @Column
+  date!: Date;
+
+  @Column
   description!: string;
 
   @Column
-  skills!: string;
+  position!: string;
 
-  // @ForeignKey(() => JobList)
-  // @Column
-  // jobListId!: number;
-  //
-  // @BelongsTo(() => JobList)
-  // jobList!: JobList;
+  @Column
+  pensum!: number;
 
   toSimplification(): any {
     return {
       'id': this.id,
       'title': this.title,
+      'company': this.company,
+      'location': this.location,
+      'date': this.date,
       'description': this.description,
-      'skills': this.skills
+      'position': this.position,
+      'pensum': this.pensum
     };
   }
 
   fromSimplification(simplification: any): void {
     this.title = simplification['title'];
-    // this.jobListId = simplification['jobListId'];
+    this.company = simplification['company'];
+    this.location = simplification['location'];
+    this.date = simplification['date'];
     this.description = simplification['description'];
-    this.skills = simplification['skills'];
+    this.position = simplification['position'];
+    this.pensum = simplification['pensum'];
   }
 
 }
