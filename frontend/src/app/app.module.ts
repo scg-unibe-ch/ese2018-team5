@@ -28,6 +28,7 @@ import {JobService} from './shared/service/job.service';
 import { HeaderComponent } from './header/header.component';
 import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 //function to get a token
 export function tokenGetter() {
@@ -43,6 +44,7 @@ export function tokenGetter() {
     HeaderComponent,
     PseudeJobsComponent,
     LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
