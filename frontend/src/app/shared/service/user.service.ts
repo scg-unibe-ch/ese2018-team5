@@ -30,4 +30,11 @@ export class UserService {
   authenticateUser(user:User):Observable<any> {
     return this.httpClient.post(this._apiUrl + 'authenticate', user);
   }
+
+  //what apiURL????????
+  register(user: User):Observable<any>  {
+    return this.httpClient.post(this._apiUrl + 'authenticate', user);
+  }
+
+
 }
