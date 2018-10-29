@@ -7,9 +7,6 @@ export class JobList extends Model<JobList> {
   @Column
   name!: string;
 
-  @HasMany(() => JobItem)
-  jobItems!: JobItem[];
-
   toSimplification(): any {
     return {
       'id': this.id,

@@ -2,10 +2,14 @@ export class JobItem {
 
   constructor(
     public id: number,
-    public jobListId: number,
-    public title: string, //rename here or backend
+    public title: string,
+    public company: string,
+    public location: string,
+    public date: Date,
     public description: string,
-    public skills: string
+    public position: string,
+    public pensum: number
+
   ) {
   }
 

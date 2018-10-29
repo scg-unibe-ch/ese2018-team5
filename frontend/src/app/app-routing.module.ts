@@ -3,14 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { LoginComponent } from './login/login.component';
+import {PseudeJobsComponent} from './pseude-jobs/pseude-jobs.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
-
+  { path: 'dashboard', component: PseudeJobsComponent},
   // otherwise redirect to home
-  { path: '**', redirectTo: 'todos' }
+  { path: '**', redirectTo: '/dashboard' }
 
 
 ];

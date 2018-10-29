@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
-import {Job} from '../JobPosts/Job';
-import { JOBS } from '../JobPosts/mock-jobs';
+import {JobItem} from '../shared/models/job-item';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Component({
   selector: 'app-pseude-jobs',
@@ -10,11 +10,20 @@ import { JOBS } from '../JobPosts/mock-jobs';
 })
 export class PseudeJobsComponent implements OnInit {
 
-  jobPostings = JOBS;
+  @Input()
+  jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null);
+  jobItems: JobItem[] = [];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+    this.httpClient.get('http://localhost:3000/jobitem', {
+
+    }).subscribe((instances: any) => {
+      this.jobItems = instances.map((instance) =>
+        new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
+          instance.description, instance.position , instance.pensum));
+    });
   }
 
 }

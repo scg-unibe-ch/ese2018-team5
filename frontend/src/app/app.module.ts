@@ -9,6 +9,8 @@ import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
 import { AuthService } from './auth.service'; //Import a authentication service
 import { AuthGuard } from './auth.guard'; //Import a authentication guard
 
+import {AppRoutingModule} from './app-routing.module';
+
 // Add css components from angular material
 import {
   MatButtonModule,
@@ -54,6 +56,8 @@ export function tokenGetter() {
     MatCheckboxModule,
     MatCardModule,
     MatIconModule,
+    AppRoutingModule,
+
 
     //import of the jwt mdule
 
