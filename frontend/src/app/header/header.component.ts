@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {JOBS} from '../JobPosts/mock-jobs';
+import {JobList} from '../shared/models/job-list';
+import {Job} from '../JobPosts/Job';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+
   title = 'Need a job?';
 
   constructor() { }
@@ -14,8 +18,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onDeleteUI(){
 
-  }
 
 }

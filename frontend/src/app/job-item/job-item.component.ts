@@ -26,6 +26,10 @@ export class JobItemComponent implements OnInit {
   onSave() {
    this.jobService.createJob(this.jobItem).subscribe();
   }
+
+
+
+
   onDestroy() {
     this.jobService.deleteJob(this.jobItem).subscribe(() => {
       this.destroy.emit(this.jobItem);
