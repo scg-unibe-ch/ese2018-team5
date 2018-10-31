@@ -1,4 +1,4 @@
-import {Table, Column, Model} from 'sequelize-typescript';
+import {Table, Column, Model, Default} from 'sequelize-typescript';
 
 
 @Table
@@ -25,6 +25,10 @@ export class JobItem extends Model<JobItem> {
   @Column
   pensum!: number;
 
+  @Default(false)
+  @Column
+  approved!: boolean;
+
   toSimplification(): any {
     return {
       'id': this.id,
@@ -34,7 +38,8 @@ export class JobItem extends Model<JobItem> {
       'date': this.date,
       'description': this.description,
       'position': this.position,
-      'pensum': this.pensum
+      'pensum': this.pensum,
+      'approved': this.approved
     };
   }
 
@@ -46,6 +51,7 @@ export class JobItem extends Model<JobItem> {
     this.description = simplification['description'];
     this.position = simplification['position'];
     this.pensum = simplification['pensum'];
+    this.approved = simplification['approved'];
   }
 
 }
