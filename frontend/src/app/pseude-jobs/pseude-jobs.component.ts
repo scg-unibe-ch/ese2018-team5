@@ -11,7 +11,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 export class PseudeJobsComponent implements OnInit {
 
   @Input()
-  jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null);
+  jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null, false);
   jobItems: JobItem[] = [];
 
   constructor(private httpClient: HttpClient) { }
@@ -22,7 +22,7 @@ export class PseudeJobsComponent implements OnInit {
     }).subscribe((instances: any) => {
       this.jobItems = instances.map((instance) =>
         new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
-          instance.description, instance.position , instance.pensum));
+          instance.description, instance.position , instance.pensum, instance.approved));
     });
   }
 

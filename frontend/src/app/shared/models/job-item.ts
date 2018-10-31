@@ -8,7 +8,8 @@ export class JobItem {
     public date: Date,
     public description: string,
     public position: string,
-    public pensum: number
+    public pensum: number,
+    public approved: boolean
 
   ) {
   }
