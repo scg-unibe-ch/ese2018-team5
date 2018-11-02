@@ -1,6 +1,7 @@
 <header>
   <br>
-  <button id="btnLogin" mat-button *ngIf="!auth.loggedIn" [routerLink]="['/login']" >Login</button>
+  <button id="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
+  <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register</button>
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
   <h1 [routerLink]="['/dashboard']"> {{title}} </h1>
 
