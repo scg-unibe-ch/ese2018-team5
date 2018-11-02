@@ -13,13 +13,26 @@ h1{
 
 #btnLogin {
 
-    color: white;
-    float: right;
-    margin: 10px;
-    background: transparent;
-    border-color: white;
-    border-style: solid;
-    color: white;
-    font-weight:400;
+   color: white;
+   float: right;
+   margin: 10px;
+   background: transparent;
+   border-color: white;
+   border-style: solid;
+   color: white;
+   font-weight:400;
+
+ }
+
+#btnLogout {
+
+  color: white;
+  float: right;
+  margin: 10px;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-weight:400;
 
 }

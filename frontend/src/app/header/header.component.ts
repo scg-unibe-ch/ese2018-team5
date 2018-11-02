@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {JOBS} from '../JobPosts/mock-jobs';
-import {JobList} from '../shared/models/job-list';
-import {Job} from '../JobPosts/Job';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +11,14 @@ export class HeaderComponent implements OnInit {
 
   title = 'Need a job?';
 
-  constructor() { }
+  constructor(public auth:AuthService) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.auth.logout()
+  }
 
 
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {JobList} from './shared/models/job-list';
-import {JobItem} from './shared/models/job-item';
-import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import { AuthService} from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,16 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  constructor(private auth: AuthService, private router: Router) {}
+
  ngOnInit(){}
+
+  logout() {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
 }
+
+
+

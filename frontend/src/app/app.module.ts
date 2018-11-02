@@ -30,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {UserService} from './shared/service/user.service';
 
 //function to get a token
 export function tokenGetter() {
@@ -67,13 +68,15 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['\'/authenticate\', authController.authenticateUser)'],
+        whitelistedDomains: ['localhost:3000'],
        // blacklistedRoutes: ['localhost:4000/api/auth']
       }
     })
 
   ],
-  providers: [JobService,
+  providers: [
+    JobService,
+    UserService,
     AuthService,
     AuthGuard],
   bootstrap: [AppComponent]

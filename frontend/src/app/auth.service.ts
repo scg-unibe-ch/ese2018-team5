@@ -14,10 +14,11 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string}>('/api/authenticate', {username: username, password: password})
+    return this.http.post<{token: string}>('http://localhost:3000/api/authenticate', {username: username, password: password})
       .pipe(
         map(result => {
           localStorage.setItem('access_token', result.token);
+          console.log('logged in!');
           return true;
         })
       );
