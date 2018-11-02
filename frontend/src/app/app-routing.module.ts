@@ -11,12 +11,12 @@ import {RegisterComponent} from './register/register.component';
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: PseudeJobsComponent},
+  { path: 'dashboard', component: PseudeJobsComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent},
 
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '/dashboard' }
+  { path: '**', redirectTo: '/login' }
 
 
 ];
