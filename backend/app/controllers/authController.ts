@@ -14,7 +14,8 @@ AuthController.signUp = async (req:any, res:any) => {
       let newUser = {
         username: req.body.username,
         password: req.body.password,
-        email: req.body.email
+        email: req.body.email,
+        role: req.body.role
       };
       return User.create(newUser).then(function() {
         res.status(201).json({message: 'Account created!'});

@@ -20,10 +20,10 @@ const APIRoutes = function(passport:any) {
   router.delete('/:id', UserControllerDelete);
   router.get('/:id', UserControllerGet);
 
-  router.get('/profile', passport.authenticate('jwt', { session: false }),
+  router.get('/profile/:id', passport.authenticate('jwt', { session: false }),
     allowOnly(config1.accessLevels.user, userController.index));
 
-  router.get('/admin', passport.authenticate('jwt', { session: false }),
+  router.get('/admin/:id', passport.authenticate('jwt', { session: false }),
     allowOnly(config1.accessLevels.admin, adminController.index));
 
 
