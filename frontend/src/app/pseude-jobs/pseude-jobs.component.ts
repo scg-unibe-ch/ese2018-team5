@@ -3,6 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {JobItem} from '../shared/models/job-item';
 import {HttpClient} from '@angular/common/http';
 import {JobService} from '../shared/service/job.service';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-pseude-jobs',
@@ -17,7 +18,7 @@ export class PseudeJobsComponent implements OnInit {
   jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null, false);
   jobItems: JobItem[] = [];
 
-  constructor(private httpClient: HttpClient, private jobService:JobService) { }
+  constructor(private httpClient: HttpClient, private jobService:JobService, public auth:AuthService) { }
 
   ngOnInit() {
     this.httpClient.get(this._apiUrl, {
@@ -33,5 +34,7 @@ export class PseudeJobsComponent implements OnInit {
     this.jobItem = this.jobItems.find(jobItem => jobItem.id == id)
     this.jobService.updateJob(this.jobItem).subscribe()
   }
+
+
 
 }

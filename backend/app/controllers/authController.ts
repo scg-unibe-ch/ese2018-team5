@@ -48,7 +48,7 @@ AuthController.authenticateUser = async (req:any, res:any) => {
 
             res.json({
               success: true,
-              token: 'JWT ' + token,
+              token: token,
               role: user.role
             });
           } else {
