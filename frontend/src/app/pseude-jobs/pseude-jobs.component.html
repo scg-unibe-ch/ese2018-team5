@@ -10,12 +10,15 @@
 <br>
     <span id="description">{{jobItem.description}}</span>
     <br>
+    <span id="id">{{jobItem.id}}</span>
+
     <br>
   <span id="pensumDate">{{jobItem.pensum}} -------- Published:{{jobItem.date}}</span>
     <br>
+    <span id="approved"> {{jobItem.approved}} </span>
     <br>
     <br>
-
+    <input type="checkbox" [(ngModel)]="jobItem.approved"  data-md-icheck (change)="setApproved(jobItem.id)"/>
     <br>
       </li>
     </ul>
