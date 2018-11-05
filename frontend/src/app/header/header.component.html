@@ -4,5 +4,6 @@
   <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register</button>
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
   <h1 [routerLink]="['/dashboard']"> {{title}} </h1>
+  <h5 id = "subtitle"> {{subtitle}}</h5>
 
 </header>

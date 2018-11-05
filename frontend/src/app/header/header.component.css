@@ -2,11 +2,11 @@ header {
 
 background-color: black;
 width: 100%;
-    height: 100px;
+    height: 150px;
 }
 
 h1{
-
+margin-left: 225px;
     color: white;
     text-align: center;
 }
@@ -48,4 +48,10 @@ h1{
   color: white;
   font-weight:400;
 
+}
+
+#subtitle {
+
+  color: lightgrey;
+  text-align: center;
 }
