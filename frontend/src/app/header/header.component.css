@@ -6,7 +6,10 @@ width: 100%;
 }
 
 h1{
-
+    font-size: 40px;
+    text-decoration: underline overline;
+    font-style:italic;
+    font-family: "Bebas Neue" ;
     color: white;
     text-align: center;
 }
@@ -48,4 +51,15 @@ h1{
   color: white;
   font-weight:400;
 
+}
+
+#submitJob{
+  color: white;
+  float: right;
+  margin: 10px;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-weight:400;
 }
