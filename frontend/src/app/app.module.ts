@@ -33,6 +33,7 @@ import { RegisterComponent } from './register/register.component';
 import {UserService} from './shared/service/user.service';
 import { JobFormComponent } from './job-form/job-form.component';
 
+
 //function to get a token
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -49,6 +50,7 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     JobFormComponent,
+
 
   ],
   imports: [

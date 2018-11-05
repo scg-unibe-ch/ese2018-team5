@@ -9,7 +9,8 @@ import {AuthService} from '../auth.service';
 export class HeaderComponent implements OnInit {
 
 
-  title = 'Need a job?';
+  title = 'Do you need a job?';
+  subtitle = 'Find here the best job offers for students';
 
   constructor(public auth:AuthService) { }
 
