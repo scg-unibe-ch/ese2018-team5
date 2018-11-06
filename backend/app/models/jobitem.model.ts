@@ -1,4 +1,4 @@
-import {Table, Column, Model, Default} from 'sequelize-typescript';
+import {Table, Column, Model, Default, DataType, CreatedAt} from 'sequelize-typescript';
 
 
 @Table
@@ -13,8 +13,9 @@ export class JobItem extends Model<JobItem> {
   @Column
   location!: string;
 
-  @Column
-  date!: Date;
+  @CreatedAt
+  @Column({type: DataType.DATE})
+  createdAt!: Date;
 
   @Column
   description!: string;
@@ -35,7 +36,7 @@ export class JobItem extends Model<JobItem> {
       'title': this.title,
       'company': this.company,
       'location': this.location,
-      'date': this.date,
+      'createdAt': this.createdAt,
       'description': this.description,
       'position': this.position,
       'pensum': this.pensum,
@@ -47,7 +48,7 @@ export class JobItem extends Model<JobItem> {
     this.title = simplification['title'];
     this.company = simplification['company'];
     this.location = simplification['location'];
-    this.date = simplification['date'];
+    this.createdAt = simplification['createdAt'];
     this.description = simplification['description'];
     this.position = simplification['position'];
     this.pensum = simplification['pensum'];

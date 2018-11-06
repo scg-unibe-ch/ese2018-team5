@@ -6,14 +6,13 @@ const config = require('../config');
 export class User extends Model<User> {
 
   @Unique
-  @AllowNull
-  @Column
+  @Column({allowNull: false})
   username!: string;
 
-  @AllowNull
-  @Column
+  @Column({allowNull: false})
   password!: string;
 
+  @Unique
   @Column
   email!: string;
 
