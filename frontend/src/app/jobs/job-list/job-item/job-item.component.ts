@@ -10,6 +10,8 @@ import {JobService} from '../../../shared/service/job.service';
 })
 export class JobItemComponent implements OnInit {
 
+  @Input() job: JobItem;
+  @Output()jobSelected = new EventEmitter<void>();
 
 
   @Input()
@@ -21,6 +23,10 @@ export class JobItemComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onSelected(){
+    this.jobSelected.emit();
   }
 
   onSave() {

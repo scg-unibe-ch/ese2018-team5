@@ -1,3 +1,14 @@
-<p>
-  jobs works!
-</p>
+<div class = "row">
+  <div class ="col-md-5">
+    <app-job-list
+      (jobWasSelected)="selectedJob = $event"></app-job-list>
+  </div>
+  <div class ="col-md-7">
+    <app-job-detail
+      *ngIf="selectedJob; else infoText"
+    [job]="selectedJob"></app-job-detail>
+    <ng-template #infoText>
+      <p>Please select a Job</p>
+    </ng-template>
+  </div>
+</div>

@@ -8,7 +8,8 @@ import {RegisterComponent} from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard} from './shared/service/role.service';
 
-import {JobListComponent} from './jobs/job-list/job-list.component';
+
+import {JobsComponent} from './jobs/jobs.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
 
   {
     path: 'jobform',
-    component: JobListComponent
+    component: JobsComponent
   },
 
   {
