@@ -15,18 +15,15 @@ export class PseudeJobsComponent implements OnInit {
   private _apiUrl = 'http://localhost:3000/jobitem/';
 
   @Input()
-  jobItem: JobItem = new JobItem(null, '', '', '',null,'','',null, false);
+  jobItem: JobItem = new JobItem();
   jobItems: JobItem[] = [];
 
   constructor(private httpClient: HttpClient, private jobService:JobService, public auth:AuthService) { }
 
   ngOnInit() {
     this.httpClient.get(this._apiUrl, {
-
-    }).subscribe((instances: any) => {
-      this.jobItems = instances.map((instance) =>
-        new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
-          instance.description, instance.position , instance.pensum, instance.approved));
+    }).subscribe(result => {
+      this.jobItems = result as JobItem[];
     });
   }
 

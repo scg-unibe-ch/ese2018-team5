@@ -10,8 +10,10 @@ export class JobItem {
   public pensum: number;
   public approved: boolean;
 
+  constructor(){
 
-  constructor(id: number, title: string, company: string, loc : string, date : Date, desc : string, pos : string, pensum: number, approved : boolean)
+  };
+ /* constructor(id?: number, title?: string, company?: string, loc? : string, date? : Date, desc? : string, pos? : string, pensum?: number, approved? : boolean)
   {
     this.id = id;
     this.title = title;
@@ -23,5 +25,7 @@ export class JobItem {
     this.pensum = pensum;
     this.approved = approved;
   }
+  %*/
+//sec
 
 }

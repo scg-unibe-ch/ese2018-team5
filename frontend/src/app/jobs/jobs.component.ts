@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {JobItem} from './job-item';
 import {JobService} from '../shared/service/job.service';
+import {Job} from '../JobPosts/Job';
 
 
 @Component({
@@ -11,13 +12,17 @@ import {JobService} from '../shared/service/job.service';
 })
 export class JobsComponent implements OnInit {
   selectedJob: JobItem;
-
-  onSaveData(){
-
-  }
-  constructor() { }
+  formJob: JobItem = new JobItem();
+  constructor(private jobService: JobService) { }
 
   ngOnInit() {
   }
+  onSaveData(job:JobItem){
+    this.jobService.createJob(job).subscribe(res=>{
+      console.log("Creating job %o",job)
+      //Do muess me jeds update Triggere im angere component das er d liste neu holt
+    })
+  }
+
 
 }

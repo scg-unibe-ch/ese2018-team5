@@ -3,10 +3,10 @@
   <input matInput  placeholder="Create list" [(ngModel)]="jobList.name" name="name">
 </mat-form-field>
 <button mat-button (click)="onJobListCreate()">create</button>
-
-<app-job-list [jobList]="jobList" (destroy)="onJobListDestroy($event)"
-              *ngFor="let jobList of jobLists"></app-job-list>
-
-
+<div *ngFor="let jobList of jobLists">
+<app-job-list
+  (destroy)="onJobListDestroy($event)"
+              ></app-job-list>
+</div>
 
 

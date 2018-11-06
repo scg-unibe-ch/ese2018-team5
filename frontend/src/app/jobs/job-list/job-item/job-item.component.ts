@@ -11,22 +11,24 @@ import {JobService} from '../../../shared/service/job.service';
 export class JobItemComponent implements OnInit {
 
   @Input() job: JobItem;
-  @Output()jobSelected = new EventEmitter<void>();
+  @Output()jobSelected = new EventEmitter<any>();
 
 
-  @Input()
   jobItem: JobItem;
+
   @Output()
   destroy = new EventEmitter<JobItem>();
 
   constructor(private jobService: JobService) {
+
   }
 
   ngOnInit() {
+
   }
 
   onSelected(){
-    this.jobSelected.emit();
+    this.jobSelected.emit(this.job);
   }
 
   onSave() {

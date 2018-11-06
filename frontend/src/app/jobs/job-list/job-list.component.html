@@ -6,9 +6,12 @@
   <hr>
   <div class ="row">
     <div class = "col-xs-12">
+    <div *ngFor="let jobX of jobs">
+      {{jobX.title}}
+    </div>
       <app-job-item
         *ngFor="let jobsEL of jobs "
-          [job]= jobsEL
+          [job]="jobsEL"
           (jobSelected)="onJobSelected(jobsEL)"></app-job-item>
     </div>
   </div>

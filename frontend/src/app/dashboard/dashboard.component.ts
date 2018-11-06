@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.httpClient.get('http://localhost:3000/joblist').subscribe((instances: any) => {
       this.jobLists = instances.map((instance) => new JobList(instance.id, instance.name));
+      console.log("JobLists:%o", this.jobLists);
     });
   }
 
