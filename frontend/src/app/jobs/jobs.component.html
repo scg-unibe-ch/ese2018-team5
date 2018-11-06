@@ -1,6 +1,47 @@
+
+
 <div class = "row">
   <div class ="col-md-5">
+    <form>
+      <div class="form-group">
+        <label for="JobTitle">Job Title</label>
+        <input
+          type="Title"
+          class="form-control"
+          id="JobTitle"
+          aria-describedby="Job Title"
+          placeholder="Enter Job Title"
+          >
+      </div>
+    </form>
+    <form>
+      <div class="form-group">
+        <label
+          for="Company">Company</label>
+        <input
+          type="Company"
+          class="form-control"
+          id="Company"
+          aria-describedby="Company Name"
+          placeholder="Enter Company Name">
+      </div>
+    </form>
+    <form>
+      <div class="form-group">
+        <label for="Pensum">Pensum</label>
+        <input type="Pensum" class="form-control" id="Pensum" aria-describedby="Pensum" placeholder="Enter Pensum">
+      </div>
+    </form>
+    <form>
+      <div class="form-group">
+        <label for="Description">Description</label>
+        <input type="Description" class="form-control" id="Description" aria-describedby="Description" placeholder="Enter Description">
+      </div>
+    </form>
+    <button type="button" class="btn btn-dark"(click)="onSaveData()">Submit</button>
+
     <app-job-list
+
       (jobWasSelected)="selectedJob = $event"></app-job-list>
   </div>
   <div class ="col-md-7">

@@ -30,7 +30,7 @@ export class JobListComponent implements OnInit {
 
   ngOnInit() {
     this.httpClient.get('http://localhost:3000/jobitem', {
-      params:  new HttpParams().set('jobListId', '' + this.jobList.id)
+      params:  new HttpParams().set('jobListId', '' + this.jobList.id)//i mean actually not sure what this is for lol
     }).subscribe((instances: any) => {
       this.jobItems = instances.map((instance) =>
         new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
@@ -44,6 +44,7 @@ export class JobListComponent implements OnInit {
 
   onJobSelected(job: JobItem){
   this.jobWasSelected.emit(this.jobItem)
+    console.log("Job has been selected: %o",job);
   }
 
   onSave() {

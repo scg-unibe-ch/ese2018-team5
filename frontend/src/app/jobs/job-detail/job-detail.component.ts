@@ -7,10 +7,11 @@ import {JobItem} from '../job-item';
   styleUrls: ['./job-detail.component.css']
 })
 export class JobDetailComponent implements OnInit {
-  @Input () job: JobItem;
+  @Input () job: JobItem = null;
   constructor() { }
 
   ngOnInit() {
+    console.log("Displaying job: %o" , this.job)
   }
 
 }

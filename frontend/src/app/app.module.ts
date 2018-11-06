@@ -50,7 +50,6 @@ export function tokenGetter() {
     PseudeJobsComponent,
     LoginComponent,
     RegisterComponent,
-
     JobsComponent,
     JobDetailComponent,
 

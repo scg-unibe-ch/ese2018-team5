@@ -1,7 +1,6 @@
 
 <div class ="row">
   <div class ="col-xs-12">
-    <button class ="btn btn-success">Submit Job</button>
   </div>
 </div>
   <hr>
@@ -9,7 +8,7 @@
     <div class = "col-xs-12">
       <app-job-item
         *ngFor="let jobsEL of jobs "
-          [job]= "jobsEL"
+          [job]= jobsEL
           (jobSelected)="onJobSelected(jobsEL)"></app-job-item>
     </div>
   </div>
