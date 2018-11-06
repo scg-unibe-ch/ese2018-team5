@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {JobItem} from '../models/job-item';
+import {JobItem} from '../../jobs/job-item';
 import {Observable} from 'rxjs';
 
 @Injectable({

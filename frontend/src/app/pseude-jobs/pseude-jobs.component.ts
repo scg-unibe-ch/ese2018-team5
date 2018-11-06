@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {JobItem} from '../shared/models/job-item';
+import {JobItem} from '../jobs/job-item';
 import {HttpClient} from '@angular/common/http';
 import {JobService} from '../shared/service/job.service';
 import {AuthService} from '../auth.service';

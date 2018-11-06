@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {JobList} from '../shared/models/job-list';
-import {JobItem} from '../shared/models/job-item';
+import {JobList} from '../../shared/models/job-list';
+import {JobItem} from '../job-item';
 import {HttpClient, HttpParams} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-job-list',
@@ -9,6 +10,12 @@ import {HttpClient, HttpParams} from '@angular/common/http';
   styleUrls: ['./job-list.component.css']
 })
 export class JobListComponent implements OnInit {
+
+  jobs: JobItem [] = [
+    new JobItem(1, 'lolz', 'credit suisse', 'lohn ammannsegg',null,'test','',50, true),
+    new JobItem(1, 'tester', 'credit suisse', 'lohn ammannsegg',null,'test','',50, true),
+    new JobItem(1, 'tester', 'credit suisse', 'lohn ammannsegg',null,'test','',50, true),
+  ];
 
   @Input()
   jobList: JobList;

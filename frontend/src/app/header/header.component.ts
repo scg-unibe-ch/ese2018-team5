@@ -9,7 +9,7 @@ import {AuthService} from '../auth.service';
 export class HeaderComponent implements OnInit {
 
 
-  title = 'Do you need a job?';
+  title = 'JOB NEEDED?';
 
 
 

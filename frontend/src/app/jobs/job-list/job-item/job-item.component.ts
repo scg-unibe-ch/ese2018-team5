@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {JobItem} from '../shared/models/job-item';
+import {JobItem} from '../../job-item';
 import {HttpClient} from '@angular/common/http';
-import {JobService} from '../shared/service/job.service';
+import {JobService} from '../../../shared/service/job.service';
 
 @Component({
   selector: 'app-job-item',

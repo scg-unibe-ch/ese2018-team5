@@ -21,8 +21,8 @@ import {
   MatListModule
 } from '@angular/material';
 
-import { JobListComponent } from './job-list/job-list.component';
-import { JobItemComponent } from './job-item/job-item.component';
+import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobItemComponent } from './jobs/job-list/job-item/job-item.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobService} from './shared/service/job.service';
@@ -31,7 +31,8 @@ import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {UserService} from './shared/service/user.service';
-import { JobFormComponent } from './job-form/job-form.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 
 
 //function to get a token
@@ -49,7 +50,9 @@ export function tokenGetter() {
     PseudeJobsComponent,
     LoginComponent,
     RegisterComponent,
-    JobFormComponent,
+
+    JobsComponent,
+    JobDetailComponent,
 
 
   ],

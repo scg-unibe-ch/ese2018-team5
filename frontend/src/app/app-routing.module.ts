@@ -8,12 +8,19 @@ import {RegisterComponent} from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard} from './shared/service/role.service';
 
+import {JobListComponent} from './jobs/job-list/job-list.component';
+
 
 const routes: Routes = [
 
   {
     path: 'login',
     component: LoginComponent
+  },
+
+  {
+    path: 'jobform',
+    component: JobListComponent
   },
 
   {
