@@ -33,7 +33,7 @@
     <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
     <small id="passwordHelp" class="form-text text-muted">We'll never share your e-mail with anyone else.</small>
     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-      <div *ngIf="f.email.errors.required">Username is required</div>
+      <div *ngIf="f.email.errors.required">Email is required</div>
     </div>
   </div>
 

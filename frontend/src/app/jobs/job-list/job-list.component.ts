@@ -10,7 +10,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
   styleUrls: ['./job-list.component.css']
 })
 export class JobListComponent implements OnInit {
-
+  @Output() jobWasSelected = new EventEmitter<JobItem>();
   jobs: JobItem [] = [
     new JobItem(1, 'lolz', 'credit suisse', 'lohn ammannsegg',null,'test','',50, true),
     new JobItem(1, 'tester', 'credit suisse', 'lohn ammannsegg',null,'test','',50, true),
@@ -36,6 +36,14 @@ export class JobListComponent implements OnInit {
         new JobItem(instance.id, instance.title, instance.company, instance.location, instance.date,
           instance.description, instance.position , instance.pensum, instance.approved));
     });
+
+
+  }
+
+
+
+  onJobSelected(job: JobItem){
+  this.jobWasSelected.emit(this.jobItem)
   }
 
   onSave() {
