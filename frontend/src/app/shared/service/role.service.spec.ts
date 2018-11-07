@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { RoleService } from './role.service';
+import { RoleGuard } from './role.service';
 
 describe('RoleService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [RoleService]
+      providers: [RoleGuard]
     });
   });
 
-  it('should be created', inject([RoleService], (service: RoleService) => {
+  it('should be created', inject([RoleGuard], (service: RoleGuard) => {
     expect(service).toBeTruthy();
   }));
 });
