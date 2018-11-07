@@ -1,10 +1,8 @@
 
-<h1 class="display-3">Open Job offers: </h1>
-
+<h1 class="display-3">Open Job offers: {{jobItems.length}} </h1>
 <hr>
-
 <div class ="row>">
-     <div class ="col-md-12">
+  <div class ="col-md-12">
  <ul class="pseude" >
   <li *ngFor="let jobItem of jobItems" id="list">
     <div *ngIf="auth.isAdmin() || jobItem.approved == true" >
@@ -12,16 +10,19 @@
       <br>
       <div id="company">Company name:{{jobItem.company}} {{jobItem.location}}</div>
       <br>
-      <span id="description">Job Description: {{jobItem.description}}</span>
+      <div id="description">Job Description: {{jobItem.description}}</div>
       <br>
-      <span id="id">ID:{{jobItem.id}}</span>
+      <div id="position">Position: {{jobItem.position}}</div>
+      <br>
+      <div id="pensumDate"> Pensum: {{jobItem.pensum}} -------- Published:{{jobItem.date}}</div>
+      <br>
 
-      <br>
-      <span id="pensumDate"> Pensum: {{jobItem.pensum}} -------- Published:{{jobItem.date}}</span>
-      <br>
-      <span id="approved">Approved by Admin: {{jobItem.approved}} </span>
+      <div id="checkbox">
+        <label for="box">Approved by Admin: {{jobItem.approved}} </label>
+        <input type="checkbox" id="box" [(ngModel)]="jobItem.approved"  data-md-icheck (change)="setApproved(jobItem.id)"
+               *ngIf="auth.isAdmin() && auth.loggedIn"/>
+      </div>
 
-      <input type="checkbox" [(ngModel)]="jobItem.approved"  data-md-icheck (change)="setApproved(jobItem.id)" *ngIf="auth.isAdmin()"/>
       <hr>
       <br>
     </div>

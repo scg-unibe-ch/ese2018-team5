@@ -26,8 +26,7 @@ const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: PseudeJobsComponent,
-    canActivate: [AuthGuard]
+    component: PseudeJobsComponent
   },
 
   {
