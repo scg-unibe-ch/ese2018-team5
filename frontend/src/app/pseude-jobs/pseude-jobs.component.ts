@@ -4,6 +4,10 @@ import {JobItem} from '../jobs/job-item';
 import {HttpClient} from '@angular/common/http';
 import {JobService} from '../shared/service/job.service';
 import {AuthService} from '../auth.service';
+import {DatePipe} from '@angular/common';
+import { registerLocaleData} from '@angular/common';
+import localeCH from '@angular/common/locales/de-CH';
+registerLocaleData(localeCH);
 
 @Component({
   selector: 'app-pseude-jobs',

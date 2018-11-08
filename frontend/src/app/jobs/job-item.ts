@@ -4,7 +4,8 @@ export class JobItem {
   public title: string;
   public company: string;
   public location: string;
-  public date: Date;
+  public createdAt: Date;
+  public updatedAt: Date;
   public description: string;
   public position: string;
   public pensum: number;
