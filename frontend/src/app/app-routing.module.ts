@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
-import {PseudeJobsComponent} from './pseude-jobs/pseude-jobs.component';
+import { JobPostingsComponent} from './pseude-jobs/jobpostings.component';
 import {RegisterComponent} from './register/register.component';
 
-import { AuthGuard } from './auth.guard';
 import { RoleGuard} from './shared/service/role.service';
 
 
@@ -26,7 +25,7 @@ const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: PseudeJobsComponent
+    component: JobPostingsComponent
   },
 
   {

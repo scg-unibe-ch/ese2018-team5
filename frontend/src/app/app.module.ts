@@ -27,13 +27,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobService} from './shared/service/job.service';
 import { HeaderComponent } from './header/header.component';
-import { PseudeJobsComponent } from './pseude-jobs/pseude-jobs.component';
+import { JobPostingsComponent } from './pseude-jobs/jobpostings.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {UserService} from './shared/service/user.service';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
-
+import { registerLocaleData} from '@angular/common';
+import localeCH from '@angular/common/locales/de-CH';
+registerLocaleData(localeCH);
 
 //function to get a token
 export function tokenGetter() {
@@ -47,7 +49,7 @@ export function tokenGetter() {
     JobItemComponent,
     DashboardComponent,
     HeaderComponent,
-    PseudeJobsComponent,
+    JobPostingsComponent,
     LoginComponent,
     RegisterComponent,
     JobsComponent,

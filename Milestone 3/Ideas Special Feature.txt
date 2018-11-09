@@ -1,0 +1,2 @@
+ - Possibility to upload pdfs (Job Postings)
+ - Language Switcher

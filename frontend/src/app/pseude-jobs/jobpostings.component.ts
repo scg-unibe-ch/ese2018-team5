@@ -4,17 +4,13 @@ import {JobItem} from '../jobs/job-item';
 import {HttpClient} from '@angular/common/http';
 import {JobService} from '../shared/service/job.service';
 import {AuthService} from '../auth.service';
-import {DatePipe} from '@angular/common';
-import { registerLocaleData} from '@angular/common';
-import localeCH from '@angular/common/locales/de-CH';
-registerLocaleData(localeCH);
 
 @Component({
-  selector: 'app-pseude-jobs',
-  templateUrl: './pseude-jobs.component.html',
-  styleUrls: ['./pseude-jobs.component.css']
+  selector: 'app-jobpostings',
+  templateUrl: './jobpostings.component.html',
+  styleUrls: ['./jobpostings.component.css']
 })
-export class PseudeJobsComponent implements OnInit {
+export class JobPostingsComponent implements OnInit {
 
   private _apiUrl = 'http://localhost:3000/jobitem/';
 
