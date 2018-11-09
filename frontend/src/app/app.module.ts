@@ -27,7 +27,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobService} from './shared/service/job.service';
 import { HeaderComponent } from './header/header.component';
-import { JobPostingsComponent } from './pseude-jobs/jobpostings.component';
+import { JobPostingsComponent } from './jobpostings/jobpostings.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {UserService} from './shared/service/user.service';

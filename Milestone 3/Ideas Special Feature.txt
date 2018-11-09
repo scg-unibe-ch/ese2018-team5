@@ -1,2 +1,5 @@
  - Possibility to upload pdfs (Job Postings)
  - Language Switcher
+ - Admin/User can change User Details
+ - Profiles
+ 

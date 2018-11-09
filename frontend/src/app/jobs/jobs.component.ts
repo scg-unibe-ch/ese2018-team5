@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {JobItem} from './job-item';
 import {JobService} from '../shared/service/job.service';
-import {Job} from '../JobPosts/Job';
 
 
 @Component({
@@ -17,6 +16,7 @@ export class JobsComponent implements OnInit {
 
   ngOnInit() {
   }
+
   onSaveData(job:JobItem){
     this.jobService.createJob(job).subscribe(res=>{
       console.log("Creating job %o",job)

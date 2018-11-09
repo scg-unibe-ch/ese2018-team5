@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
-import { JobPostingsComponent} from './pseude-jobs/jobpostings.component';
+import { JobPostingsComponent} from './jobpostings/jobpostings.component';
 import {RegisterComponent} from './register/register.component';
 
 import { RoleGuard} from './shared/service/role.service';
