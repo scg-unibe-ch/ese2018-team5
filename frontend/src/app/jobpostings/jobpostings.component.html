@@ -1,5 +1,46 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+<div id="homeTitle">
 <h1 class="display-3">Open Job offers: {{jobItems.length}} </h1>
+
+
+  <select>
+    <optgroup label="Choose category">
+      <option>Marketing</option>
+      <option>IT</option>
+      <option>Finance</option>
+      <option>Pharma</option>
+    </optgroup>
+  </select>
+
+  <select>
+    <optgroup label="Choose location">
+      <option>Bern</option>
+      <option>Solothurn</option>
+      <option>Zürich</option>
+      <option>Genf</option>
+    </optgroup>
+  </select>
+
+
+  <input id="searchJob" type="text" class="" placeholder="Choose category" />
+  <input id="searchLocation" type="text" placeholder="Choose location" />
+
+
+  <button id="searchBtn" type="submit"> <i class="fa fa-search"> </i></button>
+
+
+
+
+
+
+
+</div>
+
+
+
+
 <hr>
 <div class ="row>">
   <div class ="col-md-12">
