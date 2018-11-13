@@ -4,6 +4,17 @@
   <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register</button>
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn">submit Job</button>
-  <h1 [routerLink]="['/dashboard']"> {{title}} </h1>
+
+  <button
+    id="language"
+    #langSelect *ngFor="let lang of languages"
+    (click)="useLanguage(langSelect.value)"
+    [value]="lang"
+    [class.active]="lang === translate.currentLang">
+    {{lang}}
+  </button>
+
+
+  <h1 [routerLink]="['/dashboard']"> {{'demo.title' | translate}} </h1>
 </header>
 <hr>

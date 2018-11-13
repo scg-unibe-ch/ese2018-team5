@@ -3,13 +3,17 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
 import { AuthService } from './auth.service'; //Import a authentication service
 import { AuthGuard } from './auth.guard'; //Import a authentication guard
 
 import {AppRoutingModule} from './app-routing.module';
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
 
 // Add css components from angular material
 import {
@@ -42,6 +46,8 @@ export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +76,13 @@ export function tokenGetter() {
     MatCardModule,
     MatIconModule,
     AppRoutingModule,
-
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
 
     //import of the jwt mdule
 
@@ -90,5 +102,12 @@ export function tokenGetter() {
     AuthGuard],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule {
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }
