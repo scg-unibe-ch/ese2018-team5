@@ -1,7 +1,5 @@
 {
-	"demo":
-  {
-	  "title": "Job needed?",
-	  "text": "this is a demo"
+	"header": {
+		"title": "Job needed?"
 	}
 }

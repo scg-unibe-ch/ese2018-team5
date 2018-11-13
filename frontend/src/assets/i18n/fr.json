@@ -1,7 +1,5 @@
 {
-  "demo":
-  {
-    "title": "besoin d'emploi?",
-    "text": "this is a demo"
-  }
+	"header": {
+		"title": "besoin d'emploi?"
+	}
 }
