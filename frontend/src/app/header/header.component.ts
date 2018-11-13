@@ -9,8 +9,8 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
 
+ // language switcher based on: https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular6-app-with-ngx-translate
 
-  title = 'JOB NEEDED?';
   languages: string[] = ['en', 'de', 'fr'];
 
   constructor(
