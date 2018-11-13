@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public auth:AuthService,
-    private translate:TranslateService)
+    public translate:TranslateService)
     {
       translate.setDefaultLang('en');
     }
