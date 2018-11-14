@@ -1,5 +1,7 @@
 {
 	"header": {
+		"registerButton": "register",
+		"submitJob": "submit a job",
 		"title": "Job needed?"
 	}
 }
