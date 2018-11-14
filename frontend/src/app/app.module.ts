@@ -39,6 +39,8 @@ import { JobsComponent } from './jobs/jobs.component';
 import { JobDetailComponent } from './jobs/job-detail/job-detail.component';
 import { registerLocaleData} from '@angular/common';
 import localeCH from '@angular/common/locales/de-CH';
+import { AlertComponent } from './alert/alert.component';
+import {AlertService} from './shared/service/alert.service';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -60,6 +62,7 @@ export function tokenGetter() {
     RegisterComponent,
     JobsComponent,
     JobDetailComponent,
+    AlertComponent,
 
 
   ],
@@ -99,7 +102,9 @@ export function tokenGetter() {
     JobService,
     UserService,
     AuthService,
-    AuthGuard],
+    AuthGuard,
+    AlertService
+  ],
   bootstrap: [AppComponent]
 })
 

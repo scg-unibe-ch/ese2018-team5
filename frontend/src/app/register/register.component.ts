@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { UserService} from '../shared/service/user.service';
-//import {AlertService} from '../shared/service/alert.service';
+import {AlertService} from '../shared/service/alert.service';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
-   // private alertService: AlertService
+    private alertService: AlertService
    ) { }
 
   ngOnInit() {
@@ -50,11 +50,11 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-       //   this.alertService.success('Registration successful', true);
+          this.alertService.success('Registration successful', true);
           this.router.navigate(['/login']);
         },
         error => {
-         // this.alertService.error(error);
+          this.alertService.error(error);
           this.loading = false;
         });
   }
