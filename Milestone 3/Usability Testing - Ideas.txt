@@ -1,0 +1,7 @@
+
+ - Prototype on paper
+ - Walkthrough with User
+ 
+  What is needed for all ideas:
+ - Tasklist for users to go through (task scenarios)
+ - Record Results(deliverable)
