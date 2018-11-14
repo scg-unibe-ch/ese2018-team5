@@ -3,5 +3,9 @@
 		"registerButton": "register",
 		"submitJob": "submit a job",
 		"title": "Job needed?"
+	},
+	"login": {
+		"password": "Password",
+		"username": "Username"
 	}
 }

@@ -3,5 +3,9 @@
 		"registerButton": "registre",
 		"submitJob": "soumettre un travail",
 		"title": "besoin d'emploi?"
+	},
+	"login": {
+		"password": "Mot de passe",
+		"username": "Nom d'utilisateur"
 	}
 }

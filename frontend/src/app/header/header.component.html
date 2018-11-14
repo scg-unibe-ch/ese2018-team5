@@ -10,8 +10,8 @@
     #langSelect *ngFor="let lang of languages"
     (click)="useLanguage(langSelect.value)"
     [value]="lang"
-    [class.active]="lang === translate.currentLang">
-    {{lang}}
+    [class.active]="lang === translate.currentLang"
+    >{{lang}}
   </button>
 
 
