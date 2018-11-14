@@ -41,6 +41,7 @@ import { registerLocaleData} from '@angular/common';
 import localeCH from '@angular/common/locales/de-CH';
 import { AlertComponent } from './alert/alert.component';
 import {AlertService} from './shared/service/alert.service';
+import { SearchformComponent } from './searchform/searchform.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -63,6 +64,7 @@ export function tokenGetter() {
     JobsComponent,
     JobDetailComponent,
     AlertComponent,
+    SearchformComponent,
 
 
   ],
