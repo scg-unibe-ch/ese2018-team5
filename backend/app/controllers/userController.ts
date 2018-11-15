@@ -8,11 +8,11 @@ const UserController = {
         where: {
           userId: req.params.id
         }
-      }).then(function (result){
-        if(!result || result.length == 0) {
+      }).then(function (JobItems){
+        if(!JobItems || JobItems.length == 0) {
           return res.status(404).json({message:'no items found'})
         } else {
-          return res.status(200).json({result})
+          return res.status(200).json({JobItems})
         }
       })
     });

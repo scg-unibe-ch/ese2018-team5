@@ -1,0 +1,21 @@
+<div>
+  <ul style="list-style-type:none" class="useritems" >
+    <li *ngFor="let jobItem of userItems" id="list">
+        <div id="titleJob">Title of Job: {{jobItem.title}}</div>
+        <br>
+        <div id="company">Company name:{{jobItem.company}} {{jobItem.location}}</div>
+        <br>
+        <div id="description">Job Description: {{jobItem.description}}</div>
+        <br>
+        <div id="position">Position: {{jobItem.position}}</div>
+        <br>
+        <div id="pensum"> Pensum: {{jobItem.pensum}}</div>
+        <br>
+        <div id = "date">Published: {{jobItem.createdAt | date}}</div>
+        <br>
+        <div id="approved">Approved by Admin: {{jobItem.approved}}</div>
+        <hr>
+
+    </li>
+  </ul>
+</div>

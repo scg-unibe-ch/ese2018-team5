@@ -25,6 +25,17 @@ h1{
   font-weight:400;
 }
 
+#profile {
+  color: white;
+  float: right;
+  margin: 10px;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-weight:400;
+}
+
 #btnLogin {
 
    color: white;

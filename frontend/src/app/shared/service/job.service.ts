@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {JobItem} from '../../jobs/job-item';
 import {Observable} from 'rxjs';
 import {User} from '../models/user';
+import {AuthService} from '../../auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,15 @@ export class JobService {
   constructor(private httpClient: HttpClient) { }
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  getJobForUser(user:User): Observable<any> {
-    let token = localStorage.getItem('access_token');
-    return this.httpClient.get('http://localhost:3000/api/profile/'+ user.id,  {
+  getJobForUser(id: string): Observable<any> {
+
+   let token = localStorage.getItem('access_token');
+   return this.httpClient.get('http://localhost:3000/api/profile/'+ id,  {
       headers: new HttpHeaders({
-        'Authorization': token
+        'Authorization': 'bearer' + token
       })
     });
+
   }
 
   createJob(jobItem:JobItem): Observable<any> {

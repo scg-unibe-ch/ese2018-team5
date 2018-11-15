@@ -9,6 +9,7 @@ import { RoleGuard} from './shared/service/role.service';
 
 
 import {JobsComponent} from './jobs/jobs.component';
+import {ProfileComponent} from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,15 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: '2'
+    }
   },
 
   {
