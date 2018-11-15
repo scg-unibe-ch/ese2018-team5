@@ -18,17 +18,16 @@ export class JobService {
   getJobForUser(id: string): Observable<any> {
 
    let token = localStorage.getItem('access_token');
-   return this.httpClient.get('http://localhost:3000/api/profile/'+ id,  {
+   return this.httpClient.get('http://localhost:3000/api/profile/' + id,  {
       headers: new HttpHeaders({
         'Authorization': 'bearer' + token
       })
     });
-
   }
 
   createJob(jobItem:JobItem): Observable<any> {
     this.update.emit(true); //Emits update to signal other components that the list has been locally updated and new items should be fetched from backend
-
+    jobItem.userId = +localStorage.getItem('userId');
     return this.httpClient.post(this._apiUrl, jobItem);
   }
 
