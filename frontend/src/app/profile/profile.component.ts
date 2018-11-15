@@ -16,9 +16,19 @@ export class ProfileComponent implements OnInit {
   constructor(private jobService:JobService) { }
 
   ngOnInit() {
+    this.fetchData();
+  }
+
+  fetchData() {
     const id = localStorage.getItem('userId');
     this.jobService.getJobForUser(id).subscribe(result => {
       this.userItems = result.JobItems;
+    })
+  }
+
+  delete(jobItem:JobItem) {
+    this.jobService.deleteJob(jobItem).subscribe(() => {
+      this.fetchData();
     })
   }
 

@@ -14,8 +14,8 @@
         <div id = "date">Published: {{jobItem.createdAt | date}}</div>
         <br>
         <div id="approved">Approved by Admin: {{jobItem.approved}}</div>
+        <button (click)="delete(jobItem)">Delete</button>
         <hr>
-
     </li>
   </ul>
 </div>
