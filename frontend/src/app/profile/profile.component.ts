@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
 import {JobService} from '../shared/service/job.service';
 import {JobItem} from '../jobs/job-item';
+import {Router} from '@angular/router';
+import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +15,7 @@ export class ProfileComponent implements OnInit {
   jobItem: JobItem = new JobItem();
   userItems: JobItem[] = [];
 
-  constructor(private jobService:JobService) { }
+  constructor(private jobService:JobService, private router:Router, private data:JobItemDataService) { }
 
   ngOnInit() {
     this.fetchData();
@@ -24,6 +26,11 @@ export class ProfileComponent implements OnInit {
     this.jobService.getJobForUser(id).subscribe(result => {
       this.userItems = result.JobItems;
     })
+  }
+
+  edit(jobItem:JobItem) {
+    this.data.changeMessage(jobItem);
+    this.router.navigate(['/profile/edit'])
   }
 
   delete(jobItem:JobItem) {

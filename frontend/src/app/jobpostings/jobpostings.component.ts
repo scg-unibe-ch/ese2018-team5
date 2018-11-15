@@ -18,7 +18,6 @@ export class JobPostingsComponent implements OnInit {
   @Input()
   jobItem: JobItem = new JobItem();
   jobItems: JobItem[] = [];
-  userItem: JobItem[] = [];
 
   constructor(private httpClient: HttpClient, private jobService:JobService, public auth:AuthService) { }
 
@@ -28,19 +27,10 @@ export class JobPostingsComponent implements OnInit {
     }).subscribe(result => {
       this.jobItems = result as JobItem[];
     });
-
-
-
-
   }
-
-
 
   setApproved(id:number) {
     this.jobItem = this.jobItems.find(jobItem => jobItem.id == id)
     this.jobService.updateJob(this.jobItem).subscribe()
   }
-
-
-
 }

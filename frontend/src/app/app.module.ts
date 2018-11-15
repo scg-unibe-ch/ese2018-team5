@@ -43,6 +43,7 @@ import { AlertComponent } from './alert/alert.component';
 import {AlertService} from './shared/service/alert.service';
 import { SearchformComponent } from './searchform/searchform.component';
 import { ProfileComponent } from './profile/profile.component';
+import { JobpostingeditComponent } from './jobpostingedit/jobpostingedit.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -67,6 +68,7 @@ export function tokenGetter() {
     AlertComponent,
     SearchformComponent,
     ProfileComponent,
+    JobpostingeditComponent,
 
 
   ],

@@ -1,0 +1,58 @@
+
+<div class="container">
+  <h1>Edit your Jobposting</h1>
+  <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
+
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title"
+      required
+      [(ngModel)]="selectedJobItem.title" name="title"
+      #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+        class="alert alert-danger">Title is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company"
+      required
+      [(ngModel)]="selectedJobItem.company" name="company">
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" class="form-control" id="location"
+       required
+       [(ngModel)]="selectedJobItem.location" name="location">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description"
+      required
+      [(ngModel)]="selectedJobItem.description" name="description">
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input type="text" class="form-control" id="position"
+      required
+      [(ngModel)]="selectedJobItem.position" name="position">
+    </div>
+
+    <div class="form-group">
+      <label for="pensum">Pensum</label>
+      <input type="number" class="form-control" id="pensum"
+      required
+      [(ngModel)]="selectedJobItem.pensum" name="pensum">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+
+
+
