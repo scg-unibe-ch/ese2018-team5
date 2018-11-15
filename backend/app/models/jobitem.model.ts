@@ -1,4 +1,5 @@
-import {Table, Column, Model, Default, DataType, CreatedAt} from 'sequelize-typescript';
+import {Table, Column, Model, Default, DataType, CreatedAt, ForeignKey} from 'sequelize-typescript';
+import {User} from './user.model';
 
 
 @Table
@@ -30,6 +31,10 @@ export class JobItem extends Model<JobItem> {
   @Column
   approved!: boolean;
 
+  @ForeignKey(() => User)
+  @Column
+  userId!: number;
+
   toSimplification(): any {
     return {
       'id': this.id,
@@ -40,7 +45,8 @@ export class JobItem extends Model<JobItem> {
       'description': this.description,
       'position': this.position,
       'pensum': this.pensum,
-      'approved': this.approved
+      'approved': this.approved,
+      'userId': this.userId
     };
   }
 
@@ -53,6 +59,7 @@ export class JobItem extends Model<JobItem> {
     this.position = simplification['position'];
     this.pensum = simplification['pensum'];
     this.approved = simplification['approved'];
+    this.userId = simplification['userId'];
   }
 
 }

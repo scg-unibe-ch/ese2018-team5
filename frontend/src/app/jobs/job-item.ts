@@ -10,6 +10,7 @@ export class JobItem {
   public position: string;
   public pensum: number;
   public approved: boolean;
+  public userId: number;
 
   constructor(){
 

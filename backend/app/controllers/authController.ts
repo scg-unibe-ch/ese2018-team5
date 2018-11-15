@@ -49,7 +49,8 @@ AuthController.authenticateUser = async (req:any, res:any) => {
             res.json({
               success: true,
               token: token,
-              role: user.role
+              role: user.role,
+              id: user.id
             });
           } else {
             res.status(404).json({ message: 'Login failed!' });

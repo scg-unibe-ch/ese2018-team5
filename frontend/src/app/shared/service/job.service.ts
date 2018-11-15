@@ -1,7 +1,8 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {JobItem} from '../../jobs/job-item';
 import {Observable} from 'rxjs';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,18 @@ import {Observable} from 'rxjs';
 export class JobService {
   private _apiUrl= 'http://localhost:3000/jobitem/';
 
+
   constructor(private httpClient: HttpClient) { }
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+
+  getJobForUser(user:User): Observable<any> {
+    let token = localStorage.getItem('access_token');
+    return this.httpClient.get('http://localhost:3000/api/profile/'+ user.id,  {
+      headers: new HttpHeaders({
+        'Authorization': token
+      })
+    });
+  }
 
   createJob(jobItem:JobItem): Observable<any> {
     this.update.emit(true); //Emits update to signal other components that the list has been locally updated and new items should be fetched from backend

@@ -25,6 +25,9 @@ export class JobPostingsComponent implements OnInit {
     }).subscribe(result => {
       this.jobItems = result as JobItem[];
     });
+    let userItem: JobItem[] = [];
+    this.jobService.getJobForUser()
+
   }
 
   setApproved(id:number) {

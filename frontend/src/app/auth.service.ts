@@ -15,11 +15,12 @@ export class AuthService {
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService,private router:Router) { }
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string, role: string}>('http://localhost:3000/api/authenticate', {username: username, password: password})
+    return this.http.post<{token: string, role: string, userId: string}>('http://localhost:3000/api/authenticate', {username: username, password: password})
       .pipe(
         map(result => {
           localStorage.setItem('access_token', result.token);
           localStorage.setItem('role', result.role);
+          localStorage.setItem('userId', result.userId);
           return true;
         })
       );
@@ -27,6 +28,8 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('userId');
     this.router.navigate(['/login']);
   }
 
@@ -40,7 +43,6 @@ export class AuthService {
 
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
-
     return !this.jwtHelper.isTokenExpired(token);
   }
 }
