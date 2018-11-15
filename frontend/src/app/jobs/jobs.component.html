@@ -42,16 +42,52 @@
         <input name="Description" type="text" class="form-control" id="Description" aria-describedby="Description" placeholder="Enter Description"  [(ngModel)]="formJob.description">
       </div>
 
-    <button type="button" class="btn btn-dark" (click)="onSaveData(formJob)">Submit</button>
-    </form>
-    <app-job-list
 
-      (jobWasSelected)="selectedJob = $event"></app-job-list>
+
+      <select>
+        <optgroup label="Set category" [(ngModel)]="formJob.category">
+          <option>Marketing</option>
+          <option>IT</option>
+          <option>Finance</option>
+          <option>Pharma</option>
+        </optgroup>
+      </select>
+
+      <select>
+        <optgroup label="Set location" [(ngModel)]="formJob.category">
+          <option>Bern</option>
+          <option>Solothurn</option>
+          <option>Zürich</option>
+          <option>Genf</option>
+        </optgroup>
+      </select>
+
+
+
+<br>
+
+
+
+    <button type="button" class="btn btn-dark" (click)="onSaveData(formJob)">Submit</button>
+
+
+
+
+
+
+    </form>
+
+
+    <app-job-list (jobWasSelected)="selectedJob = $event">  </app-job-list>
+
+
   </div>
   <div class ="col-md-7">
+
     <app-job-detail
       *ngIf="selectedJob; else infoText"
     [job]="selectedJob"></app-job-detail>
+
     <ng-template #infoText>
       <p>Please select a Job</p>
     </ng-template>

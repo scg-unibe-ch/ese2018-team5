@@ -25,4 +25,11 @@ export class JobsComponent implements OnInit {
   }
 
 
+
+  onDeleteJob(job:JobItem){
+    this.jobService.deleteJob(job).subscribe(res=>{
+      console.log("deleting job %o",job)
+    })
+  }
+
 }

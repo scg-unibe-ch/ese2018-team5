@@ -3,7 +3,6 @@ export class JobItem {
   public id: number;
   public title: string;
   public company: string;
-  public location: string;
   public createdAt: Date;
   public updatedAt: Date;
   public description: string;
@@ -12,6 +11,8 @@ export class JobItem {
   public approved: boolean;
   public userId: number;
 
+  public category: string;
+  public location: string;
   constructor(){
 
   };
