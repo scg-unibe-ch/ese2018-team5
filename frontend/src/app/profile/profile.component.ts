@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {JobService} from '../shared/service/job.service';
 import {JobItem} from '../jobs/job-item';
 import {Router} from '@angular/router';
