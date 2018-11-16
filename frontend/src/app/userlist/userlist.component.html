@@ -1,0 +1,33 @@
+<h2>All Users</h2>
+<ul class="users">
+  <li *ngFor="let user of users"
+  [class.selected]="user === selectedUser"
+  (click)="onSelect(user)">
+    <span class="badge">{{user.id}}</span> {{user.username}}
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+  <h2>{{selectedUser.username}}</h2>
+  <div><span>id: </span>{{selectedUser.id}}</div>
+  <div>
+    <label>Username:
+      <input [(ngModel)]="selectedUser.username">
+    </label>
+
+    <label>email:
+      <input [(ngModel)]="selectedUser.email">
+    </label>
+
+    <label>Password:
+      <input [(ngModel)]="selectedUser.username">
+    </label>
+
+    <label type="number">Role:
+      <input [(ngModel)]="selectedUser.role">
+    </label>
+
+    <button (click)="editUser(selectedUser)">Save</button>
+    <button (click)="deleteUser(selectedUser)">Delete User</button>
+  </div>
+</div>

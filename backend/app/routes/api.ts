@@ -7,6 +7,7 @@ const config1 = require('../config');
 const UserControllerDelete = require('../controllers/user.controller').deleteUser;
 const UserControllerUpdate = require('../controllers/user.controller').updateUser;
 const UserControllerGet = require('../controllers/user.controller').getUser;
+const UserControllerGetAll = require('../controllers/user.controller').getUsers;
 
 const router = require('express').Router();
 let authController = require('../controllers/authController');
@@ -16,9 +17,11 @@ const APIRoutes = function(passport:any) {
 
   router.post('/authenticate', authController.authenticateUser);
 
+  //User
   router.put('/:id', UserControllerUpdate);
   router.delete('/:id', UserControllerDelete);
   router.get('/:id', UserControllerGet);
+  router.get('', UserControllerGetAll);
 
   router.get('/profile/:id', passport.authenticate('jwt', { session: false }),
     allowOnly(config1.accessLevels.user, userController.index));

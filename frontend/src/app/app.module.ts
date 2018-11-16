@@ -44,6 +44,7 @@ import {AlertService} from './shared/service/alert.service';
 import { SearchformComponent } from './searchform/searchform.component';
 import { ProfileComponent } from './profile/profile.component';
 import { JobpostingeditComponent } from './jobpostingedit/jobpostingedit.component';
+import { UserlistComponent } from './userlist/userlist.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -69,6 +70,7 @@ export function tokenGetter() {
     SearchformComponent,
     ProfileComponent,
     JobpostingeditComponent,
+    UserlistComponent,
 
 
   ],

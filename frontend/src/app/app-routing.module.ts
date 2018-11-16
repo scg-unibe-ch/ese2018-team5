@@ -11,6 +11,7 @@ import { RoleGuard} from './shared/service/role.service';
 import {JobsComponent} from './jobs/jobs.component';
 import {ProfileComponent} from './profile/profile.component';
 import {JobpostingeditComponent} from './jobpostingedit/jobpostingedit.component';
+import {UserlistComponent} from './userlist/userlist.component';
 
 
 const routes: Routes = [
@@ -55,7 +56,7 @@ const routes: Routes = [
 
   {
     path: 'admin',
-    component: RegisterComponent,
+    component: UserlistComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: '4'

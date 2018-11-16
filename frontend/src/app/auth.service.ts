@@ -41,6 +41,10 @@ export class AuthService {
     return (localStorage.getItem('role') == '4');
   }
 
+  public isUser(): boolean {
+    return (localStorage.getItem('role') == '2');
+  }
+
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
     return !this.jwtHelper.isTokenExpired(token);

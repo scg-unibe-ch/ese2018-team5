@@ -34,7 +34,8 @@ export class User extends Model<User> {
       'id': this.id,
       'username': this.username,
       'password': this.password,
-      'email': this.email
+      'email': this.email,
+      'role':this.role
     };
   }
 
@@ -42,6 +43,7 @@ export class User extends Model<User> {
     this.username = simplification['username'];
     this.password = simplification['password'];
     this.email = simplification['email'];
+    this.role = simplification['role'];
   }
 
   comparePassword(password: any, callback:any) {

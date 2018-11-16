@@ -14,9 +14,22 @@ h1{
     text-align: center;
 }
 
+
+
 #language {
   color: white;
   float: left;
+  margin: 10px;
+  background: transparent;
+  border-color: white;
+  border-style: solid;
+  color: white;
+  font-weight:400;
+}
+
+#admin {
+  color: white;
+  float: right;
   margin: 10px;
   background: transparent;
   border-color: white;
