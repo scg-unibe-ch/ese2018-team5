@@ -24,7 +24,7 @@ export class JobpostingeditComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    this.router.navigate(['/profile'])
+    this.router.navigate(['/JobPostingList'])
   }
 
 }

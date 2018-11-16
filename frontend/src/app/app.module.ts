@@ -42,7 +42,7 @@ import localeCH from '@angular/common/locales/de-CH';
 import { AlertComponent } from './alert/alert.component';
 import {AlertService} from './shared/service/alert.service';
 import { SearchformComponent } from './searchform/searchform.component';
-import { ProfileComponent } from './profile/profile.component';
+import { JobPostingListComponent } from './JobPostingList/JobPostingList.component';
 import { JobpostingeditComponent } from './jobpostingedit/jobpostingedit.component';
 import { UserlistComponent } from './userlist/userlist.component';
 registerLocaleData(localeCH);
@@ -68,7 +68,7 @@ export function tokenGetter() {
     JobDetailComponent,
     AlertComponent,
     SearchformComponent,
-    ProfileComponent,
+    JobPostingListComponent,
     JobpostingeditComponent,
     UserlistComponent,
 

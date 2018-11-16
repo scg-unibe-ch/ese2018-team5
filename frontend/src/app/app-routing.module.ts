@@ -9,7 +9,7 @@ import { RoleGuard} from './shared/service/role.service';
 
 
 import {JobsComponent} from './jobs/jobs.component';
-import {ProfileComponent} from './profile/profile.component';
+import {JobPostingListComponent} from './JobPostingList/JobPostingList.component';
 import {JobpostingeditComponent} from './jobpostingedit/jobpostingedit.component';
 import {UserlistComponent} from './userlist/userlist.component';
 
@@ -37,8 +37,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'jobpostingList',
+    component: JobPostingListComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: '2'
@@ -46,7 +46,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'profile/edit',
+    path: 'JobPostingList/edit',
     component: JobpostingeditComponent,
     canActivate: [RoleGuard],
     data: {

@@ -45,13 +45,15 @@ export class UserlistComponent implements OnInit {
     this.userService.deleteUser(user).subscribe(() =>
 
       data => {
-        this.alertService.success('User deleted', true)
+        this.alertService.success('User deleted', true);
+        this.fetchData();
       },
       error => {
         this.alertService.error('Could not delete user', true);
+        this.fetchData();
       }
     );
-    this.fetchData();
+
     this.selectedUser = null;
   }
 

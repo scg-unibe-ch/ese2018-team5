@@ -7,27 +7,29 @@
   </li>
 </ul>
 
-<div *ngIf="selectedUser">
-  <h2>{{selectedUser.username}}</h2>
-  <div><span>id: </span>{{selectedUser.id}}</div>
-  <div>
-    <label>Username:
-      <input [(ngModel)]="selectedUser.username">
-    </label>
+<div class="row" id="popup" *ngIf="selectedUser">
+  <div class="col-md-12">
+    <h2>{{selectedUser.username}}</h2>
+    <div><span>id: </span>{{selectedUser.id}}</div>
+    <div>
+      <label>Username:
+        <input [(ngModel)]="selectedUser.username">
+      </label>
 
-    <label>email:
-      <input [(ngModel)]="selectedUser.email">
-    </label>
+      <label>email:
+        <input [(ngModel)]="selectedUser.email">
+      </label>
 
-    <label>Password:
-      <input [(ngModel)]="selectedUser.username">
-    </label>
+      <label>Password:
+        <input [(ngModel)]="selectedUser.username">
+      </label>
 
-    <label type="number">Role:
-      <input [(ngModel)]="selectedUser.role">
-    </label>
+      <label type="number">Role:
+        <input [(ngModel)]="selectedUser.role">
+      </label>
 
-    <button (click)="editUser(selectedUser)">Save</button>
-    <button (click)="deleteUser(selectedUser)">Delete User</button>
+      <button (click)="editUser(selectedUser)">Save</button>
+      <button (click)="deleteUser(selectedUser)">Delete User</button>
+    </div>
   </div>
 </div>

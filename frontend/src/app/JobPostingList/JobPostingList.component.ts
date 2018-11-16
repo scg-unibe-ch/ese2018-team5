@@ -5,11 +5,11 @@ import {Router} from '@angular/router';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-jobpostinglist',
+  templateUrl: './JobPostingList.component.html',
+  styleUrls: ['./JobPostingList.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class JobPostingListComponent implements OnInit {
 
   @Input()
   jobItem: JobItem = new JobItem();
@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
 
   edit(jobItem:JobItem) {
     this.data.changeMessage(jobItem);
-    this.router.navigate(['/profile/edit'])
+    this.router.navigate(['/JobPostingList/edit'])
   }
 
   delete(jobItem:JobItem) {

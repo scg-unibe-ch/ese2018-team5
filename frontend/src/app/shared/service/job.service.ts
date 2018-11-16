@@ -18,7 +18,7 @@ export class JobService {
   getJobForUser(id: string): Observable<any> {
 
    let token = localStorage.getItem('access_token');
-   return this.httpClient.get('http://localhost:3000/api/profile/' + id,  {
+   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id,  {
       headers: new HttpHeaders({
         'Authorization': 'bearer' + token
       })

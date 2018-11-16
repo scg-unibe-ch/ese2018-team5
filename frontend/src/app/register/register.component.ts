@@ -15,7 +15,6 @@ import {AlertService} from '../shared/service/alert.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  loading = false;
   submitted = false;
 
   constructor(
@@ -42,11 +41,12 @@ export class RegisterComponent implements OnInit {
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
+      this.registerForm.controls['password'].reset();
       return;
     }
 
-    this.loading = true;
     this.userService.createUser(this.registerForm.value)
+
       .pipe(first())
       .subscribe(
         data => {
@@ -55,7 +55,6 @@ export class RegisterComponent implements OnInit {
         },
         error => {
           this.alertService.error('could not register');
-          this.loading = false;
         });
   }
 

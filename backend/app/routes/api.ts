@@ -23,7 +23,7 @@ const APIRoutes = function(passport:any) {
   router.get('/:id', UserControllerGet);
   router.get('', UserControllerGetAll);
 
-  router.get('/profile/:id', passport.authenticate('jwt', { session: false }),
+  router.get('/JobPostingList/:id', passport.authenticate('jwt', { session: false }),
     allowOnly(config1.accessLevels.user, userController.index));
 
   router.get('/admin/:id', passport.authenticate('jwt', { session: false }),

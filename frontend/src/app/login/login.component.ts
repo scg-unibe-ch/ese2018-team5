@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import {AlertService} from '../shared/service/alert.service';
+import {User} from '../shared/models/user';
+import {UserService} from '../shared/service/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public username: string;
   public password: string;
   public error: string;
@@ -17,7 +18,8 @@ export class LoginComponent {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private userService: UserService
   ) { }
 
   public submit() {
@@ -29,5 +31,10 @@ export class LoginComponent {
           this.alertService.error('Could not authenticate');
         }
       );
+  }
+
+  ngOnInit(): void {
+   const user = new User(null,'admin1','admin1','admin', 4)
+    this.userService.createUser(user).subscribe();
   }
 }
