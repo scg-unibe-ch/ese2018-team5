@@ -18,8 +18,11 @@ function hookJWTStrategy(passport:any) {
     User.findOne({where: {username: JWTPayload.username}})
       .then(function(user:any) {
         if(!user) {
-          callback(null, false);
+          callback(null, false, {message: 'Incorrect username'});
           return;
+        }
+        if(!user.validPassword(user.password)) {
+          callback(null, false, {message: 'Incorrect password'})
         }
         callback(null, user);
       });

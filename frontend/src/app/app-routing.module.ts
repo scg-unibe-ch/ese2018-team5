@@ -12,6 +12,7 @@ import {JobsComponent} from './jobs/jobs.component';
 import {JobPostingListComponent} from './JobPostingList/JobPostingList.component';
 import {JobpostingeditComponent} from './jobpostingedit/jobpostingedit.component';
 import {UserlistComponent} from './userlist/userlist.component';
+import {UserprofileComponent} from './userprofile/userprofile.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,15 @@ const routes: Routes = [
   {
     path: 'JobPostingList/edit',
     component: JobpostingeditComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: '2'
+    }
+  },
+
+  {
+    path: 'profile/:id',
+    component: UserprofileComponent,
     canActivate: [RoleGuard],
     data: {
       expectedRole: '2'

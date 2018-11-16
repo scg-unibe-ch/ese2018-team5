@@ -10,7 +10,6 @@ import {AlertService} from '../shared/service/alert.service';
 })
 export class UserlistComponent implements OnInit {
 
-  pressed = false;
   users: User[] = [];
   selectedUser: User;
   constructor(private userService: UserService, private alertService:AlertService) { }

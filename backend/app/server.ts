@@ -17,11 +17,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())
 
-//app.use(bodyParser.urlencoded({extended: false}));
-
 app.use(morgan('dev'));
 
 app.use(passport.initialize());
+
 const hookJWTStrategy = require('./services/passportStrategy')
 hookJWTStrategy(passport);
 
@@ -40,6 +39,7 @@ app.use(function (req, res, next) {
 
 //app.use('/joblist', JobListController);
 app.use('/jobitem', JobItemController);
+
 
 app.use('/api', require('./routes/api')(passport));
 

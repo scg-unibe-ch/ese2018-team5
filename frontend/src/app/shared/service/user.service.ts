@@ -23,8 +23,8 @@ export class UserService {
     return this.httpClient.put(this._apiUrl + user.id, user);
   }
 
-  getUser(user:User):Observable<any> {
-    return this.httpClient.get(this._apiUrl + user.id);
+  getUser(id:string):Observable<any> {
+    return this.httpClient.get(this._apiUrl + id);
   }
 
   getUsers(): Observable<any> {

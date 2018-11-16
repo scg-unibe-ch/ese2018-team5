@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
  // language switcher based on: https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular6-app-with-ngx-translate
 
   languages: string[] = ['en', 'de', 'fr'];
+  id = localStorage.getItem('userId');
 
   constructor(
     public auth:AuthService,
