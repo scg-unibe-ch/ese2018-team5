@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   const user = new User(null,'admin1','admin1','admin', 4)
+    const user = new User(null,'admin1','admin1','admin', 4)
     this.userService.createUser(user).subscribe();
   }
 }

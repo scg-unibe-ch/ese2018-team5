@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, ParamMap} from '@angular/router';
-import {switchMap} from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from '../shared/service/user.service';
-import {Observable} from 'rxjs';
 import {User} from '../shared/models/user';
+import {AuthService} from '../auth.service';
+import {AlertService} from '../shared/service/alert.service';
 
 @Component({
   selector: 'app-userprofile',
@@ -17,19 +17,33 @@ export class UserprofileComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private userService:UserService
+    private userService:UserService,
+    private auth: AuthService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
-    this.fetchData();
+    if(this.auth.isAuthenticated() || this.user == null) {
+      this.getUser();
+    }
   }
 
-  fetchData() {
-
-    const id = localStorage.getItem('userId');
-    this.userService.getUser(id).subscribe( result => {
-      this.user = result;
+  getUser() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id).subscribe( user => {
+      this.user = user;
     })
+  }
+
+  onSubmit() {
+    this.userService.updateUser(this.user).subscribe();
+    this.alertService.success('Profile saved');
+  }
+
+  onDelete() {
+    this.userService.deleteUser(this.user).subscribe();
+    this.alertService.success('Your Profile has been deleted', true);
+    this.auth.logout();
   }
 
 }

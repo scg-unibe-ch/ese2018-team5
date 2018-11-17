@@ -5,7 +5,7 @@
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
   <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">Your Jobpostings</button>
-  <button id="profile" mat-button [routerLink]="['/profile', id]">Your Profile</button>
+  <button id="profile" mat-button routerLink="/profile/{{getId()}}">Your Profile</button>
   <button id="admin" mat-button [routerLink]="['/admin']" *ngIf="auth.isAdmin()">Manage Users</button>
 
   <button
