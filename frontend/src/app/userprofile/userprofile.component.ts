@@ -13,13 +13,16 @@ import {AlertService} from '../shared/service/alert.service';
 export class UserprofileComponent implements OnInit {
 
   user:User;
+  changePassword = false;
+  pw: string;
+  confirmPW: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private userService:UserService,
     private auth: AuthService,
-    private alertService: AlertService
+    private alertService: AlertService,
   ) { }
 
   ngOnInit() {
@@ -35,9 +38,22 @@ export class UserprofileComponent implements OnInit {
     })
   }
 
+  changePW() {
+    if(this.pw == this.confirmPW) {
+      this.user.password = this.pw;
+      this.userService.updateUser(this.user).subscribe();
+      this.alertService.success('Password changed', false);
+      this.changePassword = false;
+      this.pw = null;
+      this.confirmPW = null;
+    } else {
+      this.alertService.error('Passwords do not match', false)
+    }
+  }
+
   onSubmit() {
     this.userService.updateUser(this.user).subscribe();
-    this.alertService.success('Profile saved');
+    this.alertService.success('Profile saved', false);
   }
 
   onDelete() {

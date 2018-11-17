@@ -12,21 +12,18 @@
     <h2>{{selectedUser.username}}</h2>
     <div><span>id: </span>{{selectedUser.id}}</div>
     <div>
-      <label>Username:
+      <label>Username:</label>
         <input [(ngModel)]="selectedUser.username">
-      </label>
 
-      <label>email:
+      <label>email:</label>
         <input [(ngModel)]="selectedUser.email">
-      </label>
 
-      <label>Password:
+      <label>Password:</label>
         <input [(ngModel)]="selectedUser.password">
-      </label>
 
-      <label type="number">Role:
+      <label type="number">Role:</label>
         <input [(ngModel)]="selectedUser.role">
-      </label>
+
 
       <button (click)="editUser(selectedUser)">Save</button>
       <button (click)="deleteUser(selectedUser)">Delete User</button>
