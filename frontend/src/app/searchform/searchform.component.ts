@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GrdFilterPipe} from './grd-filter.pipe';
 
 @Component({
   selector: 'app-searchform',

@@ -13,9 +13,14 @@ import {JobPostingListComponent} from './JobPostingList/JobPostingList.component
 import {JobpostingeditComponent} from './jobpostingedit/jobpostingedit.component';
 import {UserlistComponent} from './userlist/userlist.component';
 import {UserprofileComponent} from './userprofile/userprofile.component';
+import {SearchformComponent} from './searchform/searchform.component';
 
 
 const routes: Routes = [
+  {
+    path: 'search',
+    component: SearchformComponent
+  },
 
   {
     path: 'login',
