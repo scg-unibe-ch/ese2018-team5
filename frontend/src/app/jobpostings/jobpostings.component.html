@@ -1,12 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div id="homeTitle">
-<h1 class="display-3">Open Job offers: {{jobItems.length}} </h1>
+<div class="background">
+<h1 class="openJobs">Open Job offers: {{jobItems.length}} </h1>
 
 
-  <select>
+  <select class="selectCategory">
     <optgroup label="Choose category">
+      <option>Choose a Category...</option>
       <option>Marketing</option>
       <option>IT</option>
       <option>Finance</option>
@@ -14,8 +15,9 @@
     </optgroup>
   </select>
 
-  <select>
+  <select class="selectLocation">
     <optgroup label="Choose location">
+      <option>Choose a Location...</option>
       <option>Bern</option>
       <option>Solothurn</option>
       <option>Zürich</option>

@@ -1,6 +1,12 @@
 <header>
   <br>
-  <button id="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
+  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
+
+  <!--<img src="home.jpg" alt="logo">-->
+
+
+
+
   <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
