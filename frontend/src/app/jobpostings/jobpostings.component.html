@@ -4,7 +4,7 @@
 <div class="background">
 <h1 class="openJobs">Open Job offers: {{jobItems.length}} </h1>
 
-
+<div class="searchForm">
   <select class="selectCategory">
     <optgroup label="Choose category">
       <option>Choose a Category...</option>
@@ -29,6 +29,34 @@
 
   <button id="searchBtn" type="submit"> <i class="fa fa-search"> </i></button>
 
+</div>
+
+
+<div class="createJob">
+
+  <h3 class="titleEmployer">Are you a employer and want to post jo offers?</h3>
+
+  <img src="employer.png">
+
+  <p> Create and post your job offers to be seen by a wide range of students </p>
+  <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register now</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,6 +68,8 @@
 
 
 <hr>
+
+<!--
 <div class ="row>">
   <div class ="col-md-12">
  <ul class="pseude" >
@@ -71,7 +101,7 @@
  </ul>
      </div>
   </div>
-
+-->
 
 
 
