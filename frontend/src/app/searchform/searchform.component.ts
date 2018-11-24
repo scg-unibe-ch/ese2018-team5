@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {GrdFilterPipe} from './grd-filter.pipe';
+import {JobItem} from '../jobs/job-item';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-searchform',
@@ -9,14 +11,20 @@ import {GrdFilterPipe} from './grd-filter.pipe';
 export class SearchformComponent implements OnInit {
   public searchText : string;
   public customerData : any;
+  private _apiUrl = 'http://localhost:3000/jobitem/';
 
-  constructor() { }
+  @Input()
+  jobItem: JobItem = new JobItem();
+  jobItems: JobItem[] = [];
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.customerData = [
-      {"id": 1, "title": 'abc', "company" :'xxx'},
-      {"id": 2, "title": 'ace' , "company" :'xyz'},
-      {"id": 3, "title": 'def', "company" :'yyz'}];
+
+    this.httpClient.get(this._apiUrl, {
+    }).subscribe(result => {
+      this.jobItems = result as JobItem[];
+    });
   }
 
 }
