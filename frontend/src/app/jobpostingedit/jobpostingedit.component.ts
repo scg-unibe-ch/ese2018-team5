@@ -24,7 +24,12 @@ export class JobpostingeditComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    this.router.navigate(['/jobpostingList'])
+    if(localStorage.getItem('role') === '4') {
+      this.router.navigate(['/admin/jobpostings']);
+    } else {
+      this.router.navigate(['/jobpostingList'])
+    }
+
   }
 
 }

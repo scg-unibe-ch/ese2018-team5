@@ -12,8 +12,8 @@
   <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">Your Jobpostings</button>
 
 
-  <button id="admin" mat-button [routerLink]="['/admin']" *ngIf="auth.isAdmin()">Manage Users</button>
-
+  <button id="admin" mat-button [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage Users</button>
+  <button id="admin1" mat-button [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage Jobpostings</button>
   <button
     id="language"
     #langSelect *ngFor="let lang of languages"
