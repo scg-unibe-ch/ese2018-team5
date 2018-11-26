@@ -11,13 +11,17 @@
  
 	as Admin:
 		- Change password of a user
+		- delete a user
 		- Approve Jobposting
+		- 
 		
 	as User:
 		- register -> login
 			- CRUD for Jobposting
 			- change language
 		- edit password
+		
+	as Guest:	
 		- search for a job
 		
 		
