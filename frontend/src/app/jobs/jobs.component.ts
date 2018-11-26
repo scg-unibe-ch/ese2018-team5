@@ -13,6 +13,10 @@ import {AlertService} from '../shared/service/alert.service';
 export class JobsComponent implements OnInit {
   selectedJob: JobItem;
   formJob: JobItem = new JobItem();
+
+  categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
+  locations: string [] = ['Bern', 'Solothurn', 'Zürich', 'Genf'];
+
   constructor(
     private jobService: JobService,
     private alertService: AlertService

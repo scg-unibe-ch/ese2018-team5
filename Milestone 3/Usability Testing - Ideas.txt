@@ -5,11 +5,19 @@
   What is needed for all ideas:
  - Tasklist for users to go through (task scenarios)
  - Record Results(deliverable)
+ - Feedback from user
  
  Scenarios:
  
-	Admin:
+	as Admin:
 		- Change password of a user
-		- 
+		- Approve Jobposting
+		
+	as User:
+		- register -> login
+			- CRUD for Jobposting
+			- change language
+		- edit password
+		- search for a job
 		
 		
