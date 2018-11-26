@@ -14,6 +14,7 @@ import {JobpostingeditComponent} from './jobpostingedit/jobpostingedit.component
 import {UserlistComponent} from './userlist/userlist.component';
 import {UserprofileComponent} from './userprofile/userprofile.component';
 import {SearchformComponent} from './searchform/searchform.component';
+import {AdminjobpostingsComponent} from './adminjobpostings/adminjobpostings.component';
 
 
 const routes: Routes = [
@@ -70,7 +71,25 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin',
+    path: 'admin/jobpostings',
+    component: AdminjobpostingsComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: '4'
+    }
+  },
+
+  {
+    path: 'admin/jobpostings/edit',
+    component: JobpostingeditComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: '2'
+    }
+  },
+
+  {
+    path: 'admin/users',
     component: UserlistComponent,
     canActivate: [RoleGuard],
     data: {

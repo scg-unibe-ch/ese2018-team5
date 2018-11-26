@@ -21,9 +21,6 @@ function hookJWTStrategy(passport:any) {
           callback(null, false, {message: 'Incorrect username'});
           return;
         }
-        if(!user.validPassword(user.password)) {
-          callback(null, false, {message: 'Incorrect password'})
-        }
         callback(null, user);
       });
   }));

@@ -35,6 +35,9 @@ export class JobItem extends Model<JobItem> {
   @Column
   userId!: number;
 
+  @Column
+  category!:string;
+
   toSimplification(): any {
     return {
       'id': this.id,
@@ -46,7 +49,8 @@ export class JobItem extends Model<JobItem> {
       'position': this.position,
       'pensum': this.pensum,
       'approved': this.approved,
-      'userId': this.userId
+      'userId': this.userId,
+      'category': this.category
     };
   }
 
@@ -60,6 +64,7 @@ export class JobItem extends Model<JobItem> {
     this.pensum = simplification['pensum'];
     this.approved = simplification['approved'];
     this.userId = simplification['userId'];
+    this.category = simplification['category'];
   }
 
 }
