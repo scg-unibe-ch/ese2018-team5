@@ -5,3 +5,11 @@
   What is needed for all ideas:
  - Tasklist for users to go through (task scenarios)
  - Record Results(deliverable)
+ 
+ Scenarios:
+ 
+	Admin:
+		- Change password of a user
+		- 
+		
+		
