@@ -1,19 +1,19 @@
 <header>
   <br>
 
-  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
-  <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">Your Profile</button>
+  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
+  <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
  <!--<img src="img_Logo.jpg" alt="logo of company">-->
 
  <!-- <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>-->
 
-  <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">Logout</button>
+  <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
-  <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">Your Jobpostings</button>
+  <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
 
 
-  <button id="admin" mat-button [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage Users</button>
-  <button id="admin1" mat-button [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage Jobpostings</button>
+  <button id="admin" mat-button [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage {{'header.users' | translate}}</button>
+  <button id="admin1" mat-button [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageJobpostings' | translate}}</button>
   <button
     id="language"
     #langSelect *ngFor="let lang of languages"

@@ -1,10 +1,10 @@
 
 <div class="container">
-  <h1>Edit your Jobposting</h1>
+  <h1>{{'jobPostingsEdit.editYourJobPostings'| translate}}</h1>
   <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
 
     <div class="form-group">
-      <label for="title">Title</label>
+      <label for="title">{{'jobPostingsEdit.title'| translate}}</label>
       <input type="text" class="form-control" id="title"
       required
       [(ngModel)]="selectedJobItem.title" name="title"
@@ -15,41 +15,41 @@
     </div>
 
     <div class="form-group">
-      <label for="company">Company</label>
+      <label for="company">{{'jobPostingsEdit.company'| translate}}</label>
       <input type="text" class="form-control" id="company"
       required
       [(ngModel)]="selectedJobItem.company" name="company">
     </div>
 
     <div class="form-group">
-      <label for="location">Location</label>
+      <label for="location">{{'jobPostingsEdit.location'| translate}}</label>
       <input type="text" class="form-control" id="location"
        required
        [(ngModel)]="selectedJobItem.location" name="location">
     </div>
 
     <div class="form-group">
-      <label for="description">Description</label>
+      <label for="description">{{'jobPostingsEdit.description'| translate}}</label>
       <input type="text" class="form-control" id="description"
       required
       [(ngModel)]="selectedJobItem.description" name="description">
     </div>
 
     <div class="form-group">
-      <label for="position">Position</label>
+      <label for="position">{{'jobPostingsEdit.position'| translate}}</label>
       <input type="text" class="form-control" id="position"
       required
       [(ngModel)]="selectedJobItem.position" name="position">
     </div>
 
     <div class="form-group">
-      <label for="pensum">Pensum</label>
+      <label for="pensum">{{'jobPostingsEdit.pensum'| translate}}</label>
       <input type="number" class="form-control" id="pensum"
       required
       [(ngModel)]="selectedJobItem.pensum" name="pensum">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
 
   </form>
 </div>

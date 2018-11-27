@@ -1,11 +1,95 @@
 {
+	"adminjobpostings": {
+		"approvedByAdmin": "Approuve d'un Admin",
+		"companyName": "Nom de compagnie",
+		"delete": "Rayer",
+		"edit": "Réviser",
+		"jobDescription": "Profil du poste",
+		"pensum": "Tâche",
+		"position": "Position",
+		"published": "Publié",
+		"titleOfJob": "Titre d'emploi"
+	},
 	"header": {
+		"login": "Login",
+		"logout": "Logout",
+		"manageJobpostings": "Change test offes d`emploi",
 		"registerButton": "registre",
 		"submitJob": "soumettre un travail",
-		"title": "besoin d'emploi?"
+		"title": "besoin d'emploi?",
+		"users": "Utilisateur",
+		"yourProfile": "Ton profile",
+		"yourjobpostings": "Tes offre d'empoloi"
+	},
+	"job-detail": {
+		"details": "Détailes",
+		"manageJob": "Révise des offre d'emploi",
+		"title": "Titre"
+	},
+	"jobPostingsEdit": {
+		"company": "Compagnie",
+		"description": "Description",
+		"editYourJobPostings": "Révise des offre d'emploi",
+		"location": "Localisation",
+		"pensum": "Tâche",
+		"position": "Position",
+		"submit": "Soumettre",
+		"title": "Titre"
+	},
+	"jobPostingsList": {
+		"approvedByAdmin": "Approuve d'un Admin",
+		"company": "Compagnie",
+		"createNewJobPosting": "Faire nouveau offre d'empoloi",
+		"delete": "Rayer",
+		"edit": "Réviser",
+		"jobDescription": "Profil du poste",
+		"pensum": "Tâche",
+		"position": "Position",
+		"published": "Publié"
+	},
+	"jobs": {
+		"category": "Catégorie",
+		"company": "Compagnie",
+		"description": "Profil du poste",
+		"jobTitle": "Titre d'emploi",
+		"location": "Localisation",
+		"pensum": "Tâche",
+		"position": "Position"
 	},
 	"login": {
+		"login": "Login",
 		"password": "Mot de passe",
+		"register": "Registrer",
 		"username": "Nom d'utilisateur"
+	},
+	"register": {
+		"agb": "AGB",
+		"alreadyLogin": "Déjà un profile?",
+		"emailRequired": "Email nécessiter",
+		"loginHere": "Login ici",
+		"passwordRequired": "Mot de passe nécessiter",
+		"passwordSixChars": "Mot de pass doit avoire au moins 6 chiffres ",
+		"register": "Registrer",
+		"usernameRequired": "Nom d'utilisateur nécessiter"
+	},
+	"searchform": {
+		"category": "Catégorie",
+		"location": "Localisation",
+		"title": "Titre"
+	},
+	"userlist": {
+		"deleteUser": "Rayer utilisateur",
+		"email": "Email",
+		"password": "Mot de passe",
+		"role": "Rôle",
+		"save": "Sauvegarder",
+		"userName": "Nom d'utilisateur"
+	},
+	"userprofile": {
+		"changePassword": "Changer mot de passe",
+		"confirmPassword": "Confirmer mot de passe",
+		"password": "Mot de passe",
+		"save": "Sauvegarder",
+		"username": "Utilisateur"
 	}
 }

@@ -1,11 +1,95 @@
 {
+	"adminjobpostings": {
+		"approvedByAdmin": "Von Admin akzeptiert",
+		"companyName": "Firmename",
+		"delete": "Löschen",
+		"edit": "Bearbeiten",
+		"jobDescription": "Job beschreibung",
+		"pensum": "Penusm",
+		"position": "Position",
+		"published": "Veröffentlicht",
+		"titleOfJob": "Job Title"
+	},
 	"header": {
-		"registerButton": "registrieren",
+		"login": "Login",
+		"logout": "Logout",
+		"manageJobpostings": "Jobangebote bearbeiten",
+		"registerButton": "Registrieren",
 		"submitJob": "Einen Job einreichen",
-		"title": "brauchst ein job?"
+		"title": "Brauchst ein job?",
+		"users": "Benutzer",
+		"yourProfile": "Profil",
+		"yourjobpostings": "Deine Jobangebote"
+	},
+	"job-detail": {
+		"details": "Details",
+		"manageJob": "Job bearbeiten",
+		"title": "Title"
+	},
+	"jobPostingsEdit": {
+		"company": "Firma",
+		"description": "Beschreibung",
+		"editYourJobPostings": "Jobs bearbeiten",
+		"location": "Ort",
+		"pensum": "Pensum",
+		"position": "Position",
+		"submit": "Senden",
+		"title": "Title"
+	},
+	"jobPostingsList": {
+		"approvedByAdmin": "Von Admin akzeptiert",
+		"company": "Firma",
+		"createNewJobPosting": "Neues Jobangebot",
+		"delete": "Löschen",
+		"edit": "Bearbeiten",
+		"jobDescription": "Beschreibung",
+		"pensum": "Pensum",
+		"position": "Position",
+		"published": "Veröffentlicht"
+	},
+	"jobs": {
+		"category": "Kategorie",
+		"company": "Firma",
+		"description": "Beschreibung",
+		"jobTitle": "Jobtitle",
+		"location": "Ort",
+		"pensum": "Pensum",
+		"position": "Position"
 	},
 	"login": {
+		"login": "",
 		"password": "Passwort",
+		"register": "Registrieren",
+		"username": "Benutzername"
+	},
+	"register": {
+		"agb": "Sie haben die AGB gelesu und akzeptiert.",
+		"alreadyLogin": "Haben sie bereits ein Login?",
+		"emailRequired": "Email",
+		"loginHere": "Login",
+		"passwordRequired": "Passwort",
+		"passwordSixChars": "Passwort muss mindestens 6 Zeichen enthalten",
+		"register": "Registrieren",
+		"usernameRequired": "Benutzername"
+	},
+	"searchform": {
+		"category": "Kategorie",
+		"location": "Ort",
+		"title": "Title"
+	},
+	"userlist": {
+		"deleteUser": "Benutzer löschen",
+		"email": "Email",
+		"password": "Passwort",
+		"role": "Rolle",
+		"save": "Speichern",
+		"userName": "Benutzername"
+	},
+	"userprofile": {
+		"changePassword": "Passwort ändern",
+		"confirmPassword": "Passwort bestätigen",
+		"password": "Passwort",
+		"save": "Speichern",
 		"username": "Benutzername"
 	}
 }

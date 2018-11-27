@@ -3,22 +3,22 @@
     <li *ngFor="let jobItem of userItems" id="list">
         <div id="titleJob">Title of Job: {{jobItem.title}}</div>
         <br>
-        <div id="company">Company name:{{jobItem.company}} {{jobItem.location}}</div>
+        <div id="company">{{'jobPostingsList.company'| translate}}{{jobItem.company}} {{jobItem.location}}</div>
         <br>
-        <div id="description">Job Description: {{jobItem.description}}</div>
+        <div id="description">{{'jobPostingsList.jobDescription'| translate}} {{jobItem.description}}</div>
         <br>
-        <div id="position">Position: {{jobItem.position}}</div>
+        <div id="position">{{'jobPostingsList.position'| translate}}  {{jobItem.position}}</div>
         <br>
-        <div id="pensum"> Pensum: {{jobItem.pensum}}</div>
+        <div id="pensum"> {{'jobPostingsList.pensum'| translate}} {{jobItem.pensum}}</div>
         <br>
-        <div id = "date">Published: {{jobItem.createdAt | date}}</div>
+        <div id = "date">{{'jobPostingsList.published'| translate}} {{jobItem.createdAt | date}}</div>
         <br>
-        <div id="approved">Approved by Admin: {{jobItem.approved}}</div>
-        <button (click)="delete(jobItem)">Delete</button>
-        <button (click)="edit(jobItem)">Edit</button>
+        <div id="approved">{{'jobPostingsList.approvedByAdmin'| translate}} {{jobItem.approved}}</div>
+        <button (click)="delete(jobItem)">{{'jobPostingsList.delete'| translate}}</button>
+        <button (click)="edit(jobItem)">{{'jobPostingsList.edit'| translate}}</button>
         <hr>
     </li>
   </ul>
 
-  <button [routerLink]="['/jobform']" id="createJob">Create new Job Posting</button>
+  <button [routerLink]="['/jobform']" id="createJob">{{'jobPostingsList.createNewJobPosting'| translate}}</button>
 </div>

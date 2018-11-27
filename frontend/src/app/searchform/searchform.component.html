@@ -4,7 +4,7 @@
       <form name="search" id="search">
 
         <div class="form-group">
-          <label for="JobTitle">Title</label>
+          <label for="JobTitle">{{'searchform.title' | translate}}</label>
           <input
             type="text"
             class="form-control"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="category">Category</label>
+          <label for="category">{{'searchform.category' | translate}}</label>
           <select class="form-control" id="category"
           [(ngModel)]="jobItemFilter.category" name="category"
           #category>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <label for="location">Location</label>
+          <label for="location">{{'searchform.location' | translate}}</label>
           <select class="form-control" id="location"
           [(ngModel)]="jobItemFilter.location" name="location"
           #location>

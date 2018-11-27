@@ -2,7 +2,7 @@
   <div class ="col-md-5">
     <form name="create-job" id="create-job">
       <div class="form-group">
-        <label for="JobTitle">Job Title</label>
+        <label for="JobTitle">{{'jobs.jobTitle' | translate}}</label>
         <input
           type="text"
           class="form-control"
@@ -15,7 +15,7 @@
 
       <div class="form-group">
         <label
-          for="Company">Company</label>
+          for="Company">{{'jobs.company' | translate}}</label>
         <input name="company"
           type="text"
           class="form-control"
@@ -28,26 +28,26 @@
       </div>
 
       <div class="form-group">
-        <label for="Pensum">Pensum</label>
+        <label for="Pensum">{{'jobs.pensum' | translate}}</label>
         <input type="number" class="form-control" id="Pensum" aria-describedby="Pensum" placeholder="Enter Pensum" name="Pensum"
                [(ngModel)]="formJob.pensum">
       </div>
 
       <div class="form-group">
-        <label for="Description">Description</label>
+        <label for="Description">{{'jobs.description' | translate}}</label>
         <input name="Description" type="text" class="form-control" id="Description" aria-describedby="Description"
                placeholder="Enter Description"  [(ngModel)]="formJob.description">
       </div>
 
       <div class="form-group">
-        <label for="Position">Position</label>
+        <label for="Position">{{'jobs.position' | translate}}</label>
         <input name="Position" type="text" class="form-control" id="Position" aria-describedby="Position"
                placeholder="Enter Position" [(ngModel)]="formJob.position">
       </div>
 
 
       <div class="form-group">
-        <label for="Category">Category</label>
+        <label for="Category">{{'jobs.category' | translate}}</label>
         <select class="form-control" id="category"
                 [(ngModel)]="formJob.category" name="category">
           <option *ngFor="let category of categories" [value]="category">{{category}}</option>
@@ -55,7 +55,7 @@
       </div>
 
       <div class="form-group">
-        <label for="Location">Location</label>
+        <label for="Location">{{'jobs.location' | translate}}</label>
         <select class="form-control" id="location"
                 [(ngModel)]="formJob.location" name="location">
           <option *ngFor="let location of locations" [value]="location">{{location}}</option>

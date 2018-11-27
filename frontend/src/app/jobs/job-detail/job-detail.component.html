@@ -4,7 +4,7 @@
 </div>
 <div clas ="row">
   <div class ="col-xs-12">
-    <h1>Title:  {{job.title}}</h1>
+    <h1>{{'job-detail.title'| translate}}:  {{job.title}}</h1>
   </div>
 </div>
 <div class = "row">
@@ -12,7 +12,7 @@
     <div class = "btn-group">
       <button type ="button"
               class ="btn btn-primary dropdown-toggle">
-        Manage Job<span class ="caret"></span>
+        {{'job-detail.manageJob'| translate}}<span class ="caret"></span>
       </button>
       <ul class =dropdown-menu>
         <li><a href ='Edit Job'></a></li>
@@ -29,6 +29,6 @@
 </div>
 <div class ="row">
   <div class ="col-xs-12">
-    Details
+    {{'job-detail.details'| translate}}
   </div>
 </div>

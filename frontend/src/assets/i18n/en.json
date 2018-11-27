@@ -1,11 +1,95 @@
 {
+	"adminjobpostings": {
+		"approvedByAdmin": "Approved by Admin",
+		"companyName": "Company Name",
+		"delete": "Delete",
+		"edit": "Edit",
+		"jobDescription": "Job description",
+		"pensum": "Pensum",
+		"position": "Position",
+		"published": "Published",
+		"titleOfJob": "Title of Job"
+	},
 	"header": {
+		"login": "Login",
+		"logout": "Logout",
+		"manageJobpostings": "Manage Jobpostings",
 		"registerButton": "register",
 		"submitJob": "submit a job",
-		"title": "Job needed?"
+		"title": "Job needed?",
+		"users": "Users",
+		"yourProfile": "Your Profile",
+		"yourjobpostings": "Your Jobpostings"
+	},
+	"job-detail": {
+		"details": "Details",
+		"manageJob": "Manage jobs",
+		"title": "Title"
+	},
+	"jobPostingsEdit": {
+		"company": "Company",
+		"description": "Description",
+		"editYourJobPostings": "Edit your job postings",
+		"location": "Location",
+		"pensum": "Pensum",
+		"position": "Position",
+		"submit": "Submit",
+		"title": "Title"
+	},
+	"jobPostingsList": {
+		"approvedByAdmin": "Approved by Admin",
+		"company": "Company",
+		"createNewJobPosting": "Create new job posting",
+		"delete": "Delete",
+		"edit": "Edit",
+		"jobDescription": "Job description",
+		"pensum": "Penusm",
+		"position": "Position",
+		"published": "Published"
+	},
+	"jobs": {
+		"category": "Category",
+		"company": "Company",
+		"description": "Description",
+		"jobTitle": "Job title",
+		"location": "Location",
+		"pensum": "Pensum",
+		"position": "Position"
 	},
 	"login": {
+		"login": "",
 		"password": "Password",
+		"register": "Register",
+		"username": "Username"
+	},
+	"register": {
+		"agb": "By submitting this form, you confirm that you have read and agree with our General Terms and Conditions and Privacy Policies.",
+		"alreadyLogin": "Already got a login?",
+		"emailRequired": "Email required",
+		"loginHere": "Login here",
+		"passwordRequired": "Password required",
+		"passwordSixChars": "Password needs to be at least 6 Characters",
+		"register": "Register",
+		"usernameRequired": "Username required"
+	},
+	"searchform": {
+		"category": "Category",
+		"location": "Location",
+		"title": "Title"
+	},
+	"userlist": {
+		"deleteUser": "Delete user",
+		"email": "Email",
+		"password": "Password",
+		"role": "Role",
+		"save": "Save",
+		"userName": "Username"
+	},
+	"userprofile": {
+		"changePassword": "Change password",
+		"confirmPassword": "confirm password",
+		"password": "Password",
+		"save": "Save",
 		"username": "Username"
 	}
 }
