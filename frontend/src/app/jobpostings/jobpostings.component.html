@@ -1,47 +1,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div>
+  <div class="background">
+    <h1 class="openJobs">Open Job offers: {{jobItems.length}} </h1>
+    <form (ngSubmit)="submit(s)" #searchForm="ngForm">
+        <div class="searchForm">
+          <div class="form-group">
+            <select class="selectCategory" id="selectCategory"
+                    [(ngModel)]="s.category" name="category">
+              <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
 
-<div class="background">
-<h1 class="openJobs">Open Job offers: {{jobItems.length}} </h1>
-
-<div class="searchForm">
-  <select class="selectCategory">
-    <optgroup label="Choose category">
-      <option>Choose a Category...</option>
-      <option>Marketing</option>
-      <option>IT</option>
-      <option>Finance</option>
-      <option>Pharma</option>
-    </optgroup>
-  </select>
-
-  <select class="selectLocation">
-    <optgroup label="Choose location">
-      <option>Choose a Location...</option>
-      <option>Bern</option>
-      <option>Solothurn</option>
-      <option>Zürich</option>
-      <option>Genf</option>
-    </optgroup>
-  </select>
-
-
-
-  <button id="searchBtn" type="submit"> <i class="fa fa-search"> </i></button>
+            <select class="selectLocation" id="selectLocation"
+                    [(ngModel)]="s.location" name="location">
+              <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+            </select>
+            <button id="searchBtn" type="submit"> <i class="fa fa-search"> </i></button>
+        </div>
+      </div>
+    </form>
 
 </div>
 
-
 <div class="createJob">
-
-  <h3 class="titleEmployer">Are you a employer and want to post jo offers?</h3>
-
-
+  <h3 class="titleEmployer">Are you a employer and want to post job offers?</h3>
   <img class="resize" src="../../assets/employer.png"/>
   <p> Create and post your job offers to be seen by a wide range of students </p>
   <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register now</button>
-
-
 </div>
 
 

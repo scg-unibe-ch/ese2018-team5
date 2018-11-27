@@ -46,7 +46,6 @@ import { JobPostingListComponent } from './JobPostingList/JobPostingList.compone
 import { JobpostingeditComponent } from './jobpostingedit/jobpostingedit.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-import {GrdFilterPipe} from './searchform/grd-filter.pipe';
 import { AdminjobpostingsComponent } from './adminjobpostings/adminjobpostings.component';
 import { JobpostingdetailComponent } from './jobpostingdetail/jobpostingdetail.component';
 registerLocaleData(localeCH);
@@ -76,7 +75,6 @@ export function tokenGetter() {
     JobpostingeditComponent,
     UserlistComponent,
     UserprofileComponent,
-    GrdFilterPipe,
     AdminjobpostingsComponent,
     JobpostingdetailComponent
 
