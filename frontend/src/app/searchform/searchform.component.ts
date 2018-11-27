@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {GrdFilterPipe} from './grd-filter.pipe';
+import {Component, OnInit} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
-import {HttpClient} from '@angular/common/http';
+import {JobService} from '../shared/service/job.service';
+import {FilterPipe} from 'ngx-filter-pipe';
 
 @Component({
   selector: 'app-searchform',
@@ -9,20 +9,31 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./searchform.component.css']
 })
 export class SearchformComponent implements OnInit {
-  public searchText : string;
-  public customerData : any;
-  private _apiUrl = 'http://localhost:3000/jobitem/';
 
-  @Input()
-  jobItem: JobItem = new JobItem();
+  jobItemFilter: any = {
+    title: '',
+    position: '',
+    company: '',
+    pensum: '',
+    location: '',
+    category:''
+  };
+
+  categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
+  locations: string [] = ['Bern', 'Solothurn', 'Zürich', 'Genf'];
+
+  private undefined:any;
+
   jobItems: JobItem[] = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private jobService:JobService, private filter:FilterPipe) { }
 
   ngOnInit() {
+    this.fetchData();
+  }
 
-    this.httpClient.get(this._apiUrl, {
-    }).subscribe(result => {
+  fetchData() {
+    this.jobService.getJobs(1).subscribe(result => {
       this.jobItems = result as JobItem[];
     });
   }

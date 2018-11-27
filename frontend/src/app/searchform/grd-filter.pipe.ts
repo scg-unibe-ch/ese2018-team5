@@ -4,30 +4,20 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'grdFilter'
 })
 export class GrdFilterPipe implements PipeTransform {
-  transform(items: any, filter: any, defaultFilter: boolean): any {
-    if (!filter){
-      return items;
-    }
+  transform(myobjects: Array<object>, args?: Array<object>): any {
+    if(args && Array.isArray(myobjects)) {
+      var returnobjects = myobjects;
 
-    if (!Array.isArray(items)){
-      return items;
-    }
-
-    if (filter && Array.isArray(items)) {
-      let filterKeys = Object.keys(filter);
-
-      if (defaultFilter) {
-        return items.filter(item =>
-          filterKeys.reduce((x, keyName) =>
-            (x && new RegExp(filter[keyName], 'gi').test(item[keyName])) || filter[keyName] == "", true));
-      }
-      else {
-        return items.filter(item => {
-          return filterKeys.some((keyName) => {
-            return new RegExp(filter[keyName], 'gi').test(item[keyName]) || filter[keyName] == "";
-          });
-        });
-      }
+      args.forEach(function (filterobj) {
+        let filterkey = Object.keys(filterobj)[0];
+        let filtervalue = filterobj[filterkey];
+        myobjects.forEach(function (objectToFilter) {
+          if(objectToFilter[filterkey] != filtervalue && filtervalue != "") {
+            returnobjects = returnobjects.filter(obj => obj !== objectToFilter)
+          }
+        })
+      });
+      return returnobjects;
     }
   }
 }

@@ -10,7 +10,7 @@ import { AuthService } from './auth.service'; //Import a authentication service
 import { AuthGuard } from './auth.guard'; //Import a authentication guard
 
 import {AppRoutingModule} from './app-routing.module';
-
+import {FilterPipeModule} from 'ngx-filter-pipe';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -48,6 +48,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import {GrdFilterPipe} from './searchform/grd-filter.pipe';
 import { AdminjobpostingsComponent } from './adminjobpostings/adminjobpostings.component';
+import { JobpostingdetailComponent } from './jobpostingdetail/jobpostingdetail.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -76,12 +77,14 @@ export function tokenGetter() {
     UserlistComponent,
     UserprofileComponent,
     GrdFilterPipe,
-    AdminjobpostingsComponent
+    AdminjobpostingsComponent,
+    JobpostingdetailComponent
 
 
   ],
   imports: [
     BrowserModule,
+    FilterPipeModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -117,7 +120,8 @@ export function tokenGetter() {
     UserService,
     AuthService,
     AuthGuard,
-    AlertService
+    AlertService,
+    FilterPipeModule
   ],
   bootstrap: [AppComponent]
 })
