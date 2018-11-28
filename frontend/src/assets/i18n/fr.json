@@ -1,14 +1,15 @@
 {
 	"adminjobpostings": {
-		"approvedByAdmin": "Approuve d'un Admin",
-		"companyName": "Nom de compagnie",
+		"approved": "Approuve d'un Admin",
+		"company": "Nom de compagnie",
+		"createdat": "Publié",
 		"delete": "Rayer",
+		"description": "Profil du poste",
 		"edit": "Réviser",
-		"jobDescription": "Profil du poste",
+		"location": "Localisation",
 		"pensum": "Tâche",
 		"position": "Position",
-		"published": "Publié",
-		"titleOfJob": "Titre d'emploi"
+		"title": "Titre"
 	},
 	"header": {
 		"login": "Login",
@@ -74,8 +75,15 @@
 	},
 	"searchform": {
 		"category": "Catégorie",
+		"categoryPlaceholder": "choisir une catégorie",
 		"location": "Localisation",
-		"title": "Titre"
+		"locationPlaceholder": "choisir un lieu",
+		"pensum": "Taux d'occupation",
+		"pensumPlaceholder": "choisir taux d'occupation ",
+		"position": "position",
+		"positionPlaceholder": "entrer une position",
+		"title": "Titre",
+		"titlePlaceholder": "entrer un titre"
 	},
 	"userlist": {
 		"deleteUser": "Rayer utilisateur",

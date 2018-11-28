@@ -13,7 +13,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {FilterPipeModule} from 'ngx-filter-pipe';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
+import {MatSliderModule} from '@angular/material';
 
 // Add css components from angular material
 import {
@@ -78,10 +78,10 @@ export function tokenGetter() {
     AdminjobpostingsComponent,
     JobpostingdetailComponent
 
-
   ],
   imports: [
     BrowserModule,
+    MatSliderModule,
     FilterPipeModule,
     BrowserAnimationsModule,
     FormsModule,

@@ -1,14 +1,15 @@
 {
 	"adminjobpostings": {
-		"approvedByAdmin": "Von Admin akzeptiert",
-		"companyName": "Firmename",
+		"approved": "Von Admin akzeptiert",
+		"company": "Firmename",
+		"createdat": "Erstellt am",
 		"delete": "Löschen",
-		"edit": "Bearbeiten",
-		"jobDescription": "Job beschreibung",
-		"pensum": "Penusm",
+		"description": "Beschreibung",
+		"edit": "Editieren",
+		"location": "Ort",
+		"pensum": "Pensum",
 		"position": "Position",
-		"published": "Veröffentlicht",
-		"titleOfJob": "Job Title"
+		"title": "Titel"
 	},
 	"header": {
 		"login": "Login",
@@ -24,7 +25,7 @@
 	"job-detail": {
 		"details": "Details",
 		"manageJob": "Job bearbeiten",
-		"title": "Title"
+		"title": "Titel"
 	},
 	"jobPostingsEdit": {
 		"company": "Firma",
@@ -34,7 +35,7 @@
 		"pensum": "Pensum",
 		"position": "Position",
 		"submit": "Senden",
-		"title": "Title"
+		"title": "Titel"
 	},
 	"jobPostingsList": {
 		"approvedByAdmin": "Von Admin akzeptiert",
@@ -57,13 +58,13 @@
 		"position": "Position"
 	},
 	"login": {
-		"login": "",
+		"login": "Login",
 		"password": "Passwort",
 		"register": "Registrieren",
 		"username": "Benutzername"
 	},
 	"register": {
-		"agb": "Sie haben die AGB gelesu und akzeptiert.",
+		"agb": "Sie haben die AGB gelesen und akzeptiert.",
 		"alreadyLogin": "Haben sie bereits ein Login?",
 		"emailRequired": "Email",
 		"loginHere": "Login",
@@ -74,8 +75,15 @@
 	},
 	"searchform": {
 		"category": "Kategorie",
+		"categoryPlaceholder": "Bitte wähle eine Kategorie aus",
 		"location": "Ort",
-		"title": "Title"
+		"locationPlaceholder": "Bitte wähle einen Ort aus",
+		"pensum": "Pensum",
+		"pensumPlaceholder": "Bitte wähle ein Pensum aus",
+		"position": "Position",
+		"positionPlaceholder": "Bitte gib die Position an",
+		"title": "Titel",
+		"titlePlaceholder": "Bitte gib einen Titel ein"
 	},
 	"userlist": {
 		"deleteUser": "Benutzer löschen",

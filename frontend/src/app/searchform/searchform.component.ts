@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
 import {JobService} from '../shared/service/job.service';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
+import {MatSliderModule} from '@angular/material';
 
 @Component({
   selector: 'app-searchform',
@@ -11,6 +12,8 @@ import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 export class SearchformComponent implements OnInit {
 
   s = {category: '', location: ''};
+
+  pensumCount: number[] = [10,20,30,40,50,60,70,80,90,100];
 
   jobItemFilter: any = {
     title: '',

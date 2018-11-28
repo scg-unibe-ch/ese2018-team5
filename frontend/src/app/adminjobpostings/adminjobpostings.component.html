@@ -1,26 +1,28 @@
 <ul>
 <li *ngFor="let jobItem of jobItems" id="list">
 
-    <div id="titleJob">Title of Job: {{jobItem.title}}</div>
+    <div id="titleJob">{{'adminjobpostings.title' | translate}}: {{jobItem.title}}</div>
     <br>
-    <div id="company">Company name:{{jobItem.company}} {{jobItem.location}}</div>
+    <div id="company">{{'adminjobpostings.company'| translate}}: {{jobItem.company}}</div>
     <br>
-    <div id="description">Job Description: {{jobItem.description}}</div>
+    <div id="location">{{'adminjobpostings.location'| translate}}: {{jobItem.location}}</div>
     <br>
-    <div id="position">Position: {{jobItem.position}}</div>
+    <div id="description">{{'adminjobpostings.description'| translate}}: {{jobItem.description}}</div>
     <br>
-    <div id="pensum"> Pensum: {{jobItem.pensum}}</div>
+    <div id="position">{{'adminjobpostings.position'| translate}}: {{jobItem.position}}</div>
     <br>
-    <div id = "date">Published: {{jobItem.createdAt | date}}</div>
+    <div id="pensum"> {{'adminjobpostings.pensum'| translate}}: {{jobItem.pensum}}</div>
+    <br>
+    <div id = "date">{{'adminjobpostings.createdat'| translate}}: {{jobItem.createdAt | date}}</div>
     <br>
 
     <div id="checkbox">
-      <label for="box">Approved by Admin: {{jobItem.approved}} </label>
+      <label for="box">{{'adminjobpostings.approved'| translate}}: </label>
       <input type="checkbox" id="box" [(ngModel)]="jobItem.approved"  data-md-icheck (change)="setApproved(jobItem.id)">
     </div>
 
-    <button (click)="delete(jobItem)">Delete</button>
-    <button (click)="edit(jobItem)">Edit</button>
+    <button (click)="delete(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
+    <button (click)="edit(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
 
     <hr>
     <br>

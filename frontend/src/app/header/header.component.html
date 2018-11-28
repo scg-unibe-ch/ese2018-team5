@@ -1,13 +1,16 @@
 <header>
   <br>
-
-  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
+  <div>
+    <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
+    <button class="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
+  </div>
+  <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
   <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
  <!--<img src="img_Logo.jpg" alt="logo of company">-->
 
- <!-- <button id="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>-->
 
-  <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
+
+
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
   <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
 

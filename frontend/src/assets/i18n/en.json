@@ -1,14 +1,15 @@
 {
 	"adminjobpostings": {
-		"approvedByAdmin": "Approved by Admin",
-		"companyName": "Company Name",
+		"approved": "Approved by Admin",
+		"company": "Company Name",
+		"createdat": "Created at",
 		"delete": "Delete",
+		"description": "Description",
 		"edit": "Edit",
-		"jobDescription": "Job description",
+		"location": "Location",
 		"pensum": "Pensum",
 		"position": "Position",
-		"published": "Published",
-		"titleOfJob": "Title of Job"
+		"title": "Title"
 	},
 	"header": {
 		"login": "Login",
@@ -57,7 +58,7 @@
 		"position": "Position"
 	},
 	"login": {
-		"login": "",
+		"login": "Login",
 		"password": "Password",
 		"register": "Register",
 		"username": "Username"
@@ -74,8 +75,15 @@
 	},
 	"searchform": {
 		"category": "Category",
+		"categoryPlaceholder": "Choose a category",
 		"location": "Location",
-		"title": "Title"
+		"locationPlaceholder": "Choose a location",
+		"pensum": "Pensum",
+		"pensumPlaceholder": "Choose pensum",
+		"position": "Position",
+		"positionPlaceholder": "Enter position",
+		"title": "Title",
+		"titlePlaceholder": "Enter title"
 	},
 	"userlist": {
 		"deleteUser": "Delete user",
