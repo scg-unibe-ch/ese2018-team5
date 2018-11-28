@@ -37,6 +37,7 @@ export class JobPostingListComponent implements OnInit {
     this.jobService.deleteJob(jobItem).subscribe(() => {
       this.fetchData();
     })
+
   }
 
 }

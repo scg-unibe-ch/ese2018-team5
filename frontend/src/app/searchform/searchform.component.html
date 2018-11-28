@@ -34,6 +34,7 @@
             id="JobPensum"
             [(ngModel)]="jobItemFilter.pensum"
             name="pensum">
+            <option [value]=""></option>
             <option hidden value="" disabled selected>{{'searchform.pensumPlaceholder' | translate}}</option>
             <option *ngFor="let n of pensumCount" [value]="n">{{n}}</option>
           </select>
@@ -44,6 +45,7 @@
           <select class="form-control" id="category"
           [(ngModel)]="jobItemFilter.category" name="category"
           #category>
+            <option [value]=""></option>
             <option hidden value="" disabled selected>{{'searchform.categoryPlaceholder' | translate}}</option>
             <option *ngFor="let category of categories" [value]="category">{{category}}</option>
           </select>
@@ -54,6 +56,7 @@
           <select class="form-control" id="location"
           [(ngModel)]="jobItemFilter.location" name="location"
           #location>
+            <option [value]=""></option>
             <option hidden value="" disabled selected>{{'searchform.locationPlaceholder' | translate}}</option>
           <option *ngFor="let location of locations" [value]="location">{{location}}</option>
           </select>

@@ -28,6 +28,7 @@
 		"title": "Titel"
 	},
 	"jobPostingsEdit": {
+		"cancel": "Abbrechen",
 		"company": "Firma",
 		"description": "Beschreibung",
 		"editYourJobPostings": "Jobs bearbeiten",
@@ -46,7 +47,8 @@
 		"jobDescription": "Beschreibung",
 		"pensum": "Pensum",
 		"position": "Position",
-		"published": "Veröffentlicht"
+		"published": "Veröffentlicht",
+		"title": "Titel"
 	},
 	"jobs": {
 		"category": "Kategorie",

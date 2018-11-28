@@ -28,6 +28,7 @@
 		"title": "Titre"
 	},
 	"jobPostingsEdit": {
+		"cancel": "Résilier",
 		"company": "Compagnie",
 		"description": "Description",
 		"editYourJobPostings": "Révise des offre d'emploi",
@@ -46,7 +47,8 @@
 		"jobDescription": "Profil du poste",
 		"pensum": "Tâche",
 		"position": "Position",
-		"published": "Publié"
+		"published": "Publié",
+		"title": "Titre"
 	},
 	"jobs": {
 		"category": "Catégorie",

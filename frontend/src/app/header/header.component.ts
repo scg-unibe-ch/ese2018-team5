@@ -10,7 +10,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
  // language switcher based on: https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular6-app-with-ngx-translate
-
+  //TODO: Button to change set preferred language
   languages: string[] = ['en', 'de', 'fr'];
 
   @Input()

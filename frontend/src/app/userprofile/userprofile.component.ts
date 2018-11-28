@@ -4,6 +4,8 @@ import {UserService} from '../shared/service/user.service';
 import {User} from '../shared/models/user';
 import {AuthService} from '../auth.service';
 import {AlertService} from '../shared/service/alert.service';
+import {JobService} from '../shared/service/job.service';
+import {JobItem} from '../jobs/job-item';
 
 @Component({
   selector: 'app-userprofile',
@@ -16,6 +18,7 @@ export class UserprofileComponent implements OnInit {
   changePassword = false;
   pw: string;
   confirmPW: string;
+  jobItems: JobItem[]=[];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +26,7 @@ export class UserprofileComponent implements OnInit {
     private userService:UserService,
     private auth: AuthService,
     private alertService: AlertService,
+    private jobService: JobService
   ) { }
 
   ngOnInit() {
@@ -57,6 +61,9 @@ export class UserprofileComponent implements OnInit {
   }
 
   onDelete() {
+    this.jobService.getJobForUser(this.user.id.toString()).subscribe(
+      result => {this.jobItems = result.JobItem});
+   //TODO: Delete all Jobpostings of user
     this.userService.deleteUser(this.user).subscribe();
     this.alertService.success('Your Profile has been deleted', true);
     this.auth.logout();

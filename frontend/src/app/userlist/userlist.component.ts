@@ -29,6 +29,7 @@ export class UserlistComponent implements OnInit {
   }
 
   editUser(user:User) {
+    console.log(user);
     this.userService.updateUser(user).subscribe(
       data => {
         this.alertService.success('User edited', false);
@@ -39,7 +40,7 @@ export class UserlistComponent implements OnInit {
     );
     this.selectedUser = null;
   }
-
+ //TODO: password
   deleteUser(user:User) {
     this.userService.deleteUser(user).subscribe(() =>
 

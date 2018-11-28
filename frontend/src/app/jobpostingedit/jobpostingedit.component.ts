@@ -12,7 +12,6 @@ import {Router} from '@angular/router';
 export class JobpostingeditComponent implements OnInit {
 
   selectedJobItem: JobItem;
-
   submitted = false;
 
   constructor(private data:JobItemDataService, private jobService:JobService, private router:Router) { }
@@ -27,9 +26,15 @@ export class JobpostingeditComponent implements OnInit {
     if(localStorage.getItem('role') === '4') {
       this.router.navigate(['/admin/jobpostings']);
     } else {
-      this.router.navigate(['/jobpostingList'])
+      this.router.navigate(['/jobpostingList']);
     }
-
   }
 
+  cancel() {
+    if(localStorage.getItem('role') === '4') {
+      this.router.navigate(['/admin/jobpostings']);
+    } else {
+      this.router.navigate(['/jobpostingList']);
+    }
+  }
 }

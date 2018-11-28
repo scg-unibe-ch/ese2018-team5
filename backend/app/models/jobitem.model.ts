@@ -1,4 +1,4 @@
-import {Table, Column, Model, Default, DataType, CreatedAt, ForeignKey} from 'sequelize-typescript';
+import {Table, Column, Model, Default, DataType, CreatedAt, ForeignKey, UpdatedAt} from 'sequelize-typescript';
 import {User} from './user.model';
 
 
@@ -17,6 +17,10 @@ export class JobItem extends Model<JobItem> {
   @CreatedAt
   @Column({type: DataType.DATE})
   createdAt!: Date;
+
+  @UpdatedAt
+  @Column({type: DataType.DATE})
+  updatedAT!: Date;
 
   @Column
   description!: string;
