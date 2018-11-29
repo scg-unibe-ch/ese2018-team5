@@ -9,7 +9,7 @@
           id="JobTitle"
           name="jobTitle"
           aria-describedby="Job Title"
-          placeholder="Enter Job Title"
+          placeholder="{{'jobs.enterJobTitle' | translate}}"
           [(ngModel)]="formJob.title">
       </div>
 
@@ -21,7 +21,7 @@
           class="form-control"
           id="Company"
           aria-describedby="Company Name"
-          placeholder="Enter Company Name"
+          placeholder="{{'jobs.enterCompanyName' | translate}}"
           [(ngModel)]="formJob.company"
         >
 
@@ -42,13 +42,13 @@
       <div class="form-group">
         <label for="Description">{{'jobs.description' | translate}}</label>
         <input name="Description" type="text" class="form-control" id="Description" aria-describedby="Description"
-               placeholder="Enter Description"  [(ngModel)]="formJob.description">
+               placeholder="{{'jobs.enterDescription' | translate}}"  [(ngModel)]="formJob.description">
       </div>
 
       <div class="form-group">
         <label for="Position">{{'jobs.position' | translate}}</label>
         <input name="Position" type="text" class="form-control" id="Position" aria-describedby="Position"
-               placeholder="Enter Position" [(ngModel)]="formJob.position">
+               placeholder="{{'jobs.enterJobTitle' | translate}}" [(ngModel)]="formJob.position">
       </div>
 
 

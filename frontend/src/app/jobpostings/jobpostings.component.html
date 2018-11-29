@@ -9,13 +9,13 @@
             <label for="selectCategory"></label>
             <select class="selectCategory" id="selectCategory"
                     [(ngModel)]="s.category" name="category">
-              <option hidden value="" disabled selected>Choose a Category..</option>
+              <option hidden value="" disabled selected>{{'jobpostings.chooseACategory' | translate}}</option>
               <option *ngFor="let category of categories" [value]="category">{{category}}</option>
             </select>
 
             <select class="selectLocation" id="selectLocation"
                     [(ngModel)]="s.location" name="location">
-              <option hidden value="" disabled selected>Choose a Location..</option>
+              <option hidden value="" disabled selected>{{'jobpostings.chooseALocation' | translate}}</option>
               <option *ngFor="let location of locations" [value]="location">{{location}}</option>
             </select>
             <button id="searchBtn" type="submit"> <i class="fa fa-search"> </i></button>

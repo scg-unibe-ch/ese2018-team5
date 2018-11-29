@@ -2,7 +2,7 @@
   <h1>Your Profile</h1>
 
   <button id="changePassword" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
-  <button id="delete" type="submit" (click)="onDelete()" class="btn">Delete Profile</button>
+  <button id="delete" type="submit" (click)="onDelete()" class="btn">{{'userprofile.deleteProfile' | translate}}</button>
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
     <div class="form-group">
