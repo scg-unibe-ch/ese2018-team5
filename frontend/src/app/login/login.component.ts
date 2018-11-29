@@ -16,13 +16,13 @@ export class LoginComponent implements OnInit {
   public password: string;
   public error: string;
 
+  user = {id: null, username: '', password: '', email:'', role: null};
+
   constructor(
     private auth: AuthService,
     private router: Router,
     private alertService: AlertService,
-    private userService: UserService,
-    private dataService: JobItemDataService
-
+    private userService: UserService
   ) { }
 
   public submit() {
@@ -38,12 +38,8 @@ export class LoginComponent implements OnInit {
       );
   }
 
-  setCurrentUser() {
-
-  }
-
   ngOnInit(): void {
-    const user = new User(null,'admin1','admin1','admin', 4)
+    const user = new User(null,'admin1','admin1','admin', 4, 'en')
     this.userService.createUser(user).subscribe();
   }
 }

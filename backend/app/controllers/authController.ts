@@ -40,17 +40,16 @@ AuthController.authenticateUser = async (req:any, res:any) => {
       } else {
         user.comparePassword(password, function(err:any, isMatch:any) {
           if(isMatch && !err) {
+            user.password = '';
             let token = jwt.sign(
-              { username: user.username },
+              { user },
               config.keys.secret,
               { expiresIn: '30m' }
             );
 
             res.json({
               success: true,
-              token: token,
-              role: user.role,
-              userId: user.id
+              token: token
             });
           } else {
             res.status(404).json({ message: 'Login failed!' });

@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {TranslateService} from '@ngx-translate/core';
+import {User} from '../shared/models/user';
 
 @Component({
   selector: 'app-header',
@@ -13,8 +14,8 @@ export class HeaderComponent implements OnInit {
   //TODO: Button to change set preferred language
   languages: string[] = ['en', 'de', 'fr'];
 
-  @Input()
-  id:string;
+  id: number;
+  user: User;
 
   constructor(
     public auth:AuthService,
@@ -24,7 +25,9 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.id = this.getId();
+    this.user = this.auth.getCurrentUser();
+    this.useLanguage(this.user.language);
+    console.log(this.user);
   }
 
 
@@ -33,10 +36,10 @@ export class HeaderComponent implements OnInit {
   }
 
   getId() {
-    if(this.id == null || this.id != localStorage.getItem('userId')) {
-      this.id = localStorage.getItem('userId')
+    if(this.auth.isAuthenticated && this.user == undefined) {
+      this.user = this.auth.getCurrentUser();
     }
-    return this.id;
+    return this.user.id;
   }
 
   logout() {

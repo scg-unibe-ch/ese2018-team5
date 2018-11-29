@@ -32,8 +32,12 @@ export class UserService {
   patchUserPassword(user:User, password:string):Observable<any> {
     this.update.emit(true);
     this.pw.password = password
-    console.log(this.pw);
-    return this.httpClient.patch(this._apiUrl+user.id, this.pw)
+    return this.httpClient.patch(this._apiUrl+ 'pw/' + user.id, this.pw)
+  }
+
+  patchUserWithOutPW(user:User):Observable<any> {
+    this.update.emit(true);
+    return this.httpClient.patch(this._apiUrl+user.id, user)
   }
 
   getUser(id:string):Observable<any> {

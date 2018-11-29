@@ -13,6 +13,20 @@ UserController.patchUser = async(req: Request, res: Response) => {
     res.status(404).json({message:'not found'});
     return;
   };
+  let pw = instance.password;
+  instance.fromSimplification(req.body);
+  instance.password = pw;
+  res.statusCode = 200;
+  res.send(instance.toSimplification());
+}
+
+UserController.patchPW = async(req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  const instance = await User.findById(id);
+  if(instance == null) {
+    res.status(404).json({message:'not found'});
+    return;
+  };
   let pw = req.body.password;
   instance.password = pw;
   await instance.save();

@@ -11,23 +11,28 @@ import {AuthService} from '../../auth.service';
 export class JobService {
   private _apiUrl= 'http://localhost:3000/jobitem/';
 
+  constructor(
+    private httpClient: HttpClient,
+    private auth: AuthService
+  ) { }
 
-  constructor(private httpClient: HttpClient) { }
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  getJobForUser(id: string): Observable<any> {
+  getJobForUser(user:User): Observable<any> {
 
    let token = localStorage.getItem('access_token');
-   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id,  {
+   const httpOptions = {
       headers: new HttpHeaders({
-        'Authorization': 'bearer' + token
+        'Content-Type': 'application/json',
+        'Authorisation': token
       })
-    });
+    }
+   return this.httpClient.get('http://localhost:3000/api/JobPostingList/'+user.id, httpOptions);
   }
 
   createJob(jobItem:JobItem): Observable<any> {
     this.update.emit(true); //Emits update to signal other components that the list has been locally updated and new items should be fetched from backend
-    jobItem.userId = +localStorage.getItem('userId');
+    jobItem.userId = this.auth.getCurrentUser().id;
     return this.httpClient.post(this._apiUrl, jobItem);
   }
 
