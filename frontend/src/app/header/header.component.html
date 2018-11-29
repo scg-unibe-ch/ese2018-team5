@@ -1,8 +1,13 @@
 <header>
   <br>
   <div>
-    <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
-    <button class="btnRegister" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
+   <!-- <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button> -->
+
+
+
+
+
+    <button class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
   </div>
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
   <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
@@ -27,6 +32,5 @@
   </button>
 
 
-  <h1 [routerLink]="['/dashboard']"> {{'header.title' | translate}} </h1>
+
 </header>
-<hr>
