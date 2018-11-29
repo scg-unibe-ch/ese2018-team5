@@ -10,12 +10,11 @@ UserController.patchUser = async(req: Request, res: Response) => {
   const id = parseInt(req.params.id);
   const instance = await User.findById(id);
   if(instance == null) {
-    res.status(404).json({message:'not found'});
+    res.status(404).json({message: 'not found'});
     return;
   };
-  let pw = instance.password;
+  req.body.password = instance.password;
   instance.fromSimplification(req.body);
-  instance.password = pw;
   res.statusCode = 200;
   res.send(instance.toSimplification());
 }

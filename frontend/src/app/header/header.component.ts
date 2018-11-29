@@ -32,6 +32,8 @@ export class HeaderComponent implements OnInit {
 
 
   useLanguage(language: string) {
+    this.user.language = language;
+    this.auth.setCurrentUser(this.user);
     this.translate.use(language)
   }
 
