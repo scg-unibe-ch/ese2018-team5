@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from '../shared/service/user.service';
 import {User} from '../shared/models/user';
@@ -6,19 +6,20 @@ import {AuthService} from '../auth.service';
 import {AlertService} from '../shared/service/alert.service';
 import {JobService} from '../shared/service/job.service';
 import {JobItem} from '../jobs/job-item';
+import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 
 @Component({
   selector: 'app-userprofile',
   templateUrl: './userprofile.component.html',
   styleUrls: ['./userprofile.component.css']
 })
-export class UserprofileComponent implements OnInit {
+export class UserprofileComponent implements OnInit   {
 
   user:User;
   changePassword = false;
   pw: string;
   confirmPW: string;
-  jobItems: JobItem[]=[];
+
 
   constructor(
     private route: ActivatedRoute,
@@ -26,13 +27,11 @@ export class UserprofileComponent implements OnInit {
     private userService:UserService,
     private auth: AuthService,
     private alertService: AlertService,
-    private jobService: JobService
+    private dataService: JobItemDataService
   ) { }
 
   ngOnInit() {
-    if(this.auth.isAuthenticated() || this.user == null) {
-      this.getUser();
-    }
+    this.getUser();
   }
 
   getUser() {
@@ -40,6 +39,7 @@ export class UserprofileComponent implements OnInit {
     this.userService.getUser(id).subscribe( user => {
       this.user = user;
     })
+    this.dataService.changeUser(this.user);
   }
 
   changePW() {
@@ -61,12 +61,12 @@ export class UserprofileComponent implements OnInit {
   }
 
   onDelete() {
-    this.jobService.getJobForUser(this.user.id.toString()).subscribe(
-      result => {this.jobItems = result.JobItem});
    //TODO: Delete all Jobpostings of user
     this.userService.deleteUser(this.user).subscribe();
     this.alertService.success('Your Profile has been deleted', true);
     this.auth.logout();
   }
+
+
 
 }

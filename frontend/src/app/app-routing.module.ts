@@ -18,6 +18,7 @@ import {AdminjobpostingsComponent} from './adminjobpostings/adminjobpostings.com
 
 
 const routes: Routes = [
+
   {
     path: 'search',
     component: SearchformComponent
@@ -30,7 +31,11 @@ const routes: Routes = [
 
   {
     path: 'jobform',
-    component: JobsComponent
+    component: JobsComponent,
+    canActivate: [RoleGuard],
+    data: {
+      expectedRole: '2'
+    }
   },
 
   {

@@ -6,6 +6,19 @@ import {JobItem} from '../models/jobitem.model';
 
 const UserController = {} as any;
 
+UserController.patchUser = async(req: Request, res: Response) => {
+  const id = parseInt(req.params.id);
+  const instance = await User.findById(id);
+  if(instance == null) {
+    res.status(404).json({message:'not found'});
+    return;
+  };
+  let pw = req.body.password;
+  instance.password = pw;
+  await instance.save();
+  res.status(200).send(instance.toSimplification());
+};
+
 UserController.getUsers = async (req: Request, res: Response) => {
 
   const instances = await User.findAll();

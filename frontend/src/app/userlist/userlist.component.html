@@ -13,18 +13,21 @@
     <div><span>Id: </span>{{selectedUser.id}}</div>
     <div>
       <label>{{'userlist.userName'| translate}}</label>
-        <input [(ngModel)]="selectedUser.username">
+        <input
+          type="text"
+          [(ngModel)]="selectedUser.username">
 
       <label>{{'userlist.email'| translate}}</label>
         <input [(ngModel)]="selectedUser.email">
 
-      <label>{{'userlist.password'| translate}}</label>
-        <input [(ngModel)]="selectedUser.password">
+<!--      <label>{{'userlist.password'| translate}}</label>
+        <input [value]="" [(ngModel)]="selectedUser.password">-->
 
       <label type="number">{{'userlist.role'| translate}}</label>
         <input [(ngModel)]="selectedUser.role">
 
       <button (click)="editUser(selectedUser)">{{'userlist.save'| translate}}</button>
+      <button (click)="changePW()">{{'userlist.changePW' | translate}}</button>
       <button (click)="deleteUser(selectedUser)">{{'userlist.deleteUser'| translate}}</button>
     </div>
   </div>

@@ -28,8 +28,24 @@ export class UserlistComponent implements OnInit {
     this.selectedUser = user;
   }
 
+  editUserPW(user:User) {
+    this.userService.patchUserPassword(user, user.password).subscribe(
+      data => {
+        this.alertService.success('User edited', false);
+      },
+      error => {
+        this.alertService.error('Could not edit user', false);
+      }
+    );
+    this.selectedUser = null;
+    this.fetchData();
+  }
+
+  changePW() {
+
+  }
+
   editUser(user:User) {
-    console.log(user);
     this.userService.updateUser(user).subscribe(
       data => {
         this.alertService.success('User edited', false);
@@ -39,7 +55,9 @@ export class UserlistComponent implements OnInit {
       }
     );
     this.selectedUser = null;
+    this.fetchData();
   }
+
  //TODO: password
   deleteUser(user:User) {
     this.userService.deleteUser(user).subscribe(() =>

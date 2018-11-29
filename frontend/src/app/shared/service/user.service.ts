@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user';
 import {Observable} from 'rxjs';
@@ -9,18 +9,31 @@ import {Observable} from 'rxjs';
 export class UserService {
 
   private _apiUrl= 'http://localhost:3000/api/';
+  public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
   constructor(private httpClient: HttpClient) { }
 
+  pw = {password: ''};
+
   createUser(user:User):Observable<any> {
+    this.update.emit(true);
     return this.httpClient.post(this._apiUrl + 'signup', user);
   }
 
   deleteUser(user:User):Observable<any> {
+    this.update.emit(true);
     return this.httpClient.delete(this._apiUrl + user.id);
   }
 
   updateUser(user:User):Observable<any> {
+    this.update.emit(true);
     return this.httpClient.put(this._apiUrl + user.id, user);
+  }
+
+  patchUserPassword(user:User, password:string):Observable<any> {
+    this.update.emit(true);
+    this.pw.password = password
+    console.log(this.pw);
+    return this.httpClient.patch(this._apiUrl+user.id, this.pw)
   }
 
   getUser(id:string):Observable<any> {

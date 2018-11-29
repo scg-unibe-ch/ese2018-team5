@@ -48,6 +48,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { AdminjobpostingsComponent } from './adminjobpostings/adminjobpostings.component';
 import { JobpostingdetailComponent } from './jobpostingdetail/jobpostingdetail.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -76,7 +77,8 @@ export function tokenGetter() {
     UserlistComponent,
     UserprofileComponent,
     AdminjobpostingsComponent,
-    JobpostingdetailComponent
+    JobpostingdetailComponent,
+    ChangepasswordComponent
 
   ],
   imports: [

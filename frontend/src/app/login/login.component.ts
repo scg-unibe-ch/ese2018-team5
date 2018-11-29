@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import {AlertService} from '../shared/service/alert.service';
 import {User} from '../shared/models/user';
 import {UserService} from '../shared/service/user.service';
+import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 
 @Component({
   selector: 'app-login',
@@ -19,18 +20,26 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private router: Router,
     private alertService: AlertService,
-    private userService: UserService
+    private userService: UserService,
+    private dataService: JobItemDataService
+
   ) { }
 
   public submit() {
     this.auth.login(this.username, this.password)
       .pipe(first())
       .subscribe(
-        result => this.router.navigate(['/dashboard']),
+        result => {
+          this.router.navigate(['/dashboard'])
+        },
         err => {
           this.alertService.error('Could not authenticate');
         }
       );
+  }
+
+  setCurrentUser() {
+
   }
 
   ngOnInit(): void {

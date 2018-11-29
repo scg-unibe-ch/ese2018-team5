@@ -29,8 +29,14 @@
 
       <div class="form-group">
         <label for="Pensum">{{'jobs.pensum' | translate}}</label>
-        <input type="number" class="form-control" id="Pensum" aria-describedby="Pensum" placeholder="Enter Pensum" name="Pensum"
-               [(ngModel)]="formJob.pensum">
+        <select
+          class="form-control"
+          id="Pensum"
+          [(ngModel)]="formJob.pensum"
+          name="Pensum">
+          <!--<option hidden value="" disabled selected></option>-->
+          <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -62,7 +68,7 @@
         </select>
       </div>
 
-    <button type="button" class="btn btn-dark" (click)="onSaveData(formJob)">Submit</button>
+    <button type="submit" class="btn btn-dark" (click)="onSaveData(formJob)">Submit</button>
 
     </form>
   </div>

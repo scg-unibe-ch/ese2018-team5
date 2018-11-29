@@ -16,6 +16,8 @@ export class JobsComponent implements OnInit {
 
   categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
   locations: string [] = ['Bern', 'Solothurn', 'Zürich', 'Genf'];
+  pensumCount: number[] = [10,20,30,40,50,60,70,80,90,100];
+
 
   constructor(
     private jobService: JobService,

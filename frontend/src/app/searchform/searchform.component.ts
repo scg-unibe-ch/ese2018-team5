@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
 import {JobService} from '../shared/service/job.service';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
-import {MatSliderModule} from '@angular/material';
 
 @Component({
   selector: 'app-searchform',

@@ -25,7 +25,10 @@ export class JobPostingListComponent implements OnInit {
     const id = localStorage.getItem('userId');
     this.jobService.getJobForUser(id).subscribe(result => {
       this.userItems = result.JobItems;
-    })
+    }),
+      error => {
+      this.userItems.length = 0;
+      }
   }
 
   edit(jobItem:JobItem) {
