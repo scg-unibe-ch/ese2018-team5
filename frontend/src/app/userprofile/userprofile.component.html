@@ -1,4 +1,4 @@
-<div class="container" *ngIf="changePassword == false">
+<div class="container" *ngIf="!changePassword">
   <h1>Your Profile</h1>
 
   <button id="changePassword" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
@@ -20,31 +20,22 @@
       [(ngModel)]="user.email" name="email">
     </div>
 
+    <div class="form-group">
+      <select [(ngModel)]="user.language" id="language" name="language">
+        <option [value]="lang" *ngFor="let lang of languages">
+          {{lang}}
+        </option>
+      </select>
+    </div>
+
     <button id="submit" type="submit" class="btn btn-success">{{'userprofile.save' | translate}}</button>
 
   </form>
-</div>
 
+</div>
 <div *ngIf="changePassword">
-
-  <app-changepassword>[user]="user"</app-changepassword>
-<!--  <form (ngSubmit)="changePW()" #loginForm="ngForm">
-
-    <div class="form-group">
-      <label>{{'userprofile.password' | translate}}</label>
-      <input type="text" class="form-control" id="pw"
-             required minlength="6"
-             [(ngModel)]="pw" name="pw">
-    </div>
-
-    <div class="form-group">
-      <label>{{'userprofile.confirmPassword' | translate}}</label>
-      <input type="text" class="form-control" id="confirmPW"
-             required minlength="6"
-             [(ngModel)]="confirmPW" name="confirmPW">
-    </div>
-
-    <button type="submit" [disabled]="!loginForm.form.valid">{{'userprofile.changePassword' | translate}}</button>
-  </form>-->
+  <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>
 </div>
+
+
 

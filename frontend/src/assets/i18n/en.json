@@ -11,6 +11,11 @@
 		"position": "Position",
 		"title": "Title"
 	},
+	"changepassword": {
+		"confirmPW": "",
+		"password": "",
+		"submit": ""
+	},
 	"header": {
 		"login": "Login",
 		"logout": "Logout",
@@ -105,9 +110,7 @@
 	},
 	"userprofile": {
 		"changePassword": "Change password",
-		"confirmPassword": "confirm password",
 		"deleteProfile": "Delete profile",
-		"password": "Password",
 		"save": "Save",
 		"username": "Username"
 	}

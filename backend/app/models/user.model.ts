@@ -20,6 +20,10 @@ export class User extends Model<User> {
   @Column
   role!: number;
 
+  @Default('en')
+  @Column
+  language!:string;
+
   @BeforeUpdate
   @BeforeCreate
   static hashPassword(instance:User) {
@@ -35,7 +39,8 @@ export class User extends Model<User> {
       'username': this.username,
       'password': this.password,
       'email': this.email,
-      'role':this.role
+      'role':this.role,
+      'language':this.language
     };
   }
 
@@ -44,6 +49,7 @@ export class User extends Model<User> {
     this.password = simplification['password'];
     this.email = simplification['email'];
     this.role = simplification['role'];
+    this.language = simplification['language'];
   }
 
   comparePassword(password: any, callback:any) {

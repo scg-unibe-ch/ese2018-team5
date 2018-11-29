@@ -3,6 +3,7 @@ import {JobService} from '../shared/service/job.service';
 import {JobItem} from '../jobs/job-item';
 import {Router} from '@angular/router';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-jobpostinglist',
@@ -15,15 +16,20 @@ export class JobPostingListComponent implements OnInit {
   jobItem: JobItem = new JobItem();
   userItems: JobItem[] = [];
 
-  constructor(private jobService:JobService, private router:Router, private data:JobItemDataService) { }
+  constructor(
+    private jobService:JobService,
+    private router:Router,
+    private data:JobItemDataService,
+    private auth:AuthService
+  ) { }
 
   ngOnInit() {
     this.fetchData();
   }
 
   fetchData() {
-    const id = localStorage.getItem('userId');
-    this.jobService.getJobForUser(id).subscribe(result => {
+    const user = this.auth.getCurrentUser();
+    this.jobService.getJobForUser(user).subscribe(result => {
       this.userItems = result.JobItems;
     }),
       error => {

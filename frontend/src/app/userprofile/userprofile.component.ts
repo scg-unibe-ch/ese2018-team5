@@ -1,12 +1,10 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from '../shared/service/user.service';
 import {User} from '../shared/models/user';
 import {AuthService} from '../auth.service';
 import {AlertService} from '../shared/service/alert.service';
-import {JobService} from '../shared/service/job.service';
-import {JobItem} from '../jobs/job-item';
-import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-userprofile',
@@ -17,9 +15,8 @@ export class UserprofileComponent implements OnInit   {
 
   user:User;
   changePassword = false;
-  pw: string;
-  confirmPW: string;
 
+  languages: string[] = ['en', 'de', 'fr'];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,36 +24,30 @@ export class UserprofileComponent implements OnInit   {
     private userService:UserService,
     private auth: AuthService,
     private alertService: AlertService,
-    private dataService: JobItemDataService
+    public translate:TranslateService
   ) { }
 
   ngOnInit() {
     this.getUser();
+    this.translate.use(this.user.language)
   }
 
   getUser() {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.userService.getUser(id).subscribe( user => {
-      this.user = user;
-    })
-    this.dataService.changeUser(this.user);
+    this.user = this.auth.getCurrentUser();
   }
 
-  changePW() {
-    if(this.pw == this.confirmPW) {
-      this.user.password = this.pw;
-      this.userService.updateUser(this.user).subscribe();
-      this.alertService.success('Password changed', false);
-      this.changePassword = false;
-      this.pw = null;
-      this.confirmPW = null;
-    } else {
-      this.alertService.error('Passwords do not match', false)
-    }
+  setLanguage() {
+    this.translate.use(this.user.language);
+    this.auth.setCurrentUser(this.user);
+  }
+
+  swapPW(p) {
+    this.changePassword = p;
   }
 
   onSubmit() {
-    this.userService.updateUser(this.user).subscribe();
+    this.setLanguage();
+    this.userService.patchUserWithOutPW(this.user).subscribe();
     this.alertService.success('Profile saved', false);
   }
 

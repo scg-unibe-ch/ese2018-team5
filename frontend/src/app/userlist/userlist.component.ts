@@ -42,11 +42,12 @@ export class UserlistComponent implements OnInit {
   }
 
   changePW() {
-
+    //TODO: ADD changepassword component here
   }
 
   editUser(user:User) {
-    this.userService.updateUser(user).subscribe(
+    console.log(user);
+    this.userService.patchUserWithOutPW(user).subscribe(
       data => {
         this.alertService.success('User edited', false);
       },

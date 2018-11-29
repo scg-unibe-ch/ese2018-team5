@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {UserService} from './shared/service/user.service';
 import {User} from './shared/models/user';
 import {AlertService} from './shared/service/alert.service';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Injectable({
@@ -20,25 +21,37 @@ export class AuthService {
     private http: HttpClient,
     private jwtHelper: JwtHelperService,
     private router:Router,
-    private alertService:AlertService) { }
+    private alertService:AlertService,
+    public translate:TranslateService
+  ) { }
 
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{token: string, role: string, userId: string}>('http://localhost:3000/api/authenticate', {username: username, password: password})
+  login(username: string, password:string): Observable<boolean> {
+    return this.http.post<{token: string, role: string, userId: string}>('http://localhost:3000/api/authenticate',
+      {username: username, password: password})
       .pipe(
         map(result => {
           localStorage.setItem('access_token', result.token);
-          localStorage.setItem('role', result.role);
-          localStorage.setItem('userId', result.userId);
+          this.user = this.jwtHelper.decodeToken(result.token).user;
+          localStorage.setItem('user', JSON.stringify(this.user));
+          this.translate.use(this.user.language);
           return true;
         })
       );
+
   }
 
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem('user'));
+  }
+
+  setCurrentUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
 
   logout() {
     localStorage.removeItem('access_token');
-    localStorage.removeItem('role');
-    localStorage.removeItem('userId');
+    localStorage.removeItem('user');
+    this.user = null;
     this.alertService.success('Successfully logged out', true);
     this.router.navigate(['/login']);
   }
@@ -48,11 +61,11 @@ export class AuthService {
   }
 
   public isAdmin(): boolean {
-    return (localStorage.getItem('role') == '4');
+    return (this.getCurrentUser().role == 4);
   }
 
   public isUser(): boolean {
-    return (localStorage.getItem('role') == '2');
+    return (this.getCurrentUser().role == 2);
   }
 
   public isAuthenticated(): boolean {
