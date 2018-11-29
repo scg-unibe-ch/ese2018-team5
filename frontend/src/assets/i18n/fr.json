@@ -50,10 +50,17 @@
 		"published": "Publié",
 		"title": "Titre"
 	},
+	"jobpostings": {
+		"chooseACategory": "Choisir une catégorie",
+		"chooseALocation": "Choisir une région"
+	},
 	"jobs": {
 		"category": "Catégorie",
 		"company": "Compagnie",
 		"description": "Profil du poste",
+		"enterCompanyName": "Entrer nom de compaigne",
+		"enterDescription": "Entrer description de l'emploi",
+		"enterJobTitle": "Entre titre de l'emploi",
 		"jobTitle": "Titre d'emploi",
 		"location": "Localisation",
 		"pensum": "Tâche",
@@ -88,6 +95,7 @@
 		"titlePlaceholder": "entrer un titre"
 	},
 	"userlist": {
+		"changePW": "",
 		"deleteUser": "Rayer utilisateur",
 		"email": "Email",
 		"password": "Mot de passe",
@@ -98,6 +106,7 @@
 	"userprofile": {
 		"changePassword": "Changer mot de passe",
 		"confirmPassword": "Confirmer mot de passe",
+		"deleteProfile": "Rayer utilisateur",
 		"password": "Mot de passe",
 		"save": "Sauvegarder",
 		"username": "Utilisateur"

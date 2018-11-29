@@ -50,10 +50,17 @@
 		"published": "Published",
 		"title": "Title"
 	},
+	"jobpostings": {
+		"chooseACategory": "Choose a category",
+		"chooseALocation": "Choose a location"
+	},
 	"jobs": {
 		"category": "Category",
 		"company": "Company",
 		"description": "Description",
+		"enterCompanyName": "Enter company name",
+		"enterDescription": "Enter description",
+		"enterJobTitle": "Enter job title",
 		"jobTitle": "Job title",
 		"location": "Location",
 		"pensum": "Pensum",
@@ -88,6 +95,7 @@
 		"titlePlaceholder": "Enter title"
 	},
 	"userlist": {
+		"changePW": "",
 		"deleteUser": "Delete user",
 		"email": "Email",
 		"password": "Password",
@@ -98,6 +106,7 @@
 	"userprofile": {
 		"changePassword": "Change password",
 		"confirmPassword": "confirm password",
+		"deleteProfile": "Delete profile",
 		"password": "Password",
 		"save": "Save",
 		"username": "Username"

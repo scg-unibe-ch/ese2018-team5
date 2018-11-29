@@ -50,10 +50,17 @@
 		"published": "Veröffentlicht",
 		"title": "Titel"
 	},
+	"jobpostings": {
+		"chooseACategory": "Categorie wählen ",
+		"chooseALocation": "Region wählen"
+	},
 	"jobs": {
 		"category": "Kategorie",
 		"company": "Firma",
 		"description": "Beschreibung",
+		"enterCompanyName": "Firmenname",
+		"enterDescription": "Jobbeschreibung",
+		"enterJobTitle": "Jobtitel",
 		"jobTitle": "Jobtitle",
 		"location": "Ort",
 		"pensum": "Pensum",
@@ -88,6 +95,7 @@
 		"titlePlaceholder": "Bitte gib einen Titel ein"
 	},
 	"userlist": {
+		"changePW": "",
 		"deleteUser": "Benutzer löschen",
 		"email": "Email",
 		"password": "Passwort",
@@ -98,6 +106,7 @@
 	"userprofile": {
 		"changePassword": "Passwort ändern",
 		"confirmPassword": "Passwort bestätigen",
+		"deleteProfile": "Profil löschen",
 		"password": "Passwort",
 		"save": "Speichern",
 		"username": "Benutzername"
