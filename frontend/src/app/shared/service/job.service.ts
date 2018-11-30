@@ -23,8 +23,7 @@ export class JobService {
    let token = localStorage.getItem('access_token');
    const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorisation': token
+        'Authorisation': 'bearer' + token
       })
     }
    return this.httpClient.get('http://localhost:3000/api/JobPostingList/'+user.id, httpOptions);

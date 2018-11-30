@@ -1,7 +1,7 @@
 <header>
   <br>
   <div>
-   <!-- <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button> -->
+  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
 
 
 
@@ -12,9 +12,6 @@
   <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
   <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
  <!--<img src="img_Logo.jpg" alt="logo of company">-->
-
-
-
 
   <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
   <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
@@ -32,11 +29,6 @@
   </button>
 
 
-
-<<<<<<< HEAD
-=======
-
-
   <h1 [routerLink]="['/dashboard']"> {{'header.title' | translate}} </h1>
->>>>>>> b60b699b75fb47108c98b5df49e293f14fcffdc1
+
 </header>

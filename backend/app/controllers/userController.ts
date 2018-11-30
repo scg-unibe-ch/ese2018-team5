@@ -1,8 +1,9 @@
 import {JobItem} from '../models/jobitem.model';
 const sequelize = require('../services/database');
 
+
 const UserController = {
-  index: function (req:any, res:any) {
+  userJobItems: function (req:any, res:any) {
     sequelize.sync().then(function() {
       JobItem.findAll({
         where: {

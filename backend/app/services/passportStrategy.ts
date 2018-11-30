@@ -18,9 +18,10 @@ function hookJWTStrategy(passport:any) {
     User.findOne({where: {username: JWTPayload.user.username}})
       .then(function(user:any) {
         if(!user) {
-          callback(null, false, {message: 'Incorrect username'});
+          callback(null, false, {message: 'Incorrect id'});
           return;
         }
+
         callback(null, user);
       });
   }));
