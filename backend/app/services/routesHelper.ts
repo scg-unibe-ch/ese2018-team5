@@ -9,3 +9,14 @@ exports.allowOnly = function(accessLevel:any, callback:any) {
   }
   return checkUserRole;
 };
+
+exports.allowed = function(accessLevel:any, callback:any) {
+  function checkUserId(req: any, res: any) {
+    if(!(req.user.id && req.params.id ) && !(accessLevel & req.user.role)) {
+      res.sendStatus(403);
+      return;
+    }
+    callback(req, res);
+  }
+  return checkUserId;
+}

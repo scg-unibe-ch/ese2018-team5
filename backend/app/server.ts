@@ -14,14 +14,15 @@ cors({credentials: true, origin: true})
 // create a new express application instance
 const app: express.Application = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(cors())
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(cors());
 
 app.use(morgan('dev'));
 
 app.use(passport.initialize());
 
-const hookJWTStrategy = require('./services/passportStrategy')
+const hookJWTStrategy = require('./services/passportStrategy');
 hookJWTStrategy(passport);
 
 // define the port the express app will listen on

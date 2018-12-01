@@ -12,10 +12,9 @@ function hookJWTStrategy(passport:any) {
 
   options.secretOrKey = config1.keys.secret;
   options.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
-  options.ignoreExpiration = false;
 
   passport.use(new JWTStrategy(options, function(JWTPayload:any, callback:any) {
-    User.findOne({where: {username: JWTPayload.user.username}})
+    User.findOne({where: {id: JWTPayload.user.id}})
       .then(function(user:any) {
         if(!user) {
           callback(null, false, {message: 'Incorrect id'});

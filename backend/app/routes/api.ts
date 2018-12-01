@@ -3,6 +3,7 @@
 const userController = require('../controllers/userController');
 const adminController = require('../controllers/AdminController');
 const allowOnly = require('../services/routesHelper').allowOnly;
+const allowed = require('../services/routesHelper').allowed;
 const config1 = require('../config');
 const UserControllerDelete = require('../controllers/user.controller').deleteUser;
 const UserControllerUpdate = require('../controllers/user.controller').updateUser;
@@ -28,7 +29,7 @@ const APIRoutes = function(passport:any) {
   router.get('', UserControllerGetAll);
 
   router.get('/JobPostingList/:id', passport.authenticate('jwt', { session: false }),
-    allowOnly(config1.accessLevels.user, userController.userJobItems));
+    allowed(config1.accessLevels.user, userController.userJobItems));
 
   router.get('/profile/:id', passport.authenticate('jwt', {session: false}),
     allowOnly(config1.accessLevels.user, adminController.index))

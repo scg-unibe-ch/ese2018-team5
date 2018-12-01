@@ -42,7 +42,7 @@ AuthController.authenticateUser = async (req:any, res:any) => {
           if(isMatch && !err) {
             user.password = '';
             let token = jwt.sign(
-              { user },
+              {user},
               config.keys.secret,
               { expiresIn: '30m' }
             );

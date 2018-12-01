@@ -23,10 +23,12 @@ export class JobService {
    let token = localStorage.getItem('access_token');
    const httpOptions = {
       headers: new HttpHeaders({
-        'Authorisation': 'bearer' + token
+        'Content-Type': 'application/json',
+        'Authorisation': 'JWT ' + token
       })
-    }
-   return this.httpClient.get('http://localhost:3000/api/JobPostingList/'+user.id, httpOptions);
+    };
+   console.log('JWT ' + token);
+   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + user.id, httpOptions);
   }
 
   createJob(jobItem:JobItem): Observable<any> {
