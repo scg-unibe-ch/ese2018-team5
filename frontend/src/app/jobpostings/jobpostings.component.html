@@ -2,7 +2,7 @@
 
 <div>
   <div class="background">
-    <h1 class="openJobs">Open Job offers: {{jobItems.length}} </h1>
+    <h1 class="openJobs">Your career starts today!</h1>
     <form (ngSubmit)="submit(s)" #searchForm="ngForm">
         <div class="searchForm">
           <div class="form-group">
@@ -25,10 +25,22 @@
 
   </div>
 
-  <div class="createJob">
-  <h3 class="titleEmployer">Are you a employer and want to post job offers?</h3>
-  <img class="resize" src="../../assets/employer.png"/>
-  <p> Create and post your job offers to be seen by a wide range of students </p>
+  <div class="employerInfo">
+  <h2 class="titleEmployer">Are you a employer?</h2>
+  <p> Are sou searching for young and ambitious workers for your company? With our website it
+    was never this easy to register and post job offers to a wide range of students.
+<br>
+    Register now in under 5 minutes and post your first job offer today!
+    <br>
+    What are you waiting for?
+
+
+
+
+  </p>
+
+
+
   <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register now</button>
   </div>
 </div>
@@ -36,41 +48,4 @@
 
 
 <hr>
-
-
-<!--
-<div class ="row>">
-  <div class ="col-md-12">
- <ul class="pseude" >
-  <li *ngFor="let jobItem of jobItems" id="list">
-    <div *ngIf="auth.isAdmin() || jobItem.approved == true" >
-      <div id="titleJob">Title of Job: {{jobItem.title}}</div>
-      <br>
-      <div id="company">Company name:{{jobItem.company}} {{jobItem.location}}</div>
-      <br>
-      <div id="description">Job Description: {{jobItem.description}}</div>
-      <br>
-      <div id="position">Position: {{jobItem.position}}</div>
-      <br>
-      <div id="pensum"> Pensum: {{jobItem.pensum}}</div>
-      <br>
-      <div id = "date">Published: {{jobItem.createdAt | date}}</div>
-      <br>
-
-      <div id="checkbox">
-        <label for="box">Approved by Admin: {{jobItem.approved}} </label>
-        <input type="checkbox" id="box" [(ngModel)]="jobItem.approved"  data-md-icheck (change)="setApproved(jobItem.id)"
-               *ngIf="auth.isAdmin() && auth.loggedIn"/>
-      </div>
-
-      <hr>
-      <br>
-    </div>
-  </li>
- </ul>
-     </div>
-  </div>
--->
-
-
 

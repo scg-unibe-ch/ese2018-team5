@@ -1,0 +1,7 @@
+<div class="createJob">
+  <h3 class="titleEmployer">Are you a employer and want to post job offers?</h3>
+  <img class="resize" src="../../assets/employer.png"/>
+  <p> Create and post your job offers to be seen by a wide range of students </p>
+  <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register now</button>
+  <button class="registerBtn" mat-button  [routerLink]="['/register']">Register now</button>
+</div>

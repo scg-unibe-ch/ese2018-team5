@@ -1,35 +1,55 @@
 <header>
   <br>
   <div>
-  <button class="btnLogin" mat-button  [routerLink]="['/login']" *ngIf="!auth.loggedIn">{{'header.login' | translate}}</button>
 
-
-
-
-
-    <button class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
-  </div>
-  <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
-  <button id="profile" mat-button routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
- <!--<img src="img_Logo.jpg" alt="logo of company">-->
-
-  <button id="submitJob" mat-button  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
-  <button id="jobposts" mat-button [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
-
-
-  <button id="admin" mat-button [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage {{'header.users' | translate}}</button>
-  <button id="admin1" mat-button [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageJobpostings' | translate}}</button>
-  <div id="language">
-    <button
-      id="languageBTN"
-      #langSelect *ngFor="let lang of languages"
-      (click)="useLanguage(langSelect.value)"
-      [value]="lang"
-      [class.active]="lang === translate.currentLang"
+    <div id="languageDIV">
+      <button id="languageBTN"
+        #langSelect *ngFor="let lang of languages"
+        (click)="useLanguage(langSelect.value)"
+        [value]="lang"
+        [class.active]="lang === translate.currentLang"
       >{{lang}}
-    </button>
+      </button>
+    </div>
+
+
+<div class="mainNav">
+
+
+  <div class="logoutBTNS">
+
+    <img class="resize" src="../../assets/ProfileIMG.png"/>
+    <button id="yourProfile" [routerLink]="['/register']" *ngIf="!auth.loggedIn">Your Profile</button>
+    <button id="registerBtn " class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
+    <!-- When logged in -->
+    <button id="btnLogout" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
+  </div>
+      <div class="topNav">
+
+        <img class="Logo" src="../../assets/LogoCopy.jpg"/>
+        <button class= "navigation"   [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Home</button>
+        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">About us</button>
+        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Tips</button>
+        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Service</button>
+
+
+        <!-- When logged in as USER -->
+      <button class="navigation" routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
+      <button class="navigation"  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
+      <button class="navigation" [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
+
+      <!-- when loggin in as ADMIN -->
+      <button class="navigation"  [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage {{'header.users' | translate}}</button>
+      <button class="navigation" [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageJobpostings' | translate}}</button>
+
+
+    </div>
+
+
+  </div>
   </div>
 
-  <h1 [routerLink]="['/dashboard']"> {{'header.title' | translate}} </h1>
 <mat-divider class="divider"></mat-divider>
 </header>
+
+
