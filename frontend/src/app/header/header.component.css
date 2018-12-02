@@ -6,6 +6,11 @@ header {
   height: 13vh; /*1vh = 1% of screen size */
 }
 
+.divider {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
 h1{
     font-size: 40px;
     font-style:italic;
@@ -15,6 +20,19 @@ h1{
 }
 
 #language {
+  color: black;
+  float: left;
+  margin-right: 10px;
+  margin-left: 15px;
+  font-weight:200;
+  background:none;
+  border:none;
+  padding:0;
+  cursor: pointer;
+
+}
+
+#languageBTN {
   color: black;
   float: left;
   margin-right: 10px;

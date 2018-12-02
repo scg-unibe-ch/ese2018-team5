@@ -12,9 +12,9 @@
 		"title": "Titel"
 	},
 	"changepassword": {
-		"confirmPW": "",
-		"password": "",
-		"submit": ""
+		"confirmPW": "Passwort bestätigen",
+		"password": "Passwort",
+		"submit": "Senden"
 	},
 	"header": {
 		"login": "Login",
@@ -100,7 +100,7 @@
 		"titlePlaceholder": "Bitte gib einen Titel ein"
 	},
 	"userlist": {
-		"changePW": "",
+		"changePW": "Passwort ändern",
 		"deleteUser": "Benutzer löschen",
 		"email": "Email",
 		"role": "Rolle",
@@ -110,6 +110,7 @@
 	"userprofile": {
 		"changePassword": "Passwort ändern",
 		"deleteProfile": "Profil löschen",
+		"email": "Email",
 		"save": "Speichern",
 		"username": "Benutzername"
 	}

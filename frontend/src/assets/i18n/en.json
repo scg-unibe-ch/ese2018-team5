@@ -110,6 +110,7 @@
 	"userprofile": {
 		"changePassword": "Change password",
 		"deleteProfile": "Delete profile",
+		"email": "Email",
 		"save": "Save",
 		"username": "Username"
 	}

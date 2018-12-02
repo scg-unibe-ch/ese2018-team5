@@ -12,9 +12,9 @@
 		"title": "Titre"
 	},
 	"changepassword": {
-		"confirmPW": "",
-		"password": "",
-		"submit": ""
+		"confirmPW": "Confirmez le mot de passe",
+		"password": "Mot de passe",
+		"submit": "Soumettre"
 	},
 	"header": {
 		"login": "Login",
@@ -100,7 +100,7 @@
 		"titlePlaceholder": "entrer un titre"
 	},
 	"userlist": {
-		"changePW": "",
+		"changePW": "Changer let mot de passe",
 		"deleteUser": "Rayer utilisateur",
 		"email": "Email",
 		"role": "Rôle",
@@ -110,6 +110,7 @@
 	"userprofile": {
 		"changePassword": "Changer mot de passe",
 		"deleteProfile": "Rayer utilisateur",
+		"email": "Email",
 		"save": "Sauvegarder",
 		"username": "Utilisateur"
 	}

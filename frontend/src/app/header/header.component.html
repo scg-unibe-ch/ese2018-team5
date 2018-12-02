@@ -19,16 +19,17 @@
 
   <button id="admin" mat-button [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">Manage {{'header.users' | translate}}</button>
   <button id="admin1" mat-button [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageJobpostings' | translate}}</button>
-  <button
-    id="language"
-    #langSelect *ngFor="let lang of languages"
-    (click)="useLanguage(langSelect.value)"
-    [value]="lang"
-    [class.active]="lang === translate.currentLang"
-    >{{lang}}
-  </button>
-
+  <div id="language">
+    <button
+      id="languageBTN"
+      #langSelect *ngFor="let lang of languages"
+      (click)="useLanguage(langSelect.value)"
+      [value]="lang"
+      [class.active]="lang === translate.currentLang"
+      >{{lang}}
+    </button>
+  </div>
 
   <h1 [routerLink]="['/dashboard']"> {{'header.title' | translate}} </h1>
-
+<mat-divider class="divider"></mat-divider>
 </header>

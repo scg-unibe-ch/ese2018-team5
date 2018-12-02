@@ -1,39 +1,43 @@
 <div class="container" *ngIf="!changePassword">
   <h1>Your Profile</h1>
 
-  <button id="changePassword" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
-  <button id="delete" type="submit" (click)="onDelete()" class="btn">{{'userprofile.deleteProfile' | translate}}</button>
+  <button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
+  <button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 
     <div class="form-group">
-      <label for="username">{{'userprofile.username' | translate}}</label>
-      <input type="text" class="form-control" id="username"
-      required
-      [(ngModel)]="user.username" name="username">
+      <!--<label for="username"></label>-->
+      <mat-form-field>
+        <input matInput type="text" id="username" placeholder="{{'userprofile.username' | translate}}"
+        required
+        [(ngModel)]="user.username" name="username">
+      </mat-form-field>
     </div>
 
 
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" email="true" class="form-control" id="email"
-      required
-      [(ngModel)]="user.email" name="email">
+      <!--<label for="email">Email</label>-->
+      <mat-form-field>
+        <input matInput type="email" email="true" id="email" placeholder="{{'userprofile.email' | translate}}"
+        required
+        [(ngModel)]="user.email" name="email">
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <select [(ngModel)]="user.language" id="language" name="language">
-        <option [value]="lang" *ngFor="let lang of languages">
+      <mat-select [(ngModel)]="user.language" id="language" name="language">
+        <mat-option [value]="lang" *ngFor="let lang of languages">
           {{lang}}
-        </option>
-      </select>
+        </mat-option>
+      </mat-select>
     </div>
 
-    <button id="submit" type="submit" class="btn btn-success">{{'userprofile.save' | translate}}</button>
+    <button mat-raised-button color="primary" type="submit">{{'userprofile.save' | translate}}</button>
 
   </form>
 
 </div>
-<div *ngIf="changePassword">
+<div class="container" *ngIf="changePassword">
   <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>
 </div>
 
