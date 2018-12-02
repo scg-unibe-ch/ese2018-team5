@@ -45,6 +45,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
+    this.translate.use('en');
     this.auth.logout()
   }
 }

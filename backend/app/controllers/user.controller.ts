@@ -1,8 +1,7 @@
-import {Router, Request, Response} from 'express';
+import {Request, Response} from 'express';
 import {User} from '../models/user.model';
-import {JobItem} from '../models/jobitem.model';
+const bcrypt = require('bcrypt');
 
-// const router: Router = Router();
 
 const UserController = {} as any;
 
@@ -12,12 +11,19 @@ UserController.patchUser = async(req: Request, res: Response) => {
   if(instance == null) {
     res.status(404).json({message: 'not found'});
     return;
-  };
-  req.body.password = instance.password;
-  instance.fromSimplification(req.body);
+  }
+  console.log(req.body);
+  //instance.fromSimplification(req.body);
+  await instance.update(
+    {
+      username:req.body.username,
+      email:req.body.email,
+      role: req.body.role,
+      language: req.body.language,
+    });
   res.statusCode = 200;
   res.send(instance.toSimplification());
-}
+};
 
 UserController.patchPW = async(req: Request, res: Response) => {
   const id = parseInt(req.params.id);
@@ -25,10 +31,12 @@ UserController.patchPW = async(req: Request, res: Response) => {
   if(instance == null) {
     res.status(404).json({message:'not found'});
     return;
-  };
-  let pw = req.body.password;
-  instance.password = pw;
-  await instance.save();
+  }
+  bcrypt.hash(req.body.password,10, async function(err:any, password:any) {
+    await instance.update({password: password});
+  });
+
+
   res.status(200).send(instance.toSimplification());
 };
 

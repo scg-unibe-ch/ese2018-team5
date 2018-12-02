@@ -10,7 +10,7 @@ const UserControllerUpdate = require('../controllers/user.controller').updateUse
 const UserControllerGet = require('../controllers/user.controller').getUser;
 const UserControllerGetAll = require('../controllers/user.controller').getUsers;
 const UserControllerPatchPW = require('../controllers/user.controller').patchPW;
-const UserControllerPatch = require('../controllers/user.controller').patchUser;
+const UserControllerPatchUser = require('../controllers/user.controller').patchUser;
 
 const router = require('express').Router();
 let authController = require('../controllers/authController');
@@ -24,8 +24,8 @@ const APIRoutes = function(passport:any) {
   router.put('/:id', UserControllerUpdate);
   router.delete('/:id', UserControllerDelete);
   router.get('/:id', UserControllerGet);
-  router.patch('/pw/:id', UserControllerPatchPW); //password
-  router.patch('/:id', UserControllerPatch);
+  router.put('/pw/:id', UserControllerPatchPW); //password
+  router.patch('/:id', UserControllerPatchUser);
   router.get('', UserControllerGetAll);
 
   router.get('/JobPostingList/:id', passport.authenticate('jwt', { session: false }),

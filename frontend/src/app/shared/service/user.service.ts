@@ -31,12 +31,13 @@ export class UserService {
 
   patchUserPassword(user:User, password:string):Observable<any> {
     this.update.emit(true);
-    this.pw.password = password
-    return this.httpClient.patch(this._apiUrl+ 'pw/' + user.id, this.pw)
+    this.pw.password = password;
+    return this.httpClient.put(this._apiUrl+ 'pw/' + user.id, this.pw)
   }
 
   patchUserWithOutPW(user:User):Observable<any> {
     this.update.emit(true);
+    delete user['password'];
     return this.httpClient.patch(this._apiUrl+user.id, user)
   }
 

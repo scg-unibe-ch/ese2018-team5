@@ -34,35 +34,18 @@ export class UserlistComponent implements OnInit {
     this.changePassword = p;
   }
 
-  editUserPW(user:User) {
-    this.userService.patchUserPassword(user, user.password).subscribe(
-      data => {
-        this.alertService.success('User edited', false);
-      },
-      error => {
-        this.alertService.error('Could not edit user', false);
-      }
-    );
-    this.selectedUser = null;
-    this.fetchData();
-  }
-
-  changePW() {
-    //TODO: ADD changepassword component here
-  }
-
   editUser(user:User) {
-    console.log(user);
     this.userService.patchUserWithOutPW(user).subscribe(
       data => {
+        this.fetchData();
         this.alertService.success('User edited', false);
       },
       error => {
         this.alertService.error('Could not edit user', false);
       }
     );
+
     this.selectedUser = null;
-    this.fetchData();
   }
 
  //TODO: password

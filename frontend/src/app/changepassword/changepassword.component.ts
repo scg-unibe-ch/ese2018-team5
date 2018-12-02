@@ -30,8 +30,7 @@ export class ChangepasswordComponent implements OnInit {
 
   onSubmit() {
     if(this.password == this.confirmPW) {
-      this.user.password = this.password;
-      this.userService.updateUser(this.user).subscribe();
+      this.userService.patchUserPassword(this.user, this.password).subscribe();
       this.alertService.success('Password changed', false);
       this.password = null;
       this.confirmPW = null;
