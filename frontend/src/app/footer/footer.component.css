@@ -1,0 +1,32 @@
+.footerTitle{
+
+  text-align: center;
+  color: black;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  font-size: 25px;
+
+  padding-top: 2.5%;
+}
+
+.footer{
+  margin-top: 40%;
+  width: 100%;
+  height: auto;
+  background-color: whitesmoke;
+}
+
+.socialBtn{
+  color: darkred;
+  font-weight: lighter;
+  display:inline-block;
+  font-family:"Open Sans";
+  font-size:15px;
+  background:none;
+  border:none;
+  margin:0;
+  padding:30px;
+  cursor: pointer;
+
+
+}
