@@ -22,7 +22,8 @@ import {
   MatCheckboxModule,
   MatIcon, MatIconModule,
   MatInputModule,
-  MatListModule
+  MatListModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { JobListComponent } from './jobs/job-list/job-list.component';
@@ -96,6 +97,7 @@ export function tokenGetter() {
     MatCardModule,
     MatIconModule,
     AppRoutingModule,
+    MatGridListModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

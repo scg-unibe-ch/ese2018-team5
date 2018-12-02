@@ -12,6 +12,8 @@ export class UserlistComponent implements OnInit {
 
   users: User[] = [];
   selectedUser: User;
+  changePassword = false;
+
   constructor(private userService: UserService, private alertService:AlertService) { }
 
   ngOnInit() {
@@ -26,6 +28,10 @@ export class UserlistComponent implements OnInit {
 
   onSelect(user:User):void {
     this.selectedUser = user;
+  }
+
+  swapPW(p) {
+    this.changePassword = p;
   }
 
   editUserPW(user:User) {

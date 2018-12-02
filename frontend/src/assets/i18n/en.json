@@ -12,9 +12,9 @@
 		"title": "Title"
 	},
 	"changepassword": {
-		"confirmPW": "",
-		"password": "",
-		"submit": ""
+		"confirmPW": "Confirm your Password",
+		"password": "Enter Password",
+		"submit": "Submit"
 	},
 	"header": {
 		"login": "Login",
@@ -100,10 +100,9 @@
 		"titlePlaceholder": "Enter title"
 	},
 	"userlist": {
-		"changePW": "",
+		"changePW": "Change Password",
 		"deleteUser": "Delete user",
 		"email": "Email",
-		"password": "Password",
 		"role": "Role",
 		"save": "Save",
 		"userName": "Username"

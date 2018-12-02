@@ -1,34 +1,62 @@
-<h2>All Users</h2>
-<ul class="users">
-  <li *ngFor="let user of users"
-  [class.selected]="user === selectedUser"
-  (click)="onSelect(user)">
-    <span class="badge">{{user.id}}</span> {{user.username}}
-  </li>
-</ul>
+<div *ngIf="!changePassword">
+  <h2>All Users</h2>
 
-<div class="row" id="popup" *ngIf="selectedUser">
-  <div class="col-md-12">
-    <h2>{{selectedUser.username}}</h2>
-    <div><span>Id: </span>{{selectedUser.id}}</div>
-    <div>
-      <label>{{'userlist.userName'| translate}}</label>
-        <input
-          type="text"
-          [(ngModel)]="selectedUser.username">
+  <ul class="users">
+    <li *ngFor="let user of users"
+    [class.selected]="user === selectedUser"
+    (click)="onSelect(user)">
+      <span class="badge">{{user.id}}</span> {{user.username}}
+    </li>
+  </ul>
 
-      <label>{{'userlist.email'| translate}}</label>
-        <input [(ngModel)]="selectedUser.email">
+  <div class="row" id="popup" *ngIf="selectedUser">
+    <mat-card>
+    <div class="col-md-12">
+      <form #userForm="ngForm">
+      <mat-card-title>{{selectedUser.username}}</mat-card-title>
+        <mat-card-subtitle>Id: {{selectedUser.id}}</mat-card-subtitle>
+        <mat-card-content>
 
-<!--      <label>{{'userlist.password'| translate}}</label>
-        <input [value]="" [(ngModel)]="selectedUser.password">-->
 
-      <label type="number">{{'userlist.role'| translate}}</label>
-        <input [(ngModel)]="selectedUser.role">
+          <div>
+            <div class="form-group" >
+              <mat-form-field>
+              <input matInput placeholder="{{'userlist.userName'| translate}}"
+                type="text" id="username" name="username"
+                [(ngModel)]="selectedUser.username">
+              </mat-form-field>
+            </div>
 
-      <button (click)="editUser(selectedUser)">{{'userlist.save'| translate}}</button>
-      <button (click)="changePW()">{{'userlist.changePW' | translate}}</button>
-      <button (click)="deleteUser(selectedUser)">{{'userlist.deleteUser'| translate}}</button>
+            <div class="form-group">
+              <mat-form-field>
+                <input matInput placeholder="{{'userlist.email'| translate}}"
+                  type="email" id="email" name="email"
+                  [(ngModel)]="selectedUser.email">
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field>
+                <input matInput placeholder="{{'userlist.role'| translate}}"
+                  type="number" id="id" name="id"
+                  [(ngModel)]="selectedUser.role">
+              </mat-form-field>
+            </div>
+
+            <mat-card-actions>
+              <button mat-button="btn" type="button" (click)="editUser(selectedUser)">{{'userlist.save'| translate}}</button>
+              <button mat-button="btn" type="button" (click)="changePassword = true" >{{'userlist.changePW' | translate}}</button>
+              <button mat-button type="button" (click)="deleteUser(selectedUser)">{{'userlist.deleteUser'| translate}}</button>
+            </mat-card-actions>
+          </div>
+          </mat-card-content>
+      </form>
     </div>
+    </mat-card>
   </div>
+</div>
+
+
+<div *ngIf="changePassword && selectedUser">
+    <app-changepassword [user]="selectedUser" (changePW)="swapPW($event)"></app-changepassword>
 </div>
