@@ -1,5 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
+import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
+import {JobService} from '../shared/service/job.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-jobpostingdetail',
@@ -8,11 +11,26 @@ import {JobItem} from '../jobs/job-item';
 })
 export class JobpostingdetailComponent implements OnInit {
 
-  @Input() jobItem: JobItem;
+  @Input() jobItems: JobItem[];
+  @Input() admin = false;
 
-  constructor() { }
+  @Output() edit = new EventEmitter();
+  @Output() delete = new EventEmitter();
+  constructor(
+    private router:Router,
+    private data: JobItemDataService,
+    private jobService:JobService
+  ) { }
 
   ngOnInit() {
+  }
+
+  editJob(jobItem:JobItem) {
+    this.edit.emit(jobItem);
+  }
+
+  deleteJob(jobItem:JobItem) {
+    this.delete.emit(jobItem);
   }
 
 }

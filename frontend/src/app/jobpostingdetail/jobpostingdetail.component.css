@@ -1,0 +1,18 @@
+.list {
+
+}
+
+.card {
+  max-width: 400px;
+  height: 300px;
+  overflow-wrap: break-word;
+}
+
+.container {
+  min-height: 100%;
+  width: 100%
+}
+
+.checkbox {
+
+}

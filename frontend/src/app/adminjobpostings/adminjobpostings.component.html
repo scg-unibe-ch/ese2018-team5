@@ -1,3 +1,4 @@
+<!--
 <ul>
 <li *ngFor="let jobItem of jobItems" id="list">
 
@@ -29,3 +30,6 @@
 
 </li>
 </ul>
+-->
+
+<app-jobpostingdetail [jobItems]="jobItems" [admin]="true" (edit)="edit($event)" (delete)="delete($event)"></app-jobpostingdetail>

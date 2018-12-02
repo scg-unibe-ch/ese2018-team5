@@ -1,4 +1,42 @@
 <div>
+  <div>
+    <mat-grid-list class="list" cols="5" rowHeight="300px" gutterSize="15px">
+      <mat-grid-tile *ngFor="let jobItem of jobItems">
+        <mat-card class="card" *ngIf="jobItem.approved">
+          <mat-card-header>
+            <mat-card-title>{{jobItem.title}}</mat-card-title>
+            <mat-card-subtitle>{{jobItem.createdAt | date}}</mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>{{jobItem.category}}</p>
+            <p>{{jobItem.position}}</p>
+            <p>{{jobItem.location}}</p>
+            <p>{{jobItem.pensum}}</p>
+            <p class="description" type="text">{{jobItem.description}}</p>
+          </mat-card-content>
+
+
+          <mat-card-actions *ngIf="admin">
+            <button mat-button type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
+            <button mat-button (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
+          </mat-card-actions>
+
+          <mat-card-actions *ngIf="!admin">
+            <button mat-raised-button>HI</button>
+          </mat-card-actions>
+
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+
+
+
+
+<!--<div>
   <hr>
   <div id="titleJob">Title of Job: {{jobItem.title}}</div>
   <br>
@@ -13,5 +51,4 @@
   <div id = "date">{{'jobPostingsList.published'| translate}} {{jobItem.createdAt | date}}</div>
   <br>
   <div id="approved">{{'jobPostingsList.approvedByAdmin'| translate}} {{jobItem.approved}}</div>
-
-</div>
+</div>-->

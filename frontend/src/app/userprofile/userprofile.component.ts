@@ -37,6 +37,7 @@ export class UserprofileComponent implements OnInit   {
   }
 
   setLanguage() {
+    //TODO: CHECK IF LANGUAGE IS SAVED PROPERLY
     this.translate.use(this.user.language);
     this.auth.setCurrentUser(this.user);
   }

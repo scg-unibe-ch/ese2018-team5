@@ -1,76 +1,72 @@
-<div>
-  <div class = "row">
-    <div class="col-md-3">
-      <form name="search" id="search">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <form name="search" id="search" mat-row="">
 
         <div class="form-group">
-          <label for="JobTitle">{{'searchform.title' | translate}}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="JobTitle"
-            name="jobTitle"
-            aria-describedby="Job Title"
-            placeholder="{{'searchform.titlePlaceholder' | translate}}"
-            [(ngModel)]="jobItemFilter.title">
+          <!--<label for="JobTitle">{{'searchform.title' | translate}}</label>-->
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              id="JobTitle"
+              name="jobTitle"
+              aria-describedby="Job Title"
+              placeholder="{{'searchform.titlePlaceholder' | translate}}"
+              [(ngModel)]="jobItemFilter.title">
+          </mat-form-field>
         </div>
 
         <div class="form-group">
-          <label for="JobPosition">{{'searchform.position' | translate}}</label>
-          <input
-            type="text"
-            class="form-control"
-            id="JobPosition"
-            name="jobPosition"
-            aria-describedby="Job Position"
-            placeholder="{{'searchform.positionPlaceholder' | translate}}"
-            [(ngModel)]="jobItemFilter.position">
+          <!--<label for="JobPosition">{{'searchform.position' | translate}}</label>-->
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              id="JobPosition"
+              name="jobPosition"
+              aria-describedby="Job Position"
+              placeholder="{{'searchform.positionPlaceholder' | translate}}"
+              [(ngModel)]="jobItemFilter.position">
+          </mat-form-field>
         </div>
 
         <div class="form-group">
-          <label for="JobPensum">{{'searchform.pensum' | translate}}</label>
-          <select
-            class="form-control"
-            id="JobPensum"
-            [(ngModel)]="jobItemFilter.pensum"
-            name="pensum">
-            <option [value]=""></option>
-            <option hidden value="" disabled selected>{{'searchform.pensumPlaceholder' | translate}}</option>
-            <option *ngFor="let n of pensumCount" [value]="n">{{n}}</option>
-          </select>
+          <!--<label for="JobPensum">{{'searchform.pensum' | translate}}</label>-->
+          <mat-form-field>
+            <mat-select placeholder="{{'searchform.pensumPlaceholder' | translate}}" name="job" id="JobPensum" [(ngModel)]="jobItemFilter.pensum">
+              <mat-option></mat-option>
+              <mat-option *ngFor="let n of pensumCount" [value]="n">{{n}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div class="form-group">
-          <label for="category">{{'searchform.category' | translate}}</label>
-          <select class="form-control" id="category"
-          [(ngModel)]="jobItemFilter.category" name="category"
-          #category>
-            <option [value]=""></option>
-            <option hidden value="" disabled selected>{{'searchform.categoryPlaceholder' | translate}}</option>
-            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-          </select>
+          <!--<label for="category">{{'searchform.category' | translate}}</label>-->
+          <mat-form-field>
+            <mat-select id="category" [(ngModel)]="jobItemFilter.category" name="category" placeholder="{{'searchform.categoryPlaceholder' | translate}}">
+              <mat-option></mat-option>
+              <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div class="form-group">
-          <label for="location">{{'searchform.location' | translate}}</label>
-          <select class="form-control" id="location"
-          [(ngModel)]="jobItemFilter.location" name="location"
-          #location>
-            <option [value]=""></option>
-            <option hidden value="" disabled selected>{{'searchform.locationPlaceholder' | translate}}</option>
-          <option *ngFor="let location of locations" [value]="location">{{location}}</option>
-          </select>
+          <!--<label for="location">{{'searchform.location' | translate}}</label>-->
+          <mat-form-field>
+            <mat-select id="location" placeholder="{{'searchform.locationPlaceholder' | translate}}"
+            [(ngModel)]="jobItemFilter.location" name="location"
+            #location>
+              <mat-option></mat-option>
+              <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-
       </form>
     </div>
   </div>
 </div>
 
 <div>
-  <ul style="list-style-type:none" class="jobitems" >
-    <li *ngFor="let jobItem of jobItems | filterBy: jobItemFilter" id="list">
-     <app-jobpostingdetail [jobItem]="jobItem"> </app-jobpostingdetail>
-    </li>
-  </ul>
+      <app-jobpostingdetail [jobItems]="jobItems | filterBy: jobItemFilter" [admin]="false"> </app-jobpostingdetail>
 </div>
