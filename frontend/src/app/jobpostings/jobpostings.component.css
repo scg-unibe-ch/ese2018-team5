@@ -53,27 +53,38 @@ img.resize {
   font-family: "Open Sans";
   font-size: 20px;
   text-align: center;
+  margin-top: 5%;
+margin-right: 25%;
+  margin-left: 25%;
 }
 
 .titleEmployer {
-font-family: Verdana;
+font-family: "Open Sans";
   font-weight: 200;
+}
+
+.titleCareer {
+  font-family: "Open Sans";
+  font-weight: 200;
+  text-align: center;
+  margin-top: 2.5%;
 }
 
 
 .registerBtn {
   background-color:#196c8a;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+
   border-radius:10px;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  font-family:Verdana;
-  font-size:16px;
-  padding:5px 30px;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:10px 100px;
   text-decoration:none;
   text-shadow:0px 0px 0px #3d768a;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
 
@@ -84,7 +95,12 @@ font-family: Verdana;
 
 }
 
+.divide{
 
+  width: 5%;
+  border-color: #000000;
+
+}
 
 .background{
 
@@ -131,7 +147,6 @@ color: white;
   background: #0c4973;
   color: lightgrey;
 }
-
 
 
 

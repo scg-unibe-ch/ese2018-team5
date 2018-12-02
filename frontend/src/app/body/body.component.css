@@ -1,31 +1,31 @@
-img.resize {
-  max-height: 10%;
-  max-width: 10%;
+#left {
+
+
+  height: 500px;
+  width: 35%;
+  background-image: url("room.jpg");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  display: inline-block;
+  margin-right: 50px;
+
+
 }
 
-.createJob{
+#right{
+
+  height: 500px;
+  width: 35%;
+  background-image: url("cv.jpg");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+#careerDIV{
   text-align: center;
-  padding-top: 300px;
-}
-
-
-.titleEmployer {
-  font-family: Verdana;
-  font-weight: 200;
-}
-
-
-.registerBtn {
-  background-color:#196c8a;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
-  border-radius:10px;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Verdana;
-  font-size:16px;
-  padding:5px 30px;
-  text-decoration:none;
-  text-shadow:0px 0px 0px #3d768a;
+  margin-top: 5%;
 }
