@@ -161,21 +161,17 @@ button.social-signin.google {
   background: #DD4B39;
 }
 
-.register {
+.backgroundImg {
 
-  background-color:#196c8a;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
-  border-radius:10px;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Verdana;
-  font-size:16px;
-  padding:5px 30px;
-  text-decoration:none;
-  text-shadow:0px 0px 0px #3d768a;
+  display: table;
+  margin: 0 auto;
 
+  height: 700px;
+  width: 600px;
+  background-image: url("registerBg.png");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
 }
 
 alreadyLogin{
@@ -183,3 +179,86 @@ alreadyLogin{
   text-underline: #32508E;
 }
 
+
+#usernameLabel{
+   margin-left: 10%;
+   font-size: 15px;
+   color: lightgrey;
+ }
+
+#passwordLabel{
+  margin-left: 10%;
+  font-size: 15px;
+  color: lightgrey;
+}
+
+#emailLabel{
+  margin-left: 10%;
+  font-size: 15px;
+  color: lightgrey;
+}
+
+
+#username{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+}
+
+
+#password{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+}
+
+#email{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+}
+
+
+
+.registerButton{
+
+  margin-top: 10%;
+  background-color: #2363e5;
+  border-radius:50px;
+  width: 80%;
+  height: 50px;
+  margin-left: 10%;
+  border-color: transparent;
+  cursor:pointer;
+  color:white;
+  font-family:"Open Sans";
+  font-size:20px;
+  text-align: center;
+}
+
+
+
+#signUp{
+
+  color: white;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.registerText{
+  margin-top: 10%;
+  color: white;
+}
+
+
+.divider{
+
+  margin-left: 10%;
+
+}
