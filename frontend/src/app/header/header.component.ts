@@ -26,8 +26,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.auth.getCurrentUser();
-    this.useLanguage(this.user.language);
-    console.log(this.user);
+    if(this.user == null) {
+      this.translate.use('en')
+    } else {
+      this.useLanguage(this.user.language);
+    }
   }
 
 

@@ -17,13 +17,11 @@
 		"submit": "Submit"
 	},
 	"header": {
-		"login": "Login",
 		"logout": "Logout",
 		"manageJobpostings": "Manage Jobpostings",
+		"manageusers": "Manage Users",
 		"registerButton": "Register",
 		"submitJob": "submit a job",
-		"title": "Job needed?",
-		"users": "Users",
 		"yourProfile": "Your Profile",
 		"yourjobpostings": "Your Jobpostings"
 	},

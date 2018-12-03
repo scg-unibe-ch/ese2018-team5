@@ -17,13 +17,11 @@
 		"submit": "Soumettre"
 	},
 	"header": {
-		"login": "Login",
 		"logout": "Logout",
-		"manageJobpostings": "Change test offes d`emploi",
+		"manageJobpostings": "Gérer les offres d'emploi",
+		"manageusers": "Gérer les utilisateurs",
 		"registerButton": "registre",
 		"submitJob": "soumettre un travail",
-		"title": "besoin d'emploi?",
-		"users": "Utilisateur",
 		"yourProfile": "Ton profile",
 		"yourjobpostings": "Tes offre d'empoloi"
 	},

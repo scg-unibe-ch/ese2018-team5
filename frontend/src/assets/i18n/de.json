@@ -17,13 +17,11 @@
 		"submit": "Senden"
 	},
 	"header": {
-		"login": "Login",
 		"logout": "Logout",
 		"manageJobpostings": "Jobangebote bearbeiten",
+		"manageusers": "Benutzer verwalten",
 		"registerButton": "Registrieren",
 		"submitJob": "Einen Job einreichen",
-		"title": "Brauchst ein job?",
-		"users": "Benutzer",
 		"yourProfile": "Profil",
 		"yourjobpostings": "Deine Jobangebote"
 	},
