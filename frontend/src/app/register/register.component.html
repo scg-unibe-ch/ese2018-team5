@@ -62,21 +62,33 @@
 
   <div class="input">
     <label id="usernameLabel" for="username" class="label">USERNAME</label>
-    <input id="username" type="text" class="input" >
+    <input id="username" placeholder="Username" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+    <div *ngIf="submitted && registerForm.controls['username'].errors" class="invalid-feedback">
+      <div *ngIf="registerForm.controls['username'].errors.required">{{'register.usernameRequired' | translate}}</div>
+    </div>
+
   </div>
   <div class="input">
     <label id="passwordLabel"for="password" class="label">PASSWORD</label>
-    <input id="password" type="password" class="input" data-type="password" >
+    <input id="password" placeholder="Password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+    <div *ngIf="submitted && registerForm.controls['password'].errors" class="invalid-feedback">
+      <div *ngIf="registerForm.controls['password'].errors.required">{{'register.passwordRequired' | translate}}</div>
+      <div *ngIf="registerForm.controls['password'].errors.minlength">{{'register.passwordSixChars' | translate}}</div>
+    </div>
+
   </div>
 
   <div class="input">
     <label id="emailLabel"for="email" class="label">EMAIL</label>
     <input id="email" type="text" class="input" >
   </div>
+  <small id="agb" class="form-text text-muted">By submitting this form, you confirm that you have read and agree with our General Terms and Conditions and Privacy Policies.</small>
 
   <button class="registerButton">{{'register.register' | translate}}</button>
+
+  <small id="already2" class="form-text text-muted">Already got an account? <a href="url" id="link"> Login here! </a></small>
 </div>
 
-  <mat-divider class="divider"></mat-divider>
+
 
 </div>

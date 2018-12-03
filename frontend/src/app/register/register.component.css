@@ -168,7 +168,7 @@ button.social-signin.google {
 
   height: 700px;
   width: 600px;
-  background-image: url("registerBg.png");
+  background-image: url("registerBg2.png");
   background-size:     cover;
   background-repeat:   no-repeat;
   background-position: center center;
@@ -183,19 +183,19 @@ alreadyLogin{
 #usernameLabel{
    margin-left: 10%;
    font-size: 15px;
-   color: lightgrey;
+   color: black;
  }
 
 #passwordLabel{
   margin-left: 10%;
   font-size: 15px;
-  color: lightgrey;
+  color: black;
 }
 
 #emailLabel{
   margin-left: 10%;
   font-size: 15px;
-  color: lightgrey;
+  color: black;
 }
 
 
@@ -205,6 +205,9 @@ alreadyLogin{
   margin-right: 10%;
   margin-left: 10%;
   height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
 }
 
 
@@ -214,6 +217,9 @@ alreadyLogin{
   margin-right: 10%;
   margin-left: 10%;
   height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
 }
 
 #email{
@@ -222,6 +228,9 @@ alreadyLogin{
   margin-right: 10%;
   margin-left: 10%;
   height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
 }
 
 
@@ -229,7 +238,7 @@ alreadyLogin{
 .registerButton{
 
   margin-top: 10%;
-  background-color: #2363e5;
+  background-color: black;
   border-radius:50px;
   width: 80%;
   height: 50px;
@@ -242,13 +251,18 @@ alreadyLogin{
   text-align: center;
 }
 
+.registerButton:hover{
+  background-color: grey;
+
+}
 
 
 #signUp{
 
-  color: white;
+  color: black;
   text-align: center;
   margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .registerText{
@@ -261,4 +275,25 @@ alreadyLogin{
 
   margin-left: 10%;
 
+}
+
+#agb{
+
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 4%;
+
+
+}
+
+#already2{
+  font-size: 17.5px;
+  margin-left: 10%;
+  margin-top: 5%;
+
+}
+
+#link{
+  color: rgba(0, 0, 0, 0.8);
 }
