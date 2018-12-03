@@ -17,7 +17,10 @@
 
   <div class="logoutBTNS">
 
-    <img class="resize" src="../../assets/ProfileIMG.png"/>
+
+
+    <a [routerLink]="['/login']"> <img class="resize" src="../../assets/ProfileIMG.png"/> </a>
+
     <button id="yourProfile" [routerLink]="['/login']" *ngIf="!auth.loggedIn">Your Profile</button>
     <button id="registerBtn " class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
     <!-- When logged in -->

@@ -245,7 +245,8 @@ alreadyLogin{
   margin-left: 10%;
   border-color: transparent;
   cursor:pointer;
-  color:white;
+
+  color: #FFFFFF;
   font-family:"Open Sans";
   font-size:20px;
   text-align: center;

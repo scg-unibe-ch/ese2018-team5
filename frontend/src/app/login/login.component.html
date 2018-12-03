@@ -1,4 +1,5 @@
 
+<!-- DELETE TO GET AGAIN
 <h4 *ngIf="error">{{error}}</h4>
 <form (ngSubmit)="submit()">
   <div class ="container">
@@ -25,3 +26,35 @@
   </div>
 </form>
 
+-->
+
+
+<h4 *ngIf="error">{{error}}</h4>
+<form (ngSubmit)="submit()">
+  <div class="backgroundImg">
+    <h2 id="signUp">SIGN IN</h2>
+
+    <div class = "registerText">
+
+      <div class="input">
+        <label id="usernameLabel" for="username">USERNAME</label>
+        <input placeholder="Username" type="text" id="username" name="username" class="form-control" [(ngModel)]="username" />
+
+      </div>
+      <div class="input">
+        <label id="passwordLabel" for="password">PASSWORD</label>
+        <input placeholder="Password" type="password" id="password" name="password" class="form-control" [(ngModel)]="password" />
+
+      </div>
+
+
+
+      <button class="loginBtn2" type="submit">Login</button>
+   <!--   <button type="submit" class="registerButton">Register</button> -->
+      <small id="already2" class="form-text text-muted">Not registered yet? <a [routerLink]="['/register']" id="link"> Register here! </a></small>
+    </div>
+
+
+
+  </div>
+</form>

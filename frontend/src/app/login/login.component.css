@@ -1,0 +1,139 @@
+
+.backgroundImg {
+
+  display: table;
+  margin: 0 auto;
+
+  height: 700px;
+  width: 600px;
+  background-image: url("loginBg2.png");
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+
+alreadyLogin{
+  color: #32508E;
+  text-underline: #32508E;
+}
+
+
+#usernameLabel{
+  margin-left: 10%;
+  font-size: 15px;
+  color: black;
+}
+
+#passwordLabel{
+  margin-left: 10%;
+  font-size: 15px;
+  color: black;
+}
+
+#emailLabel{
+  margin-left: 10%;
+  font-size: 15px;
+  color: black;
+}
+
+
+#username{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
+  margin-bottom: 5%;
+}
+
+
+#password{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
+}
+
+#email{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+  color: white;
+}
+
+
+
+.loginBtn2{
+
+  margin-top: 10%;
+  background-color: black;
+  border-radius:50px;
+  width: 80%;
+  height: 50px;
+  margin-left: 10%;
+  border-color: transparent;
+  cursor:pointer;
+
+  color: #FFFFFF;
+  font-family:"Open Sans";
+  font-size:20px;
+  text-align: center;
+}
+
+.loginBtn2:hover{
+  background-color: grey;
+
+}
+
+
+#signUp{
+
+  color: black;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.registerText{
+  margin-top: 10%;
+  color: white;
+}
+
+
+.divider{
+
+  margin-left: 10%;
+
+}
+
+#agb{
+
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 4%;
+
+
+}
+
+#already2{
+  font-size: 17.5px;
+  margin-left: 10%;
+  margin-top: 5%;
+
+}
+
+#link{
+  color: rgba(0, 0, 0, 0.8);
+}

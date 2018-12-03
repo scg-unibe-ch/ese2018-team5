@@ -43,3 +43,49 @@
 
 
 
+
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+<div class="profileDIV">
+
+  <mat-card id="card">
+
+    <img class="resize" src="../../assets/ProfileIMG.png"/>
+
+    <mat-form-field class="profileName">
+      <input matInput type="text" id="username" placeholder="Change username"
+             required
+             [(ngModel)]="user.username" name="username">
+    </mat-form-field>
+
+
+
+    <mat-form-field class="profileEmail">
+      <input matInput type="email" email="true" id="email" placeholder="Change email"
+             required
+             [(ngModel)]="user.email" name="email">
+    </mat-form-field>
+
+
+
+
+  </mat-card>
+
+
+
+
+
+</div>
+
+</form>
+
+
+<mat-select [(ngModel)]="user.language" id="languageProfile" name="language" >
+  <mat-option [value]="lang" *ngFor="let lang of languages">
+    {{lang}}
+  </mat-option>
+</mat-select>
+
+<button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
+<button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
+
