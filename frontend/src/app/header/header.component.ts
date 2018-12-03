@@ -25,27 +25,22 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.user = this.auth.getCurrentUser();
-    if(this.user == null) {
-      this.translate.use('en')
+
+    if(localStorage.getItem('lang') !== null) {
+      this.translate.use(localStorage.getItem('lang'));
     } else {
-      this.useLanguage(this.user.language);
+      this.translate.use('en');
     }
   }
 
 
   useLanguage(language: string) {
-    this.user.language = language;
-    this.auth.setCurrentUser(this.user);
     this.translate.use(language)
   }
 
   getId() {
-    if(this.auth.isAuthenticated && this.user == undefined) {
-      this.user = this.auth.getCurrentUser();
-    }
-    if(this.user != null) {
-      return this.user.id;
+    if(localStorage.getItem('id') !== null) {
+      return localStorage.getItem('id');
     }
   }
 

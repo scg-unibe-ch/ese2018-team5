@@ -18,22 +18,23 @@ export class JobService {
 
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  getJobForUser(user:User): Observable<any> {
+  getJobForUser(id:string): Observable<any> {
 
-   let token = localStorage.getItem('access_token');
+    let token = this.auth.getToken();
+
    const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorisation': 'JWT ' + token
+        'Authorization': 'Bearer '+ token
       })
     };
-   console.log('JWT ' + token);
-   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + user.id, httpOptions);
+
+   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id, httpOptions);
   }
 
   createJob(jobItem:JobItem): Observable<any> {
     this.update.emit(true); //Emits update to signal other components that the list has been locally updated and new items should be fetched from backend
-    jobItem.userId = this.auth.getCurrentUser().id;
+    jobItem.userId = +this.auth.getId();
     return this.httpClient.post(this._apiUrl, jobItem);
   }
 

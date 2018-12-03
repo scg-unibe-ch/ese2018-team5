@@ -30,8 +30,11 @@ export class AuthService {
       {username: username, password: password})
       .pipe(
         map(result => {
-          this.token = result.token;
+          this.setToken(result.token);
           this.user = this.jwtHelper.decodeToken(result.token).user;
+          localStorage.setItem('role', this.user.role.toString());
+          localStorage.setItem('lang', this.user.language);
+          localStorage.setItem('id', this.user.id.toString());
           this.translate.use(this.user.language);
           return true;
         })
@@ -40,50 +43,47 @@ export class AuthService {
   }
 
   setToken(token:any) {
-    this.token = token;
+    localStorage.setItem('token', token);
+  }
+
+  getRole() {
+    return localStorage.getItem('role');
+  }
+
+  getLanguage() {
+    return localStorage.getItem('lang');
   }
 
   getToken() {
-    return this.token;
-  }
-
-  getCurrentUser() {
-    return this.user;
-  }
-
-  setCurrentUser(user: User) {
-    this.user = user;
+    return localStorage.getItem('token');
   }
 
   logout() {
-    this.token = null;
-    this.user = null;
-    this.alertService.success('Successfully logged out', true);
+    localStorage.clear();
+    this.alertService.success('Successfully logged out', false);
     this.router.navigate(['/login']);
   }
 
   public get loggedIn(): boolean {
-    return this.token !== null;
+    return this.getToken() !== null;
   }
 
   public isAdmin(): boolean {
-    if(this.user != null){
-      return this.user.role == 4
-    }
-    return false;
+    return this.getRole() === '4';
   }
 
   public isUser(): boolean {
-    if(this.user != null) {
-      return this.user.role == 2;
+    return this.getRole() === '2';
+  }
+
+  public isAuthenticated(): boolean {
+    if(this.getToken() != null) {
+      return !this.jwtHelper.isTokenExpired(this.getToken());
     }
     return false;
   }
 
-  public isAuthenticated(): boolean {
-    if(this.token != null) {
-      return !this.jwtHelper.isTokenExpired(this.token);
-    }
-    return false;
+  getId() {
+    return localStorage.getItem('id');
   }
 }

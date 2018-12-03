@@ -16,6 +16,7 @@ export class JobPostingListComponent implements OnInit {
   jobItem: JobItem = new JobItem();
   userItems: JobItem[] = [];
 
+  id: number;
   constructor(
     private jobService:JobService,
     private router:Router,
@@ -28,8 +29,8 @@ export class JobPostingListComponent implements OnInit {
   }
 
   fetchData() {
-    const user = this.auth.getCurrentUser();
-    this.jobService.getJobForUser(user).subscribe(result => {
+
+    this.jobService.getJobForUser(this.auth.getId()).subscribe(result => {
       this.userItems = result.JobItems;
     },
       error => {

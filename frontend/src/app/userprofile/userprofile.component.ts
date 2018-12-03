@@ -13,7 +13,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class UserprofileComponent implements OnInit   {
 
-  user:User;
+  public user: User = new User(null, '','','',null,'');
   changePassword = false;
 
   languages: string[] = ['en', 'de', 'fr'];
@@ -28,18 +28,16 @@ export class UserprofileComponent implements OnInit   {
   ) { }
 
   ngOnInit() {
-    this.getUser();
-    this.translate.use(this.user.language)
+    this.translate.use(this.auth.getLanguage());
+    this.fetchData();
   }
 
-  getUser() {
-    this.user = this.auth.getCurrentUser();
+  fetchData() {
+    this.userService.getUser(this.auth.getId()).subscribe( result => this.user = result)
   }
 
-  setLanguage() {
-    //TODO: CHECK IF LANGUAGE IS SAVED PROPERLY
-    this.translate.use(this.user.language);
-    this.auth.setCurrentUser(this.user);
+  setLanguage(language:string) {
+    this.translate.use(language);
   }
 
   swapPW(p) {
@@ -47,7 +45,7 @@ export class UserprofileComponent implements OnInit   {
   }
 
   onSubmit() {
-    this.setLanguage();
+    this.setLanguage(this.user.language);
     this.userService.patchUserWithOutPW(this.user).subscribe();
     this.alertService.success('Profile saved', false);
   }

@@ -29,7 +29,7 @@ export class JobpostingeditComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    if(this.auth.getCurrentUser().role === 4) {
+    if(this.auth.getRole() === '4') {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);
@@ -37,7 +37,7 @@ export class JobpostingeditComponent implements OnInit {
   }
 
   cancel() {
-    if(this.auth.getCurrentUser().role === 4) {
+    if(this.auth.getRole() === '4') {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);

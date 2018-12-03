@@ -33,7 +33,7 @@
 
 
         <!-- When logged in as USER -->
-      <button class="navigation" routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn">{{'header.yourProfile' | translate}}</button>
+      <button class="navigation" routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourProfile' | translate}}</button>
       <button class="navigation"  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
       <button class="navigation" [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>
 
