@@ -44,7 +44,9 @@ export class HeaderComponent implements OnInit {
     if(this.auth.isAuthenticated && this.user == undefined) {
       this.user = this.auth.getCurrentUser();
     }
-    return this.user.id;
+    if(this.user != null) {
+      return this.user.id;
+    }
   }
 
   logout() {

@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
   constructor(private router: Router, private auth: AuthService) { }
 
   canActivate() {
-    if (localStorage.getItem('access_token') && this.auth.isAuthenticated()) {
+    if (this.auth.getCurrentUser() != null && this.auth.isAuthenticated()) {
       return true;
     }
 

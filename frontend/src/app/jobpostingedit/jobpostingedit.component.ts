@@ -3,6 +3,7 @@ import {JobItem} from '../jobs/job-item';
 import {JobItemDataService} from './job-item-data.service';
 import {JobService} from '../shared/service/job.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-jobpostingedit',
@@ -14,7 +15,12 @@ export class JobpostingeditComponent implements OnInit {
   selectedJobItem: JobItem;
   submitted = false;
 
-  constructor(private data:JobItemDataService, private jobService:JobService, private router:Router) { }
+  constructor(
+    private data:JobItemDataService,
+    private jobService:JobService,
+    private router:Router,
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
     this.data.currentJobItem.subscribe(jobitem => this.selectedJobItem = jobitem);
@@ -23,7 +29,7 @@ export class JobpostingeditComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    if(localStorage.getItem('role') === '4') {
+    if(this.auth.getCurrentUser().role === 4) {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);
@@ -31,7 +37,7 @@ export class JobpostingeditComponent implements OnInit {
   }
 
   cancel() {
-    if(localStorage.getItem('role') === '4') {
+    if(this.auth.getCurrentUser().role === 4) {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);
