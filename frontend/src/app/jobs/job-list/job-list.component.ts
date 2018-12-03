@@ -39,7 +39,7 @@ export class JobListComponent implements OnInit {
   }
 
   getJobs(){
-    this.jobService.getJobs(1).subscribe(result =>{
+    this.jobService.getJobs().subscribe(result =>{
       this.jobs = result;
     })
   }

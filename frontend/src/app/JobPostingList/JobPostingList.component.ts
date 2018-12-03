@@ -31,10 +31,10 @@ export class JobPostingListComponent implements OnInit {
     const user = this.auth.getCurrentUser();
     this.jobService.getJobForUser(user).subscribe(result => {
       this.userItems = result.JobItems;
-    }),
+    },
       error => {
       this.userItems.length = 0;
-      }
+      })
   }
 
   edit(jobItem:JobItem) {

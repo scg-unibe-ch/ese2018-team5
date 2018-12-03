@@ -40,7 +40,7 @@ export class SearchformComponent implements OnInit {
   }
 
   fetchData() {
-    this.jobService.getJobs(1).subscribe(result => {
+    this.jobService.getJobs().subscribe(result => {
       this.jobItems = result as JobItem[];
     });
   }

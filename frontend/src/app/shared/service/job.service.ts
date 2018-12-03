@@ -48,10 +48,8 @@ export class JobService {
     return this.httpClient.put(this._apiUrl + jobItem.id, jobItem);
   }
 
-  getJobs(jobListId:any): Observable<any>{
-    return this.httpClient.get(this._apiUrl,{
-      params:  new HttpParams().set('jobListId', '' + jobListId)
-    } )
+  getJobs(): Observable<any>{
+    return this.httpClient.get(this._apiUrl)
   }
 
 

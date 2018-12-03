@@ -1,8 +1,8 @@
 <div>
   <div>
-    <mat-grid-list class="list" cols="5" rowHeight="300px" gutterSize="15px">
+    <mat-grid-list class="list" cols="3" rowHeight="300px" gutterSize="15px">
       <mat-grid-tile *ngFor="let jobItem of jobItems">
-        <mat-card class="card" *ngIf="jobItem.approved">
+        <mat-card class="card" >
           <mat-card-header>
             <mat-card-title>{{jobItem.title}}</mat-card-title>
             <mat-card-subtitle>{{jobItem.createdAt | date}}</mat-card-subtitle>
@@ -31,24 +31,3 @@
     </mat-grid-list>
   </div>
 </div>
-
-
-
-
-
-<!--<div>
-  <hr>
-  <div id="titleJob">Title of Job: {{jobItem.title}}</div>
-  <br>
-  <div id="company">{{'jobPostingsList.company'| translate}}{{jobItem.company}} {{jobItem.location}}</div>
-  <br>
-  <div id="description">{{'jobPostingsList.jobDescription'| translate}} {{jobItem.description}}</div>
-  <br>
-  <div id="position">{{'jobPostingsList.position'| translate}}  {{jobItem.position}}</div>
-  <br>
-  <div id="pensum"> {{'jobPostingsList.pensum'| translate}} {{jobItem.pensum}}</div>
-  <br>
-  <div id = "date">{{'jobPostingsList.published'| translate}} {{jobItem.createdAt | date}}</div>
-  <br>
-  <div id="approved">{{'jobPostingsList.approvedByAdmin'| translate}} {{jobItem.approved}}</div>
-</div>-->

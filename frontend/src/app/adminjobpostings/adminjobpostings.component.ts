@@ -25,9 +25,12 @@ export class AdminjobpostingsComponent implements OnInit {
   }
 
   fetchData() {
-    this.jobService.getJobs(1).subscribe( result => {
-      this.jobItems = result as JobItem[];
-    })
+    this.jobService.getJobs().subscribe( result => {
+      this.jobItems = result.JobItems;
+    },
+      error => {
+        this.jobItems.length = 0;
+      })
   }
 
   setApproved(id:number) {

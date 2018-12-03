@@ -11,7 +11,7 @@ const UserController = {
         }
       }).then(function (JobItems){
         if(!JobItems || JobItems.length == 0) {
-          return res.status(404).json({message:'no items found'})
+          return res.status(404).json({JobItems})
         } else {
           return res.status(200).json({JobItems})
         }

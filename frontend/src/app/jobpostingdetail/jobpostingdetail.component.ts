@@ -3,6 +3,7 @@ import {JobItem} from '../jobs/job-item';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
 import {JobService} from '../shared/service/job.service';
 import {Router} from '@angular/router';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-jobpostingdetail',
@@ -16,10 +17,9 @@ export class JobpostingdetailComponent implements OnInit {
 
   @Output() edit = new EventEmitter();
   @Output() delete = new EventEmitter();
+
   constructor(
-    private router:Router,
-    private data: JobItemDataService,
-    private jobService:JobService
+    public auth:AuthService
   ) { }
 
   ngOnInit() {
