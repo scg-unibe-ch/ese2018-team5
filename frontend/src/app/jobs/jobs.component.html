@@ -1,74 +1,107 @@
-<div class = "row">
-  <div class ="col-md-5">
-    <form name="create-job" id="create-job">
+<div class="container">
+  <div>
+    <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="create-job">
       <div class="form-group">
-        <label for="JobTitle">{{'jobs.jobTitle' | translate}}</label>
-        <input
-          type="text"
-          class="form-control"
-          id="JobTitle"
-          name="jobTitle"
-          aria-describedby="Job Title"
-          placeholder="{{'jobs.enterJobTitle' | translate}}"
-          [(ngModel)]="formJob.title">
+        <label hidden for="JobTitle">{{'jobs.jobTitle' | translate}}</label>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            id="JobTitle"
+            name="jobTitle"
+            aria-describedby="Job Title"
+            placeholder="{{'jobs.enterJobTitle' | translate}}"
+            [(ngModel)]="formJob.title">
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-        <label
-          for="Company">{{'jobs.company' | translate}}</label>
-        <input name="company"
-          type="text"
-          class="form-control"
-          id="Company"
-          aria-describedby="Company Name"
-          placeholder="{{'jobs.enterCompanyName' | translate}}"
-          [(ngModel)]="formJob.company"
-        >
-
+        <label hidden for="Company">{{'jobs.company' | translate}}</label>
+        <mat-form-field>
+          <input
+            matInput
+            name="company"
+            type="text"
+            id="Company"
+            aria-describedby="Company Name"
+            placeholder="{{'jobs.enterCompanyName' | translate}}"
+            [(ngModel)]="formJob.company">
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-        <label for="Pensum">{{'jobs.pensum' | translate}}</label>
-        <select
-          class="form-control"
-          id="Pensum"
-          [(ngModel)]="formJob.pensum"
-          name="Pensum">
-          <!--<option hidden value="" disabled selected></option>-->
-          <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
-        </select>
+        <label hidden for="Pensum">{{'jobs.pensum' | translate}}</label>
+        <mat-form-field>
+          <mat-select
+            placeholder="{{'jobs.pensum' | translate}}"
+            id="Pensum"
+            [(ngModel)]="formJob.pensum"
+            name="Pensum">
+            <!--<option hidden value="" disabled selected></option>-->
+            <mat-option></mat-option>
+            <mat-option *ngFor="let n of pensumCount" [value]="n">{{n}}%</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-        <label for="Description">{{'jobs.description' | translate}}</label>
-        <input name="Description" type="text" class="form-control" id="Description" aria-describedby="Description"
-               placeholder="{{'jobs.enterDescription' | translate}}"  [(ngModel)]="formJob.description">
+        <label hidden for="Description">{{'jobs.description' | translate}}</label>
+        <mat-form-field>
+          <input
+            matInput
+            name="Description"
+            type="text"
+            id="Description"
+            aria-describedby="Description"
+            placeholder="{{'jobs.enterDescription' | translate}}"
+            [(ngModel)]="formJob.description">
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-        <label for="Position">{{'jobs.position' | translate}}</label>
-        <input name="Position" type="text" class="form-control" id="Position" aria-describedby="Position"
-               placeholder="{{'jobs.enterJobTitle' | translate}}" [(ngModel)]="formJob.position">
+        <label hidden for="Position">{{'jobs.position' | translate}}</label>
+        <mat-form-field>
+          <input
+            name="Position"
+            type="text"
+            matInput
+            id="Position"
+            aria-describedby="Position"
+            placeholder="{{'jobs.enterJobTitle' | translate}}"
+            [(ngModel)]="formJob.position">
+        </mat-form-field>
       </div>
 
 
       <div class="form-group">
-        <label for="Category">{{'jobs.category' | translate}}</label>
-        <select class="form-control" id="category"
-                [(ngModel)]="formJob.category" name="category">
-          <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-        </select>
+        <label hidden for="Category">{{'jobs.category' | translate}}</label>
+        <mat-form-field>
+          <mat-select
+            id="category"
+            [(ngModel)]="formJob.category"
+            name="category"
+            placeholder="{{'jobs.category' | translate}}">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="form-group">
-        <label for="Location">{{'jobs.location' | translate}}</label>
-        <select class="form-control" id="location"
-                [(ngModel)]="formJob.location" name="location">
-          <option *ngFor="let location of locations" [value]="location">{{location}}</option>
-        </select>
+        <label hidden for="Location">{{'jobs.location' | translate}}</label>
+        <mat-form-field>
+          <mat-select
+            id="location"
+            [(ngModel)]="formJob.location"
+            name="location"
+            placeholder="{{'jobs.location' | translate}}">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
-    <button type="submit" class="btn btn-dark" (click)="onSaveData(formJob)">Submit</button>
+    <button type="submit" class="btn btn-dark">Submit</button>
 
     </form>
   </div>

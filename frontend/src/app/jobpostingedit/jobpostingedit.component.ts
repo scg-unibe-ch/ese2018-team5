@@ -15,6 +15,10 @@ export class JobpostingeditComponent implements OnInit {
   selectedJobItem: JobItem;
   submitted = false;
 
+  categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
+  locations: string [] = ['Bern', 'Solothurn', 'Zürich', 'Genf'];
+  pensumCount: number[] = [10,20,30,40,50,60,70,80,90,100];
+
   constructor(
     private data:JobItemDataService,
     private jobService:JobService,

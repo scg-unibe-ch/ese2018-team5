@@ -1,26 +1,3 @@
-<div>
-  <!--<ul style="list-style-type:none" class="useritems" >
-    <li *ngFor="let jobItem of userItems" id="list">
-        <div id="titleJob">{{'jobPostingsList.title' | translate}}: {{jobItem.title}}</div>
-        <br>
-        <div id="company">{{'jobPostingsList.company'| translate}}:{{jobItem.company}} {{jobItem.location}}</div>
-        <br>
-        <div id="description">{{'jobPostingsList.jobDescription'| translate}}: {{jobItem.description}}</div>
-        <br>
-        <div id="position">{{'jobPostingsList.position'| translate}}:  {{jobItem.position}}</div>
-        <br>
-        <div id="pensum"> {{'jobPostingsList.pensum'| translate}}: {{jobItem.pensum}}</div>
-        <br>
-        <div id = "date">{{'jobPostingsList.published'| translate}}: {{jobItem.createdAt | date}}</div>
-        <br>
-        <div id="approved">{{'jobPostingsList.approvedByAdmin'| translate}}: {{jobItem.approved}}</div>
-        <button (click)="delete(jobItem)">{{'jobPostingsList.delete'| translate}}</button>
-        <button (click)="edit(jobItem)">{{'jobPostingsList.edit'| translate}}</button>
-        <hr>
-    </li>
-  </ul>-->
-
-    <app-jobpostingdetail [jobItems]="userItems" [admin]="true" (edit)="edit($event)" (delete)="delete($event)"></app-jobpostingdetail>
-
-  <button [routerLink]="['/jobform']" id="createJob">{{'jobPostingsList.createNewJobPosting'| translate}}</button>
+<div class="container">
+    <app-jobpostingdetail [jobItems]="userItems" [admin]="false" [editable]="true" (edit)="edit($event)" (delete)="delete($event)"></app-jobpostingdetail>
 </div>

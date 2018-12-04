@@ -14,15 +14,23 @@ export class JobpostingdetailComponent implements OnInit {
 
   @Input() jobItems: JobItem[];
   @Input() admin = false;
+  @Input() editable = false;
 
   @Output() edit = new EventEmitter();
   @Output() delete = new EventEmitter();
 
   constructor(
-    public auth:AuthService
+    public auth:AuthService,
+    private jobService:JobService
   ) { }
 
   ngOnInit() {
+
+  }
+
+  flipApproved(jobItem: JobItem) {
+    jobItem.approved = !jobItem.approved;
+    this.jobService.updateJob(jobItem).subscribe();
   }
 
   editJob(jobItem:JobItem) {

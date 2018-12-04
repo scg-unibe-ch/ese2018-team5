@@ -26,17 +26,14 @@ export class AdminjobpostingsComponent implements OnInit {
 
   fetchData() {
     this.jobService.getJobs().subscribe( result => {
-      this.jobItems = result.JobItems;
+      this.jobItems = result as JobItem[];
     },
       error => {
         this.jobItems.length = 0;
       })
   }
 
-  setApproved(id:number) {
-    this.jobItem = this.jobItems.find(jobItem => jobItem.id == id);
-    this.jobService.updateJob(this.jobItem).subscribe();
-  }
+
 
   edit(jobItem:JobItem) {
     this.data.changeMessage(jobItem);

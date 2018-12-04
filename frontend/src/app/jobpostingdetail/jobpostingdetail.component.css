@@ -3,16 +3,35 @@
 }
 
 .card {
+  min-width: 200px;
   max-width: 400px;
-  height: 300px;
+  height: 350px;
   overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  min-height: 100%;
-  width: 100%
+  display: block;
+  position: relative;
+  margin-top: 5%;
+}
+
+.mat-class-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.mat-card-header {
+  display:flex;
+  flex-direction: row;
+  flex-shrink: 0;
 }
 
 .checkbox {
+  float: right;
+}
 
+.apply-btn {
+  float: right
 }

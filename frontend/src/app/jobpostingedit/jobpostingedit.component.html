@@ -4,53 +4,111 @@
   <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
 
     <div class="form-group">
-      <label for="title">{{'jobPostingsEdit.title'| translate}}</label>
-      <input type="text" class="form-control" id="title"
-      required
-      [(ngModel)]="selectedJobItem.title" name="title"
-      #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
-        class="alert alert-danger">Title is required
-      </div>
+      <label hidden for="title">{{'jobPostingsEdit.title'| translate}}</label>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="{{'jobPostingsEdit.title'| translate}}"
+          id="title"
+          required
+          [(ngModel)]="selectedJobItem.title"
+          name="title"
+          >
+        <div [hidden]="!name.valid || name.pristine || !name.untouched"
+          class="alert alert-danger">Title is required
+        </div>
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <label for="company">{{'jobPostingsEdit.company'| translate}}</label>
-      <input type="text" class="form-control" id="company"
-      required
-      [(ngModel)]="selectedJobItem.company" name="company">
+      <label hidden for="company">{{'jobPostingsEdit.company'| translate}}</label>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="{{'jobPostingsEdit.company'| translate}}"
+          id="company"
+          required
+          [(ngModel)]="selectedJobItem.company"
+          name="company">
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <label for="location">{{'jobPostingsEdit.location'| translate}}</label>
-      <input type="text" class="form-control" id="location"
-       required
-       [(ngModel)]="selectedJobItem.location" name="location">
+      <label hidden for="description">{{'jobPostingsEdit.description'| translate}}</label>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="{{'jobPostingsEdit.description'| translate}}"
+          id="description"
+          required
+          [(ngModel)]="selectedJobItem.description"
+          name="description">
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <label for="description">{{'jobPostingsEdit.description'| translate}}</label>
-      <input type="text" class="form-control" id="description"
-      required
-      [(ngModel)]="selectedJobItem.description" name="description">
+      <label hidden for="position">{{'jobPostingsEdit.position'| translate}}</label>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="{{'jobPostingsEdit.position'| translate}}"
+          id="position"
+          required
+          [(ngModel)]="selectedJobItem.position"
+          name="position">
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <label for="position">{{'jobPostingsEdit.position'| translate}}</label>
-      <input type="text" class="form-control" id="position"
-      required
-      [(ngModel)]="selectedJobItem.position" name="position">
+      <label hidden for="pensum">{{'jobPostingsEdit.pensum'| translate}}</label>
+      <mat-form-field>
+        <mat-select
+          placeholder="{{'jobPostingsEdit.pensum'| translate}}"
+          id="pensum"
+          [(ngModel)]="selectedJobItem.pensum"
+          name="pensum"
+          #name="ngModel">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let n of pensumCount" [value]="n">{{n}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="form-group">
-      <label for="pensum">{{'jobPostingsEdit.pensum'| translate}}</label>
-      <input type="number" class="form-control" id="pensum"
-      required
-      [(ngModel)]="selectedJobItem.pensum" name="pensum">
+        <label hidden for="location">{{'jobPostingsEdit.location'| translate}}</label>
+        <mat-form-field>
+          <mat-select
+            placeholder="{{'jobPostingsEdit.location'| translate}}"
+            id="location"
+            name="location"
+            [(ngModel)]="selectedJobItem.location">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <label hidden for="category">{{'jobPostingsEdit.category'| translate}}</label>
+      <mat-form-field>
+        <mat-select
+          placeholder="{{'jobPostingsEdit.category'| translate}}"
+          id="category"
+          name="category"
+          [(ngModel)]="selectedJobItem.category">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <button type="submit" class="btn btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
     <button (click)="cancel()" class="btn">{{'jobPostingsEdit.cancel' | translate}}</button>
+
   </form>
 </div>
 
