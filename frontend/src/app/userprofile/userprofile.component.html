@@ -1,49 +1,6 @@
-<div class="container" *ngIf="!changePassword">
-  <h1>Your Profile</h1>
-
-  <button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
-  <button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
-  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-
-    <div class="form-group">
-      <!--<label for="username"></label>-->
-      <mat-form-field>
-        <input matInput type="text" id="username" placeholder="{{'userprofile.username' | translate}}"
-        required
-        [(ngModel)]="user.username" name="username">
-      </mat-form-field>
-    </div>
 
 
-    <div class="form-group">
-      <!--<label for="email">Email</label>-->
-      <mat-form-field>
-        <input matInput type="email" email="true" id="email" placeholder="{{'userprofile.email' | translate}}"
-        required
-        [(ngModel)]="user.email" name="email">
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-select [(ngModel)]="user.language" id="language" name="language">
-        <mat-option [value]="lang" *ngFor="let lang of languages">
-          {{lang}}
-        </mat-option>
-      </mat-select>
-    </div>
-
-    <button mat-raised-button color="primary" type="submit">{{'userprofile.save' | translate}}</button>
-
-  </form>
-
-</div>
-<div class="container" *ngIf="changePassword">
-  <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>
-</div>
-
-
-
-
+<div  *ngIf="!changePassword">
 
 <form (ngSubmit)="onSubmit()" #userForm="ngForm">
 <div class="profileDIV">
@@ -76,7 +33,7 @@
 </div>
 
 </form>
-
+</div>
 <mat-card id="card2">
 <mat-select [(ngModel)]="user.language" id="languageProfile" name="language" >
   <mat-option [value]="lang" *ngFor="let lang of languages">
@@ -88,3 +45,6 @@
 <button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
 
 </mat-card>
+<div class="container" *ngIf="changePassword">
+  <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>
+</div>

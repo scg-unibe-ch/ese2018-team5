@@ -101,14 +101,18 @@ margin-bottom: 5%;
 }
 
 #labelCompany{
-  display: inline-block;
-  margin-right: 20%;
+  display: block;
+  margin-left: 5%;
 }
 
 #labelTitle{
   margin-left: 5%;
 }
 
+#labelPensum{
+  margin-top: 5%;
+  margin-left: 5%;
+}
 #tog1Left{
   float: left;
 }
@@ -119,4 +123,10 @@ margin-bottom: 5%;
 
 #tog1{
   margin-bottom: 5%;
+  display: block;
+}
+
+#otherOffers{
+  margin-top: 5%;
+  margin-left: 10%;
 }
