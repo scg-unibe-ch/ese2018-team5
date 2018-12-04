@@ -1,0 +1,122 @@
+
+#stripPic{
+
+  background-image: url("submitImg5.jpg") ;
+
+  height: 300px;
+  width: 100%;
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+
+margin-bottom: 5%;
+
+
+}
+
+
+
+
+
+
+#jobPostCard{
+
+
+  width: 40%;
+  margin: auto;
+  background-color: white;
+}
+
+#titelJobOffer{
+  font-family: "Open Sans";
+  color: black;
+  text-align: center;
+}
+
+#Position{
+  display: inline-block;
+}
+#Position{
+  display: inline-block;
+}
+#inputTitle{
+  border-radius: 50px;
+  width: 80%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  height: 50px;
+  background-color: lightgrey;
+  border-color: transparent;
+  color: white;
+}
+#inputCompany{
+  border-radius: 50px;
+  width: 30%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+  background-color: lightgrey;
+  border-color: transparent;
+  color: white;
+}
+
+#inputPosition{
+  border-radius: 50px;
+  width: 30%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 50px;
+  background-color: lightgrey;
+  border-color: transparent;
+  color: white;
+}
+
+#inputDescription{
+  border-radius: 20px;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: 150px;
+  background-color: lightgrey;
+  border-color: transparent;
+  color: white;
+}
+
+
+.selectStuff {
+  border-radius: 20px;
+  background-color: lightgrey;
+  border-color: transparent;
+  color: white;
+  font-size: 10px;
+  width: 80%;
+  height: 50px;
+  cursor: pointer;
+  font-family: "Open Sans";
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+#labelCompany{
+  display: inline-block;
+  margin-right: 20%;
+}
+
+#labelTitle{
+  margin-left: 5%;
+}
+
+#tog1Left{
+  float: left;
+}
+
+#tog1Right{
+  float: right;
+}
+
+#tog1{
+  margin-bottom: 5%;
+}

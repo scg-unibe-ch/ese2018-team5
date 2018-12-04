@@ -1,3 +1,5 @@
+<!-- DELETE TO GET AGAIN
+
 <div class="container">
   <div>
     <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="create-job">
@@ -38,6 +40,8 @@
             [(ngModel)]="formJob.pensum"
             name="Pensum">
             <!--<option hidden value="" disabled selected></option>-->
+
+<!--  DELETE TO GET AGAIN
             <mat-option></mat-option>
             <mat-option *ngFor="let n of pensumCount" [value]="n">{{n}}%</mat-option>
           </mat-select>
@@ -108,17 +112,135 @@
 
 </div>
 
-    <!--  <app-job-list (jobWasSelected)="selectedJob = $event">  </app-job-list>
+-->
 
 
-    </div>
-    <div class ="col-md-7">
+<div id="stripPic">
 
-      <app-job-detail
-        *ngIf="selectedJob; else infoText"
-      [job]="selectedJob"></app-job-detail>
+</div>
 
-      <ng-template #infoText>
-        <p>Please select a Job</p>
-      </ng-template>-->
 
+<div class="jobPostDIV">
+  <mat-card id="jobPostCard">
+  <h1 id="titelJobOffer">Post your job offer</h1>
+
+
+
+    <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="submitForm">
+
+        <label id="labelTitle">TITLE</label>
+
+          <input
+            class="form-control"
+            type="text"
+            id="inputTitle"
+            name="jobTitle"
+            aria-describedby="Job Title"
+            placeholder="Enter a title for your job f.e 'Database Administrator'"
+            [(ngModel)]="formJob.title">
+
+<div id="tog1">
+<div id="tog1Left">
+
+        <label id="labelCompany">COMPANY</label>
+
+
+          <input
+            class="form-control"
+            name="company"
+            type="text"
+            id="inputCompany"
+            aria-describedby="Company Name"
+            placeholder="Enter a company Name f.e 'Apple Inc.'"
+            [(ngModel)]="formJob.company">
+
+</div>
+      <div id="tog1Right">
+      <label id="labelPosition">POSITION</label>
+
+
+
+      <input
+        class="form-control"
+        name="Position"
+        type="text"
+        id="inputPosition"
+        aria-describedby="Position"
+        placeholder="Enter job position"
+        [(ngModel)]="formJob.position">
+
+</div>
+</div>
+
+
+      <label id="labelPensum">PENUSM</label>
+
+          <select
+            class="selectStuff"
+            placeholder="Choose a pensum"
+            id="selectPensum"
+            [(ngModel)]="formJob.pensum"
+            name="Pensum">
+            <!--<option hidden value="" disabled selected></option>-->
+            <option></option>
+            <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
+          </select>
+
+
+
+
+
+
+
+
+
+
+
+      <label id="labelCategory">CATEGORY</label>
+
+          <select
+            class="selectStuff"
+            [(ngModel)]="formJob.category"
+            name="category"
+            placeholder="Select a category for your job">
+            <option></option>
+            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+          </select>
+
+
+
+
+      <label id="labelLocation">LOCATION</label>
+
+          <select
+           class="selectStuff"
+            [(ngModel)]="formJob.location"
+            name="location"
+            placeholder="Select a location">
+            <option></option>
+            <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+          </select>
+
+
+      <label id="labelDescription">DESCRIPTION</label>
+
+      <input
+     class="form-control"
+        name="Description"
+        type="text"
+        id="inputDescription"
+        aria-describedby="Description"
+        placeholder="{{'jobs.enterDescription' | translate}}"
+        [(ngModel)]="formJob.description">
+
+
+      <button type="submit" class="btn btn-dark">Submit</button>
+
+    </form>
+
+
+
+  </mat-card>
+
+
+</div>

@@ -32,8 +32,10 @@ img.resize {
   display: block;
   text-align: center;
 background-color: transparent;
-  border-color: transparent;
   font-size: 25px;
+
+
+
 
 
 }
@@ -48,9 +50,16 @@ background-color: transparent;
 
 }
 
-#card{
+#card1{
   width: 30%;
   height: 60%;
   margin: auto;
   background-color: lightpink;
+}
+
+#card2{
+  width: 30%;
+  margin: auto;
+  background-color: lightgrey;
+
 }
