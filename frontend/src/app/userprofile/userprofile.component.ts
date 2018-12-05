@@ -15,6 +15,7 @@ export class UserprofileComponent implements OnInit   {
 
   public user: User = new User(null, '','','',null,'');
   changePassword = false;
+  deleteProfile = false;
 
   languages: string[] = ['en', 'de', 'fr'];
 
@@ -38,6 +39,10 @@ export class UserprofileComponent implements OnInit   {
 
   setLanguage(language:string) {
     this.translate.use(language);
+  }
+
+  swapDeleteProfile(p) {
+    this.deleteProfile = p;
   }
 
   swapPW(p) {

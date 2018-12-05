@@ -5,30 +5,29 @@
 
       <mat-card id="card1">
 
-      <img class="resize" src="../../assets/ProfileIMG.png"/>
+        <img class="resize" src="../../assets/ProfileIMG.png"/>
+        <mat-card-content>
+          <mat-form-field class="profileName">
+            <input matInput type="text" id="username" placeholder="Tap to change username"
+                   [(ngModel)]="user.username" name="username">
+          </mat-form-field>
 
-        <mat-form-field class="profileName">
-          <input matInput type="text" id="username" placeholder="Tap to change username"
-                 [(ngModel)]="user.username" name="username">
-        </mat-form-field>
+          <mat-form-field class="profileEmail">
+            <input matInput type="email" email="true" id="email" placeholder="Tap to change email"
+                   [(ngModel)]="user.email" name="email">
+          </mat-form-field>
 
-
-
-        <mat-form-field class="profileEmail">
-          <input matInput type="email" email="true" id="email" placeholder="Tap to change email"
-                 [(ngModel)]="user.email" name="email">
-        </mat-form-field>
-
-        <mat-form-field [floatLabel]="'always'">
-          <mat-select [(ngModel)]="user.language" id="languageProfile" name="language" placeholder="{{'userprofile.selectLanguage' | translate}}">
-            <mat-option [value]="lang" *ngFor="let lang of languages">
-              {{lang}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <button mat-raised-button class="btnSubmit" type="submit">{{'userprofile.submit' | translate}}</button>
-
+          <mat-form-field [floatLabel]="'always'">
+            <mat-select [(ngModel)]="user.language" id="languageProfile" name="language" placeholder="{{'userprofile.selectLanguage' | translate}}">
+              <mat-option [value]="lang" *ngFor="let lang of languages">
+                {{lang}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="btnSubmit" type="submit">{{'userprofile.submit' | translate}}</button>
+        </mat-card-actions>
       </mat-card>
 
     </div>
@@ -37,11 +36,14 @@
 </div>
 <mat-card id="card2">
 
-
-<button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
-<button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
+    <button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
+    <button mat-raised-button class="btnTop" color="warn" (click)="deleteProfile = true">{{'userprofile.deleteProfile' | translate}}</button>
 
 </mat-card>
+
+<div *ngIf="deleteProfile">
+  <app-alert-box [message]="'Deleting your profile is irreversible'" (doAction)="onDelete()" (cancelAction)="swapDeleteProfile($event)"></app-alert-box>
+</div>
 
 <div class="container" *ngIf="changePassword">
   <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>

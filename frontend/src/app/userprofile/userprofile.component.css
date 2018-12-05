@@ -5,8 +5,8 @@
 }
 
 .btnSubmit {
-  float:bottom;
-  display: inline-block;
+
+
 }
 
 .container {
@@ -56,11 +56,12 @@ background-color: transparent;
   height: 60%;
   margin: auto;
   background-color: lightpink;
+  text-align: center;
 }
 
 #card2{
   width: 30%;
   margin: auto;
   background-color: lightgrey;
-
+  text-align: center;
 }
