@@ -80,6 +80,7 @@ export class AuthService {
     if(this.getToken() != null) {
       return !this.jwtHelper.isTokenExpired(this.getToken());
     }
+    this.logout();
     return false;
   }
 
