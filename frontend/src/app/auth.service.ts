@@ -26,7 +26,7 @@ export class AuthService {
   ) { }
 
   login(username: string, password:string): Observable<boolean> {
-    return this.http.post<{token: string}>('http://localhost:3000/api/authenticate',
+    return this.http.post<{token: string}>('http://localhost:3000/api/user/authenticate',
       {username: username, password: password})
       .pipe(
         map(result => {

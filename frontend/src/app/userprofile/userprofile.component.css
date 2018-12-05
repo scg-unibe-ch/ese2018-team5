@@ -4,6 +4,11 @@
   margin-bottom: 20px;
 }
 
+.btnSubmit {
+  float:bottom;
+  display: inline-block;
+}
+
 .container {
   position: center;
 }
@@ -33,10 +38,6 @@ img.resize {
   text-align: center;
 background-color: transparent;
   font-size: 25px;
-
-
-
-
 
 }
 

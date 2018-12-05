@@ -8,7 +8,8 @@ import {Observable} from 'rxjs';
 })
 export class UserService {
 
-  private _apiUrl= 'http://localhost:3000/api/';
+  private _apiUrl= 'http://localhost:3000/api/user/';
+  private adminURL = 'http://localhost:3000/api/';
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
   constructor(private httpClient: HttpClient) { }
 
@@ -42,10 +43,10 @@ export class UserService {
   }
 
   getUser(id:string):Observable<any> {
-    return this.httpClient.get(this._apiUrl + 'profile/' + id);
+    return this.httpClient.get(this.adminURL + 'profile/' + id);
   }
 
   getUsers(): Observable<any> {
-    return this.httpClient.get(this._apiUrl+'admin/1');
+    return this.httpClient.get(this.adminURL +'admin/1');
   }
 }

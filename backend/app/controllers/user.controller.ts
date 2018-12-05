@@ -43,14 +43,14 @@ UserController.patchPW = async(req: Request, res: Response) => {
 UserController.getUsers = async (req: Request, res: Response) => {
 
   const instances = await User.findAll();
-  if(instances == null) {
-    res.status(404).json({message: 'no users found'});
-  }
-  res.statusCode = 200;
   for(let a of instances) {
     a.password = '';
   }
-  res.send(instances.map(e => e.toSimplification()));
+  if(instances == null) {
+    res.status(404).json({message: 'no users found'});
+  }
+
+  res.status(200).send(instances.map(e => e.toSimplification()));
 
 };
 
