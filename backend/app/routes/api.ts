@@ -16,17 +16,21 @@ const router = require('express').Router();
 let authController = require('../controllers/authController');
 
 const APIRoutes = function(passport:any) {
-  router.post('/signup', authController.signUp);
+  router.post('/user/signup', authController.signUp);
 
-  router.post('/authenticate', authController.authenticateUser);
+  router.post('/user/authenticate', authController.authenticateUser);
 
   //User
-  router.put('/:id', UserControllerUpdate);
-  router.delete('/:id', UserControllerDelete);
-  router.get('/:id', UserControllerGet);
-  router.put('/pw/:id', UserControllerPatchPW); //password
-  router.patch('/:id', UserControllerPatchUser);
-  router.get('', UserControllerGetAll);
+  router.put('/user/:id', passport.authenticate('jwt', {session: false}),
+    allowed(config1.accessLevels.user, UserControllerUpdate)); //update user
+  router.delete('/user/:id', passport.authenticate('jwt', {session: false}),
+    allowOnly(config1.accessLevels.user, UserControllerDelete));
+  router.get('/user/:id',passport.authenticate('jwt', {session: false}),
+    allowed(config1.accessLevels.user, UserControllerGet));
+  router.put('/user/pw/:id', passport.authenticate('jwt', {session: false}),
+    allowed(config1.accessLevels.user, UserControllerPatchPW)); //password
+  router.patch('/user/:id',passport.authenticate('jwt', {session: false}),
+    allowed(config1.accessLevels.user, UserControllerPatchUser));
 
   router.get('/JobPostingList/:id', passport.authenticate('jwt', { session: false }),
     allowed(config1.accessLevels.user, userController.userJobItems));

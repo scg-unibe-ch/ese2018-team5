@@ -1,15 +1,11 @@
 {
 	"adminjobpostings": {
-		"approved": "Approuve d'un Admin",
-		"company": "Nom de compagnie",
-		"createdat": "Publié",
 		"delete": "Rayer",
-		"description": "Profil du poste",
-		"edit": "Réviser",
-		"location": "Localisation",
-		"pensum": "Tâche",
-		"position": "Position",
-		"title": "Titre"
+		"edit": "Réviser"
+	},
+	"alertbox": {
+		"accept": "Acceptez",
+		"cancel": "Annuler"
 	},
 	"changepassword": {
 		"confirmPW": "Confirmez le mot de passe",
@@ -32,6 +28,7 @@
 	},
 	"jobPostingsEdit": {
 		"cancel": "Résilier",
+		"category": "",
 		"company": "Compagnie",
 		"description": "Description",
 		"editYourJobPostings": "Révise des offre d'emploi",
@@ -39,18 +36,6 @@
 		"pensum": "Tâche",
 		"position": "Position",
 		"submit": "Soumettre",
-		"title": "Titre"
-	},
-	"jobPostingsList": {
-		"approvedByAdmin": "Approuve d'un Admin",
-		"company": "Compagnie",
-		"createNewJobPosting": "Faire nouveau offre d'empoloi",
-		"delete": "Rayer",
-		"edit": "Réviser",
-		"jobDescription": "Profil du poste",
-		"pensum": "Tâche",
-		"position": "Position",
-		"published": "Publié",
 		"title": "Titre"
 	},
 	"jobpostings": {
@@ -108,8 +93,7 @@
 	"userprofile": {
 		"changePassword": "Changer mot de passe",
 		"deleteProfile": "Rayer utilisateur",
-		"email": "Email",
-		"save": "Sauvegarder",
-		"username": "Utilisateur"
+		"selectLanguage": "Choisissez la langue",
+		"submit": "Enregistrer le profil"
 	}
 }

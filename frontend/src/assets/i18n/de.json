@@ -1,15 +1,11 @@
 {
 	"adminjobpostings": {
-		"approved": "Von Admin akzeptiert",
-		"company": "Firmename",
-		"createdat": "Erstellt am",
 		"delete": "Löschen",
-		"description": "Beschreibung",
-		"edit": "Editieren",
-		"location": "Ort",
-		"pensum": "Pensum",
-		"position": "Position",
-		"title": "Titel"
+		"edit": "Editieren"
+	},
+	"alertbox": {
+		"accept": "Akzeptieren",
+		"cancel": "Abbrechen"
 	},
 	"changepassword": {
 		"confirmPW": "Passwort bestätigen",
@@ -32,6 +28,7 @@
 	},
 	"jobPostingsEdit": {
 		"cancel": "Abbrechen",
+		"category": "",
 		"company": "Firma",
 		"description": "Beschreibung",
 		"editYourJobPostings": "Jobs bearbeiten",
@@ -39,18 +36,6 @@
 		"pensum": "Pensum",
 		"position": "Position",
 		"submit": "Senden",
-		"title": "Titel"
-	},
-	"jobPostingsList": {
-		"approvedByAdmin": "Von Admin akzeptiert",
-		"company": "Firma",
-		"createNewJobPosting": "Neues Jobangebot",
-		"delete": "Löschen",
-		"edit": "Bearbeiten",
-		"jobDescription": "Beschreibung",
-		"pensum": "Pensum",
-		"position": "Position",
-		"published": "Veröffentlicht",
 		"title": "Titel"
 	},
 	"jobpostings": {
@@ -108,8 +93,7 @@
 	"userprofile": {
 		"changePassword": "Passwort ändern",
 		"deleteProfile": "Profil löschen",
-		"email": "Email",
-		"save": "Speichern",
-		"username": "Benutzername"
+		"selectLanguage": "Sprache auswählen",
+		"submit": "Profil speichern"
 	}
 }

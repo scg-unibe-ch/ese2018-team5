@@ -4,6 +4,11 @@
   margin-bottom: 20px;
 }
 
+.btnSubmit {
+
+
+}
+
 .container {
   position: center;
 }
@@ -34,10 +39,6 @@ img.resize {
 background-color: transparent;
   font-size: 25px;
 
-
-
-
-
 }
 
 .profileEmail{
@@ -55,11 +56,12 @@ background-color: transparent;
   height: 60%;
   margin: auto;
   background-color: lightpink;
+  text-align: center;
 }
 
 #card2{
   width: 30%;
   margin: auto;
   background-color: lightgrey;
-
+  text-align: center;
 }

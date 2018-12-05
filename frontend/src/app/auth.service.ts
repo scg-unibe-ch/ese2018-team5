@@ -26,7 +26,7 @@ export class AuthService {
   ) { }
 
   login(username: string, password:string): Observable<boolean> {
-    return this.http.post<{token: string}>('http://localhost:3000/api/authenticate',
+    return this.http.post<{token: string}>('http://localhost:3000/api/user/authenticate',
       {username: username, password: password})
       .pipe(
         map(result => {
@@ -61,7 +61,7 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.alertService.success('Successfully logged out', false);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/dashboard']);
   }
 
   public get loggedIn(): boolean {
@@ -80,6 +80,7 @@ export class AuthService {
     if(this.getToken() != null) {
       return !this.jwtHelper.isTokenExpired(this.getToken());
     }
+    this.logout();
     return false;
   }
 

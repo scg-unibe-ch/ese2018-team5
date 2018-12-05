@@ -10,26 +10,10 @@ const UserController = {
 
     if(instances === null || instances.length === 0) {
       res.status(404).json({message: 'error'});
-    } else if(instances.length === 0) {
-      res.status(404).json({instances})
+    } else {
+      res.statusCode = 200;
+      res.send(instances.map(e => e.toSimplification()));
     }
-    console.log(instances.map(e => e.toSimplification()));
-    res.status(200).json(instances.map(e => e.toSimplification()));
-
-
-    /*sequelize.sync().then(function() {
-      JobItem.findAll({
-        where: {
-          userId: req.params.id
-        }
-      }).then(function (JobItems){
-        if(!JobItems || JobItems.length == 0) {
-          return res.status(404).json({JobItems})
-        } else {
-          return res.status(200).json({JobItems})
-        }
-      })
-    });*/
   },
   user: async function (req:any, res:any) {
     req.user.password = '';
