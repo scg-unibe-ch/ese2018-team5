@@ -1,12 +1,16 @@
-.alertHeader{
 
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 
 
-
-.alertHeader {
-  padding: 20px 16px;
+#alertID {
+  width: 100%;
+  position: fixed;
 
 }
 

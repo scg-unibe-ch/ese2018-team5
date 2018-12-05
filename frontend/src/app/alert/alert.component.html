@@ -1,20 +1,6 @@
-<div class="alertHeader" id="alertID"
+<div  id="alertID"
   *ngIf="message"
   [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }"
   >{{message.text}}
 </div>
 
-<script>
-  window.onscroll = function() {myFunction()};
-
-  var header = document.getElementById("alertHeaderID");
-  var sticky = header.offsetTop;
-
-  function myFunction() {
-    if (window.pageYOffset > sticky) {
-      header.classList.add("sticky");
-    } else {
-      header.classList.remove("sticky");
-    }
-  }
-</script>

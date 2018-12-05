@@ -55,13 +55,40 @@ background-color: transparent;
   width: 30%;
   height: 60%;
   margin: auto;
-  background-color: lightpink;
+  background-color: white;
   text-align: center;
 }
 
 #card2{
   width: 30%;
   margin: auto;
-  background-color: lightgrey;
+  background-color: white;
   text-align: center;
+}
+
+.profileDIV{
+  margin-top: 10%;
+}
+
+.userBtn{
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+  margin-right: 5%;
+}
+
+#card2BtnDelete{
+  background-color:#9f0031;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
 }
