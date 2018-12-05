@@ -1,15 +1,11 @@
 {
 	"adminjobpostings": {
-		"approved": "Approuve d'un Admin",
-		"company": "Nom de compagnie",
-		"createdat": "Publié",
 		"delete": "Rayer",
-		"description": "Profil du poste",
-		"edit": "Réviser",
-		"location": "Localisation",
-		"pensum": "Tâche",
-		"position": "Position",
-		"title": "Titre"
+		"edit": "Réviser"
+	},
+	"alertbox": {
+		"accept": "Acceptez",
+		"cancel": "Annuler"
 	},
 	"changepassword": {
 		"confirmPW": "Confirmez le mot de passe",
