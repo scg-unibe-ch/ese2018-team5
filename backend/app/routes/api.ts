@@ -29,13 +29,13 @@ const APIRoutes = function(passport:any) {
   router.get('', UserControllerGetAll);
 
   router.get('/JobPostingList/:id', passport.authenticate('jwt', { session: false }),
-    allowOnly(config1.accessLevels.user, userController.userJobItems));
+    allowed(config1.accessLevels.user, userController.userJobItems));
 
   router.get('/profile/:id', passport.authenticate('jwt', {session: false}),
-    allowOnly(config1.accessLevels.user, adminController.index));
+    allowed(config1.accessLevels.user, userController.user));
 
   router.get('/admin/:id', passport.authenticate('jwt', { session: false }),
-    allowOnly(config1.accessLevels.admin, adminController.index));
+    allowed(config1.accessLevels.admin, UserControllerGetAll));
 
   return router;
 

@@ -42,17 +42,10 @@ export class UserService {
   }
 
   getUser(id:string):Observable<any> {
-    return this.httpClient.get(this._apiUrl + id);
+    return this.httpClient.get(this._apiUrl + 'profile/' + id);
   }
 
   getUsers(): Observable<any> {
-    return this.httpClient.get(this._apiUrl);
+    return this.httpClient.get(this._apiUrl+'admin/1');
   }
-
-  authenticateUser(user:User):Observable<any> {
-    return this.httpClient.post(this._apiUrl + 'authenticate', user);
-  }
-
-
-
 }

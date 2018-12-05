@@ -1,8 +1,7 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {JobItem} from '../../jobs/job-item';
 import {Observable} from 'rxjs';
-import {User} from '../models/user';
 import {AuthService} from '../../auth.service';
 
 @Injectable({
@@ -19,16 +18,6 @@ export class JobService {
   public update: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   getJobForUser(id:string): Observable<any> {
-
-    let token = this.auth.getToken();
-
-   const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+ token
-      })
-    };
-
    return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id);
   }
 

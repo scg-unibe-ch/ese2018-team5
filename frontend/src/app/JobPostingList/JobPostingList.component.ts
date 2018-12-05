@@ -31,10 +31,10 @@ export class JobPostingListComponent implements OnInit {
   fetchData() {
 
     this.jobService.getJobForUser(this.auth.getId()).subscribe(result => {
-      this.userItems = result.JobItems;
+      this.userItems = result as JobItem[];
     },
       error => {
-      this.userItems.length = 0;
+        this.userItems.length = 0;
       })
   }
 

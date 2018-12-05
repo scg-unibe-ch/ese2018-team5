@@ -47,6 +47,9 @@ UserController.getUsers = async (req: Request, res: Response) => {
     res.status(404).json({message: 'no users found'});
   }
   res.statusCode = 200;
+  for(let a of instances) {
+    a.password = '';
+  }
   res.send(instances.map(e => e.toSimplification()));
 
 };
