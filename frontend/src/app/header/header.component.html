@@ -1,11 +1,11 @@
-<header>
+<header id="head">
   <br>
   <div>
 
     <div id="languageDIV">
       <button id="languageBTN"
         #langSelect *ngFor="let lang of languages"
-        (click)="useLanguage(langSelect.value)"
+        (click)="useLanguage(langSelect.value.toLocaleLowerCase())"
         [value]="lang"
         [class.active]="lang === translate.currentLang"
       >{{lang}}
@@ -51,6 +51,7 @@
   </div>
   </div>
 
+  <mat-divider></mat-divider>
 </header>
 
 

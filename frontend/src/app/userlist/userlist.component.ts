@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from '../shared/models/user';
 import {UserService} from '../shared/service/user.service';
 import {AlertService} from '../shared/service/alert.service';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-userlist',
@@ -14,14 +15,14 @@ export class UserlistComponent implements OnInit {
   selectedUser: User;
   changePassword = false;
 
-  constructor(private userService: UserService, private alertService:AlertService) { }
+  constructor(private userService: UserService, private alertService:AlertService, private auth:AuthService) { }
 
   ngOnInit() {
     this.fetchData();
   }
 
   fetchData() {
-    this.userService.getUsers().subscribe(result => {
+    this.userService.getUsers(this.auth.getId()).subscribe(result => {
       this.users = result as User[];
     })
   }

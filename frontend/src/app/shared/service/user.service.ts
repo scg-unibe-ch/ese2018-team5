@@ -46,7 +46,7 @@ export class UserService {
     return this.httpClient.get(this.adminURL + 'profile/' + id);
   }
 
-  getUsers(): Observable<any> {
-    return this.httpClient.get(this.adminURL +'admin/1');
+  getUsers(id: string): Observable<any> {
+    return this.httpClient.get(this.adminURL +'admin/' + id);
   }
 }

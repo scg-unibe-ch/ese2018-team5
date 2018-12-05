@@ -1,0 +1,19 @@
+.alertHeader{
+
+}
+
+
+
+
+.alertHeader {
+  padding: 20px 16px;
+
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+

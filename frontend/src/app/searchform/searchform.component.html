@@ -14,12 +14,8 @@
               <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
             </mat-select>
 
-            <select class="selectCategory" id="selectCategory"
-                    [(ngModel)]="s.category" name="category">
-              <option hidden value="" disabled selected>{{'jobpostings.chooseACategory' | translate}}</option>
-              <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-            </select>
-            
+
+
           </mat-form-field>
         </div>
 
@@ -47,7 +43,7 @@
   </div>
 </div>
 
-
+<!--
 
 <div class="searchForm">
   <div class="form-group">
@@ -67,7 +63,7 @@
   </div>
 </div>
 
-
+-->
 
 
 <div>
