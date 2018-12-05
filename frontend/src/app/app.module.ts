@@ -2,18 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt'; // Import JWT module
 import { AuthService } from './auth.service'; //Import a authentication service
 import { AuthGuard } from './auth.guard'; //Import a authentication guard
-
 import {AppRoutingModule} from './app-routing.module';
 import {FilterPipeModule} from 'ngx-filter-pipe';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MatSliderModule} from '@angular/material';
-
+import {HttpInterceptorService} from './shared/service/http-interceptor.service';
 // Add css components from angular material
 import {
   MatButtonModule,
@@ -102,6 +100,7 @@ export function tokenGetter() {
     AppRoutingModule,
     MatGridListModule,
     MatSelectModule,
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -127,7 +126,12 @@ export function tokenGetter() {
     AuthService,
     AuthGuard,
     AlertService,
-    FilterPipeModule
+    FilterPipeModule,
+    [HttpInterceptorService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }]
   ],
   bootstrap: [AppComponent]
 })

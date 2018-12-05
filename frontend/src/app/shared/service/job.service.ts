@@ -29,7 +29,7 @@ export class JobService {
       })
     };
 
-   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id, httpOptions);
+   return this.httpClient.get('http://localhost:3000/api/JobPostingList/' + id);
   }
 
   createJob(jobItem:JobItem): Observable<any> {

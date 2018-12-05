@@ -35,11 +35,13 @@
 </form>
 </div>
 <mat-card id="card2">
-<mat-select [(ngModel)]="user.language" id="languageProfile" name="language" >
-  <mat-option [value]="lang" *ngFor="let lang of languages">
-    {{lang}}
-  </mat-option>
-</mat-select>
+<mat-form-field [floatLabel]="'always'">
+  <mat-select [(ngModel)]="user.language" id="languageProfile" name="language" placeholder="{{'userprofile.selectLanguage' | translate}}">
+    <mat-option [value]="lang" *ngFor="let lang of languages">
+      {{lang}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
 <button mat-raised-button class="btnTop" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
 <button mat-raised-button class="btnTop" color="warn" (click)="onDelete()">{{'userprofile.deleteProfile' | translate}}</button>
