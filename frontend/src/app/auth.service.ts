@@ -61,7 +61,7 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.alertService.success('Successfully logged out', false);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/dashboard']);
   }
 
   public get loggedIn(): boolean {
