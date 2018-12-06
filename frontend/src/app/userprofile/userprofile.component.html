@@ -1,6 +1,7 @@
 
 <div  *ngIf="!changePassword">
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <!--
     <div class="profileDIV">
 
       <mat-card id="card1">
@@ -33,29 +34,32 @@
       </mat-card>
 
 
-
+-->
 
 
       <mat-card id="cardtest">
         <h2> Welcome {{user.username}}</h2>
         <img class="resize" src="../../assets/ProfileIMG.png"/>
 
-        <input  type="text" class="inputTest"
+        <div id="divs">
+      Username: <input  type="text" class="inputTest"
                [(ngModel)]="user.username" name="username">
-
-        <input  type="email" email="true" class="inputTest"
+</div>
+        <div style="text-align: left">
+        Email:
+          <input  type="email" email="true" class="inputTest2"
                [(ngModel)]="user.email" name="email">
-
-
-          <select [(ngModel)]="user.language" id="languageProfile" name="language" >
+        </div>
+<div id="languageDIV">
+          <select [(ngModel)]="user.language" id="languageID" name="language" >
             <option [value]="lang" *ngFor="let lang of languages">
               {{lang}}
             </option>
           </select>
-
-
-        <button  class="userBtn" type="submit">{{'userprofile.submit' | translate}}</button>
-
+</div>
+<div id="btnDIV">
+        <button  class="userBtn2" type="submit">{{'userprofile.submit' | translate}}</button>
+</div>
 
       </mat-card>
 
@@ -63,12 +67,12 @@
 
 
 
-    </div>
+
 
   </form>
 </div>
 
-
+<!-- </div> -->
 
 <mat-card id="card2">
 
