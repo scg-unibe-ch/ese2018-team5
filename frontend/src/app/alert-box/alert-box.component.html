@@ -2,11 +2,12 @@
   <mat-card>
 
     <mat-card-header class="header">
-      {{message}}
+     <span id="spanBox"> {{message}}</span>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-raised-button color="warn" (click)="doAct()">{{'alertbox.accept' | translate}}</button>
-      <button mat-raised-button (click)="cancel()">{{'alertbox.cancel' | translate}}</button>
+
+      <button mat-raised-button id="btnCancel" (click)="cancel()">{{'alertbox.cancel' | translate}}</button>
+      <button mat-raised-button id="btnDelete" (click)="doAct()">{{'alertbox.accept' | translate}}</button>
     </mat-card-actions>
   </mat-card>
 </div>

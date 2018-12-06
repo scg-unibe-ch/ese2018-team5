@@ -62,7 +62,6 @@ background-color: transparent;
 #card2{
   width: 30%;
   margin: auto;
-  margin-top: 20%;
   background-color: white;
   text-align: center;
 }
@@ -83,6 +82,7 @@ background-color: transparent;
   font-size:20px;
   padding:5px 30px;
   margin-right: 5%;
+  margin-bottom: 5%;
 }
 
 #card2BtnDelete{
@@ -94,6 +94,7 @@ background-color: transparent;
   font-family:"Open Sans";
   font-size:20px;
   padding:5px 30px;
+  margin-top: 5%;
 }
 
 #cardtest{
@@ -107,32 +108,77 @@ background-color: transparent;
 }
 
 .inputTest{
-margin-left: 17.5%;
+margin-left: 7%;
   text-align: center;
+  color: #196c8a;
+  font-weight: bold;
+  font-family:"Open Sans";
+  font-size:17.5px;
+  background:none;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-bottom: grey;
+  border-style: solid;
 }
 
 .inputTest2{
-  margin-left: 23.75%;
+  margin-left: 17.5%;
   text-align: center;
+  color: #196c8a;
+  font-weight: bold;
+  font-family:"Open Sans";
+  font-size:17.5px;
+  background:none;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-bottom: grey;
+  border-style: solid;
 }
 
 
 #inputsID{
   display: block;
   float: left;
+
 }
 
 #languageID{
-  display: block;
+  background: #ffffff;
+  padding: 1rem;
+
+  width: 45%;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #196c8a;
+  font-weight: bold;
+  font-family:"Open Sans";
+  font-size:17.5px;
+  background:none;
+  border-top: white;
+  border-left: white;
+  border-right: white;
+  border-bottom: grey;
+  border-style: solid;
+  display: inline-block;
+  text-align: center;
+ margin-left: 9%;
+
+
 }
 
 #divs{
   text-align: left;
-  margin-bottom: 5%;
+  margin-bottom: 7.5%;
 }
 
 #languageDIV{
-  margin-top: 5%;
+  margin-top: 7.5%;
+  text-align: left;
 }
 
 .userBtn2{
@@ -144,9 +190,15 @@ margin-left: 17.5%;
   font-family:"Open Sans";
   font-size:20px;
   padding:5px 30px;
-  margin-top: 5%;
+  margin-top: 7.5%;
 }
 
 #btnDIV{
-  text-align: right;
+  text-align: center;
 }
+
+#textID{
+  font-size: 25px;
+  font-family: "Open Sans";
+}
+

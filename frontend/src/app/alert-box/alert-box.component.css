@@ -7,3 +7,35 @@
   width: auto;
   text-align: center;
 }
+
+#spanBox{
+  font-size: 20px;
+  font-family: "Open Sans";
+  color: black;
+}
+
+#btnDelete{
+  background-color:#9f0031;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+  margin-top: 5%;
+}
+#btnCancel{
+
+  display: block;
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
