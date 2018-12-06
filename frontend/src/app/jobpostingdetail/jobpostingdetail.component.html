@@ -17,13 +17,19 @@
 
 <div class="cardSearch">
   <div>
-    <mat-grid-list class="list" cols="4" rowHeight="400px" gutterSize="15px">
-      <mat-grid-tile *ngFor="let jobItem of jobItems">
-        <mat-card class="card" >
-          <mat-card-header>
-            <mat-card-title>{{jobItem.title}}</mat-card-title>
-            <mat-card-subtitle >{{jobItem.createdAt | date}}</mat-card-subtitle>
-            <mat-card-subtitle >{{jobItem.updatedAt| date}}</mat-card-subtitle>
+    <mat-grid-list  class="list" cols="1" rowHeight="300" gutterSize="15px">
+      <mat-grid-tile  *ngFor="let jobItem of jobItems">
+        <mat-card class="cardJob" >
+          <div id="totalDiv">
+          <div id="picture">
+            <img  class="resize" src="../../assets/companyLogo.png"/>
+          </div>
+         <div id="info">
+          <mat-card-header style="background-color: #9f0031">
+            <mat-card-title class="cardTitle">{{jobItem.title}}</mat-card-title>
+            <mat-card-subtitle class="subtitle" >{{jobItem.company}} - {{jobItem.location}}</mat-card-subtitle>
+         <!--   <mat-card-subtitle class="cardDate" >{{jobItem.createdAt | date}}</mat-card-subtitle>
+            <mat-card-subtitle >{{jobItem.updatedAt| date}}</mat-card-subtitle> -->
             <mat-checkbox
               *ngIf="admin"
               (click)="flipApproved(jobItem)">
@@ -32,11 +38,12 @@
           </mat-card-header>
 
           <mat-card-content class="mat-class-content">
-            <p>{{jobItem.category}}</p>
-            <p>{{jobItem.position}}</p>
-            <p>{{jobItem.location}}</p>
-            <p>{{jobItem.pensum}}</p>
+
             <p class="description" type="text">{{jobItem.description}}</p>
+
+            <label id="jobDetail">{{jobItem.category}}</label>
+            <label id="jobDetail">{{jobItem.pensum}}</label>
+            <label id="jobDetail">{{jobItem.position}}</label>
 
 
           </mat-card-content>
@@ -57,9 +64,11 @@
               Approve
             </mat-checkbox>
           </mat-card-footer>
-
+         </div>
+          </div>
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>
+
