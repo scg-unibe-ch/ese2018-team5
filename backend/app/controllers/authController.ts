@@ -44,7 +44,7 @@ AuthController.authenticateUser = async (req:any, res:any) => {
             let token = jwt.sign(
               {user},
               config.keys.secret,
-              { expiresIn: '30m' }
+              { expiresIn: '60m' }
             );
 
             res.json({

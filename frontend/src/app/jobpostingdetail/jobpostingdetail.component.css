@@ -70,7 +70,7 @@ img.resize {
   margin: auto;
 }
 
-#jobDetail{
+.jobDetail{
 text-align: center;
   display: inline-block;
   border-radius: 50px;

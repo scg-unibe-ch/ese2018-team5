@@ -2,23 +2,22 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+<!-- Allows Admin to filter jobpostings by approved/non-approved -->
+<div class="select" *ngIf="admin">
+  <mat-form-field>
+    <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
+      <mat-option  value="all">All Jobpostings</mat-option>
+      <mat-option  value="true">Approved Jobpostings</mat-option>
+      <mat-option value="false">non-Approved Jobpostings</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
 
 <div class="cardSearch">
   <div>
     <mat-grid-list  class="list" cols="1" rowHeight="300" gutterSize="15px">
-      <mat-grid-tile  *ngFor="let jobItem of jobItems">
+      <mat-grid-tile  *ngFor="let jobItem of jobItems | filterBy: jobItemFilter">
         <mat-card class="cardJob" >
           <div id="totalDiv">
           <div id="picture">
@@ -32,7 +31,8 @@
             <mat-card-subtitle >{{jobItem.updatedAt| date}}</mat-card-subtitle> -->
             <mat-checkbox
               *ngIf="admin"
-              (click)="flipApproved(jobItem)">
+              [(ngModel)]="jobItem.approved"
+              (change)="flipApproved(jobItem)">
                 Approve
             </mat-checkbox>
           </mat-card-header>
@@ -58,11 +58,7 @@
           </mat-card-actions>
 
           <mat-card-footer *ngIf="admin">
-            <mat-checkbox class="checkbox"
-              *ngIf="admin"
-              (click)="flipApproved(jobItem)">
-              Approve
-            </mat-checkbox>
+
           </mat-card-footer>
          </div>
           </div>

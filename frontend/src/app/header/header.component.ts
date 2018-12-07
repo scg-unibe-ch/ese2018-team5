@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
  // language switcher based on: https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular6-app-with-ngx-translate
   //TODO: Button to change set preferred language
-  languages: string[] = ['EN', 'DE', 'FR'];
+  languages: string[] = ['en', 'de', 'fr'];
 
   id: number;
   user: User;
@@ -25,11 +25,14 @@ export class HeaderComponent implements OnInit {
     }
 
   ngOnInit() {
-
     if(localStorage.getItem('lang') !== null) {
       this.translate.use(localStorage.getItem('lang'));
     } else {
       this.translate.use('en');
+    }
+
+    if(!this.auth.isAuthenticated()) {
+      this.auth.logout();
     }
   }
 

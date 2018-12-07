@@ -5,10 +5,10 @@
     <div id="languageDIV">
       <button id="languageBTN"
         #langSelect *ngFor="let lang of languages"
-        (click)="useLanguage(langSelect.value.toLocaleLowerCase())"
+        (click)="useLanguage(langSelect.value)"
         [value]="lang"
         [class.active]="lang === translate.currentLang"
-      >{{lang}}
+      >{{lang.toUpperCase()}}
       </button>
     </div>
 

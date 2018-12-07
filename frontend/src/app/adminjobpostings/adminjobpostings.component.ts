@@ -11,7 +11,6 @@ import {Router} from '@angular/router';
 })
 export class AdminjobpostingsComponent implements OnInit {
 
-  jobItem: JobItem = new JobItem();
   jobItems: JobItem[] = [];
 
   constructor(
