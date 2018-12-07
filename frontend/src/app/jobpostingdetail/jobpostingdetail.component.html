@@ -19,14 +19,11 @@
     <mat-grid-list  class="list" cols="1" rowHeight="300" gutterSize="15px">
       <mat-grid-tile  *ngFor="let jobItem of jobItems | filterBy: jobItemFilter">
         <mat-card class="cardJob" >
-          <div id="totalDiv">
-          <div id="picture">
-            <img  class="resize" src="../../assets/companyLogo.png"/>
-          </div>
+
          <div id="info">
-          <mat-card-header style="background-color: #9f0031">
+          <mat-card-header >
             <mat-card-title class="cardTitle">{{jobItem.title}}</mat-card-title>
-            <mat-card-subtitle class="subtitle" >{{jobItem.company}} - {{jobItem.location}}</mat-card-subtitle>
+            <mat-card-subtitle class="subtitle" > <strong style="font-size: 17.5px">{{jobItem.company}}</strong> <span style="font-size: 20px"> - </span> {{jobItem.location}}</mat-card-subtitle>
          <!--   <mat-card-subtitle class="cardDate" >{{jobItem.createdAt | date}}</mat-card-subtitle>
             <mat-card-subtitle >{{jobItem.updatedAt| date}}</mat-card-subtitle> -->
             <mat-checkbox
@@ -41,9 +38,9 @@
 
             <p class="description" type="text">{{jobItem.description}}</p>
 
-            <label id="jobDetail">{{jobItem.category}}</label>
-            <label id="jobDetail">{{jobItem.pensum}}</label>
-            <label id="jobDetail">{{jobItem.position}}</label>
+            <label class="jobDetail">{{jobItem.category}}</label>
+            <label class="jobDetail">{{jobItem.pensum}} %</label>
+            <label class="jobDetail">{{jobItem.position}}</label>
 
 
           </mat-card-content>
@@ -54,14 +51,14 @@
           </mat-card-actions>
 
           <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
-            <button mat-raised-button>Apply</button>
+            <button class="applyBtn" mat-raised-button>Apply</button>
           </mat-card-actions>
 
           <mat-card-footer *ngIf="admin">
 
           </mat-card-footer>
          </div>
-          </div>
+
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>

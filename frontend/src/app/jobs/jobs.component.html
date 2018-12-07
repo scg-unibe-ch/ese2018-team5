@@ -65,12 +65,11 @@
 
           <select
             class="selectStuff"
-            placeholder="Choose a pensum"
             id="selectPensum"
             [(ngModel)]="formJob.pensum"
             name="Pensum">
             <!--<option hidden value="" disabled selected></option>-->
-            <option></option>
+            <option hidden value="" disabled selected>Select a pensum</option>
             <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
           </select>
 
@@ -91,7 +90,7 @@
             [(ngModel)]="formJob.category"
             name="category"
             placeholder="Select a category for your job">
-            <option></option>
+            <option hidden value="" disabled selected>Select a category</option>
             <option *ngFor="let category of categories" [value]="category">{{category}}</option>
           </select>
 
@@ -104,7 +103,8 @@
            class="selectStuff2"
             [(ngModel)]="formJob.location"
             name="location">
-            <option></option>
+            <option hidden value="" disabled selected>Select a location</option>
+
             <option *ngFor="let location of locations" [value]="location">{{location}}</option>
           </select>
 
