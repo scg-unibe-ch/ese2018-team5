@@ -3,3 +3,21 @@
   display: block;
   margin-top: 50px;
 }
+
+.container1 {
+  margin-top: 50px;
+  height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 80%;
+}
+
+.search {
+  margin-left: 5px;
+}
+
+.input {
+  margin-left: 50px;
+}
