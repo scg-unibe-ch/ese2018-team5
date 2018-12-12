@@ -10,7 +10,14 @@ import {AppRoutingModule} from './app-routing.module';
 import {FilterPipeModule} from 'ngx-filter-pipe';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {MatMenuModule, MatSliderModule, MatSortModule, MatTableModule} from '@angular/material';
+import {
+  MatMenuModule,
+  MatSliderModule,
+  MatSortModule,
+  MatTableModule,
+  MatPaginator,
+  MatPaginatorModule
+} from '@angular/material';
 import {HttpInterceptorService} from './shared/service/http-interceptor.service';
 // Add css components from angular material
 import {
@@ -105,6 +112,7 @@ export function tokenGetter() {
     MatTableModule,
     MatSortModule,
     MatMenuModule,
+    MatPaginatorModule,
 
     TranslateModule.forRoot({
       loader: {

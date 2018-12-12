@@ -1,4 +1,4 @@
-<div class="container1">
+<div *ngIf="!editUser" class="container1">
 
   <div class="search">
     <mat-form-field class="input">
@@ -58,8 +58,8 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="editUser(element)">Edit</button>
-          <button mat-menu-item (click)="changePassword = true">Change Password</button>
+          <button mat-menu-item (click)="eUser(element)">Edit</button>
+          <button mat-menu-item (click)="changePassw(element)">Change Password</button>
           <button mat-menu-item (click)="deleteUser(element)">Delete</button>
         </mat-menu>
       </mat-cell>
@@ -68,24 +68,12 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
 </div>
 
-
-
-
-<div class="container">
-  <div *ngIf="!changePassword">
-    <h2>All Users</h2>
-
-    <ul class="users">
-      <li *ngFor="let user of users"
-      [class.selected]="user === selectedUser"
-      (click)="onSelect(user)">
-        <span class="badge">{{user.id}}</span> {{user.username}}
-      </li>
-    </ul>
-
-    <div class="row" id="popup" *ngIf="selectedUser">
+<div class="container" *ngIf="selectedUser && editUser">
+  <div>
+    <div class="row" id="popup" >
       <mat-card>
       <div class="col-md-12">
         <form #userForm="ngForm">
@@ -120,9 +108,7 @@
               </div>
 
               <mat-card-actions>
-                <button mat-button="btn" type="button" (click)="editUser(selectedUser)">{{'userlist.save'| translate}}</button>
-                <button mat-button="btn" type="button" (click)="changePassword = true" >{{'userlist.changePW' | translate}}</button>
-                <button mat-button type="button" (click)="deleteUser(selectedUser)">{{'userlist.deleteUser'| translate}}</button>
+                <button mat-button="btn" type="button" (click)="editUsers(selectedUser)">{{'userlist.save'| translate}}</button>
               </mat-card-actions>
             </div>
             </mat-card-content>
@@ -131,9 +117,8 @@
       </mat-card>
     </div>
   </div>
+</div>
 
-
-  <div *ngIf="changePassword && selectedUser">
-      <app-changepassword [user]="selectedUser" (changePW)="swapPW($event)"></app-changepassword>
-  </div>
+<div *ngIf="changePassword && selectedUser">
+  <app-changepassword [user]="selectedUser" (changePW)="swapPW($event)"></app-changepassword>
 </div>

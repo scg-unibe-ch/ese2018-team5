@@ -3,7 +3,7 @@ import {User} from '../shared/models/user';
 import {UserService} from '../shared/service/user.service';
 import {AlertService} from '../shared/service/alert.service';
 import {AuthService} from '../auth.service';
-import {MatTableDataSource, MatSort} from '@angular/material';
+import {MatTableDataSource, MatSort, MatPaginator} from '@angular/material';
 import {FilterPipe} from 'ngx-filter-pipe';
 
 @Component({
@@ -14,11 +14,13 @@ import {FilterPipe} from 'ngx-filter-pipe';
 export class UserlistComponent implements OnInit {
 
   users: User[] = [];
+  editUser = false;
   selectedUser: User;
   changePassword = false;
   displayedColumns = ['id','username','email','role','language','actions'];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   userFilter: any = {
     id: '',
@@ -37,10 +39,7 @@ export class UserlistComponent implements OnInit {
   createTable() {
     this.dataSource = new MatTableDataSource(this.users);
     this.dataSource.sort = this.sort;
-  }
-
-  refresh() {
-    this.dataSource.data = this.users;
+    this.dataSource.paginator = this.paginator;
   }
 
   fetchData() {
@@ -50,41 +49,67 @@ export class UserlistComponent implements OnInit {
     })
   }
 
-  onSelect(user:User):void {
+  refreshData() {
+    this.userService.getUsers(this.auth.getId()).subscribe( data => {
+      this.users = data as User[];
+      this.dataSource.data = this.users;
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+      this.applyFilter();
+    })
+  }
+
+  changePassw(user:User) {
+    this.editUser = false;
+    this.changePassword = true;
     this.selectedUser = user;
   }
 
   swapPW(p) {
     this.changePassword = p;
+    this.selectedUser = null;
+    this.editUser = false;
   }
 
-  editUser(user:User) {
+  eUser(user:User) {
+    this.changePassword = false;
+    this.editUser = true;
+    this.selectedUser = user;
+  }
+
+  editUsers(user:User) {
+
     this.userService.patchUserWithOutPW(user).subscribe(
       data => {
         this.alertService.success('User edited', false);
-        this.fetchData();
+        this.refreshData();
       },
       error => {
         this.alertService.error('Could not edit user', false);
+        this.refreshData();
       }
     );
-
+    this.editUser = false;
     this.selectedUser = null;
   }
 
  //TODO: password
   deleteUser(user:User) {
-    this.userService.deleteUser(user).subscribe(() =>
-      data => {
-        this.alertService.success('User deleted', true);
-        this.fetchData();
-      },
-      error => {
-        this.alertService.error('Could not delete user', true);
-        this.fetchData();
-      }
-    );
-    this.refresh();
+    if(user.role === 4) {
+      this.alertService.error('Cannot delete other Administrators', false);
+    } else {
+      this.userService.deleteUser(user).subscribe(
+        data=> {
+          this.alertService.success('User deleted', false);
+          this.refreshData();
+        },
+        error => {
+          this.alertService.error('Could not delete user', false);
+          this.refreshData();
+        }
+      );
+    }
+
   }
 
   applyFilter() {
