@@ -13,7 +13,7 @@ export class ChangepasswordComponent implements OnInit {
   @Input() user: User;
 
   @Output() changePW = new EventEmitter();
-
+  @Output() b = new EventEmitter();
   passwordChange = true;
 
   password: string;
@@ -40,6 +40,11 @@ export class ChangepasswordComponent implements OnInit {
     } else {
       this.alertService.error('Passwords do not match', false)
     }
+  }
+
+  back() {
+    this.passwordChange = false;
+    this.b.emit(this.passwordChange);
   }
 }
 

@@ -28,7 +28,7 @@
 	},
 	"jobPostingsEdit": {
 		"cancel": "Abbrechen",
-		"category": "",
+		"category": "Kategorie",
 		"company": "Firma",
 		"description": "Beschreibung",
 		"editYourJobPostings": "Jobs bearbeiten",

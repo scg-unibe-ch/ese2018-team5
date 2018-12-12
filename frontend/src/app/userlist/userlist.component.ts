@@ -109,7 +109,6 @@ export class UserlistComponent implements OnInit {
         }
       );
     }
-
   }
 
   applyFilter() {

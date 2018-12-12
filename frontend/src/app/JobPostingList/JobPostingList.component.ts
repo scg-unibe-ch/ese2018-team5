@@ -12,7 +12,6 @@ import {AuthService} from '../auth.service';
 })
 export class JobPostingListComponent implements OnInit {
 
-  @Input()
   jobItem: JobItem = new JobItem();
   userItems: JobItem[] = [];
 

@@ -28,7 +28,7 @@
 	},
 	"jobPostingsEdit": {
 		"cancel": "Résilier",
-		"category": "",
+		"category": "Catégorie",
 		"company": "Compagnie",
 		"description": "Description",
 		"editYourJobPostings": "Révise des offre d'emploi",

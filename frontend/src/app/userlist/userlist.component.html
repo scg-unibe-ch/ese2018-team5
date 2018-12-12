@@ -120,5 +120,5 @@
 </div>
 
 <div *ngIf="changePassword && selectedUser">
-  <app-changepassword [user]="selectedUser" (changePW)="swapPW($event)"></app-changepassword>
+  <app-changepassword [user]="selectedUser" (changePW)="swapPW($event)" (b)="swapPW($event)"></app-changepassword>
 </div>

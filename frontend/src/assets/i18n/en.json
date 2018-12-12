@@ -28,7 +28,7 @@
 	},
 	"jobPostingsEdit": {
 		"cancel": "Cancel",
-		"category": "",
+		"category": "Category",
 		"company": "Company",
 		"description": "Description",
 		"editYourJobPostings": "Edit your job postings",

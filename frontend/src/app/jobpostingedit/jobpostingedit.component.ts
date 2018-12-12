@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
 import {JobItemDataService} from './job-item-data.service';
 import {JobService} from '../shared/service/job.service';
@@ -13,6 +13,7 @@ import {AuthService} from '../auth.service';
 export class JobpostingeditComponent implements OnInit {
 
   selectedJobItem: JobItem;
+
   submitted = false;
 
   categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
@@ -27,13 +28,19 @@ export class JobpostingeditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.data.currentJobItem.subscribe(jobitem => this.selectedJobItem = jobitem);
+    if(localStorage.getItem('job') == undefined) {
+      this.data.currentJobItem.subscribe(jobitem => this.selectedJobItem = jobitem);
+      localStorage.setItem('job', JSON.stringify(this.selectedJobItem));
+    } else {
+      this.selectedJobItem = JSON.parse(localStorage.getItem('job'));
+    }
+
   }
 
   onSubmit() {
-    this.submitted = true;
+    localStorage.removeItem('job');
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    if(this.auth.getRole() === '4') {
+    if(this.auth.isAdmin()) {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);
@@ -41,7 +48,8 @@ export class JobpostingeditComponent implements OnInit {
   }
 
   cancel() {
-    if(this.auth.getRole() === '4') {
+    localStorage.removeItem('job');
+    if(this.auth.isAdmin()) {
       this.router.navigate(['/admin/jobpostings']);
     } else {
       this.router.navigate(['/jobpostingList']);
