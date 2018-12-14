@@ -11,9 +11,10 @@
     </mat-form-field>
   </div>
   <div>
-    <mat-grid-list  class="list" cols="1" rowHeight="300" gutterSize="15px">
+    <mat-grid-list  class="list" cols="1" rowHeight="350" gutterSize="15px">
       <mat-grid-tile  *ngFor="let jobItem of jobItems | filterBy: jobItemFilter">
         <mat-card class="cardJob" >
+ <div> <img class="resize" src="../../assets/companyLogo.png"/> </div>
 
          <div id="info">
           <mat-card-header >
@@ -36,13 +37,14 @@
             <label class="jobDetail">{{jobItem.category}}</label>
             <label class="jobDetail">{{jobItem.pensum}} %</label>
             <label class="jobDetail">{{jobItem.position}}</label>
-
+           
+            <label class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" > info.admin@sbb.ch </span></label>
 
           </mat-card-content>
 
-          <mat-card-actions *ngIf="editable">
-            <button mat-button type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
-            <button mat-button type="button" (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
+          <mat-card-actions id="action" *ngIf="editable">
+            <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
+            <button mat-button id="edit" type="button" (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
           </mat-card-actions>
 
           <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
