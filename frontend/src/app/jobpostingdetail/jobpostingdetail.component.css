@@ -2,6 +2,18 @@
 
 }
 
+#filter{
+  font-size: 30px;
+color: black;
+  margin-left: 25%;
+}
+.select{
+  display: inline-block;
+  color: black;
+  font-size: 20px;
+
+
+}
 .cardJob {
   background-color: white;
   border-style: solid;
@@ -100,11 +112,12 @@ float: left;
 }
 
 .select {
-
+margin-left: 10%;
+  margin-top: 5%;
 }
 
 #action{
-  float: right;
+
 }
 
 #delete{
@@ -116,6 +129,7 @@ float: left;
   font-family:"Open Sans";
   font-size:15px;
   padding:3px 20px;
+  margin-right: 5%;
 
 }
 
@@ -129,10 +143,8 @@ float: left;
   font-family:"Open Sans";
   font-size:15px;
   padding:3px 20px;
-
-
+  margin-right: 5%;
 }
-
 
 .description{
   color: grey;
@@ -148,4 +160,25 @@ float: left;
   font-size: 16px;
   color: grey;
 
+}
+
+#editTool{
+
+text-align: center;
+  margin-top: 2.5%;
+}
+
+#checkboxID{
+background-color: #006a05;
+  cursor:pointer;
+  padding:7.5px 20px;
+  border-color: #006a05;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#spanApprove{
+  color:white;
+  font-family:"Open Sans";
+  font-size:15px;
 }

@@ -1,6 +1,7 @@
 
 <div class="cardSearch">
   <!-- Allows Admin to filter jobpostings by approved/non-approved -->
+  <label id="filter">Set filter: </label>
   <div class="select" *ngIf="admin">
     <mat-form-field>
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
@@ -22,12 +23,7 @@
             <mat-card-subtitle class="subtitle" > <strong style="font-size: 17.5px">{{jobItem.company}}</strong> <span style="font-size: 20px"> - </span> {{jobItem.location}}</mat-card-subtitle>
          <!--   <mat-card-subtitle class="cardDate" >{{jobItem.createdAt | date}}</mat-card-subtitle>
             <mat-card-subtitle >{{jobItem.updatedAt| date}}</mat-card-subtitle> -->
-            <mat-checkbox
-              *ngIf="admin"
-              [(ngModel)]="jobItem.approved"
-              (change)="flipApproved(jobItem)">
-                Approve
-            </mat-checkbox>
+
           </mat-card-header>
 
           <mat-card-content class="mat-class-content">
@@ -37,24 +33,36 @@
             <label class="jobDetail">{{jobItem.category}}</label>
             <label class="jobDetail">{{jobItem.pensum}} %</label>
             <label class="jobDetail">{{jobItem.position}}</label>
-           
+
             <label class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" > info.admin@sbb.ch </span></label>
 
           </mat-card-content>
+            <mat-divider></mat-divider>
 
-          <mat-card-actions id="action" *ngIf="editable">
-            <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
-            <button mat-button id="edit" type="button" (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
-          </mat-card-actions>
+         </div>
+          <div id="editTool">
+            <mat-card-actions id="action" *ngIf="editable">
+              <button mat-button id="edit" type="button" (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
+              <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
 
-          <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
-            <button class="applyBtn" mat-raised-button>Apply</button>
-          </mat-card-actions>
+              <mat-checkbox
+                id="checkboxID"
+                *ngIf="admin"
+                [(ngModel)]="jobItem.approved"
+                (change)="flipApproved(jobItem)">
+                <span id="spanApprove">    Approve</span>
 
+              </mat-checkbox>
+
+            </mat-card-actions>
+
+            <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
+              <button class="applyBtn" mat-raised-button>Apply</button>
+            </mat-card-actions>
+          </div>
           <mat-card-footer *ngIf="admin">
 
           </mat-card-footer>
-         </div>
 
         </mat-card>
       </mat-grid-tile>

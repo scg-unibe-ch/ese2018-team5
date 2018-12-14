@@ -1,4 +1,4 @@
-
+<!--
 <div class="container">
   <h1>{{'jobPostingsEdit.editYourJobPostings'| translate}}</h1>
   <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
@@ -112,5 +112,138 @@
   </form>
 </div>
 
+-->
+
+
+<div class="jobPostDIV">
+  <mat-card id="jobPostCard">
+    <h1 id="titelJobOffer">Edit this job</h1>
+
+
+
+    <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
+
+
+
+      <label id="labelTitle">TITLE</label>
+
+
+      <input
+        class="form-control"
+        type="text"
+        id="inputTitle"
+        name="jobTitle"
+        aria-describedby="Job Title"
+        placeholder="Enter a title for your job f.e 'Database Administrator'"
+        [(ngModel)]="selectedJobItem.title">
+
+
+
+      <div id="tog1">
+
+
+        <label id="labelCompany">COMPANY</label>
+        <label id="labelPosition">POSITION</label>
+
+        <br>
+        <input
+          class="form-control"
+          name="company"
+          type="text"
+          id="inputCompany"
+          aria-describedby="Company Name"
+          placeholder="Enter company Name "
+          [(ngModel)]="selectedJobItem.company">
+
+
+
+
+        <input
+          class="form-control"
+          name="Position"
+          type="text"
+          id="inputPosition"
+          aria-describedby="Position"
+          placeholder="Enter job position"
+          [(ngModel)]="selectedJobItem.position">
+
+      </div>
+
+
+
+
+      <label id="labelCompany">PENUSM</label>
+
+      <label id="labelPosition2">CATEGORY</label>
+
+      <select
+        class="selectStuff"
+        id="selectPensum"
+        [(ngModel)]="selectedJobItem.pensum"
+        name="Pensum">
+        <!--<option hidden value="" disabled selected></option>-->
+        <option hidden value="" disabled selected>Select a pensum</option>
+        <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
+      </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <select
+        class="selectStuff"
+        [(ngModel)]="selectedJobItem.category"
+        name="category"
+        placeholder="Select a category for your job">
+        <option hidden value="" disabled selected>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+
+
+
+
+      <label id="labelLocation">LOCATION</label>
+
+      <select
+        class="selectStuff2"
+        [(ngModel)]="selectedJobItem.location"
+        name="location">
+        <option hidden value="" disabled selected>Select a location</option>
+
+        <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+      </select>
+
+
+      <label id="labelCompany">DESCRIPTION</label>
+
+      <input
+        class="form-control"
+        name="Description"
+        type="text"
+        id="inputDescription"
+        aria-describedby="Description"
+        placeholder="Enter job description"
+        [(ngModel)]="selectedJobItem.description">
+
+      <button type="submit" class="btnSubmit btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
+      <button type="button" (click)="cancel()" class="btn">{{'jobPostingsEdit.cancel' | translate}}</button>
+
+
+    </form>
+
+
+
+  </mat-card>
+
+
+</div>
 
 
