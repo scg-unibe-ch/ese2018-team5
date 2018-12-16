@@ -30,6 +30,8 @@ export class UserlistComponent implements OnInit {
     language:''
   };
 
+  roles: number[] = [2,4];
+
   constructor(private userService: UserService, private alertService:AlertService, private auth:AuthService, private filterPipe: FilterPipe) { }
 
   ngOnInit() {
@@ -111,8 +113,17 @@ export class UserlistComponent implements OnInit {
     }
   }
 
+  cancel() {
+    this.changePassword = false;
+  }
+
   applyFilter() {
     this.dataSource.data = this.filterPipe.transform(this.users, this.userFilter);
   }
+
+  compareFn(o1: any, o2: any): boolean {
+    return o1 === o2;
+  }
+
 }
 

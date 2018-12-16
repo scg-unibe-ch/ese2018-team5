@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
 import {JobItemDataService} from './job-item-data.service';
 import {JobService} from '../shared/service/job.service';
@@ -12,47 +12,30 @@ import {AuthService} from '../auth.service';
 })
 export class JobpostingeditComponent implements OnInit {
 
-  selectedJobItem: JobItem;
+  @Input() selectedJobItem: JobItem;
 
-  submitted = false;
+  @Output() cancelEdit = new EventEmitter();
+  @Output() submitEdit = new EventEmitter();
+
 
   categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
   locations: string [] = ['Bern', 'Solothurn', 'Zürich', 'Genf'];
   pensumCount: number[] = [10,20,30,40,50,60,70,80,90,100];
 
   constructor(
-    private data:JobItemDataService,
-    private jobService:JobService,
-    private router:Router,
-    private auth: AuthService
+    private jobService:JobService
   ) { }
 
   ngOnInit() {
-    if(localStorage.getItem('job') == undefined) {
-      this.data.currentJobItem.subscribe(jobitem => this.selectedJobItem = jobitem);
-      localStorage.setItem('job', JSON.stringify(this.selectedJobItem));
-    } else {
-      this.selectedJobItem = JSON.parse(localStorage.getItem('job'));
-    }
 
   }
 
   onSubmit() {
-    localStorage.removeItem('job');
     this.jobService.updateJob(this.selectedJobItem).subscribe();
-    if(this.auth.isAdmin()) {
-      this.router.navigate(['/admin/jobpostings']);
-    } else {
-      this.router.navigate(['/jobpostingList']);
-    }
+    this.submitEdit.emit();
   }
 
   cancel() {
-    localStorage.removeItem('job');
-    if(this.auth.isAdmin()) {
-      this.router.navigate(['/admin/jobpostings']);
-    } else {
-      this.router.navigate(['/jobpostingList']);
-    }
+    this.cancelEdit.emit();
   }
 }

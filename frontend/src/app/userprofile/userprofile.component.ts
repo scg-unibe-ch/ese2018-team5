@@ -37,10 +37,6 @@ export class UserprofileComponent implements OnInit   {
     this.userService.getUser(this.auth.getId()).subscribe( result => this.user = result)
   }
 
-  setLanguage(language:string) {
-    this.translate.use(language);
-  }
-
   swapDeleteProfile(p) {
     this.deleteProfile = p;
   }
@@ -50,7 +46,7 @@ export class UserprofileComponent implements OnInit   {
   }
 
   onSubmit() {
-    this.setLanguage(this.user.language);
+    this.translate.use(this.user.language);
     this.userService.patchUserWithOutPW(this.user).subscribe();
     this.alertService.success('Profile saved', false);
   }

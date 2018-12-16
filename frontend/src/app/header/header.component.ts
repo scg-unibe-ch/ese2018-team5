@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     if(localStorage.getItem('lang') !== null) {
+      console.log('lang');
       this.translate.use(localStorage.getItem('lang'));
     } else {
       this.translate.use('en');

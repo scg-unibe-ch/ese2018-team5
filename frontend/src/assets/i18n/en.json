@@ -1,13 +1,10 @@
 {
-	"adminjobpostings": {
-		"delete": "Delete",
-		"edit": "Edit"
-	},
 	"alertbox": {
 		"accept": "Accept",
 		"cancel": "Cancel"
 	},
 	"changepassword": {
+		"cancel": "Cancel",
 		"confirmPW": "Confirm your Password",
 		"password": "Enter Password",
 		"submit": "Submit"
@@ -29,30 +26,32 @@
 	"jobPostingsEdit": {
 		"cancel": "Cancel",
 		"category": "Category",
+		"categoryPlaceholder": "Enter Category",
 		"company": "Company",
+		"companyPlaceholder": "Enter Company",
 		"description": "Description",
+		"descriptionPlaceholder": "Enter Description",
 		"editYourJobPostings": "Edit your job postings",
 		"location": "Location",
+		"locationPlaceholder": "Enter Location",
 		"pensum": "Pensum",
+		"pensumPlaceholder": "Choose Pensum",
 		"position": "Position",
+		"positionPlaceholder": "Enter Position",
 		"submit": "Submit",
-		"title": "Title"
+		"title": "Title",
+		"titlePlaceHolder": "Enter Title"
+	},
+	"jobpostingdetail": {
+		"apply": "Apply",
+		"approve": "Approve",
+		"delete": "Delete",
+		"edit": "Edit",
+		"setFilter": "Set Filter"
 	},
 	"jobpostings": {
 		"chooseACategory": "Choose a category",
 		"chooseALocation": "Choose a location"
-	},
-	"jobs": {
-		"category": "Category",
-		"company": "Company",
-		"description": "Description",
-		"enterCompanyName": "Enter company name",
-		"enterDescription": "Enter description",
-		"enterJobTitle": "Enter job title",
-		"jobTitle": "Job title",
-		"location": "Location",
-		"pensum": "Pensum",
-		"position": "Position"
 	},
 	"login": {
 		"login": "Login",
@@ -74,26 +73,23 @@
 		"category": "Category",
 		"categoryPlaceholder": "Choose a category",
 		"location": "Location",
-		"locationPlaceholder": "Choose a location",
-		"pensum": "Pensum",
-		"pensumPlaceholder": "Choose pensum",
-		"position": "Position",
-		"positionPlaceholder": "Enter position",
-		"title": "Title",
-		"titlePlaceholder": "Enter title"
+		"locationPlaceholder": "Choose a location"
 	},
 	"userlist": {
+		"actions": "Actions",
+		"cancel": "Cancel",
 		"changePW": "Change Password",
-		"deleteUser": "Delete user",
+		"delete": "Delete User",
+		"edit": "Edit User",
 		"email": "Email",
+		"language": "Language",
 		"role": "Role",
 		"save": "Save",
 		"userName": "Username"
 	},
 	"userprofile": {
-		"changePassword": "Change password",
-		"deleteProfile": "Delete profile",
-		"selectLanguage": "Choose Language",
+		"changePassword": "Change Password",
+		"deleteProfile": "Delete Profile",
 		"submit": "Save Profile"
 	}
 }

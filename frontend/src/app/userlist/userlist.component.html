@@ -6,19 +6,19 @@
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.username" (keyup)="applyFilter()" placeholder="Username">
+      <input matInput [(ngModel)]="userFilter.username" (keyup)="applyFilter()" placeholder="{{'userlist.userName' | translate}}">
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.email" (keyup)="applyFilter()" placeholder="Email">
+      <input matInput [(ngModel)]="userFilter.email" (keyup)="applyFilter()" placeholder="{{'userlist.email' | translate}}">
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.role" (keyup)="applyFilter()" placeholder="Role">
+      <input matInput [(ngModel)]="userFilter.role" (keyup)="applyFilter()" placeholder="{{'userlist.role' | translate}}">
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.language" (keyup)="applyFilter()" placeholder="Language">
+      <input matInput [(ngModel)]="userFilter.language" (keyup)="applyFilter()" placeholder="{{'userlist.language' | translate}}">
     </mat-form-field>
   </div>
 
@@ -32,35 +32,35 @@
     </ng-container>
 
     <ng-container matColumnDef="username">
-      <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>{{'userlist.userName' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.username}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>{{'userlist.email' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="role">
-      <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>{{'userlist.role' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.role}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="language">
-      <mat-header-cell *matHeaderCellDef>Language</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>{{'userlist.language' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.language.toUpperCase()}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> {{'userlist.actions' | translate}} </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <button mat-button [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="eUser(element)">Edit</button>
-          <button mat-menu-item (click)="changePassw(element)">Change Password</button>
-          <button mat-menu-item (click)="deleteUser(element)">Delete</button>
+          <button mat-menu-item (click)="eUser(element)">{{'userlist.edit' | translate}}</button>
+          <button mat-menu-item (click)="changePassw(element)">{{'userlist.changePW' | translate}}</button>
+          <button mat-menu-item (click)="deleteUser(element)">{{'userlist.delete' | translate}}</button>
         </mat-menu>
       </mat-cell>
     </ng-container>
@@ -101,14 +101,15 @@
 
               <div class="form-group">
                 <mat-form-field>
-                  <input matInput placeholder="{{'userlist.role'| translate}}"
-                    type="number" id="id" name="id"
-                    [(ngModel)]="selectedUser.role">
+                  <mat-select [(ngModel)]="selectedUser.role" placeholder="{{'userlist.role'| translate}}">
+                    <mat-option [value]="role" *ngFor="let role of roles" >{{role}}</mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
 
               <mat-card-actions>
-                <button mat-button="btn" type="button" (click)="editUsers(selectedUser)">{{'userlist.save'| translate}}</button>
+                <button mat-raised-button type="button" (click)="editUsers(selectedUser)">{{'userlist.save'| translate}}</button>
+                <button mat-raised-button class="mat-warn" type="button" (click)="editUser = false">{{'userlist.cancel'| translate}}</button>
               </mat-card-actions>
             </div>
             </mat-card-content>

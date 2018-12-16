@@ -1,13 +1,10 @@
 {
-	"adminjobpostings": {
-		"delete": "Löschen",
-		"edit": "Editieren"
-	},
 	"alertbox": {
 		"accept": "Akzeptieren",
 		"cancel": "Abbrechen"
 	},
 	"changepassword": {
+		"cancel": "Abbrechen",
 		"confirmPW": "Passwort bestätigen",
 		"password": "Passwort",
 		"submit": "Senden"
@@ -29,30 +26,32 @@
 	"jobPostingsEdit": {
 		"cancel": "Abbrechen",
 		"category": "Kategorie",
-		"company": "Firma",
+		"categoryPlaceholder": "Bitte wähle eine Kategory aus",
+		"company": "Unternehmung",
+		"companyPlaceholder": "Bitte gib die Unternehmung an",
 		"description": "Beschreibung",
+		"descriptionPlaceholder": "Gib eine Beschreibung an",
 		"editYourJobPostings": "Jobs bearbeiten",
 		"location": "Ort",
+		"locationPlaceholder": "Bitte wähle einen Ort aus",
 		"pensum": "Pensum",
+		"pensumPlaceholder": "Bitte wähle ein Pensum aus",
 		"position": "Position",
+		"positionPlaceholder": "Bitte gib die Position an",
 		"submit": "Senden",
-		"title": "Titel"
+		"title": "Titel",
+		"titlePlaceHolder": "Bitte gib einen Titel an"
+	},
+	"jobpostingdetail": {
+		"apply": "Bewerben",
+		"approve": "Annehmen",
+		"delete": "Löschen",
+		"edit": "Editieren",
+		"setFilter": "Filter setzen"
 	},
 	"jobpostings": {
-		"chooseACategory": "Categorie wählen ",
+		"chooseACategory": "Kategorie wählen ",
 		"chooseALocation": "Region wählen"
-	},
-	"jobs": {
-		"category": "Kategorie",
-		"company": "Firma",
-		"description": "Beschreibung",
-		"enterCompanyName": "Firmenname",
-		"enterDescription": "Jobbeschreibung",
-		"enterJobTitle": "Jobtitel",
-		"jobTitle": "Jobtitle",
-		"location": "Ort",
-		"pensum": "Pensum",
-		"position": "Position"
 	},
 	"login": {
 		"login": "Login",
@@ -74,18 +73,16 @@
 		"category": "Kategorie",
 		"categoryPlaceholder": "Bitte wähle eine Kategorie aus",
 		"location": "Ort",
-		"locationPlaceholder": "Bitte wähle einen Ort aus",
-		"pensum": "Pensum",
-		"pensumPlaceholder": "Bitte wähle ein Pensum aus",
-		"position": "Position",
-		"positionPlaceholder": "Bitte gib die Position an",
-		"title": "Titel",
-		"titlePlaceholder": "Bitte gib einen Titel ein"
+		"locationPlaceholder": "Bitte wähle einen Ort aus"
 	},
 	"userlist": {
+		"actions": "Aktionen",
+		"cancel": "Abbrechen",
 		"changePW": "Passwort ändern",
-		"deleteUser": "Benutzer löschen",
+		"delete": "Benutzer löschen",
+		"edit": "Benutzer editieren",
 		"email": "Email",
+		"language": "Sprache",
 		"role": "Rolle",
 		"save": "Speichern",
 		"userName": "Benutzername"
@@ -93,7 +90,6 @@
 	"userprofile": {
 		"changePassword": "Passwort ändern",
 		"deleteProfile": "Profil löschen",
-		"selectLanguage": "Sprache auswählen",
 		"submit": "Profil speichern"
 	}
 }

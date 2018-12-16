@@ -121,7 +121,7 @@
 
     <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
 
-      <label id="labelTitle">TITLE</label>
+      <label id="labelTitle">{{'jobPostingsEdit.title' | translate}}</label>
 
       <input
         class="form-control"
@@ -129,13 +129,13 @@
         id="inputTitle"
         name="jobTitle"
         aria-describedby="Job Title"
-        placeholder="Enter a title for your job f.e 'Database Administrator'"
+        placeholder="{{'jobPostingsEdit.titlePlaceHolder' | translate}}"
         [(ngModel)]="selectedJobItem.title">
 
       <div id="tog1">
 
-        <label id="labelCompany">COMPANY</label>
-        <label id="labelPosition">POSITION</label>
+        <label id="labelCompany">{{'jobPostingsEdit.company' | translate}}</label>
+        <label id="labelPosition">{{'jobPostingsEdit.position' | translate}}</label>
 
         <br>
         <input
@@ -144,7 +144,7 @@
           type="text"
           id="inputCompany"
           aria-describedby="Company Name"
-          placeholder="Enter company Name "
+          placeholder="{{'jobPostingsEdit.companyPlaceholder' | translate}}"
           [(ngModel)]="selectedJobItem.company">
 
         <input
@@ -153,7 +153,7 @@
           type="text"
           id="inputPosition"
           aria-describedby="Position"
-          placeholder="Enter job position"
+          placeholder="{{'jobPostingsEdit.positionPlaceholder' | translate}}"
           [(ngModel)]="selectedJobItem.position">
 
       </div>
@@ -161,42 +161,41 @@
 
 
 
-      <label id="labelCompany">PENUSM</label>
+      <label id="labelCompany">{{'jobPostingsEdit.pensum' | translate}}</label>
 
-      <label id="labelPosition2">CATEGORY</label>
+      <label id="labelPosition2">{{'jobPostingsEdit.category' | translate}}</label>
 
       <select
         class="selectStuff"
         id="selectPensum"
         [(ngModel)]="selectedJobItem.pensum"
         name="Pensum">
-        <!--<option hidden value="" disabled selected></option>-->
-        <option hidden value="" disabled selected>Select a pensum</option>
+        <option hidden value="" disabled selected></option>
+        <option hidden value="" disabled selected>{{'jobPostingsEdit.pensumPlaceholder' | translate}}</option>
         <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
       </select>
 
       <select
         class="selectStuff"
         [(ngModel)]="selectedJobItem.category"
-        name="category"
-        placeholder="Select a category for your job">
-        <option hidden value="" disabled selected>Select a category</option>
+        name="category">
+        <option hidden value="" disabled selected>{{'jobPostingsEdit.categoryPlaceholder' | translate}}</option>
         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>
 
-      <label id="labelLocation">LOCATION</label>
+      <label id="labelLocation">{{'jobPostingsEdit.location' | translate}}</label>
 
       <select
         class="selectStuff2"
         [(ngModel)]="selectedJobItem.location"
         name="location">
-        <option hidden value="" disabled selected>Select a location</option>
+        <option hidden value="" disabled selected>{{'jobPostingsEdit.locationPlaceholder' | translate}}</option>
 
         <option *ngFor="let location of locations" [value]="location">{{location}}</option>
       </select>
 
 
-      <label id="labelCompany">DESCRIPTION</label>
+      <label id="labelCompany">{{'jobPostingsEdit.description' | translate}}</label>
 
       <input
         class="form-control"
@@ -204,7 +203,7 @@
         type="text"
         id="inputDescription"
         aria-describedby="Description"
-        placeholder="Enter job description"
+        placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}"
         [(ngModel)]="selectedJobItem.description">
 
       <button type="submit" class="btnSubmit btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
@@ -212,12 +211,7 @@
 
 
     </form>
-
-
-
   </mat-card>
-
-
 </div>
 
 

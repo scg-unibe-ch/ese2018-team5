@@ -1,13 +1,10 @@
 {
-	"adminjobpostings": {
-		"delete": "Rayer",
-		"edit": "Réviser"
-	},
 	"alertbox": {
 		"accept": "Acceptez",
 		"cancel": "Annuler"
 	},
 	"changepassword": {
+		"cancel": "Annuler",
 		"confirmPW": "Confirmez le mot de passe",
 		"password": "Mot de passe",
 		"submit": "Soumettre"
@@ -29,30 +26,32 @@
 	"jobPostingsEdit": {
 		"cancel": "Résilier",
 		"category": "Catégorie",
+		"categoryPlaceholder": "Choisir une catégorie",
 		"company": "Compagnie",
+		"companyPlaceholder": "veuillez entrer une entreprise",
 		"description": "Description",
+		"descriptionPlaceholder": "veuillez donner une description",
 		"editYourJobPostings": "Révise des offre d'emploi",
 		"location": "Localisation",
+		"locationPlaceholder": "veuillez choisir un lieu",
 		"pensum": "Tâche",
+		"pensumPlaceholder": "choisir un relais",
 		"position": "Position",
+		"positionPlaceholder": "choisir une position",
 		"submit": "Soumettre",
-		"title": "Titre"
+		"title": "Titre",
+		"titlePlaceHolder": "Entrez un titre"
+	},
+	"jobpostingdetail": {
+		"apply": "appliquer",
+		"approve": "accepter",
+		"delete": "effacer",
+		"edit": "éditer",
+		"setFilter": "Définir le filtre"
 	},
 	"jobpostings": {
 		"chooseACategory": "Choisir une catégorie",
 		"chooseALocation": "Choisir une région"
-	},
-	"jobs": {
-		"category": "Catégorie",
-		"company": "Compagnie",
-		"description": "Profil du poste",
-		"enterCompanyName": "Entrer nom de compaigne",
-		"enterDescription": "Entrer description de l'emploi",
-		"enterJobTitle": "Entre titre de l'emploi",
-		"jobTitle": "Titre d'emploi",
-		"location": "Localisation",
-		"pensum": "Tâche",
-		"position": "Position"
 	},
 	"login": {
 		"login": "Login",
@@ -74,18 +73,16 @@
 		"category": "Catégorie",
 		"categoryPlaceholder": "choisir une catégorie",
 		"location": "Localisation",
-		"locationPlaceholder": "choisir un lieu",
-		"pensum": "Taux d'occupation",
-		"pensumPlaceholder": "choisir taux d'occupation ",
-		"position": "position",
-		"positionPlaceholder": "entrer une position",
-		"title": "Titre",
-		"titlePlaceholder": "entrer un titre"
+		"locationPlaceholder": "choisir un lieu"
 	},
 	"userlist": {
-		"changePW": "Changer let mot de passe",
-		"deleteUser": "Rayer utilisateur",
+		"actions": "Actes",
+		"cancel": "Annuler",
+		"changePW": "Changer mot de passe",
+		"delete": "Rayer utilisateur",
+		"edit": "édite",
 		"email": "Email",
+		"language": "Langue",
 		"role": "Rôle",
 		"save": "Sauvegarder",
 		"userName": "Nom d'utilisateur"
@@ -93,7 +90,6 @@
 	"userprofile": {
 		"changePassword": "Changer mot de passe",
 		"deleteProfile": "Rayer utilisateur",
-		"selectLanguage": "Choisissez la langue",
 		"submit": "Enregistrer le profil"
 	}
 }

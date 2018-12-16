@@ -1,7 +1,7 @@
 
-<div class="cardSearch">
+<div class="cardSearch" *ngIf="!editJob">
   <!-- Allows Admin to filter jobpostings by approved/non-approved -->
-  <label id="filter">Set filter: </label>
+  <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
   <div class="select" *ngIf="admin">
     <mat-form-field>
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
@@ -42,22 +42,21 @@
          </div>
           <div id="editTool">
             <mat-card-actions id="action" *ngIf="editable">
-              <button mat-button id="edit" type="button" (click)="editJob(jobItem)">{{'adminjobpostings.edit' | translate}}</button>
-              <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'adminjobpostings.delete'| translate}}</button>
+              <button mat-button id="edit" type="button" (click)="editJobItem(jobItem)">{{'jobpostingdetail.edit' | translate}}</button>
+              <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'jobpostingdetail.delete'| translate}}</button>
 
               <mat-checkbox
                 id="checkboxID"
                 *ngIf="admin"
                 [(ngModel)]="jobItem.approved"
                 (change)="flipApproved(jobItem)">
-                <span id="spanApprove">    Approve</span>
-
+                <span id="spanApprove">{{'jobpostingdetail.approve' | translate}}</span>
               </mat-checkbox>
 
             </mat-card-actions>
 
             <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
-              <button class="applyBtn" mat-raised-button>Apply</button>
+              <button class="applyBtn" mat-raised-button>{{'jobpostingdetail.apply' | translate}}</button>
             </mat-card-actions>
           </div>
           <mat-card-footer *ngIf="admin">
@@ -68,4 +67,8 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+</div>
+
+<div *ngIf="editJob">
+  <app-jobpostingedit [selectedJobItem]="selectedJobItem" (cancelEdit)="cancelEdit()" (submitEdit)="submitEdit()"></app-jobpostingedit>
 </div>

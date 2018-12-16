@@ -3,8 +3,6 @@ import {JobItem} from '../jobs/job-item';
 import {JobService} from '../shared/service/job.service';
 import {AuthService} from '../auth.service';
 import {FormControl} from '@angular/forms';
-import {UserService} from '../shared/service/user.service';
-import {User} from '../shared/models/user';
 
 @Component({
   selector: 'app-jobpostingdetail',
@@ -17,8 +15,10 @@ export class JobpostingdetailComponent implements OnInit {
   @Input() admin = false;
   @Input() editable = false;
 
-  @Output() edit = new EventEmitter();
   @Output() delete = new EventEmitter();
+
+  editJob = false;
+  selectedJobItem: JobItem;
 
   chosen = new FormControl();
   jobItemFilter: any = {
@@ -64,9 +64,17 @@ export class JobpostingdetailComponent implements OnInit {
 
   }
 
+  cancelEdit() {
+    this.editJob = false;
+  }
 
-  editJob(jobItem:JobItem) {
-    this.edit.emit(jobItem);
+  submitEdit() {
+    this.editJob = false;
+  }
+
+  editJobItem(jobItem:JobItem) {
+    this.editJob = true;
+    this.selectedJobItem = jobItem;
   }
 
   deleteJob(jobItem:JobItem) {
