@@ -57,6 +57,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlertBoxComponent } from './alert-box/alert-box.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 registerLocaleData(localeCH);
 
 //function to get a token
@@ -89,7 +90,8 @@ export function tokenGetter() {
     ChangepasswordComponent,
     BodyComponent,
     FooterComponent,
-    AlertBoxComponent
+    AlertBoxComponent,
+    AboutUsComponent
 
   ],
   imports: [
