@@ -5,9 +5,9 @@
   <div class="select" *ngIf="admin">
     <mat-form-field>
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
-        <mat-option  value="all">All Jobpostings</mat-option>
-        <mat-option  value="true">Approved Jobpostings</mat-option>
-        <mat-option value="false">non-Approved Jobpostings</mat-option>
+        <mat-option  [value]="undefined">All Jobpostings</mat-option>
+        <mat-option  [value]="true">Approved Jobpostings</mat-option>
+        <mat-option [value]="false">non-Approved Jobpostings</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -34,7 +34,7 @@
             <label class="jobDetail">{{jobItem.pensum}} %</label>
             <label class="jobDetail">{{jobItem.position}}</label>
 
-            <label class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" > info.admin@sbb.ch </span></label>
+            <label  class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" > info.admin@sbb.ch </span></label>
 
           </mat-card-content>
             <mat-divider></mat-divider>

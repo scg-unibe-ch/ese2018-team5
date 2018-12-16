@@ -3,6 +3,8 @@ import {JobItem} from '../jobs/job-item';
 import {JobService} from '../shared/service/job.service';
 import {AuthService} from '../auth.service';
 import {FormControl} from '@angular/forms';
+import {UserService} from '../shared/service/user.service';
+import {User} from '../shared/models/user';
 
 @Component({
   selector: 'app-jobpostingdetail',
@@ -19,7 +21,6 @@ export class JobpostingdetailComponent implements OnInit {
   @Output() delete = new EventEmitter();
 
   chosen = new FormControl();
-
   jobItemFilter: any = {
 
   };
@@ -36,11 +37,11 @@ export class JobpostingdetailComponent implements OnInit {
   filtering() {
 
     switch(this.chosen.value) {
-      case 'true': {
+      case true: {
         this.jobItemFilter.approved = true;
         break;
       }
-      case 'false': {
+      case false: {
         this.jobItemFilter.approved = false;
         break;
       }
@@ -62,6 +63,7 @@ export class JobpostingdetailComponent implements OnInit {
     });
 
   }
+
 
   editJob(jobItem:JobItem) {
     this.edit.emit(jobItem);

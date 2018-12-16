@@ -119,14 +119,9 @@
   <mat-card id="jobPostCard">
     <h1 id="titelJobOffer">Edit this job</h1>
 
-
-
     <form (ngSubmit)="onSubmit()" #JobForm="ngForm">
 
-
-
       <label id="labelTitle">TITLE</label>
-
 
       <input
         class="form-control"
@@ -137,10 +132,7 @@
         placeholder="Enter a title for your job f.e 'Database Administrator'"
         [(ngModel)]="selectedJobItem.title">
 
-
-
       <div id="tog1">
-
 
         <label id="labelCompany">COMPANY</label>
         <label id="labelPosition">POSITION</label>
@@ -154,9 +146,6 @@
           aria-describedby="Company Name"
           placeholder="Enter company Name "
           [(ngModel)]="selectedJobItem.company">
-
-
-
 
         <input
           class="form-control"
@@ -186,18 +175,6 @@
         <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
       </select>
 
-
-
-
-
-
-
-
-
-
-
-
-
       <select
         class="selectStuff"
         [(ngModel)]="selectedJobItem.category"
@@ -206,9 +183,6 @@
         <option hidden value="" disabled selected>Select a category</option>
         <option *ngFor="let category of categories" [value]="category">{{category}}</option>
       </select>
-
-
-
 
       <label id="labelLocation">LOCATION</label>
 
