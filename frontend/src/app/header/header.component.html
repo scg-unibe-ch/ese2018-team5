@@ -19,14 +19,14 @@
       <div class="topNav">
 
         <img class="Logo" src="../../assets/LogoCopy.jpg"/>
-        <button class= "navigation"   [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Home</button>
+        <button class= "navigation3"   [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Home</button>
         <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">About us</button>
         <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Tips</button>
         <button class="navigation2"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Service</button>
 
 
         <!-- When logged in as USER -->
-        <button class= "navigation"   [routerLink]="['/dashboard']" *ngIf="auth.loggedIn && auth.isUser()">Home</button>
+        <button class= "navigation3"   [routerLink]="['/dashboard']" *ngIf="auth.loggedIn && auth.isUser()">Home</button>
       <button class="navigation" routerLink="/profile/{{getId()}}" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourProfile' | translate}}</button>
       <button class="navigation"  [routerLink]="['/jobform']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.submitJob' | translate}}</button>
       <button class="navigation" [routerLink]="['/jobpostingList']" *ngIf="auth.loggedIn && auth.isUser()">{{'header.yourjobpostings' | translate}}</button>

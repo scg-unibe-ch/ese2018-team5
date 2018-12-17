@@ -113,8 +113,8 @@ float: left;
 }
 
 .select {
-margin-left: 10%;
-  margin-top: 5%;
+display: inline-block;
+
 }
 
 #action{
@@ -182,4 +182,12 @@ background-color: #006a05;
   color:white;
   font-family:"Open Sans";
   font-size:15px;
+}
+
+
+#h3title{
+  margin-top: 5%;
+margin-left: 25%;
+  margin-right: 26.5%;
+  display: inline-block;
 }

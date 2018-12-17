@@ -1,7 +1,7 @@
 
 <div class="cardSearch" *ngIf="!editJob">
+  <h3 id="h3title"> Filter job postings by:</h3>
   <!-- Allows Admin to filter jobpostings by approved/non-approved -->
-  <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
   <div class="select" *ngIf="admin">
     <mat-form-field>
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
@@ -12,7 +12,9 @@
     </mat-form-field>
   </div>
   <div>
-    <mat-grid-list  class="list" cols="1" rowHeight="350" gutterSize="15px">
+
+
+    <mat-grid-list  class="list" cols="1" rowHeight="400" gutterSize="15px">
       <mat-grid-tile  *ngFor="let jobItem of jobItems | filterBy: jobItemFilter">
         <mat-card class="cardJob" >
  <div> <img class="resize" src="../../assets/companyLogo.png"/> </div>
@@ -54,10 +56,11 @@
               </mat-checkbox>
 
             </mat-card-actions>
-
+<!--
             <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
               <button class="applyBtn" mat-raised-button>{{'jobpostingdetail.apply' | translate}}</button>
             </mat-card-actions>
+            -->
           </div>
           <mat-card-footer *ngIf="admin">
 
