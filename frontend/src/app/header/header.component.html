@@ -15,25 +15,14 @@
 
 <div class="mainNav">
 
-  <div class="logoutBTNS">
 
-
-
-    <a [routerLink]="['/login']"> <img *ngIf="!auth.loggedIn"class="resize" src="../../assets/ProfileIMG.png"/> </a>
-
-    <button id="yourProfile" [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
-    <button id="registerBtn " class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
-    <!-- When logged in -->
-
-    <button id="btnLogout" class="btn" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
-  </div>
       <div class="topNav">
 
         <img class="Logo" src="../../assets/LogoCopy.jpg"/>
         <button class= "navigation"   [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Home</button>
         <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">About us</button>
         <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Tips</button>
-        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Service</button>
+        <button class="navigation2"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Service</button>
 
 
         <!-- When logged in as USER -->
@@ -47,6 +36,13 @@
       <button class="navigation"  [routerLink]="['/admin/users']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageusers' | translate}}</button>
       <button class="navigation" [routerLink]="['/admin/jobpostings']" *ngIf="auth.loggedIn && auth.isAdmin()">{{'header.manageJobpostings' | translate}}</button>
 
+        <a [routerLink]="['/login']"> <img *ngIf="!auth.loggedIn"class="resize" src="../../assets/ProfileIMG.png"/> </a>
+
+        <button id="yourProfile" [routerLink]="['/login']" *ngIf="!auth.loggedIn">Login</button>
+        <button id="registerBtn " class="btn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'header.registerButton' | translate}}</button>
+        <!-- When logged in -->
+
+        <button id="btnLogout" class="btn" mat-button (click)="logout()" *ngIf="auth.loggedIn">{{'header.logout' | translate}}</button>
 
     </div>
 
