@@ -14,7 +14,7 @@
 		"manageJobpostings": "Jobangebote bearbeiten",
 		"manageusers": "Benutzer verwalten",
 		"registerButton": "Registrieren",
-		"submitJob": "Einen Job einreichen",
+		"submitJob": "Einen Job erstellen",
 		"yourProfile": "Profil",
 		"yourjobpostings": "Deine Jobangebote"
 	},
@@ -51,7 +51,8 @@
 	},
 	"jobpostings": {
 		"chooseACategory": "Kategorie wählen ",
-		"chooseALocation": "Region wählen"
+		"chooseALocation": "Region wählen",
+		"pictureTitle": "Deine Karriere startet heute"
 	},
 	"login": {
 		"login": "Login",
@@ -90,6 +91,10 @@
 	"userprofile": {
 		"changePassword": "Passwort ändern",
 		"deleteProfile": "Profil löschen",
-		"submit": "Profil speichern"
+		"email": "Email",
+		"language": "Sprache",
+		"submit": "Profil speichern",
+		"username": "Benutzername",
+		"welcome": "Willkommen"
 	}
 }

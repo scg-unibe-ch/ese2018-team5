@@ -101,7 +101,7 @@
 
               <div class="form-group">
                 <mat-form-field>
-                  <mat-select [(ngModel)]="selectedUser.role" placeholder="{{'userlist.role'| translate}}">
+                  <mat-select [(ngModel)]="selectedUser.role" name="role" placeholder="{{'userlist.role'| translate}}">
                     <mat-option [value]="role" *ngFor="let role of roles" >{{role}}</mat-option>
                   </mat-select>
                 </mat-form-field>

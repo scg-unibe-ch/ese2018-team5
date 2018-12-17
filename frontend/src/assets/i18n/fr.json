@@ -51,7 +51,8 @@
 	},
 	"jobpostings": {
 		"chooseACategory": "Choisir une catégorie",
-		"chooseALocation": "Choisir une région"
+		"chooseALocation": "Choisir une région",
+		"pictureTitle": "Votre carrière commence aujourd'hui"
 	},
 	"login": {
 		"login": "Login",
@@ -90,6 +91,10 @@
 	"userprofile": {
 		"changePassword": "Changer mot de passe",
 		"deleteProfile": "Rayer utilisateur",
-		"submit": "Enregistrer le profil"
+		"email": "Email",
+		"language": "Langue",
+		"submit": "Enregistrer le profil",
+		"username": "Nom d'utilisateur",
+		"welcome": "Bienvenue"
 	}
 }

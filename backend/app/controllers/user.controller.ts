@@ -13,7 +13,6 @@ UserController.patchUser = async(req: Request, res: Response) => {
     return;
   }
   console.log(req.body);
-  //instance.fromSimplification(req.body);
   await instance.update(
     {
       username:req.body.username,

@@ -38,21 +38,21 @@
 
 
       <mat-card id="cardtest">
-        <h2 style="font-family: 'Open Sans'"> Welcome <span style="color:#196c8a;">{{user.username}} </span></h2>
+        <h2 style="font-family: 'Open Sans'"> {{'userprofile.welcome' | translate}} <span style="color:#196c8a;">{{user.username}} </span></h2>
         <img class="resize" src="../../assets/ProfileIMG.png"/>
 
         <div id="divs">
-          <span id="textID"> Username: </span> <input  type="text" class="inputTest"
+          <span id="textID"> {{'userprofile.username' | translate}}: </span> <input  type="text" class="inputTest"
                [(ngModel)]="user.username" name="username">
 </div>
         <div style="text-align: left">
-       <span id="textID"> Email: </span>
+       <span id="textID"> {{'userprofile.email' | translate}}: </span>
           <input  type="email" email="true" class="inputTest2"
                [(ngModel)]="user.email" name="email">
         </div>
 
         <div id="languageDIV">
-          <span id="textID"> Language: </span>
+          <span id="textID"> {{'userprofile.language' | translate}}: </span>
           <select [(ngModel)]="user.language" id="languageID" name="language" >
             <option [value]="lang" *ngFor="let lang of languages">
               {{lang.toUpperCase()}}
@@ -60,37 +60,30 @@
           </select>
         </div>
 
-
-<div id="btnDIV">
-        <button  class="userBtn2" type="submit">{{'userprofile.submit' | translate}}</button>
-</div>
+      <div id="btnDIV">
+              <button  class="userBtn2" type="submit">{{'userprofile.submit' | translate}}</button>
+      </div>
 
       </mat-card>
+    <mat-card id="card2">
 
+      <button  class="userBtn" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
+      <button  id="card2BtnDelete" color="warn" (click)="deleteProfile = true">{{'userprofile.deleteProfile' | translate}}</button>
 
-
-
-
-
-
+    </mat-card>
   </form>
 </div>
 
 <!-- </div> -->
 
-<mat-card id="card2">
 
-    <button  class="userBtn" (click)="changePassword = true">{{'userprofile.changePassword' | translate}}</button>
-    <button  id="card2BtnDelete" color="warn" (click)="deleteProfile = true">{{'userprofile.deleteProfile' | translate}}</button>
-
-</mat-card>
 
 <div *ngIf="deleteProfile" >
   <app-alert-box [message]="'Deleting your profile is irreversible'" (doAction)="onDelete()" (cancelAction)="swapDeleteProfile($event)"></app-alert-box>
 </div>
 
 <div class="container" *ngIf="changePassword">
-  <app-changepassword [user]="user" (changePW)="swapPW($event)"></app-changepassword>
+  <app-changepassword [user]="user" (changePW)="swapPW($event)" (b)="swapPW($event)"></app-changepassword>
 </div>
 
 <!--
