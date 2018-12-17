@@ -3,137 +3,93 @@
 
 </div>
 
-
 <div class="jobPostDIV">
   <mat-card id="jobPostCard">
-  <h1 id="titelJobOffer">Post your job offer</h1>
-
-
+    <h1 id="titelJobOffer">{{'jobform.postYourJobOffer' | translate}}</h1>
 
     <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="submitForm">
 
+      <label id="labelTitle">{{'jobPostingsEdit.title' | translate}}</label>
+        <input
+          class="form-control"
+          type="text"
+          id="inputTitle"
+          name="jobTitle"
+          aria-describedby="Job Title"
+          placeholder="{{'jobPostingsEdit.title' | translate}}"
+          [(ngModel)]="formJob.title">
+
+      <div id="tog1">
+        <label id="labelCompany">{{'jobPostingsEdit.company' | translate}}</label>
+        <label id="labelPosition">{{'jobPostingsEdit.position' | translate}}</label>
+      <br>
+        <input
+          class="form-control"
+          name="company"
+          type="text"
+          id="inputCompany"
+          aria-describedby="Company Name"
+          placeholder="{{'jobPostingsEdit.companyPlaceholder' | translate}}"
+          [(ngModel)]="formJob.company">
+
+       <input
+         matInput
+          class="form-control"
+          name="Position"
+          type="text"
+          id="inputPosition"
+          aria-describedby="Position"
+          placeholder="{{'jobPostingsEdit.positionPlaceholder' | translate}}"
+          [(ngModel)]="formJob.position">
+
+      </div>
+        <label id="labelCompany">{{'jobPostingsEdit.pensum' | translate}}</label>
+        <label id="labelPosition2">{{'jobPostingsEdit.category' | translate}}</label>
+
+        <select
+          class="selectStuff"
+          id="selectPensum"
+          [(ngModel)]="formJob.pensum"
+          name="Pensum">
+          <!--<option hidden value="" disabled selected></option>-->
+          <option value="undefined" disabled selected>{{'jobPostingsEdit.pensumPlaceholder' | translate}}</option>
+          <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
+        </select>
+
+        <select
+          class="selectStuff"
+          [(ngModel)]="formJob.category"
+          name="category">
+          <option value="undefined" disabled selected>{{'jobPostingsEdit.categoryPlaceholder' | translate}}</option>
+          <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+        </select>
+
+        <label id="labelLocation">LOCATION</label>
+
+        <select class="selectStuff2" id="location"
+          [(ngModel)]="formJob.location" name="location">
+          <option hidden value="undefined" disabled selected>{{'jobPostingsEdit.locationPlaceholder' | translate}}</option>
+          <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+        </select>
+
+        <label id="labelCompany">{{'jobPostingsEdit.description' | translate}}</label>
+
+        <input
+          class="form-control"
+          name="Description"
+          type="text"
+          id="inputDescription"
+          aria-describedby="Description"
+          placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}"
+          [(ngModel)]="formJob.description">
 
 
-        <label id="labelTitle">TITLE</label>
-
-
-          <input
-            class="form-control"
-            type="text"
-            id="inputTitle"
-            name="jobTitle"
-            aria-describedby="Job Title"
-            placeholder="Enter a title for your job f.e 'Database Administrator'"
-            [(ngModel)]="formJob.title">
-
-<div id="tog1">
-
-
-        <label id="labelCompany">COMPANY</label>
-  <label id="labelPosition">POSITION</label>
-
-<br>
-          <input
-            class="form-control"
-            name="company"
-            type="text"
-            id="inputCompany"
-            aria-describedby="Company Name"
-            placeholder="Enter company Name "
-            [(ngModel)]="formJob.company">
-
-
-
-
-      <input
-        class="form-control"
-        name="Position"
-        type="text"
-        id="inputPosition"
-        aria-describedby="Position"
-        placeholder="Enter job position"
-        [(ngModel)]="formJob.position">
-
-</div>
-
-
-
-
-      <label id="labelCompany">PENUSM</label>
-
-      <label id="labelPosition2">CATEGORY</label>
-
-          <select
-            class="selectStuff"
-            id="selectPensum"
-            [(ngModel)]="formJob.pensum"
-            name="Pensum">
-            <!--<option hidden value="" disabled selected></option>-->
-            <option hidden value="" disabled selected>Select a pensum</option>
-            <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
-          </select>
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <select
-            class="selectStuff"
-            [(ngModel)]="formJob.category"
-            name="category"
-            placeholder="Select a category for your job">
-            <option hidden value="" disabled selected>Select a category</option>
-            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
-          </select>
-
-
-
-
-      <label id="labelLocation">LOCATION</label>
-
-          <select
-           class="selectStuff2"
-            [(ngModel)]="formJob.location"
-            name="location">
-            <option hidden value="" disabled selected>Select a location</option>
-
-            <option *ngFor="let location of locations" [value]="location">{{location}}</option>
-          </select>
-
-
-      <label id="labelCompany">DESCRIPTION</label>
-
-      <input
-     class="form-control"
-        name="Description"
-        type="text"
-        id="inputDescription"
-        aria-describedby="Description"
-        placeholder="Enter job description"
-        [(ngModel)]="formJob.description">
-
-
-      <button type="submit" id="btnSubmit">Submit</button>
+        <button type="submit" id="btnSubmit">{{'jobPostingsEdit.submit' | translate}}</button>
 
     </form>
-
-
-
   </mat-card>
-
-
 </div>
 
-
-<h3 id="otherOffers">Your current job offers: </h3>
-
-
+<mat-divider></mat-divider>
+<h3 id="otherOffers">{{'jobform.currentOffers' | translate}}: </h3>
 <app-jobpostinglist></app-jobpostinglist>

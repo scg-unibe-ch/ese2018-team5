@@ -1,8 +1,9 @@
 
 <div class="cardSearch" *ngIf="!editJob">
   <!-- Allows Admin to filter jobpostings by approved/non-approved -->
-  <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
+
   <div class="select" *ngIf="admin">
+    <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
     <mat-form-field>
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
         <mat-option  [value]="undefined">All Jobpostings</mat-option>

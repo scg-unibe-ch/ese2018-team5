@@ -42,6 +42,10 @@
 		"title": "Titel",
 		"titlePlaceHolder": "Bitte gib einen Titel an"
 	},
+	"jobform": {
+		"currentOffers": "Ihre aktuellen Stellenangebote",
+		"postYourJobOffer": "Erstellen sie einen Job"
+	},
 	"jobpostingdetail": {
 		"apply": "Bewerben",
 		"approve": "Annehmen",
