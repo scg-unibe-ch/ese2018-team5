@@ -14,7 +14,7 @@
 		"manageJobpostings": "Manage Jobpostings",
 		"manageusers": "Manage Users",
 		"registerButton": "Register",
-		"submitJob": "submit a job",
+		"submitJob": "Submit a job",
 		"yourProfile": "Your Profile",
 		"yourjobpostings": "Your Jobpostings"
 	},
@@ -26,14 +26,14 @@
 	"jobPostingsEdit": {
 		"cancel": "Cancel",
 		"category": "Category",
-		"categoryPlaceholder": "Enter Category",
+		"categoryPlaceholder": "Choose Category",
 		"company": "Company",
 		"companyPlaceholder": "Enter Company",
 		"description": "Description",
 		"descriptionPlaceholder": "Enter Description",
 		"editYourJobPostings": "Edit your job postings",
 		"location": "Location",
-		"locationPlaceholder": "Enter Location",
+		"locationPlaceholder": "Choose Location",
 		"pensum": "Pensum",
 		"pensumPlaceholder": "Choose Pensum",
 		"position": "Position",
@@ -41,6 +41,10 @@
 		"submit": "Submit",
 		"title": "Title",
 		"titlePlaceHolder": "Enter Title"
+	},
+	"jobform": {
+		"currentOffers": "Your current job offers",
+		"postYourJobOffer": "Post your job offer"
 	},
 	"jobpostingdetail": {
 		"apply": "Apply",
