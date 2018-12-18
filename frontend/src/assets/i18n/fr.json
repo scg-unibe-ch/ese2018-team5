@@ -10,11 +10,13 @@
 		"submit": "Soumettre"
 	},
 	"header": {
+		"aboutUs": "Notre Profile",
 		"logout": "Logout",
 		"manageJobpostings": "Gérer les offres d'emploi",
 		"manageusers": "Gérer les utilisateurs",
-		"registerButton": "registre",
+		"registerButton": "Registre",
 		"submitJob": "soumettre un travail",
+		"tips": "Conseils",
 		"yourProfile": "Ton profile",
 		"yourjobpostings": "Tes offre d'empoloi"
 	},
@@ -43,7 +45,6 @@
 		"titlePlaceHolder": "Entrez un titre"
 	},
 	"jobform": {
-		"currentOffers": "Vos offres d'emploi actuelles",
 		"postYourJobOffer": "Poster votre offre d'emploi"
 	},
 	"jobpostingdetail": {

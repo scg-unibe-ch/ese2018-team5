@@ -15,6 +15,9 @@ import {UserlistComponent} from './userlist/userlist.component';
 import {UserprofileComponent} from './userprofile/userprofile.component';
 import {SearchformComponent} from './searchform/searchform.component';
 import {AdminjobpostingsComponent} from './adminjobpostings/adminjobpostings.component';
+import {AboutUsComponent} from './about-us/about-us.component';
+import {TipsComponent} from './tips/tips.component';
+import {ServiceComponent} from './service/service.component';
 
 
 const routes: Routes = [
@@ -22,6 +25,21 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchformComponent
+  },
+
+  {
+    path: 'about',
+    component: AboutUsComponent
+  },
+
+  {
+    path: 'tips',
+    component: TipsComponent
+  },
+
+  {
+    path: 'service',
+    component: ServiceComponent
   },
 
   {

@@ -13,7 +13,7 @@ exports.allowOnly = function(accessLevel:any, callback:any) {
 exports.allowed = function(accessLevel:any, callback:any) {
   function checkUserId(req: any, res: any) {
     if(!(req.user.id & req.params.id) || !(accessLevel & req.user.role)) {
-      res.sendStatus(403);
+      res.sendStatus(403).json({message:'wrong'});
       return;
     }
     callback(req, res);

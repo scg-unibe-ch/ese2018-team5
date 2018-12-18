@@ -10,11 +10,13 @@
 		"submit": "Submit"
 	},
 	"header": {
+		"aboutUs": "About Us",
 		"logout": "Logout",
 		"manageJobpostings": "Manage Jobpostings",
 		"manageusers": "Manage Users",
 		"registerButton": "Register",
 		"submitJob": "Submit a job",
+		"tips": "Tips",
 		"yourProfile": "Your Profile",
 		"yourjobpostings": "Your Jobpostings"
 	},
@@ -43,7 +45,6 @@
 		"titlePlaceHolder": "Enter Title"
 	},
 	"jobform": {
-		"currentOffers": "Your current job offers",
 		"postYourJobOffer": "Post your job offer"
 	},
 	"jobpostingdetail": {

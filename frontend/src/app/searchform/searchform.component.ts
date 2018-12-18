@@ -22,7 +22,8 @@ export class SearchformComponent implements OnInit {
     pensum: '',
     location: '',
     category:'',
-    description:''
+    description:'',
+    approved:'true'
   };
 
   categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];

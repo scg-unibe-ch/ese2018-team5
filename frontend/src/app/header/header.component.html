@@ -20,9 +20,9 @@
 
         <img class="Logo" src="../../assets/LogoCopy.jpg"/>
         <button class= "navigation3"   [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Home</button>
-        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">About us</button>
-        <button class="navigation"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Tips</button>
-        <button class="navigation2"  [routerLink]="['/dashboard']" *ngIf="!auth.loggedIn">Service</button>
+        <button class="navigation"  [routerLink]="['/about']" *ngIf="!auth.loggedIn">{{'header.aboutUs' | translate}}</button>
+        <button class="navigation"  [routerLink]="['/tips']" *ngIf="!auth.loggedIn">{{'header.tips' | translate}}</button>
+        <button class="navigation2"  [routerLink]="['/service']" *ngIf="!auth.loggedIn">Service</button>
 
 
         <!-- When logged in as USER -->

@@ -51,7 +51,7 @@
           [(ngModel)]="formJob.pensum"
           name="Pensum">
           <!--<option hidden value="" disabled selected></option>-->
-          <option value="undefined" disabled selected>{{'jobPostingsEdit.pensumPlaceholder' | translate}}</option>
+          <option hidden value="undefined" disabled selected>{{'jobPostingsEdit.pensumPlaceholder' | translate}}</option>
           <option *ngFor="let n of pensumCount" [value]="n">{{n}}%</option>
         </select>
 
@@ -60,7 +60,7 @@
           id="category"
           [(ngModel)]="formJob.category"
           name="category">
-          <option value="undefined" disabled selected>{{'jobPostingsEdit.categoryPlaceholder' | translate}}</option>
+          <option hidden value="undefined" disabled selected>{{'jobPostingsEdit.categoryPlaceholder' | translate}}</option>
           <option *ngFor="let category of categories" [value]="category">{{category}}</option>
         </select>
 
@@ -88,15 +88,4 @@
   </mat-card>
 </div>
 
-
-
-
-
-
-
-
-
 <mat-divider style="margin-top: 5%"></mat-divider>
-
-
-<app-jobpostinglist ></app-jobpostinglist>

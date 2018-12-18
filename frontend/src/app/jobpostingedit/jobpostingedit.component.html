@@ -206,11 +206,10 @@
         [(ngModel)]="selectedJobItem.description">
 
       </textarea>
-
-      <button type="submit" class="btnSubmit btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
-      <button type="button" (click)="cancel()" class="btn">{{'jobPostingsEdit.cancel' | translate}}</button>
-
-
+      <mat-card-actions class="actions">
+        <button type="submit" class="btnSubmit btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
+        <button type="button" (click)="cancel()" class="btn">{{'jobPostingsEdit.cancel' | translate}}</button>
+      </mat-card-actions>
     </form>
   </mat-card>
 </div>

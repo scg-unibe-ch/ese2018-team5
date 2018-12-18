@@ -10,11 +10,13 @@
 		"submit": "Senden"
 	},
 	"header": {
+		"aboutUs": "Über uns",
 		"logout": "Logout",
 		"manageJobpostings": "Jobangebote bearbeiten",
 		"manageusers": "Benutzer verwalten",
 		"registerButton": "Registrieren",
 		"submitJob": "Einen Job erstellen",
+		"tips": "Tips",
 		"yourProfile": "Profil",
 		"yourjobpostings": "Deine Jobangebote"
 	},
@@ -43,7 +45,6 @@
 		"titlePlaceHolder": "Bitte gib einen Titel an"
 	},
 	"jobform": {
-		"currentOffers": "Ihre aktuellen Stellenangebote",
 		"postYourJobOffer": "Erstellen sie einen Job"
 	},
 	"jobpostingdetail": {
