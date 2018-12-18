@@ -32,7 +32,12 @@ export class UserlistComponent implements OnInit {
 
   roles: number[] = [2,4];
 
-  constructor(private userService: UserService, private alertService:AlertService, private auth:AuthService, private filterPipe: FilterPipe) { }
+  constructor(
+    private userService: UserService,
+    private alertService:AlertService,
+    private auth:AuthService,
+    private filterPipe: FilterPipe
+  ) { }
 
   ngOnInit() {
     this.fetchData();

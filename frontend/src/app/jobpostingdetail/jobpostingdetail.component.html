@@ -2,11 +2,18 @@
 <div class="cardSearch" *ngIf="!editJob">
   <!-- Allows Admin to filter jobpostings by approved/non-approved -->
 
+<<<<<<< HEAD
 
   <div  *ngIf="admin">
     <h1 id="filter">{{'jobpostingdetail.setFilter' | translate}}: </h1>
     <mat-form-field id="selectAdim">
       <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()" >
+=======
+  <div class="select" *ngIf="admin">
+    <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
+    <mat-form-field>
+      <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
+>>>>>>> 949d690a462b79efc96b30cf38927e71a6ee6f5d
         <mat-option  [value]="undefined">All Jobpostings</mat-option>
         <mat-option  [value]="true">Approved Jobpostings</mat-option>
         <mat-option [value]="false">non-Approved Jobpostings</mat-option>

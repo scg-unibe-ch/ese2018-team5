@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {JobItem} from '../jobs/job-item';
 import {JobService} from '../shared/service/job.service';
 import {JobItemDataService} from '../jobpostingedit/job-item-data.service';
+import {FilterPipe} from 'ngx-filter-pipe';
 
 @Component({
   selector: 'app-searchform',
@@ -20,7 +21,8 @@ export class SearchformComponent implements OnInit {
     company: '',
     pensum: '',
     location: '',
-    category:''
+    category:'',
+    description:''
   };
 
   categories: string [] = ['Marketing', 'IT', 'Finance', 'Pharma'];
@@ -30,7 +32,9 @@ export class SearchformComponent implements OnInit {
 
   constructor(
     private jobService:JobService,
-    private data:JobItemDataService) { }
+    private data:JobItemDataService,
+    private filterPipe: FilterPipe
+  ) { }
 
   ngOnInit() {
     this.data.currentS.subscribe( s => this.s = s);
