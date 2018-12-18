@@ -39,27 +39,30 @@ alreadyLogin{
 
 
 #username{
-  border-radius: 50px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+  background-color: #FFFFFF;
+  color: black;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  width: 90%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-color: transparent;
-  color: white;
+  margin-left: 5%;
   margin-bottom: 5%;
 }
 
 
 #password{
-  border-radius: 50px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+  background-color: #FFFFFF;
+  color: black;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  width: 90%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-color: transparent;
-  color: white;
+  margin-left: 5%;
+
 }
 
 #email{
@@ -77,19 +80,18 @@ alreadyLogin{
 
 .loginBtn2{
 
-  margin-top: 10%;
-  background-color: black;
-  border-radius:50px;
-  width: 80%;
-  height: 50px;
-  margin-left: 10%;
-  border-color: transparent;
-  cursor:pointer;
 
-  color: #FFFFFF;
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
   font-family:"Open Sans";
   font-size:20px;
-  text-align: center;
+  padding:5px 30px;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 90%;
 }
 
 .loginBtn2:hover{
@@ -101,9 +103,10 @@ alreadyLogin{
 #signUp{
 
   color: black;
-  text-align: center;
+  text-align: left;
   margin-top: 5%;
   margin-bottom: 5%;
+  margin-left: 5%;
 }
 
 .registerText{
@@ -137,4 +140,11 @@ alreadyLogin{
 
 #link{
   color: rgba(0, 0, 0, 0.8);
+}
+#loginCard{
+
+  width: 22.5%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: white;
 }

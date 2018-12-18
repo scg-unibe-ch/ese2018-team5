@@ -201,61 +201,62 @@ alreadyLogin{
 
 
 #username{
-  border-radius: 50px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+ background-color: #FFFFFF;
+  color: black;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  width: 90%;
   height: 50px;
-  background-color: rgba(25, 108, 138, 0.5);
-  border-color: transparent;
-  color: white;
+  margin-left: 5%;
+
 }
 
 
 #password{
-  border-radius: 50px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+  background-color: #FFFFFF;
+  color: black;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  width: 90%;
   height: 50px;
-  background-color: rgba(25, 108, 138, 0.5);
-  border-color: transparent;
-  color: white;
+  margin-left: 5%;margin-left: 5%;
 }
 
 #email{
-  border-radius: 50px;
-  width: 80%;
-  margin-right: 10%;
-  margin-left: 10%;
+  background-color: #FFFFFF;
+  color: black;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: thin;
+  width: 90%;
   height: 50px;
-  background-color: rgba(25, 108, 138, 0.5);
-
-  border-color: transparent;
-  color: white;
+  margin-left: 5%;
 }
 
 
 
 .registerButton{
 
-  margin-top: 10%;
-  background-color: black;
-  border-radius:50px;
-  width: 80%;
-  height: 50px;
-  margin-left: 10%;
-  border-color: transparent;
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
   cursor:pointer;
-
-  color: #FFFFFF;
+  color:#ffffff;
   font-family:"Open Sans";
   font-size:20px;
-  text-align: center;
+  padding:5px 30px;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 90%;
 }
 
 .registerButton:hover{
-  background-color: grey;
+  color: grey;
 
 }
 
@@ -263,9 +264,9 @@ alreadyLogin{
 #signUp{
 
   color: black;
-  text-align: center;
+  text-align: left;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-left: 5%;
 }
 
 .registerText{
@@ -284,7 +285,7 @@ alreadyLogin{
 
   width: 80%;
   margin-right: 10%;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 4%;
 
 
@@ -299,4 +300,14 @@ alreadyLogin{
 
 #link{
   color: rgba(0, 0, 0, 0.8);
+}
+
+
+#registerCard{
+
+
+  width: 22.5%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: white;
 }

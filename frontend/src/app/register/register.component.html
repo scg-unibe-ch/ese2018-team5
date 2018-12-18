@@ -63,16 +63,17 @@
 
 
 -->
-
+<mat-card id="registerCard">
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-<div class="backgroundImg">
-  <h2 id="signUp">SIGN UP</h2>
+
+
+  <h4 id="signUp">SIGN UP</h4>
 
 <div class = "registerText">
 
   <div class="input">
-    <label id="usernameLabel" for="username" class="label">USERNAME</label>
+   <!-- <label id="usernameLabel" for="username" class="label">USERNAME</label> -->
     <input id="username" placeholder="Username" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
     <div *ngIf="submitted && registerForm.controls['username'].errors" class="invalid-feedback">
       <div *ngIf="registerForm.controls['username'].errors.required">{{'register.usernameRequired' | translate}}</div>
@@ -80,33 +81,33 @@
 
   </div>
   <div class="input">
-    <label id="passwordLabel"for="password" class="label">PASSWORD</label>
-    <input id="password" placeholder="Password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-    <div *ngIf="submitted && registerForm.controls['password'].errors" class="invalid-feedback">
-      <div *ngIf="registerForm.controls['password'].errors.required">{{'register.passwordRequired' | translate}}</div>
-      <div *ngIf="registerForm.controls['password'].errors.minlength">{{'register.passwordSixChars' | translate}}</div>
+    <!--  <label id="passwordLabel"for="password" class="label">PASSWORD</label> -->
+     <input id="password" placeholder="Password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+     <div *ngIf="submitted && registerForm.controls['password'].errors" class="invalid-feedback">
+       <div *ngIf="registerForm.controls['password'].errors.required">{{'register.passwordRequired' | translate}}</div>
+       <div *ngIf="registerForm.controls['password'].errors.minlength">{{'register.passwordSixChars' | translate}}</div>
+     </div>
+
+   </div>
+
+   <div class="input">
+     <!-- <!--    <label id="emailLabel"for="email" class="label">EMAIL</label> -->
+        <input id="email" placeholder="Email" type="email" email="true" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+
+        <div *ngIf="submitted && registerForm.controls['email'].errors" class="invalid-feedback">
+          <div *ngIf="registerForm.controls['email'].errors.required">{{'register.emailRequired' | translate}}</div>
+          <div *ngIf="registerForm.controls['email'].errors">Email must be a valid email address</div>
+        </div>
+
+      </div>
+      <small id="agb" class="form-text text-muted">By submitting this form, you confirm that you have read and agree with our General Terms and Conditions and Privacy Policies.</small>
+
+
+      <button type="submit" class="registerButton">Register</button>
+      <small id="already2" class="form-text text-muted">Already got an account? <a [routerLink]="['/login']" id="link"> Login here! </a></small>
     </div>
 
-  </div>
-
-  <div class="input">
-    <label id="emailLabel"for="email" class="label">EMAIL</label>
-    <input id="email" placeholder="Email" type="email" email="true" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-
-    <div *ngIf="submitted && registerForm.controls['email'].errors" class="invalid-feedback">
-      <div *ngIf="registerForm.controls['email'].errors.required">{{'register.emailRequired' | translate}}</div>
-      <div *ngIf="registerForm.controls['email'].errors">Email must be a valid email address</div>
-    </div>
-
-  </div>
-  <small id="agb" class="form-text text-muted">By submitting this form, you confirm that you have read and agree with our General Terms and Conditions and Privacy Policies.</small>
 
 
-  <button type="submit" class="registerButton">Register</button>
-  <small id="already2" class="form-text text-muted">Already got an account? <a [routerLink]="['/login']" id="link"> Login here! </a></small>
-</div>
-
-
-
-</div>
-</form>
+    </form>
+    </mat-card>

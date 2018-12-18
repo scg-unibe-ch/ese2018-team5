@@ -193,3 +193,26 @@
   margin-left: 67.5%;
 
 }
+
+
+.btnCanc{
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+}
+
+.btnSub{
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+}
