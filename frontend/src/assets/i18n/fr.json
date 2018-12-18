@@ -75,10 +75,11 @@
 		"usernameRequired": "Nom d'utilisateur nécessiter"
 	},
 	"searchform": {
+		"SearchByLocationOrTitle": "Recherche par catégorie ou lieu",
 		"category": "Catégorie",
 		"categoryPlaceholder": "choisir une catégorie",
-		"location": "Localisation",
-		"locationPlaceholder": "choisir un lieu"
+		"locationPlaceholder": "choisir un lieu",
+		"moreFilterOptions": "Plus d'options de filtrage"
 	},
 	"userlist": {
 		"actions": "Actes",

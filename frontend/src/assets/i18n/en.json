@@ -75,10 +75,11 @@
 		"usernameRequired": "Username required"
 	},
 	"searchform": {
+		"SearchByLocationOrTitle": "Search by Category or Location ",
 		"category": "Category",
 		"categoryPlaceholder": "Choose a category",
-		"location": "Location",
-		"locationPlaceholder": "Choose a location"
+		"locationPlaceholder": "Choose a location",
+		"moreFilterOptions": "More Filter Options"
 	},
 	"userlist": {
 		"actions": "Actions",

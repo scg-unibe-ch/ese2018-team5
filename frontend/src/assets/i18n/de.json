@@ -75,10 +75,11 @@
 		"usernameRequired": "Benutzername"
 	},
 	"searchform": {
+		"SearchByLocationOrTitle": "Suche nach Kategorie oder Ort",
 		"category": "Kategorie",
 		"categoryPlaceholder": "Bitte wähle eine Kategorie aus",
-		"location": "Ort",
-		"locationPlaceholder": "Bitte wähle einen Ort aus"
+		"locationPlaceholder": "Bitte wähle einen Ort aus",
+		"moreFilterOptions": "Mehr Filteroptionen"
 	},
 	"userlist": {
 		"actions": "Aktionen",

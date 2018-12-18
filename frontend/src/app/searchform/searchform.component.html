@@ -1,12 +1,13 @@
 <div class="container">
 
-  <h2 id="h2Title">Search job by category or location</h2>
+  <h2 id="h2Title">{{'searchform.SearchByLocationOrTitle' | translate}}</h2>
     <form name="search" id="search" mat-row="">
       <div class="searchForm" style="text-align: center">
         <div class="form-group">
           <!--<label for="category">{{'searchform.category' | translate}}</label>-->
           <mat-form-field id="formFiel1">
-            <mat-select id="category" [(ngModel)]="jobItemFilter.category" name="category" placeholder="{{'searchform.categoryPlaceholder' | translate}}">
+            <mat-select id="category" [(ngModel)]="jobItemFilter.category" name="category"
+                        placeholder="{{'searchform.categoryPlaceholder' | translate}}">
               <mat-option></mat-option>
               <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
             </mat-select>
@@ -23,34 +24,41 @@
 
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              More Filter Options:
+              {{'searchform.moreFilterOptions' | translate}}:
             </mat-expansion-panel-header>
 
             <mat-action-row class="search">
               <mat-form-field class="input">
-                <input matInput name="title" [(ngModel)]="jobItemFilter.title" placeholder="title">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.title"
+                       placeholder="{{'jobPostingsEdit.titlePlaceHolder' | translate}}">
               </mat-form-field>
+
               <mat-form-field class="input">
-                <mat-select name="pensum" placeholder="Pensum" [(ngModel)]="jobItemFilter.pensum">
+                <mat-select name="pensum" placeholder="{{'jobPostingsEdit.pensumPlaceholder' | translate}}" [(ngModel)]="jobItemFilter.pensum">
                   <mat-option></mat-option>
                   <mat-option *ngFor="let pensum of pensumCount" [value]="pensum">
                     {{pensum}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
+
               <mat-form-field class="input">
-                <input matInput name="title" [(ngModel)]="jobItemFilter.position" placeholder="Position">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.position"
+                       placeholder="{{'jobPostingsEdit.positionPlaceholder' | translate}}">
               </mat-form-field>
+
               <mat-form-field class="input">
-                <input matInput name="title" [(ngModel)]="jobItemFilter.company" placeholder="Company">
+                <input matInput name="company" [(ngModel)]="jobItemFilter.company"
+                       placeholder="{{'jobPostingsEdit.companyPlaceholder' | translate}}">
               </mat-form-field>
-              <mat-form-field class="input">
-                <input matInput name="title" [(ngModel)]="jobItemFilter.description" placeholder="Description">
+
+              <mat-form-field class="description">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.description"
+                       placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}">
               </mat-form-field>
             </mat-action-row>
 
           </mat-expansion-panel>
-
 
         </div>
 
