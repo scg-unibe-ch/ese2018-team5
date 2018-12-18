@@ -14,7 +14,7 @@
   </div>
   <div>
     <mat-grid-list  class="list" cols="1" rowHeight="400" gutterSize="15px">
-      <mat-grid-tile  *ngFor="let jobItem of jobItems | filterBy: jobItemFilter">
+      <mat-grid-tile  *ngFor="let jobItem of jobItems; trackBy:trackByIdx">
         <mat-card class="cardJob" >
         <div> <img class="resize" src="../../assets/companyLogo.png"/> </div>
 
@@ -46,13 +46,7 @@
               <button mat-button id="edit" type="button" (click)="editJobItem(jobItem)">{{'jobpostingdetail.edit' | translate}}</button>
               <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'jobpostingdetail.delete'| translate}}</button>
 
-              <mat-checkbox
-                id="checkboxID"
-                *ngIf="admin"
-                [(ngModel)]="jobItem.approved"
-                (change)="flipApproved(jobItem)">
-                <span id="spanApprove">{{'jobpostingdetail.approve' | translate}}</span>
-              </mat-checkbox>
+              <mat-checkbox [(ngModel)]="jobItem.approved" (change)="flipApproved(jobItem)"></mat-checkbox>
 
             </mat-card-actions>
 <!--

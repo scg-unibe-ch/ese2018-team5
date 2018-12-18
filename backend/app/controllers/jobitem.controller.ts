@@ -39,6 +39,7 @@ router.put('/:id', async (req: Request, res: Response) => {
   }
   instance.fromSimplification(req.body);
   await instance.save();
+  console.log(instance);
   res.statusCode = 200;
   res.send(instance.toSimplification());
 });

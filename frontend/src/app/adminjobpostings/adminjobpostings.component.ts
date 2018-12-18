@@ -32,8 +32,6 @@ export class AdminjobpostingsComponent implements OnInit {
       })
   }
 
-
-
   edit(jobItem:JobItem) {
     this.data.changeMessage(jobItem);
     this.router.navigate(['/admin/jobpostings/edit']);
