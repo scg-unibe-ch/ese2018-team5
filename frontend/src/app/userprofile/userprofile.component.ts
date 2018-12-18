@@ -29,7 +29,7 @@ export class UserprofileComponent implements OnInit   {
   ) { }
 
   ngOnInit() {
-    this.translate.use(this.auth.getLanguage());
+    //this.translate.use(this.auth.getLanguage());
     this.fetchData();
   }
 

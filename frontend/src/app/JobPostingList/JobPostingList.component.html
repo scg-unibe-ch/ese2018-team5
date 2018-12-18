@@ -1,4 +1,4 @@
 
-  <h3 style="margin-top: 5%; margin-left: 10%"> Your current job offers: </h3>v
-    <app-jobpostingdetail [jobItems]="userItems" [admin]="false" [editable]="true"></app-jobpostingdetail>
+  <h3 style="margin-top: 5%; margin-left: 10%"> Your current job offers: </h3>
+    <app-jobpostingdetail [jobItems]="userItems" [admin]="false" [editable]="true" (delete)="delete($event)"></app-jobpostingdetail>
 

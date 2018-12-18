@@ -197,14 +197,15 @@
 
       <label id="labelCompany">{{'jobPostingsEdit.description' | translate}}</label>
 
-      <input
-        class="form-control"
+      <textarea
         name="Description"
         type="text"
         id="inputDescription"
         aria-describedby="Description"
         placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}"
         [(ngModel)]="selectedJobItem.description">
+
+      </textarea>
 
       <button type="submit" class="btnSubmit btn-success">{{'jobPostingsEdit.submit'| translate}}</button>
       <button type="button" (click)="cancel()" class="btn">{{'jobPostingsEdit.cancel' | translate}}</button>

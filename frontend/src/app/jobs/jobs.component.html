@@ -9,7 +9,7 @@
 
     <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="submitForm">
 
-      <label id="labelTitle">{{'jobPostingsEdit.title' | translate}}</label>
+      <label for="inputTitle" id="labelTitle">{{'jobPostingsEdit.title' | translate}}</label>
         <input
           class="form-control"
           type="text"
@@ -20,8 +20,8 @@
           [(ngModel)]="formJob.title">
 
       <div id="tog1">
-        <label id="labelCompany">{{'jobPostingsEdit.company' | translate}}</label>
-        <label id="labelPosition">{{'jobPostingsEdit.position' | translate}}</label>
+        <label id="labelCompany" for="inputCompany">{{'jobPostingsEdit.company' | translate}}</label>
+        <label id="labelPosition" for="inputPosition">{{'jobPostingsEdit.position' | translate}}</label>
       <br>
         <input
           class="form-control"
@@ -33,7 +33,6 @@
           [(ngModel)]="formJob.company">
 
        <input
-         matInput
           class="form-control"
           name="Position"
           type="text"
@@ -43,8 +42,8 @@
           [(ngModel)]="formJob.position">
 
       </div>
-        <label id="labelCompany">{{'jobPostingsEdit.pensum' | translate}}</label>
-        <label id="labelPosition2">{{'jobPostingsEdit.category' | translate}}</label>
+        <label id="labelCompany" for="selectPensum">{{'jobPostingsEdit.pensum' | translate}}</label>
+        <label id="labelPosition2" for="category">{{'jobPostingsEdit.category' | translate}}</label>
 
         <select
           class="selectStuff"
@@ -58,13 +57,14 @@
 
         <select
           class="selectStuff"
+          id="category"
           [(ngModel)]="formJob.category"
           name="category">
           <option value="undefined" disabled selected>{{'jobPostingsEdit.categoryPlaceholder' | translate}}</option>
           <option *ngFor="let category of categories" [value]="category">{{category}}</option>
         </select>
 
-        <label id="labelLocation">LOCATION</label>
+        <label for="location" id="labelLocation">{{'jobPostingsEdit.location' | translate}}</label>
 
         <select class="selectStuff2" id="location"
           [(ngModel)]="formJob.location" name="location">
@@ -72,17 +72,15 @@
           <option *ngFor="let location of locations" [value]="location">{{location}}</option>
         </select>
 
-        <label id="labelCompany">{{'jobPostingsEdit.description' | translate}}</label>
+        <label id="labelCompany" for="inputDescription">{{'jobPostingsEdit.description' | translate}}</label>
 
-        <input
-          class="form-control"
-          name="Description"
+        <textarea
+          name="desc"
           type="text"
+          [(ngModel)]="formJob.description"
           id="inputDescription"
-          aria-describedby="Description"
-          placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}"
-          [(ngModel)]="formJob.description">
-
+          placeholder="{{'jobPostingsEdit.descriptionPlaceholder' | translate}}">
+        </textarea>
 
         <button type="submit" id="btnSubmit">{{'jobPostingsEdit.submit' | translate}}</button>
 

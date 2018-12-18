@@ -126,9 +126,5 @@ export class UserlistComponent implements OnInit {
     this.dataSource.data = this.filterPipe.transform(this.users, this.userFilter);
   }
 
-  compareFn(o1: any, o2: any): boolean {
-    return o1 === o2;
-  }
-
 }
 

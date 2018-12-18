@@ -13,6 +13,8 @@ export class AdminjobpostingsComponent implements OnInit {
 
   jobItems: JobItem[] = [];
 
+  jobItemFilter
+
   constructor(
     private jobService: JobService,
     private data:JobItemDataService,
@@ -41,6 +43,10 @@ export class AdminjobpostingsComponent implements OnInit {
     this.jobService.deleteJob(jobItem).subscribe(() => {
       this.fetchData();
     })
+  }
+
+  setFilter(filter:any) {
+    this.jobItemFilter = filter;
   }
 
 }

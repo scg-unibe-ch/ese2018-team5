@@ -5,16 +5,14 @@
   <div  *ngIf="admin">
     <label id="filter">{{'jobpostingdetail.setFilter' | translate}}: </label>
     <mat-form-field>
-      <mat-select #choose placeholder="Options" [formControl]="chosen" (selectionChange)="filtering()">
-        <mat-option  [value]="undefined">All Jobpostings</mat-option>
-        <mat-option  [value]="true">Approved Jobpostings</mat-option>
-        <mat-option [value]="false">non-Approved Jobpostings</mat-option>
+      <mat-select #choose placeholder="Options" [(ngModel)]="selectedState" (selectionChange)="filtering()">
+        <mat-option *ngFor="let state of states" [value]="state.value">{{state.viewValue}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div>
     <mat-grid-list  class="list" cols="1" rowHeight="400" gutterSize="15px">
-      <mat-grid-tile  *ngFor="let jobItem of jobItems; trackBy:trackByIdx">
+      <mat-grid-tile  *ngFor="let jobItem of jobItems; trackBy:trackByIdx" >
         <mat-card class="cardJob" >
         <div> <img class="resize" src="../../assets/companyLogo.png"/> </div>
 
@@ -46,7 +44,9 @@
               <button mat-button id="edit" type="button" (click)="editJobItem(jobItem)">{{'jobpostingdetail.edit' | translate}}</button>
               <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'jobpostingdetail.delete'| translate}}</button>
 
-              <mat-checkbox [(ngModel)]="jobItem.approved" (change)="flipApproved(jobItem)"></mat-checkbox>
+              <mat-checkbox *ngIf="admin" [(ngModel)]="jobItem.approved" (change)="updateJobItem(jobItem)">
+                {{'jobpostingdetail.approve'|translate}}
+              </mat-checkbox>
 
             </mat-card-actions>
 <!--

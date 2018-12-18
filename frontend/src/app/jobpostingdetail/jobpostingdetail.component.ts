@@ -27,46 +27,49 @@ export class JobpostingdetailComponent implements OnInit {
 
   @Output() update = new EventEmitter();
   @Output() delete = new EventEmitter();
+  @Output() filter = new EventEmitter();
+
+  states: States[] = [
+    {value: 'all', viewValue: 'All Jobpostings'},
+    {value: 'approved', viewValue: 'Approved Jobpostings'},
+    {value: 'unapproved',viewValue: 'Unapproved Jobpostings'},
+  ];
+
+  selectedState = 'all';
 
   editJob = false;
   selectedJobItem: JobItem;
 
-  oldJobItems: JobItem[];
-
-  chosen = new FormControl();
   jobItemFilter: any = {
 
   };
 
   constructor(
     public auth:AuthService,
-    private jobService:JobService,
-    private filterPipe: FilterPipe
+    private jobService:JobService
   ) { }
 
   ngOnInit() {
-    this.oldJobItems = this.jobItems;
-    this.oldJobItems.forEach(function (v) {
-      console.log(v);
-    })
+
   }
 
   filtering() {
+    switch(this.selectedState) {
 
-    switch(this.chosen.value) {
-      case true: {
+      case 'approved': {
         this.jobItemFilter.approved = true;
-        this.applyFilter();
+        this.filter.emit(this.jobItemFilter);
         break;
       }
-      case false: {
+      case 'unapproved': {
         this.jobItemFilter.approved = false;
-        this.applyFilter();
+        this.filter.emit(this.jobItemFilter);
         break;
       }
+
       default: {
         this.deleteApproved();
-        this.jobItems = this.oldJobItems;
+        this.filter.emit(this.jobItemFilter);
         break;
       }
     }
@@ -77,8 +80,7 @@ export class JobpostingdetailComponent implements OnInit {
     delete this.jobItemFilter['approved'];
   }
 
-  flipApproved(jobItem: JobItem) {
-    console.log(jobItem);
+  updateJobItem(jobItem: JobItem) {
     this.jobService.updateJob(jobItem).subscribe();
   }
 
@@ -102,9 +104,9 @@ export class JobpostingdetailComponent implements OnInit {
   trackByIdx(index:number, item:JobItem): any {
     return item.id;
   }
+}
 
-  applyFilter() {
-    this.jobItems = this.filterPipe.transform(this.jobItems, this.jobItemFilter);
-  }
-
+export interface States {
+  value: string;
+  viewValue: string;
 }
