@@ -1,13 +1,8 @@
 <div class="container">
 
-
-
-      <h2 id="h2Title">Search job by category or location</h2>
-
-
-      <form name="search" id="search" mat-row="">
-        <div class="searchForm" style="text-align: center">
-
+  <h2 id="h2Title">Search job by category or location</h2>
+    <form name="search" id="search" mat-row="">
+      <div class="searchForm" style="text-align: center">
         <div class="form-group">
           <!--<label for="category">{{'searchform.category' | translate}}</label>-->
           <mat-form-field id="formFiel1">
@@ -15,11 +10,7 @@
               <mat-option></mat-option>
               <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
             </mat-select>
-
-
-
           </mat-form-field>
-
 
           <mat-form-field>
             <mat-select id="location" placeholder="{{'searchform.locationPlaceholder' | translate}}"
@@ -29,23 +20,45 @@
               <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
             </mat-select>
           </mat-form-field>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              More Filter Options:
+            </mat-expansion-panel-header>
+
+            <mat-action-row class="search">
+              <mat-form-field class="input">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.title" placeholder="title">
+              </mat-form-field>
+              <mat-form-field class="input">
+                <mat-select name="pensum" placeholder="Pensum" [(ngModel)]="jobItemFilter.pensum">
+                  <mat-option></mat-option>
+                  <mat-option *ngFor="let pensum of pensumCount" [value]="pensum">
+                    {{pensum}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="input">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.position" placeholder="Position">
+              </mat-form-field>
+              <mat-form-field class="input">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.company" placeholder="Company">
+              </mat-form-field>
+              <mat-form-field class="input">
+                <input matInput name="title" [(ngModel)]="jobItemFilter.description" placeholder="Description">
+              </mat-form-field>
+            </mat-action-row>
+
+          </mat-expansion-panel>
+
+
         </div>
 
+      </div>
 
-
-        </div>
-
-
-      </form>
-
-
-
-
+    </form>
 
 </div>
-
-
-
 
 <div>
       <app-jobpostingdetail [jobItems]="jobItems | filterBy: jobItemFilter" [admin]="false" [editable]="false"> </app-jobpostingdetail>
