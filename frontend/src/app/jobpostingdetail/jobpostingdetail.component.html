@@ -44,6 +44,7 @@
               <button mat-button id="edit" type="button" (click)="editJobItem(jobItem)">{{'jobpostingdetail.edit' | translate}}</button>
               <button mat-button id="delete" type="button" (click)="deleteJob(jobItem)">{{'jobpostingdetail.delete'| translate}}</button>
 
+
               <mat-checkbox *ngIf="admin" [(ngModel)]="jobItem.approved" (change)="updateJobItem(jobItem)">
                 {{'jobpostingdetail.approve'|translate}}
               </mat-checkbox>

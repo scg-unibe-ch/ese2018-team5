@@ -72,15 +72,15 @@
   <mat-paginator [pageSizeOptions]="[5,10,25,100]"></mat-paginator>
 </div>
 
-<div class="container" *ngIf="selectedUser && editUser">
+<div class="container" *ngIf="selectedUser && editUser" id="con">
   <div>
     <div class="row" id="popup" >
-      <mat-card>
+      <mat-card style="width: 40%; text-align: center; margin: auto;">
       <div class="col-md-12">
         <form #userForm="ngForm">
-        <mat-card-title>{{selectedUser.username}}</mat-card-title>
+        <mat-card-title style="color: #196c8a">{{selectedUser.username}}</mat-card-title>
           <mat-card-subtitle>Id: {{selectedUser.id}}</mat-card-subtitle>
-          <mat-card-content>
+          <mat-card-content style="font-size: 20px">
 
 
             <div>
@@ -109,8 +109,9 @@
               </div>
 
               <mat-card-actions>
-                <button mat-raised-button type="button" (click)="editUsers(selectedUser)">{{'userlist.save'| translate}}</button>
-                <button mat-raised-button class="mat-warn" type="button" (click)="editUser = false">{{'userlist.cancel'| translate}}</button>
+                <button  id="cancel" class="mat-warn" type="button" (click)="editUser = false">{{'userlist.cancel'| translate}}</button>
+                <button  id="save" type="button" (click)="editUsers(selectedUser)">{{'userlist.save'| translate}} </button>
+
               </mat-card-actions>
             </div>
             </mat-card-content>

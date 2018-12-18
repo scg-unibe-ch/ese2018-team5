@@ -24,3 +24,35 @@ table {
 .input {
   margin-left: 50px;
 }
+
+#con{
+  margin-top: 5%;
+  width: 100%;
+
+
+}
+
+#cancel{
+  background-color:#9f0031;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+  margin-right: 5%;
+}
+
+#save{
+  background-color:#196c8a;
+  border-radius:5px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:"Open Sans";
+  font-size:20px;
+  padding:5px 30px;
+}
+
+
