@@ -1,4 +1,10 @@
 {
+	"about-us": {
+		"about": "About us",
+		"first": " The Software Composition Group carries out research in programming language design and software reengineering with the goal of facilitating the development of flexible, open software systems. The SCG is led by Oscar Nierstrasz and is part of the Institute of Computer Science (INF) at the University of Berne.",
+		"second": "The ESE course will focus on the use of agile software processes, object-oriented methods, UML and other industrial best practices to successful completion of software projects. The follow themes will be explored: How can you effectively determine and agree on what a customers really needs? How can you ensure that the software product being developed will satisfy non-functional requirements, such as user-friendliness, robustness,reliability and extensibility? How do you plan a software project and manage a project developed in a team? What tools are available to help support you in a software project?The ESE course will focus on the use of agile software processes, object-oriented methods, UML and other industrial best practices to successful completion of software projects. The follow themes will be explored: How can you effectively determine and agree on what a customers really needs? How can you ensure that the software product being developed will satisfy non-functional requirements, such as user-friendliness, robustness,reliability and extensibility? How do you plan a software project and manage a project developed in a team? What tools are available to help support you in a software project?",
+		"third": " The exercises for the course will consist of a small software project to be developed by the students in teams over the course of the semester."
+	},
 	"alertbox": {
 		"accept": "Accept",
 		"cancel": "Cancel"
@@ -51,7 +57,7 @@
 		"postYourJobOffer": "Post your job offer"
 	},
 	"jobposting": {
-		"bigtext": " Are sou searching for young and ambitious workers for your company? With our website it was never this easy to register and post job offers to a wide range of students.",
+		"bigtext": " Are you searching for young and ambitious workers for your company? With our website it was never this easy to register and post job offers to a wide range of students.",
 		"carAndAp": "Career and applications",
 		"cvcheck": "Does your CV contain any gramar faults? Is it personal enough? Are you missing out some important points?",
 		"fivemin": "Register now in under 5 minutes and post your first job offer today!",

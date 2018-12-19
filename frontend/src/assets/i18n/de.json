@@ -1,4 +1,10 @@
 {
+	"about-us": {
+		"about": "Über uns",
+		"first": "Die Software Composition Group forscht im Bereich Programmiersprachendesign und Software-Reengineering mit dem Ziel, die Entwicklung flexibler, offener Softwaresysteme zu erleichtern. Die SCG wird von Oscar Nierstrasz geleitet und ist Teil des Instituts für Informatik (INF) an der Universität Bern. ",
+		"second": "Der ESE-Kurs konzentriert sich auf den Einsatz agiler Softwareprozesse, objektorientierter Methoden, UML und anderer industrieller Best Practices zum erfolgreichen Abschluss von Softwareprojekten. Die folgenden Themen werden behandelt: Wie können Sie effektiv bestimmen und vereinbaren, was ein Kunde wirklich braucht? Wie können Sie sicherstellen, dass das zu entwickelnde Softwareprodukt nicht-funktionale Anforderungen wie Benutzerfreundlichkeit, Robustheit, Zuverlässigkeit und Erweiterbarkeit erfüllt? Wie plant man ein Softwareprojekt und leitet ein im Team entwickeltes Projekt? Welche Tools stehen zur Verfügung, um Sie bei einem Softwareprojekt zu unterstützen? ",
+		"third": "Die Übungen für den Kurs bestehen aus einem kleinen Softwareprojekt, das von den Studierenden im Laufe des Semesters in Teams entwickelt wird.Die Übungen für den Kurs bestehen aus einem kleinen Softwareprojekt, das von den Studierenden im Laufe des Semesters in Teams entwickelt wird."
+	},
 	"alertbox": {
 		"accept": "Akzeptieren",
 		"cancel": "Abbrechen"

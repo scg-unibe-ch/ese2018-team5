@@ -1,4 +1,10 @@
 {
+	"about-us": {
+		"about": "À propos de nous",
+		"first": "Le Software Composition Group mène des recherches sur la conception de langages de programmation et la réingénierie logicielle dans le but de faciliter le développement de systèmes logiciels flexibles et ouverts. Le SCG est dirigé par Oscar Nierstrasz et fait partie de l'Institut d'informatique (INF) de l'Université de Berne.",
+		"second": "Le cours ESE se concentrera sur l'utilisation de processus logiciels agiles, de méthodes orientées objet, d'UML et d'autres meilleures pratiques industrielles pour mener à bien des projets logiciels. Les thèmes suivants seront explorés : Comment pouvez-vous déterminer efficacement et vous mettre d'accord sur les besoins réels d'un client ? Comment s'assurer que le produit logiciel en cours de développement répondra à des exigences non fonctionnelles, telles que la convivialité, la robustesse, la fiabilité et l'extensibilité ? Comment planifier un projet logiciel et gérer un projet développé en équipe ? Quels sont les outils disponibles pour vous aider dans un projet logiciel ?",
+		"third": "Les exercices du cours consisteront en un petit projet de logiciel qui sera développé par les étudiants en équipes au cours du semestre."
+	},
 	"alertbox": {
 		"accept": "Acceptez",
 		"cancel": "Annuler"
