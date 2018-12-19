@@ -33,7 +33,8 @@
             <label class="jobDetail">{{jobItem.pensum}} %</label>
             <label class="jobDetail">{{jobItem.position}}</label>
 
-            <label  class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" >email </span></label>
+          <!--  <label  class="contact">Contact:  <span style="margin-left: 2.5%" style="color: #196c8a" > ben.helmy@gmail.com</span></label> -->
+            <label  class="contact" style="color: white">Contact<span style="margin-left: 2.5%" style="color: white" > ben.helmy@gmail.com</span></label>
 
           </mat-card-content>
             <mat-divider></mat-divider>
@@ -50,11 +51,11 @@
               </mat-checkbox>
 
             </mat-card-actions>
-<!--
-            <mat-card-actions class="apply-btn" *ngIf="!admin && !editable">
-              <button class="applyBtn" mat-raised-button>{{'jobpostingdetail.apply' | translate}}</button>
+
+            <mat-card-actions *ngIf="!admin && !editable" style="margin-bottom: 0%">
+              <button class="applyBtn">{{'jobpostingdetail.apply' | translate}}</button>
             </mat-card-actions>
-            -->
+
           </div>
           <mat-card-footer *ngIf="admin">
 
