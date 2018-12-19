@@ -15,16 +15,22 @@
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.role" (keyup)="applyFilter()" placeholder="{{'userlist.role' | translate}}">
+      <mat-select [(ngModel)]="userFilter.role" (selectionChange)="applyFilter()" placeholder="{{'userlist.role' | translate}}">
+        <mat-option [value]=""></mat-option>
+        <mat-option [value]="role" *ngFor="let role of roles" >{{role}}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field class="input">
-      <input matInput [(ngModel)]="userFilter.language" (keyup)="applyFilter()" placeholder="{{'userlist.language' | translate}}">
+      <mat-select [(ngModel)]="userFilter.language" (selectionChange)="applyFilter()" placeholder="{{'userlist.language' | translate}}">
+        <mat-option [value]=""></mat-option>
+        <mat-option [value]="lang" *ngFor="let lang of languages">{{lang.toUpperCase()}}</mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 
 
-  <mat-table #table [dataSource]="dataSource" matSort>
+  <mat-table class="table-bordered" #table [dataSource]="dataSource" matSort>
 
 
     <ng-container matColumnDef="id">

@@ -5,20 +5,20 @@
 }
 
 .container1 {
-  margin-top: 50px;
-  height: 400px;
+  margin-top: 5%;
+  margin-left:10%;
   width: 80%;
   position: relative;
   display: block;
-  overflow: auto;
 }
 
-table {
-  width: 80%;
+.table-bordered {
+  width: 100%;
 }
 
 .search {
-  margin-left: 5px;
+  width:100%;
+  margin-left: 5%;
 }
 
 .input {
@@ -28,8 +28,6 @@ table {
 #con{
   margin-top: 5%;
   width: 100%;
-
-
 }
 
 #cancel{

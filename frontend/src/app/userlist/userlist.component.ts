@@ -18,6 +18,8 @@ export class UserlistComponent implements OnInit {
   selectedUser: User;
   changePassword = false;
   displayedColumns = ['id','username','email','role','language','actions'];
+
+
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -30,6 +32,7 @@ export class UserlistComponent implements OnInit {
     language:''
   };
 
+  languages = ['en','de','fr'];
   roles: number[] = [2,4];
 
   constructor(
