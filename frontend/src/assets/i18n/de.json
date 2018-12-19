@@ -25,6 +25,9 @@
 		"manageJob": "Job bearbeiten",
 		"title": "Titel"
 	},
+	"jobPostingList": {
+		"current": "Ihre momentanen Stellen Ausschreibungen"
+	},
 	"jobPostingsEdit": {
 		"cancel": "Abbrechen",
 		"category": "Kategorie",
@@ -46,6 +49,20 @@
 	},
 	"jobform": {
 		"postYourJobOffer": "Erstellen sie einen Job"
+	},
+	"jobposting": {
+		"bigtext": "Suchen Sie junge und ambitionierte Mitarbeiter für Ihr Unternehmen? Mit unserer Website war e noch nie so einfach Stellen auszuschreiben und sie einer weiten Bandbreite von motivierten Studenten vorzustellen.",
+		"carAndAp": "Karriere und Bewerbungen",
+		"cvcheck": "Ist Ihr CV fehlerfrei? Ist es genug persönlich? Haben Sie irgendwelche wichtigen Punkte vergessen?",
+		"fivemin": "Registrieren Sie sich jetzt in unter 5 Minuten und schreiben Sie noch heute Ihre erste Stelle aus.",
+		"know": "Kennen Sie wirklich Ihre Stärken?",
+		"regBtn": "Registrieren",
+		"strenghts": "Was sind Ihre Stärken?",
+		"survey": "Zum Fragebogen",
+		"thrmin": "In einem 30 Minütigen Gespräch bekommen Sie ein kritisches Feedback über Ihren Lebenslauf, sowie Vorschläge sowie Hinweise, was Sie noch verbessern könnten.",
+		"titleInfo": "Sind Sie ein Arbeitsgeber?",
+		"waiting": "Auf was warten Sie noch?",
+		"with": "Mit dem Strenght-Finder von Gallup können Sie nun ganz einfach Ihre 5 Stärken herausfinden."
 	},
 	"jobpostingdetail": {
 		"apply": "Bewerben",

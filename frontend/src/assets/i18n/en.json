@@ -25,6 +25,9 @@
 		"manageJob": "Manage jobs",
 		"title": "Title"
 	},
+	"jobPostingList": {
+		"current": "Your current job offers:"
+	},
 	"jobPostingsEdit": {
 		"cancel": "Cancel",
 		"category": "Category",
@@ -46,6 +49,20 @@
 	},
 	"jobform": {
 		"postYourJobOffer": "Post your job offer"
+	},
+	"jobposting": {
+		"bigtext": " Are sou searching for young and ambitious workers for your company? With our website it was never this easy to register and post job offers to a wide range of students.",
+		"carAndAp": "Career and applications",
+		"cvcheck": "Does your CV contain any gramar faults? Is it personal enough? Are you missing out some important points?",
+		"fivemin": "Register now in under 5 minutes and post your first job offer today!",
+		"know": "Do you really know your strenghts?",
+		"regBtn": "Register now",
+		"strenghts": "What are your strenghts",
+		"survey": "Go to survey",
+		"thrmin": "In a 30-minute one-on-one interview, you will receive critical feedback on your CV as well as recommendations and advice on what you could change an improve.",
+		"titleInfo": "Are you an employer?",
+		"waiting": " What are you waiting for?",
+		"with": "With the Strenght-Finder survey from Gallup you can now figure out your top 5 strenghts!"
 	},
 	"jobpostingdetail": {
 		"apply": "Apply",

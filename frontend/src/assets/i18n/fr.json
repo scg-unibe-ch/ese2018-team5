@@ -25,6 +25,9 @@
 		"manageJob": "Révise des offre d'emploi",
 		"title": "Titre"
 	},
+	"jobPostingList": {
+		"current": "Vos offres d'emploi actuelles :"
+	},
 	"jobPostingsEdit": {
 		"cancel": "Résilier",
 		"category": "Catégorie",
@@ -46,6 +49,20 @@
 	},
 	"jobform": {
 		"postYourJobOffer": "Poster votre offre d'emploi"
+	},
+	"jobposting": {
+		"bigtext": "Vous recherchez des collaborateurs jeunes et ambitieux pour votre entreprise ? Avec notre site Web, il n'a jamais été aussi facile de publier des offres d'emploi et de les présenter à un large éventail d'étudiants motivés.",
+		"carAndAp": "Carrière et applications",
+		"cvcheck": "Votre CV est-il exempt d'erreurs ? Est-ce assez personnel ? Avez-vous oublié des points importants ? ",
+		"fivemin": "Inscrivez-vous maintenant en moins de 5 minutes et affichez votre première offre d'emploi dès aujourd'hui !Inscrivez-vous maintenant en moins de 5 minutes et affichez votre première offre d'emploi dès aujourd'hui !",
+		"know": "Connaissez-vous vraiment vos forces ?",
+		"regBtn": "Régistrer",
+		"strenghts": "Quelles sont vos forces ?",
+		"survey": "Questionnaire",
+		"thrmin": "Au cours d'un entretien de 30 minutes, vous recevrez des commentaires critiques sur votre CV et des suggestions d'amélioration.",
+		"titleInfo": "Êtes-vous un employeur?",
+		"waiting": "Qu'est-ce que vous attendez ?",
+		"with": "Avec le Strenght-Finder de Gallup, vous pouvez maintenant facilement découvrir vos 5 points forts."
 	},
 	"jobpostingdetail": {
 		"apply": "appliquer",

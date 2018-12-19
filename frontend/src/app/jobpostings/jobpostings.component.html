@@ -26,22 +26,22 @@
   </div>
 
   <div class="employerInfo">
-  <h2 class="titleEmployer">Are you an employer?</h2>
+  <h2 class="titleEmployer">{{'jobposting.titleInfo' | translate}}</h2>
   <p> <br> <br>
-    Are sou searching for young and ambitious workers for your company? With our website it
-    was never this easy to register and post job offers to a wide range of students.
+    {{'jobposting.bigtext' | translate}}
+
 <br>
-   <strong>Register now in under 5 minutes and post your first job offer today!  </strong>
+   <strong> {{'jobposting.fivemin' | translate}} </strong>
     <br>
     <br>
-    What are you waiting for?
+    {{'jobposting.waiting' | translate}}
 
 
   </p>
 
 
 
-  <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">Register now</button>
+  <button class="registerBtn" mat-button  [routerLink]="['/register']" *ngIf="!auth.loggedIn">{{'jobposting.regBtn' | translate}}</button>
 
   </div>
 
@@ -53,7 +53,7 @@
 
 
 <div class="career">
-  <h2 class="titleCareer" >Career and applications</h2>
+  <h2 class="titleCareer" >{{'jobposting.carAndAp' | translate}}</h2>
 
 </div>
 
