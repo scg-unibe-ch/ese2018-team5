@@ -42,26 +42,27 @@
         <img class="resize" src="../../assets/ProfileIMG.png"/>
 
         <div id="divs">
-          <span id="textID"> {{'userprofile.username' | translate}}: </span> <input  type="text" class="inputTest"
+          <span id="textID"> {{'userprofile.username' | translate}}: </span>
+          <input  style="float: right" type="text" class="inputTest"
                [(ngModel)]="user.username" name="username">
 </div>
         <div style="text-align: left">
        <span id="textID"> {{'userprofile.email' | translate}}: </span>
-          <input  type="email" email="true" class="inputTest2"
+          <input  style="float: right" type="email" email="true" class="inputTest2"
                [(ngModel)]="user.email" name="email">
         </div>
 
-        <div id="languageDIV">
+        <div id="languageDIV" style="margin-bottom: 3%">
           <span id="textID"> {{'userprofile.language' | translate}}: </span>
-          <select [(ngModel)]="user.language" id="languageID" name="language" >
+          <select style="float: right" [(ngModel)]="user.language" id="languageID" name="language" >
             <option [value]="lang" *ngFor="let lang of languages">
               {{lang.toUpperCase()}}
             </option>
           </select>
         </div>
-
-      <div id="btnDIV">
-              <button  class="userBtn2" type="submit">{{'userprofile.submit' | translate}}</button>
+<br>
+      <div id="btnDIV" style="text-align: center">
+              <button   class="userBtn2" type="submit">{{'userprofile.submit' | translate}}</button>
       </div>
 
       </mat-card>
