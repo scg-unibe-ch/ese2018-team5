@@ -115,6 +115,13 @@
 	"service": {
 		"for": "Pour toute question, plainte ou divulgation, veuillez communiquer avec :"
 	},
+	"tips": {
+		"five": "5. Assurez-vous de mettre l'accent sur les responsabilités de vos emplois antérieurs qui correspondent le mieux à votre poste cible lorsque vous remplissez vos descriptions. Supposons, par exemple, que vous n'ayez passé qu'une fraction de votre temps à générer des documents dans votre travail sur le campus, mais qu'il s'agisse de la fonction principale d'un travail cible.Énumérez cette activité en premier sur la demande d'emploi lorsque vous décrivez votre emploi sur le campus, de sorte que votre qualification clé soit facilement remarquée. Utilisez des mots d'action pour diriger vos phrases lorsque vous décrivez des emplois antérieurs.",
+		"four": "4. Vérifiez l'orthographe et la grammaire de votre demande et demandez à quelqu'un d'autre de la réviser. Mettez votre doigt sur chaque mot pour vous assurer qu'il est correct même si vous tapez et utilisez la vérification orthographique.",
+		"one": "1. Dans la mesure du possible, apportez votre demande à la maison ou remplissez-la en ligne pour ne pas avoir à vous presser lorsque vous êtes dans un bureau de placement. Dressez une liste de tous les renseignements que vous devez inclure dans votre demande avant de la remplir. Vous ne savez pas trop quoi dire lorsque vous devez aller chercher une demande d'emploi ? Voici comment faire une demande d'emploi. ",
+		"three": "3. Montrez à l'employeur que vous pouvez suivre les directives en remplissant toutes les sections du formulaire de demande. Si vous n'avez pas d'information à inscrire dans une case, vous pouvez dire S/O (sans objet). Passez soigneusement en revue toutes les questions pour vous assurer que vous comprenez bien ce qu'elles demandent. Si vous n'avez pas d'expérience de travail officielle, vous pouvez inscrire sur votre demande d'emploi des emplois comme le gardiennage ou le jardinage, ou même la participation à un club scolaire ou à une association étudiante à titre d'officier. Demandez l'aide d'un parent ou d'un conseiller d'orientation si vous avez besoin d'aide pour répondre à des questions déroutantes. ",
+		"two": "2. La propreté compte. Demandez à un ami ou à un parent qui a une belle écriture de remplir votre demande avec vous si vous avez une écriture négligée. Si vous avez accès à un photocopieur, faites-en une copie à utiliser lorsque vous remplissez d'autres applications, car elles demandent toutes à peu près les mêmes informations, et souvent même dans le même ordre."
+	},
 	"userlist": {
 		"actions": "Actes",
 		"cancel": "Annuler",

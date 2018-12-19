@@ -115,6 +115,13 @@
 	"service": {
 		"for": "Für Fragen, Beschwerden oder Mitteilungen wenden Sie sich bitte an:"
 	},
+	"tips": {
+		"five": "5. Stellen Sie sicher, dass Sie bei der Vervollständigung Ihrer Beschreibungen die Verantwortlichkeiten Ihrer bisherigen Stellen hervorheben, die für Ihre Zielposition am relevantesten sind. Angenommen, Sie haben nur einen Bruchteil Ihrer Zeit damit verbracht, Dokumente in Ihrem Campusjob zu erstellen, aber es wird die Hauptfunktion in einem Ziejob sein.Notieren Sie diese Aktivität zuerst in der Bewerbung bei der Beschreibung Ihres Campusjobs, damit Ihre Schlüsselqualifikation leicht erkennbar ist. Verwenden Sie Handlungswörter, um Ihre Phrasen zu führen, wenn Sie vergangene Aufträge beschreiben.",
+		"four": "4. Überprüfen Sie Ihre Bewerbung auf Rechtschreib- und Grammatikfehler und lassen Sie sie von jemand anderem überprüfen. Legen Sie Ihren Finger auf jedes Wort, um sicherzustellen, dass es in Ordnung ist, auch wenn Sie schreiben und die Rechtschreibprüfung verwenden.",
+		"one": "1. Wenn immer möglich, nehmen Sie die Bewerbung mit nach Hause oder füllen Sie sie online aus, damit Sie sich nicht beeilen müssen, während Sie in einem Arbeitsamt sitzen. Machen Sie eine Liste aller Informationen, die Sie in Ihren Antrag aufnehmen müssen, bevor Sie ihn ausfüllen. Sie sind sich nicht sicher, was Sie sagen sollen, wenn Sie eine Bewerbung für eine Stelle abholen müssen? Hier erfahren Sie, wie Sie eine Bewerbung einreichen können. ",
+		"three": "3. Zeigen Sie dem Arbeitgeber, dass Sie den Anweisungen folgen können, indem Sie alle Abschnitte des Bewerbungsformulars ausfüllen. Wenn Sie keine Informationen haben, die Sie in eine Box eintragen können, können Sie N/A (nicht zutreffend) sagen. Überprüfen Sie alle Fragen sorgfältig, um sicherzustellen, dass Sie verstehen, worum sie bitten. Wenn Sie keine formelle Berufserfahrung haben, ist es in Ordnung, auf Ihren Antrag Jobs wie Babysitter- oder Gartenarbeit oder sogar die Teilnahme als Offizier in einem Schulclub oder einer Schülerregierung anzugeben. Bitten Sie einen Elternteil oder einen Beratungslehrer um Hilfe, wenn Sie Hilfe bei der Beantwortung von verwirrenden Fragen benötigen. ",
+		"two": "2. Sauberkeit zählt. Lassen Sie einen Freund oder Elternteil mit schöner Handschrift Ihre Anwendungen mit Ihnen ausfüllen, wenn Sie eine schlampige Handschrift haben. Wenn Sie Zugriff auf ein Kopiergerät haben, erstellen Sie eine Kopie, die Sie beim Ausfüllen anderer Anwendungen verwenden können, da sie alle nach so ziemlich den gleichen Informationen fragen, und oft sogar in der gleichen Reihenfolge."
+	},
 	"userlist": {
 		"actions": "Aktionen",
 		"cancel": "Abbrechen",

@@ -115,6 +115,13 @@
 	"service": {
 		"for": "For questions, complaints or disclosures please contact:"
 	},
+	"tips": {
+		"five": "5. Make sure you emphasize the job responsibilities of your past jobs which are most relevant to your target position when completing your descriptions. For example, suppose that you only spent a fraction of your time generating documents in your campus job, but it will be the primary function in a target job.List that activity first on the application when describing your campus job, so your key qualification is easily noticed. Use action words to lead your phrases when describing past jobs.",
+		"four": "4. Check your application for spelling and grammar mistakes and have someone else review it as well. Put your finger on every word to make sure it is okay even if you are typing and using spellcheck.",
+		"one": "1. Whenever possible, take the application home or fill it out online, so you don't have to rush while sitting in an employment office. Make a list of all the information you need to include in your application prior to filling it out. Not sure what to say when you need to pick up an application for employment? Here's how to ask for a job application.",
+		"three": "3. Show the employer that you can follow directions by filling in all sections of the application form. If you don't have information to put in a box, you can say N/A (not applicable). Review all the questions carefully to make sure you understand what they are asking for. If you don't have formal work experience, it's fine to list jobs like babysitting or yard work, or even participation as an officer in a school club or student government, on your application. Request help from a parent or guidance counselor if you need assistance responding to any confusing items.",
+		"two": "2. Neatness counts.  Have a friend or parent with nice handwriting fill out your applications with you if you have sloppy handwriting. If you have access to a copy machine, make a copy to use when filling out other applications, since they all ask for pretty much the same information, and often even in the same order."
+	},
 	"userlist": {
 		"actions": "Actions",
 		"cancel": "Cancel",
