@@ -112,6 +112,9 @@
 		"locationPlaceholder": "Bitte wähle einen Ort aus",
 		"moreFilterOptions": "Mehr Filteroptionen"
 	},
+	"service": {
+		"for": "Für Fragen, Beschwerden oder Mitteilungen wenden Sie sich bitte an:"
+	},
 	"userlist": {
 		"actions": "Aktionen",
 		"cancel": "Abbrechen",

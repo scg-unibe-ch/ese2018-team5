@@ -112,6 +112,9 @@
 		"locationPlaceholder": "choisir un lieu",
 		"moreFilterOptions": "Plus d'options de filtrage"
 	},
+	"service": {
+		"for": "Pour toute question, plainte ou divulgation, veuillez communiquer avec :"
+	},
 	"userlist": {
 		"actions": "Actes",
 		"cancel": "Annuler",

@@ -112,6 +112,9 @@
 		"locationPlaceholder": "Choose a location",
 		"moreFilterOptions": "More Filters"
 	},
+	"service": {
+		"for": "For questions, complaints or disclosures please contact:"
+	},
 	"userlist": {
 		"actions": "Actions",
 		"cancel": "Cancel",
