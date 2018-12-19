@@ -61,19 +61,26 @@
 	},
 	"login": {
 		"login": "Login",
+		"notRegisteredYet?": "Not registered yet?",
 		"password": "Password",
 		"register": "Register",
+		"registerHere": "Register Here!",
+		"signIn": "Sign In",
 		"username": "Username"
 	},
 	"register": {
 		"agb": "By submitting this form, you confirm that you have read and agree with our General Terms and Conditions and Privacy Policies.",
+		"alreadyGotAnAccount": "Already got an Account",
 		"alreadyLogin": "Already got a login?",
+		"email": "Email",
 		"emailRequired": "Email required",
 		"loginHere": "Login here",
 		"passwordRequired": "Password required",
 		"passwordSixChars": "Password needs to be at least 6 Characters",
 		"register": "Register",
-		"usernameRequired": "Username required"
+		"signUp": "Sign Up",
+		"usernameRequired": "Username required",
+		"validEmail": "Email must be a valid email address"
 	},
 	"searchform": {
 		"SearchByLocationOrTitle": "Search by Category or Location ",

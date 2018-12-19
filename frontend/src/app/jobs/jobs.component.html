@@ -7,7 +7,7 @@
   <mat-card id="jobPostCard">
     <h1 id="titelJobOffer">{{'jobform.postYourJobOffer' | translate}}</h1>
 
-    <form (ngSubmit)="onSaveData(formJob)" name="create-job" id="submitForm">
+    <form #createJob="ngForm" (ngSubmit)="onSaveData(formJob);createJob.resetForm()" name="create-job" id="submitForm">
 
       <label for="inputTitle" id="labelTitle">{{'jobPostingsEdit.title' | translate}}</label>
         <input

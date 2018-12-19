@@ -21,11 +21,11 @@
 
 .search {
   margin-left: 5px;
-  display: inline;
+  display: inline-block;
 }
 
 .input {
-  margin-left: 2%;
+  margin-left: 3px;
 }
 
 #expansion{

@@ -85,6 +85,7 @@ export class JobpostingdetailComponent implements OnInit {
   }
 
   cancelEdit() {
+    this.update.emit();
     this.editJob = false;
   }
 

@@ -61,19 +61,26 @@
 	},
 	"login": {
 		"login": "Login",
+		"notRegisteredYet?": "Pas encore inscrit?",
 		"password": "Mot de passe",
 		"register": "Registrer",
+		"registerHere": "Inscrivez-vous ici!",
+		"signIn": "Inscrire ici",
 		"username": "Nom d'utilisateur"
 	},
 	"register": {
-		"agb": "AGB",
+		"agb": "En soumettant ce formulaire, vous confirmez que vous avez lu et accepté nos Conditions générales et nos règles de confidentialité.",
+		"alreadyGotAnAccount": "Vous avez déjà un compte",
 		"alreadyLogin": "Déjà un profile?",
+		"email": "Email",
 		"emailRequired": "Email nécessiter",
 		"loginHere": "Login ici",
 		"passwordRequired": "Mot de passe nécessiter",
 		"passwordSixChars": "Mot de pass doit avoire au moins 6 chiffres ",
 		"register": "Registrer",
-		"usernameRequired": "Nom d'utilisateur nécessiter"
+		"signUp": "Inscrire",
+		"usernameRequired": "Nom d'utilisateur nécessiter",
+		"validEmail": "L'email doit être valide"
 	},
 	"searchform": {
 		"SearchByLocationOrTitle": "Recherche par catégorie ou lieu",
