@@ -34,27 +34,27 @@
 
 
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="username">
-      <mat-header-cell *matHeaderCellDef>{{'userlist.userName' | translate}}</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'userlist.userName' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.username}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef>{{'userlist.email' | translate}}</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> {{'userlist.email' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="role">
-      <mat-header-cell *matHeaderCellDef>{{'userlist.role' | translate}}</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'userlist.role' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.role}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="language">
-      <mat-header-cell *matHeaderCellDef>{{'userlist.language' | translate}}</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'userlist.language' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let element">{{element.language.toUpperCase()}}</mat-cell>
     </ng-container>
 

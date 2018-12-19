@@ -48,8 +48,8 @@ export class UserlistComponent implements OnInit {
 
   createTable() {
     this.dataSource = new MatTableDataSource(this.users);
-    this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   fetchData() {
