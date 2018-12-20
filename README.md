@@ -26,4 +26,4 @@ Afterwards you can either register as a normal user or login as a Administrator 
 - Password: admin1
 
 
-### [Project Deliverables](./Project%Deliverables)
+### [Project Deliverables](./ProjectDeliverables)
