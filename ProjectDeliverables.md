@@ -10,11 +10,14 @@
 
 [Milestone 3](./Milestone3)
 
-#### ReadMe
-[ReadMe.md](./README.md) Contains deployment manual as well
+#### ReadMe/Deployment Manual
+[ReadMe.md](./README.md)
 
 #### Project Documentation
 [SRS](./Milestone3/SRS.pdf)
+
+#### Report about biggest challenges, risks and learning outcome
+[Report](./ReportChallengesRisksOutcomes.pdf)
 
 #### Presentation
 We did not use a presentation
