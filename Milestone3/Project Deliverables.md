@@ -1,5 +1,20 @@
 ## Here you can find links to all project deliverables
 
-#### [ReadMe.md](../README.md)
+#### Milestones
 
-#### [Project Documentation SRS](../"Milestone 3"/SRS.pdf)
+[Milestone 1](../Milestone1)
+
+
+[Milestone 2](../Milestone2)
+
+
+[Milestone 3](../Milestone3)
+
+#### ReadMe
+[ReadMe.md](../README.md) Contains deployment manual as well
+
+#### Project Documentation
+[SRS](SRS.pdf)
+
+#### Presentation
+We did not use a presentation
